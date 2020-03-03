@@ -14,7 +14,7 @@
 * [Χρήστος Καπουτσέλης](https://github.com/ChristosKap22)
 * [Αποστόλης Μοσχόπουλος](https://github.com/ApostolisMoschopoulos)
 * [Γιώργος Μπασιούκας](https://github.com/YorgosBas)
-* Μητροφάνος Ντατίδης
+* [Μητροφάνος Ντατίδης](https://github.com/DatMitro)
 * [Δημήτρης Παπαδόπουλος](https://github.com/Dimitri-Lavos)
 * [Αθανασία Παπαδοπούλου](https://github.com/AthanasiaPapadopoulou)
 * [Μαρίνα Σαράφογλου](https://github.com/morningstarm)

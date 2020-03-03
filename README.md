@@ -10,15 +10,15 @@
 
 Η ομάδα αποτελείται από τους:
 
-* Ανέστης Βασιλειάδης
+* [Ανέστης Βασιλειάδης](https://github.com/Anoliz)
 * [Χρήστος Καπουτσέλης](https://github.com/ChristosKap22)
 * [Αποστόλης Μοσχόπουλος](https://github.com/ApostolisMoschopoulos)
 * [Γιώργος Μπασιούκας](https://github.com/YorgosBas)
 * Μητροφάνος Ντατίδης
-* Δημήτρης Παπαδόπουλος
-* Αθανασία Παπαδοπούλου
-* Μαρίνα Σαράφογλου
-* Κώστας Σπυριδόπουλος
+* [Δημήτρης Παπαδόπουλος](https://github.com/Dimitri-Lavos)
+* [Αθανασία Παπαδοπούλου](https://github.com/AthanasiaPapadopoulou)
+* [Μαρίνα Σαράφογλου](https://github.com/morningstarm)
+* [Κώστας Σπυριδόπουλος](https://github.com/KostasSpiridopoulos)
 * [Θοδωρής Τσιρπάνης](https://github.com/teo-tsirpanis)
 
 ## Η διαδικασία

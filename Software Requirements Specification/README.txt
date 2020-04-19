@@ -2,7 +2,7 @@ This is the LaTeX version of the SRS
 
 To propose changes:
 
-1. Download "Software Requirements Specification for DayGame" folder
+1. Download "Software Requirements Specification" folder
 2. Upload to Overleaf for an online LaTeX compiler
 3. Make changes safely by compiling regularly
 4. Open a Pull Request and write a short description of your changes

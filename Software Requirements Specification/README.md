@@ -11,6 +11,9 @@ You can find the preview of the SRS [here](https://github.com/teo-tsirpanis/DayG
 If you don't want to use Overleaf you will have to download an IDE with the right TeX compilers (Not recommended to new users).
 First time compilation might take some time for all the packages to be installed.
 
+### Compiles with 
+pdfLaTeX + MakeIndex + BibTeX option
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 

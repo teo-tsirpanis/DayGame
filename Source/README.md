@@ -37,4 +37,4 @@
 ![pullr](/Source/images/documentation/afterr.png)
 
 ## Git
-Για τους hardcore και για όσους θέλουν να μάθουν git (ευκαιρία είναι) δείτε online tutorials. Γενικα τα βήματα πάνω θα γίνονται με command line.
+Για όσους θέλουν να μάθουν git (ευκαιρία είναι) δείτε online tutorials. Γενικα τα βήματα πάνω θα γίνονται με command line.

@@ -1,6 +1,6 @@
 # Contribution Guidance
 
-### 1. Κάνουμε fork το repository του γενικού
+### 1. Κάνουμε fork το repository του γενικού (μια φορά)
 
 ![fork](/Source/images/documentation/forkkk.png)
 

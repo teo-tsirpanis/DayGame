@@ -8,11 +8,11 @@ namespace DayGame
 {
     class Armor : NonConsumableItems
     {
-        private int _defence;
-        public int Defence { get { return this._defence; } set { this._defence = value; } }
+        public int Defence { get; set; }
+
         public Armor(string name, string description, int image, int price, int defence) : base(name, description, image, price)
         {
-            this._defence = defence;
+            this.Defence = defence;
         }
     }
 }

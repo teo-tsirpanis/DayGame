@@ -8,11 +8,11 @@ namespace DayGame
 {
     class Spell : ConsumableItems
     {
-        private int _damage;
-        public int Damage { get { return this._damage; } set { this._damage = value; } }
+        public int Damage { get; set; }
+
         public Spell(string name, string description, int image, int price, int damage) : base(name, description, image, price)
         {
-            this._damage = damage;
+            this.Damage = damage;
         }
     }
 }

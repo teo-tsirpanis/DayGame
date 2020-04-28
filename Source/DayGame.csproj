@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net472</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
 </Project>

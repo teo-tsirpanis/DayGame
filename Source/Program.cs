@@ -19,6 +19,7 @@ namespace DayGame
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
             Potion potion1 = new Potion("bruh potion", "it's extra bruh", 44, 33, 10);
+            Application.Run(new inventoryGUI());
         }
     }
 }

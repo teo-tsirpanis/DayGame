@@ -1,6 +1,0 @@
-﻿namespace DayGame
-{
-    class BossStats
-    {
-    }
-}

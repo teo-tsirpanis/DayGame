@@ -6,8 +6,4 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="BossBattle" />
-  </ItemGroup>
-
 </Project>

@@ -21,7 +21,8 @@ namespace DayGame
             {
                 pictureBox2.Image = imageList1.Images[1];
             }
-
+            
+            
             questLog = (new QuestLog(character, this));
             openChildForm(questLog);
             
@@ -84,5 +85,6 @@ namespace DayGame
         {
             xpLabel.Text = "" + character.ExpreriencePoints + " / " + character.Level * 100;
         }
+        
     }
 }

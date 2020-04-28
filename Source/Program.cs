@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -14,14 +11,11 @@ namespace DayGame
         [STAThread]
         static void Main()
         {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            // Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new StartUpMenu());
             Potion potion1 = new Potion("bruh potion", "it's extra bruh", 44, 33, 10);
-
-
-            Application.Run(new inventoryGUI());
         }
     }
 }

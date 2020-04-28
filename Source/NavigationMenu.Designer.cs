@@ -198,10 +198,9 @@ namespace DayGame
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(12, 6);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 17);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(110, 110);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -314,7 +313,6 @@ namespace DayGame
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
         }
 

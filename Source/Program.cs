@@ -1,3 +1,4 @@
+using DayGame.Boss;
 using System;
 using System.Windows.Forms;
 
@@ -14,8 +15,8 @@ namespace DayGame
             // Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartUpMenu());
-            Potion potion1 = new Potion("bruh potion", "it's extra bruh", 44, 33, 10);
+            //Application.Run(new StartUpMenu());
+            Application.Run(new BossBattleFrame());
         }
     }
 }

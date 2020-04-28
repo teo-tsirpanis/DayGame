@@ -15,11 +15,11 @@ namespace DayGame
             InitializeComponent();
             if (character.Gender == "Male")
             {
-                pictureBox2.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\maleOrc110.png");
+                pictureBox2.Image = imageList1.Images[0];
             }
             else
             {
-                pictureBox2.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\femaleOrc110.png");
+                pictureBox2.Image = imageList1.Images[1];
             }
 
             questLog = (new QuestLog(character, this));

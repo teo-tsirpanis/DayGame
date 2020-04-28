@@ -1,6 +1,6 @@
 ﻿namespace DayGame
 {
-    partial class Form1
+    partial class StartUpMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+                new System.ComponentModel.ComponentResourceManager(typeof(StartUpMenu));
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -85,7 +85,7 @@
             this.panel2.Size = new System.Drawing.Size(1, 579);
             this.panel2.TabIndex = 6;
             // 
-            // Form1
+            // StartUpMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -98,7 +98,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "StartUpMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Up";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();

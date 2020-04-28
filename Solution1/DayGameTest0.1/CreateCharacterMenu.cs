@@ -30,7 +30,6 @@ namespace DayGameTest0._1
             }
 
             character = new Character(nameBox.Text, gender);
-            Database.characters.Add(character);
             this.Close();
         }
 

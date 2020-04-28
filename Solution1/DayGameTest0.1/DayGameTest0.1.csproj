@@ -65,7 +65,6 @@
         <Compile Include="CreateTaskMenu.Designer.cs">
           <DependentUpon>CreateTaskMenu.cs</DependentUpon>
         </Compile>
-        <Compile Include="Database.cs" />
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>

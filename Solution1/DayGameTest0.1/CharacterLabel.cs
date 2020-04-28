@@ -36,7 +36,6 @@ namespace DayGameTest0._1
             if (dialogResult == DialogResult.Yes)
             {
                 this.Close();
-                Database.characters.Remove(character);
             }
         }
     }

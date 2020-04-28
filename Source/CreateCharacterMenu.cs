@@ -36,12 +36,12 @@ namespace DayGame
 
         private void radioMale_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox2.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\maleOrc110.png");
+            pictureBox2.Image = imageList1.Images[0];
         }
 
         private void radioFemale_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox2.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\femaleOrc110.png");
+            pictureBox2.Image = imageList1.Images[1];
         }
 
     }

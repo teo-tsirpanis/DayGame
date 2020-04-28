@@ -31,6 +31,7 @@ namespace DayGame
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources =
                 new System.ComponentModel.ComponentResourceManager(typeof(NavigationMenu));
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,6 +53,7 @@ namespace DayGame
             this.xpBar = new System.Windows.Forms.Panel();
             this.xpLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
@@ -284,6 +286,14 @@ namespace DayGame
             this.panel2.Size = new System.Drawing.Size(1270, 150);
             this.panel2.TabIndex = 1;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream =
+                ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "maleOrc110.png");
+            this.imageList1.Images.SetKeyName(1, "femaleOrc110.png");
+            // 
             // NavigationMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -329,5 +339,6 @@ namespace DayGame
         private System.Windows.Forms.Panel xpBar;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label gameBalanceLabel;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

@@ -21,7 +21,7 @@ namespace DayGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 obj = (Form1) Application.OpenForms["Form1"];
+            StartUpMenu obj = (StartUpMenu) Application.OpenForms["StartUpMenu"];
             NavigationMenu navigationMenu = new NavigationMenu(character);
             navigationMenu.Show();
             obj.Hide();

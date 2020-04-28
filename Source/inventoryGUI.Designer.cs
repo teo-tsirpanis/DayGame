@@ -1,4 +1,4 @@
-﻿namespace wqeqsd
+﻿namespace DayGame
 {
     partial class inventoryGUI
     {

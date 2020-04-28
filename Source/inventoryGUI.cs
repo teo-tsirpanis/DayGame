@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace wqeqsd
+namespace DayGame
 {
     public partial class inventoryGUI : Form
     {

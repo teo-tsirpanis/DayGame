@@ -551,6 +551,7 @@
             this.chestbutton3.Size = new System.Drawing.Size(80, 80);
             this.chestbutton3.TabIndex = 4;
             this.chestbutton3.UseVisualStyleBackColor = true;
+            this.chestbutton3.Click += new System.EventHandler(this.chestbutton3_Click);
             // 
             // chestbutton2
             // 
@@ -608,19 +609,21 @@
             // 
             // WeaponButton
             // 
-            this.WeaponButton.Location = new System.Drawing.Point(297, 138);
+            this.WeaponButton.BackColor = System.Drawing.SystemColors.Control;
+            this.WeaponButton.Location = new System.Drawing.Point(61, 131);
             this.WeaponButton.Name = "WeaponButton";
             this.WeaponButton.Size = new System.Drawing.Size(80, 80);
             this.WeaponButton.TabIndex = 39;
-            this.WeaponButton.UseVisualStyleBackColor = true;
+            this.WeaponButton.UseVisualStyleBackColor = false;
             // 
             // ArmorButton
             // 
-            this.ArmorButton.Location = new System.Drawing.Point(52, 138);
+            this.ArmorButton.BackColor = System.Drawing.SystemColors.Control;
+            this.ArmorButton.Location = new System.Drawing.Point(297, 138);
             this.ArmorButton.Name = "ArmorButton";
             this.ArmorButton.Size = new System.Drawing.Size(80, 80);
             this.ArmorButton.TabIndex = 38;
-            this.ArmorButton.UseVisualStyleBackColor = true;
+            this.ArmorButton.UseVisualStyleBackColor = false;
             this.ArmorButton.Click += new System.EventHandler(this.button43_Click);
             // 
             // EquipedText
@@ -705,19 +708,21 @@
             // 
             // BagButton8
             // 
+            this.BagButton8.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton8.Location = new System.Drawing.Point(310, 129);
             this.BagButton8.Name = "BagButton8";
             this.BagButton8.Size = new System.Drawing.Size(80, 80);
             this.BagButton8.TabIndex = 41;
-            this.BagButton8.UseVisualStyleBackColor = true;
+            this.BagButton8.UseVisualStyleBackColor = false;
             // 
             // BagButton7
             // 
+            this.BagButton7.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton7.Location = new System.Drawing.Point(224, 129);
             this.BagButton7.Name = "BagButton7";
             this.BagButton7.Size = new System.Drawing.Size(80, 80);
             this.BagButton7.TabIndex = 40;
-            this.BagButton7.UseVisualStyleBackColor = true;
+            this.BagButton7.UseVisualStyleBackColor = false;
             // 
             // BagText
             // 
@@ -731,53 +736,59 @@
             // 
             // BagButton4
             // 
+            this.BagButton4.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton4.Location = new System.Drawing.Point(310, 43);
             this.BagButton4.Name = "BagButton4";
             this.BagButton4.Size = new System.Drawing.Size(80, 80);
             this.BagButton4.TabIndex = 45;
-            this.BagButton4.UseVisualStyleBackColor = true;
+            this.BagButton4.UseVisualStyleBackColor = false;
             // 
             // BagButton1
             // 
+            this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton1.Location = new System.Drawing.Point(52, 43);
             this.BagButton1.Name = "BagButton1";
             this.BagButton1.Size = new System.Drawing.Size(80, 80);
             this.BagButton1.TabIndex = 42;
-            this.BagButton1.UseVisualStyleBackColor = true;
+            this.BagButton1.UseVisualStyleBackColor = false;
             // 
             // BagButton6
             // 
+            this.BagButton6.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton6.Location = new System.Drawing.Point(138, 129);
             this.BagButton6.Name = "BagButton6";
             this.BagButton6.Size = new System.Drawing.Size(80, 80);
             this.BagButton6.TabIndex = 39;
-            this.BagButton6.UseVisualStyleBackColor = true;
+            this.BagButton6.UseVisualStyleBackColor = false;
             // 
             // BagButton2
             // 
+            this.BagButton2.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton2.Location = new System.Drawing.Point(138, 43);
             this.BagButton2.Name = "BagButton2";
             this.BagButton2.Size = new System.Drawing.Size(80, 80);
             this.BagButton2.TabIndex = 43;
-            this.BagButton2.UseVisualStyleBackColor = true;
+            this.BagButton2.UseVisualStyleBackColor = false;
             // 
             // BagButton3
             // 
+            this.BagButton3.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton3.Location = new System.Drawing.Point(224, 43);
             this.BagButton3.Name = "BagButton3";
             this.BagButton3.Size = new System.Drawing.Size(80, 80);
             this.BagButton3.TabIndex = 44;
-            this.BagButton3.UseVisualStyleBackColor = true;
+            this.BagButton3.UseVisualStyleBackColor = false;
             // 
             // BagButton5
             // 
+            this.BagButton5.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton5.Location = new System.Drawing.Point(52, 129);
             this.BagButton5.Name = "BagButton5";
             this.BagButton5.Size = new System.Drawing.Size(80, 80);
             this.BagButton5.TabIndex = 38;
-            this.BagButton5.UseVisualStyleBackColor = true;
+            this.BagButton5.UseVisualStyleBackColor = false;
             // 
-            // Form1
+            // inventoryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -789,8 +800,9 @@
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "inventoryGUI";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.inventoryGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

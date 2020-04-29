@@ -1,6 +1,6 @@
 ﻿namespace DayGame
 {
-    class Item
+    public class Item
     {
         public string name;
         public string description;

@@ -116,7 +116,7 @@
             this.panel1.Controls.Add(this.FilterText);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(202, 756);
+            this.panel1.Size = new System.Drawing.Size(233, 756);
             this.panel1.TabIndex = 0;
             // 
             // potionscheckbox
@@ -166,7 +166,7 @@
             this.FilterText.AutoSize = true;
             this.FilterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.FilterText.Location = new System.Drawing.Point(30, 12);
+            this.FilterText.Location = new System.Drawing.Point(45, 12);
             this.FilterText.Name = "FilterText";
             this.FilterText.Size = new System.Drawing.Size(68, 29);
             this.FilterText.TabIndex = 1;
@@ -231,7 +231,7 @@
             this.panel2.Controls.Add(this.ChestText);
             this.panel2.Location = new System.Drawing.Point(202, -1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(743, 755);
+            this.panel2.Size = new System.Drawing.Size(749, 755);
             this.panel2.TabIndex = 2;
             // 
             // chestbutton42
@@ -553,6 +553,7 @@
             this.chestbutton3.Size = new System.Drawing.Size(93, 92);
             this.chestbutton3.TabIndex = 4;
             this.chestbutton3.UseVisualStyleBackColor = true;
+            this.chestbutton3.Click += new System.EventHandler(this.chestbutton3_Click);
             // 
             // chestbutton2
             // 
@@ -582,9 +583,9 @@
             this.panel3.Controls.Add(this.WeaponButton);
             this.panel3.Controls.Add(this.ArmorButton);
             this.panel3.Controls.Add(this.EquipedText);
-            this.panel3.Location = new System.Drawing.Point(951, -1);
+            this.panel3.Location = new System.Drawing.Point(951, 1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(510, 273);
+            this.panel3.Size = new System.Drawing.Size(513, 307);
             this.panel3.TabIndex = 3;
             // 
             // WeaponText
@@ -592,7 +593,7 @@
             this.WeaponText.AutoSize = true;
             this.WeaponText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.WeaponText.Location = new System.Drawing.Point(47, 112);
+            this.WeaponText.Location = new System.Drawing.Point(55, 107);
             this.WeaponText.Name = "WeaponText";
             this.WeaponText.Size = new System.Drawing.Size(103, 29);
             this.WeaponText.TabIndex = 41;
@@ -604,7 +605,7 @@
             this.ArmorText.AutoSize = true;
             this.ArmorText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular,
                 System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.ArmorText.Location = new System.Drawing.Point(190, 112);
+            this.ArmorText.Location = new System.Drawing.Point(349, 107);
             this.ArmorText.Name = "ArmorText";
             this.ArmorText.Size = new System.Drawing.Size(78, 29);
             this.ArmorText.TabIndex = 40;
@@ -612,19 +613,21 @@
             // 
             // WeaponButton
             // 
-            this.WeaponButton.Location = new System.Drawing.Point(190, 159);
+            this.WeaponButton.BackColor = System.Drawing.SystemColors.Control;
+            this.WeaponButton.Location = new System.Drawing.Point(71, 151);
             this.WeaponButton.Name = "WeaponButton";
             this.WeaponButton.Size = new System.Drawing.Size(93, 92);
             this.WeaponButton.TabIndex = 39;
-            this.WeaponButton.UseVisualStyleBackColor = true;
+            this.WeaponButton.UseVisualStyleBackColor = false;
             // 
             // ArmorButton
             // 
-            this.ArmorButton.Location = new System.Drawing.Point(47, 159);
+            this.ArmorButton.BackColor = System.Drawing.SystemColors.Control;
+            this.ArmorButton.Location = new System.Drawing.Point(346, 159);
             this.ArmorButton.Name = "ArmorButton";
             this.ArmorButton.Size = new System.Drawing.Size(93, 92);
             this.ArmorButton.TabIndex = 38;
-            this.ArmorButton.UseVisualStyleBackColor = true;
+            this.ArmorButton.UseVisualStyleBackColor = false;
             this.ArmorButton.Click += new System.EventHandler(this.button43_Click);
             // 
             // EquipedText
@@ -632,7 +635,7 @@
             this.EquipedText.AutoSize = true;
             this.EquipedText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.EquipedText.Location = new System.Drawing.Point(114, 54);
+            this.EquipedText.Location = new System.Drawing.Point(198, 36);
             this.EquipedText.Name = "EquipedText";
             this.EquipedText.Size = new System.Drawing.Size(104, 29);
             this.EquipedText.TabIndex = 38;
@@ -645,7 +648,7 @@
             this.panel4.Controls.Add(this.DamageTextNumber);
             this.panel4.Controls.Add(this.DefenceText);
             this.panel4.Controls.Add(this.DamageText);
-            this.panel4.Location = new System.Drawing.Point(951, 279);
+            this.panel4.Location = new System.Drawing.Point(951, 307);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(512, 175);
             this.panel4.TabIndex = 4;
@@ -655,7 +658,7 @@
             this.DefenceTextNumber.AutoSize = true;
             this.DefenceTextNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.DefenceTextNumber.Location = new System.Drawing.Point(206, 85);
+            this.DefenceTextNumber.Location = new System.Drawing.Point(341, 69);
             this.DefenceTextNumber.Name = "DefenceTextNumber";
             this.DefenceTextNumber.Size = new System.Drawing.Size(26, 29);
             this.DefenceTextNumber.TabIndex = 42;
@@ -667,7 +670,7 @@
             this.DamageTextNumber.AutoSize = true;
             this.DamageTextNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.DamageTextNumber.Location = new System.Drawing.Point(59, 85);
+            this.DamageTextNumber.Location = new System.Drawing.Point(124, 69);
             this.DamageTextNumber.Name = "DamageTextNumber";
             this.DamageTextNumber.Size = new System.Drawing.Size(26, 29);
             this.DamageTextNumber.TabIndex = 41;
@@ -678,7 +681,7 @@
             this.DefenceText.AutoSize = true;
             this.DefenceText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.DefenceText.Location = new System.Drawing.Point(161, 43);
+            this.DefenceText.Location = new System.Drawing.Point(299, 27);
             this.DefenceText.Name = "DefenceText";
             this.DefenceText.Size = new System.Drawing.Size(103, 29);
             this.DefenceText.TabIndex = 40;
@@ -689,7 +692,7 @@
             this.DamageText.AutoSize = true;
             this.DamageText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.DamageText.Location = new System.Drawing.Point(13, 43);
+            this.DamageText.Location = new System.Drawing.Point(83, 27);
             this.DamageText.Name = "DamageText";
             this.DamageText.Size = new System.Drawing.Size(104, 29);
             this.DamageText.TabIndex = 39;
@@ -707,26 +710,28 @@
             this.panel5.Controls.Add(this.BagButton2);
             this.panel5.Controls.Add(this.BagButton3);
             this.panel5.Controls.Add(this.BagButton5);
-            this.panel5.Location = new System.Drawing.Point(950, 450);
+            this.panel5.Location = new System.Drawing.Point(951, 481);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(513, 276);
             this.panel5.TabIndex = 5;
             // 
             // BagButton8
             // 
+            this.BagButton8.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton8.Location = new System.Drawing.Point(362, 149);
             this.BagButton8.Name = "BagButton8";
             this.BagButton8.Size = new System.Drawing.Size(93, 92);
             this.BagButton8.TabIndex = 41;
-            this.BagButton8.UseVisualStyleBackColor = true;
+            this.BagButton8.UseVisualStyleBackColor = false;
             // 
             // BagButton7
             // 
+            this.BagButton7.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton7.Location = new System.Drawing.Point(261, 149);
             this.BagButton7.Name = "BagButton7";
             this.BagButton7.Size = new System.Drawing.Size(93, 92);
             this.BagButton7.TabIndex = 40;
-            this.BagButton7.UseVisualStyleBackColor = true;
+            this.BagButton7.UseVisualStyleBackColor = false;
             // 
             // BagText
             // 
@@ -741,56 +746,63 @@
             // 
             // BagButton4
             // 
+            this.BagButton4.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton4.Location = new System.Drawing.Point(362, 50);
             this.BagButton4.Name = "BagButton4";
             this.BagButton4.Size = new System.Drawing.Size(93, 92);
             this.BagButton4.TabIndex = 45;
-            this.BagButton4.UseVisualStyleBackColor = true;
+            this.BagButton4.UseVisualStyleBackColor = false;
             // 
             // BagButton1
             // 
+            this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton1.Location = new System.Drawing.Point(61, 50);
             this.BagButton1.Name = "BagButton1";
             this.BagButton1.Size = new System.Drawing.Size(93, 92);
             this.BagButton1.TabIndex = 42;
-            this.BagButton1.UseVisualStyleBackColor = true;
+            this.BagButton1.UseVisualStyleBackColor = false;
             // 
             // BagButton6
             // 
+            this.BagButton6.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton6.Location = new System.Drawing.Point(161, 149);
             this.BagButton6.Name = "BagButton6";
             this.BagButton6.Size = new System.Drawing.Size(93, 92);
             this.BagButton6.TabIndex = 39;
-            this.BagButton6.UseVisualStyleBackColor = true;
+            this.BagButton6.UseVisualStyleBackColor = false;
             // 
             // BagButton2
             // 
+            this.BagButton2.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton2.Location = new System.Drawing.Point(161, 50);
             this.BagButton2.Name = "BagButton2";
             this.BagButton2.Size = new System.Drawing.Size(93, 92);
             this.BagButton2.TabIndex = 43;
-            this.BagButton2.UseVisualStyleBackColor = true;
+            this.BagButton2.UseVisualStyleBackColor = false;
             // 
             // BagButton3
             // 
+            this.BagButton3.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton3.Location = new System.Drawing.Point(261, 50);
             this.BagButton3.Name = "BagButton3";
             this.BagButton3.Size = new System.Drawing.Size(93, 92);
             this.BagButton3.TabIndex = 44;
-            this.BagButton3.UseVisualStyleBackColor = true;
+            this.BagButton3.UseVisualStyleBackColor = false;
             // 
             // BagButton5
             // 
+            this.BagButton5.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton5.Location = new System.Drawing.Point(61, 149);
             this.BagButton5.Name = "BagButton5";
             this.BagButton5.Size = new System.Drawing.Size(93, 92);
             this.BagButton5.TabIndex = 38;
-            this.BagButton5.UseVisualStyleBackColor = true;
+            this.BagButton5.UseVisualStyleBackColor = false;
             // 
             // inventoryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1254, 654);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -801,6 +813,7 @@
             this.MinimizeBox = false;
             this.Name = "inventoryGUI";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.inventoryGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

@@ -17,6 +17,10 @@ namespace DayGame
             this.price = price;
         }
 
+        public string Name => name;
+
+        public string Description => description;
+
         public int Image => image;
     }
 }

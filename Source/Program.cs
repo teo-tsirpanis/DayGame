@@ -11,7 +11,9 @@ namespace DayGame
         [STAThread]
         static void Main()
         {
-            // Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            #if NETCOREAPP3_1
+            Application.SetHighDpiMode(HighDpiMode.SystemAware);
+            #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartUpMenu());

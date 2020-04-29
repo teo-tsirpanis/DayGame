@@ -614,7 +614,9 @@
             // WeaponButton
             // 
             this.WeaponButton.BackColor = System.Drawing.SystemColors.Control;
-            this.WeaponButton.Location = new System.Drawing.Point(71, 151);
+
+            this.WeaponButton.Location = new System.Drawing.Point(61, 131);
+
             this.WeaponButton.Name = "WeaponButton";
             this.WeaponButton.Size = new System.Drawing.Size(93, 92);
             this.WeaponButton.TabIndex = 39;
@@ -623,7 +625,9 @@
             // ArmorButton
             // 
             this.ArmorButton.BackColor = System.Drawing.SystemColors.Control;
-            this.ArmorButton.Location = new System.Drawing.Point(346, 159);
+
+            this.ArmorButton.Location = new System.Drawing.Point(297, 138);
+
             this.ArmorButton.Name = "ArmorButton";
             this.ArmorButton.Size = new System.Drawing.Size(93, 92);
             this.ArmorButton.TabIndex = 38;
@@ -718,7 +722,9 @@
             // BagButton8
             // 
             this.BagButton8.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton8.Location = new System.Drawing.Point(362, 149);
+
+            this.BagButton8.Location = new System.Drawing.Point(310, 129);
+
             this.BagButton8.Name = "BagButton8";
             this.BagButton8.Size = new System.Drawing.Size(93, 92);
             this.BagButton8.TabIndex = 41;
@@ -727,7 +733,9 @@
             // BagButton7
             // 
             this.BagButton7.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton7.Location = new System.Drawing.Point(261, 149);
+
+            this.BagButton7.Location = new System.Drawing.Point(224, 129);
+
             this.BagButton7.Name = "BagButton7";
             this.BagButton7.Size = new System.Drawing.Size(93, 92);
             this.BagButton7.TabIndex = 40;
@@ -747,7 +755,9 @@
             // BagButton4
             // 
             this.BagButton4.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton4.Location = new System.Drawing.Point(362, 50);
+
+            this.BagButton4.Location = new System.Drawing.Point(310, 43);
+
             this.BagButton4.Name = "BagButton4";
             this.BagButton4.Size = new System.Drawing.Size(93, 92);
             this.BagButton4.TabIndex = 45;
@@ -756,7 +766,9 @@
             // BagButton1
             // 
             this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton1.Location = new System.Drawing.Point(61, 50);
+
+            this.BagButton1.Location = new System.Drawing.Point(52, 43);
+
             this.BagButton1.Name = "BagButton1";
             this.BagButton1.Size = new System.Drawing.Size(93, 92);
             this.BagButton1.TabIndex = 42;
@@ -765,7 +777,9 @@
             // BagButton6
             // 
             this.BagButton6.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton6.Location = new System.Drawing.Point(161, 149);
+
+            this.BagButton6.Location = new System.Drawing.Point(138, 129);
+
             this.BagButton6.Name = "BagButton6";
             this.BagButton6.Size = new System.Drawing.Size(93, 92);
             this.BagButton6.TabIndex = 39;
@@ -774,7 +788,9 @@
             // BagButton2
             // 
             this.BagButton2.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton2.Location = new System.Drawing.Point(161, 50);
+
+            this.BagButton2.Location = new System.Drawing.Point(138, 43);
+
             this.BagButton2.Name = "BagButton2";
             this.BagButton2.Size = new System.Drawing.Size(93, 92);
             this.BagButton2.TabIndex = 43;
@@ -783,7 +799,9 @@
             // BagButton3
             // 
             this.BagButton3.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton3.Location = new System.Drawing.Point(261, 50);
+
+            this.BagButton3.Location = new System.Drawing.Point(224, 43);
+
             this.BagButton3.Name = "BagButton3";
             this.BagButton3.Size = new System.Drawing.Size(93, 92);
             this.BagButton3.TabIndex = 44;
@@ -792,7 +810,9 @@
             // BagButton5
             // 
             this.BagButton5.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton5.Location = new System.Drawing.Point(61, 149);
+
+            this.BagButton5.Location = new System.Drawing.Point(52, 129);
+
             this.BagButton5.Name = "BagButton5";
             this.BagButton5.Size = new System.Drawing.Size(93, 92);
             this.BagButton5.TabIndex = 38;

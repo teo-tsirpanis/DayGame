@@ -38,7 +38,7 @@ namespace DayGame.Boss
         public void CharacterAttack()
         {
             int characterDamage = 10; //to be changed
-            dialogue = String.Format("Whoa! You  have dealt {} damage", characterDamage);
+            dialogue = $"Whoa! You  have dealt {characterDamage} damage";
         }
 
         public void UseSpells(Spell spell)

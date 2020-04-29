@@ -47,5 +47,10 @@ namespace DayGame
         {
 
         }
+
+        private void inventoryGUI_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

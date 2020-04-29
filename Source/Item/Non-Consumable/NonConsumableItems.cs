@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Drawing;
 
 namespace DayGame
 {
-    class NonConsumableItems : Item
+    public class NonConsumableItems : Item
     {
         public NonConsumableItems(string name, string description, int image, int price) : base(name, description, image, price)
         {

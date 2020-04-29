@@ -1,10 +1,12 @@
-﻿namespace DayGame
+﻿using System.Drawing;
+
+namespace DayGame
 {
-    class Weapon : NonConsumableItems
+    public class Weapon : NonConsumableItems
     {
         public int Damage { get; set; }
 
-        public Weapon(string name, string description, int image, int price, int damage) : base(name, description,
+        public Weapon(string name, string description, Image image, int price, int damage) : base(name, description,
             image, price)
         {
             this.Damage = damage;

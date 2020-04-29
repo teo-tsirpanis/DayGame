@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -17,7 +18,6 @@ namespace DayGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new StartUpMenu());
-            Potion potion1 = new Potion("bruh potion", "it's extra bruh", 44, 33, 10);
         }
     }
 }

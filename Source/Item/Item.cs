@@ -1,13 +1,15 @@
-﻿namespace DayGame
-{
-    class Item
-    {
-        public string name;
-        public string description;
-        public int image;
-        public int price;
+﻿using System.Drawing;
 
-        public Item(string name, string description, int image, int price)
+namespace DayGame
+{
+    public class Item
+    {
+        protected string name;
+        protected string description;
+        protected Image image;
+        protected int price;
+
+        public Item(string name, string description, Image image, int price)
         {
             this.name = name;
             this.description = description;
@@ -15,5 +17,6 @@
             this.price = price;
         }
 
+        public Image Image => image;
     }
 }

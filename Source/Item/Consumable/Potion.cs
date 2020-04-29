@@ -1,4 +1,6 @@
-﻿namespace DayGame
+﻿using System.Drawing;
+
+namespace DayGame
 {
     class Potion : ConsumableItems
     {

@@ -8,6 +8,7 @@ namespace DayGame
     {
         private Character character;
         private QuestLog questLog;
+        private inventoryGUI inventoryGui;
 
         public NavigationMenu(Character character)
         {
@@ -24,6 +25,7 @@ namespace DayGame
             
             
             questLog = (new QuestLog(character, this));
+            inventoryGui = new inventoryGUI();
             openChildForm(questLog);
             
             nameLabel.Text = character.Name;
@@ -36,10 +38,11 @@ namespace DayGame
         private Form activeForm = null;
 
         private void openChildForm(Form childForm)
-        {
+        {    
+            
             if (childForm != activeForm)
             {
-                if (activeForm != null) activeForm.Close();
+                if (activeForm != null) activeForm.Hide();
                 activeForm = childForm;
                 childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
@@ -85,6 +88,10 @@ namespace DayGame
         {
             xpLabel.Text = "" + character.ExpreriencePoints + " / " + character.Level * 100;
         }
-        
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            openChildForm(inventoryGui);
+        }
     }
 }

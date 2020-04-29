@@ -131,6 +131,7 @@ namespace DayGame
             this.button3.TabIndex = 7;
             this.button3.Text = "Inventory";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -190,6 +191,7 @@ namespace DayGame
             // 
             // panelChildForm
             // 
+            this.panelChildForm.AutoScroll = true;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(0, 219);
             this.panelChildForm.Name = "panelChildForm";

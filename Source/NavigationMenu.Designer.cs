@@ -191,6 +191,7 @@ namespace DayGame
             // 
             // panelChildForm
             // 
+            this.panelChildForm.AutoScroll = true;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(0, 219);
             this.panelChildForm.Name = "panelChildForm";

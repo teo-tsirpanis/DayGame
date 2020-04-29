@@ -17,7 +17,9 @@ namespace DayGame
             #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new StartUpMenu());
+
         }
     }
 }

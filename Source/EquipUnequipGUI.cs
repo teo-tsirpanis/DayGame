@@ -21,8 +21,10 @@ namespace DayGame
 
         public void setup(Item item,String buttontext)
         {
+
             itemnamelabel.Text = item.name;
             itemdescriptionlabel.Text = item.description;
+
             equnbutton.Text = buttontext;
 
             if (item.GetType() == typeof(Armor))

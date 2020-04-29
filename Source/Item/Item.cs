@@ -6,10 +6,10 @@ namespace DayGame
     {
         protected string name;
         protected string description;
-        protected Image image;
+        protected int image;
         protected int price;
 
-        public Item(string name, string description, Image image, int price)
+        public Item(string name, string description, int image, int price)
         {
             this.name = name;
             this.description = description;
@@ -17,6 +17,6 @@ namespace DayGame
             this.price = price;
         }
 
-        public Image Image => image;
+        public int Image => image;
     }
 }

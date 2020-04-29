@@ -584,7 +584,7 @@
             this.panel3.Controls.Add(this.EquipedText);
             this.panel3.Location = new System.Drawing.Point(951, -1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(510, 274);
+            this.panel3.Size = new System.Drawing.Size(510, 273);
             this.panel3.TabIndex = 3;
             // 
             // WeaponText
@@ -667,7 +667,7 @@
             this.DamageTextNumber.AutoSize = true;
             this.DamageTextNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F,
                 System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.DamageTextNumber.Location = new System.Drawing.Point(60, 85);
+            this.DamageTextNumber.Location = new System.Drawing.Point(59, 85);
             this.DamageTextNumber.Name = "DamageTextNumber";
             this.DamageTextNumber.Size = new System.Drawing.Size(26, 29);
             this.DamageTextNumber.TabIndex = 41;

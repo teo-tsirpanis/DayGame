@@ -12,6 +12,7 @@ namespace DayGame.Boss
 {
     public partial class BossBattleFrame : Form
     {
+
         public BossBattleFrame()
         {
             InitializeComponent();

@@ -22,8 +22,8 @@ namespace DayGame
         public void setup(Item item,String buttontext)
         {
 
-            itemnamelabel.Text = item.name;
-            itemdescriptionlabel.Text = item.description;
+            itemnamelabel.Text = item.Name;
+            itemdescriptionlabel.Text = item.Description;
 
             equnbutton.Text = buttontext;
 

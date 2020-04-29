@@ -61,7 +61,7 @@ namespace DayGame
             this.panel1.AllowDrop = true;
             this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(32, 82);
+            this.panel1.Location = new System.Drawing.Point(31, 82);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(364, 519);
             this.panel1.TabIndex = 1;
@@ -88,7 +88,7 @@ namespace DayGame
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(32, 31);
+            this.label1.Location = new System.Drawing.Point(31, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 28);
             this.label1.TabIndex = 4;

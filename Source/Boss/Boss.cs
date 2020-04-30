@@ -5,19 +5,19 @@ using System.Text;
 namespace DayGame.Boss
 
 {
-    class Boss
+    public class Boss
     {
         public string Name { get; set; }
         private int _image;
         public int Damage { get; set; }
-        public int Hit_points { get; set; }
+        public int HitPoints { get; set; }
         public int Level { get; set; }
 
         public Boss(string Name, int image, int Hit_points, int Level)
             {
                 this.Name = Name;
                 this._image = image;
-                this.Hit_points = Hit_points;
+                this.HitPoints = Hit_points;
                 this.Level = Level;
             }
 

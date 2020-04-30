@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,14 +44,14 @@ namespace DayGame
 
         public void DeleteArmor(Item item, int counter)
         {
-            ChestSpace[counter] = ArmorEquiped;
-            ArmorEquiped = null;
+                ChestSpace[counter] = ArmorEquiped;
+                ArmorEquiped = null;
         }
 
         public void DeleteWeapon(Item item, int counter)
         {
-            ChestSpace[counter] = WeaponEquiped;
-            WeaponEquiped = null;
+                ChestSpace[counter] = WeaponEquiped;
+                WeaponEquiped = null;
         }
 
 

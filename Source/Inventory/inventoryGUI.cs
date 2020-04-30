@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,6 +45,8 @@ namespace DayGame
             ArmorButton.Click += UnequipArmor;
             WeaponButton.Click += UnequipWeapon;
 
+
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -87,6 +89,9 @@ namespace DayGame
 
         }
 
+
+
+
         private void Equip(object sender, EventArgs e)
         {   //GIA THN WRA DOULEVEI MONO GIA WEAPONS KAI ARMOR//
             Button btn = sender as Button;
@@ -103,7 +108,11 @@ namespace DayGame
                             DamageBuff = DamageBuff + spathi2.Damage;
                             DamageTextNumber.Text = DamageBuff.ToString();
                         }
-                        
+
+
+
+
+
                         inv.AddWeapon(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese sto WeaponButton to weapon pou epilexthike kai svistw apo ton katalogo
                         WeaponButton.BackColor = Color.Red;//svise optika to weapon apo ton katalogo
                         btn.BackColor = Color.FromKnownColor(KnownColor.Control);//vale optika sto weapon to weapon pou epelexes
@@ -221,9 +230,16 @@ namespace DayGame
                 else if (inv.ChestSpace[i].GetType() == typeof(Weapon)) {
                     ChestButtonsArray[i].BackColor = Color.Red;
                 }
+                    
             }
+
         }
-        
+
+
+
+
+
+
         private void chestbutton3_Click(object sender, EventArgs e)
         {
 

@@ -1,7 +1,6 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
-
 namespace DayGame.Boss
 {
     class Boss
@@ -10,15 +9,17 @@ namespace DayGame.Boss
         private int _image;
         public int Damage { get; set; }
         public int Hit_points { get; set; }
+        public int HitPoints { get; set; }
         public int Level { get; set; }
 
         public Boss(string Name, int image, int Hit_points, int Level)
-        {
-            this.Name = Name;
-            this._image = image;
-            this.Hit_points = Hit_points;
-            this.Level = Level;
-        }
+            {
+                this.Name = Name;
+                this._image = image;
+                this.Hit_points = Hit_points;
+                this.HitPoints = Hit_points;
+                this.Level = Level;
+            }
 
         //dummy method, to be changed
         public void BossDeath()
@@ -26,5 +27,6 @@ namespace DayGame.Boss
             Console.WriteLine("The boss died");
         }
     }
+    
+    
 }
-

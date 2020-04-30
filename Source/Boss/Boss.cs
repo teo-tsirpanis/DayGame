@@ -5,7 +5,7 @@ using System.Text;
 namespace DayGame.Boss
 
 {
-    class Boss
+    public class Boss
     {
         public string Name { get; set; }
         private int _image;

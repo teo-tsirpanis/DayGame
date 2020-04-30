@@ -12,10 +12,17 @@ namespace DayGame.Boss
 {
     public partial class BossBattleFrame : Form
     {
-
-        public BossBattleFrame()
+        private Character character;
+        private Boss boss;
+        public BossBattleFrame(Character character, Boss boss)
         {
+            this.character = character;
+            this.boss = boss;
             InitializeComponent();
+            this.BossName.Text = boss.Name;
+            this.CharName.Text = character.Name;
+            this.BossLevel.Text = "Level " + boss.Level;
+            this.CharLevel.Text = "Level " + character.Level;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -49,6 +56,16 @@ namespace DayGame.Boss
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

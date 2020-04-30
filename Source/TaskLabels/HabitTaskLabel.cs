@@ -41,6 +41,7 @@ namespace DayGame.TaskLabels
             habit.UpdateTask(false,character);
             navigationMenu.hpBarController();
             navigationMenu.gameLabelController();
+            navigationMenu.hpLabelController();
             label2.Text = "+" + positive + " | -" + negative;
             checkKarma(positive - negative);
         }

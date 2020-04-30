@@ -13,7 +13,6 @@ namespace DayGame.TaskLabels
 
         public DailyTaskLabel(Daily daily, Character character, NavigationMenu navigationMenu)
         {
-            ticks = -1000000;
             this.daily = daily;
             this.character = character;
             this.navigationMenu = navigationMenu;
@@ -46,7 +45,7 @@ namespace DayGame.TaskLabels
         {
             ticks++;
             if (ticks == 10)
-            {
+            { 
                 checkBox1.Checked = false;
                 checkBox1.Enabled = true;
                 checkBox1.BackColor = Color.FromArgb(247, 163, 27);

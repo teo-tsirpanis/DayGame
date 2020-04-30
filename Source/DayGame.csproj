@@ -8,12 +8,15 @@
 
   <ItemGroup>
 
+    <Folder Include="Help" />
+
     <Folder Include="Images\WeaponImages" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Folder Include="Shop" />
   </ItemGroup>
 
   <ItemGroup>

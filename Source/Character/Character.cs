@@ -1,4 +1,6 @@
-﻿namespace DayGame
+﻿using System.Runtime.InteropServices;
+
+namespace DayGame
 {
     public class Character
     {
@@ -7,11 +9,15 @@
         private int level;
         private int lifePoints;
         private int takenDamage;
+        
         private int experiencePoints;
         private double inGameBalance;
-
+        public int Damage { get; set; }
+        public int HitPoints { get; set; }
         public Character(string name, string gender)
         {
+            this.HitPoints = 31;
+            this.Damage = 10;
             this.name = name;
             this.gender = gender;
             level = 1;

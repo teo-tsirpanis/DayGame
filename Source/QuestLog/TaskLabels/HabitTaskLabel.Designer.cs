@@ -38,6 +38,7 @@ namespace DayGame.TaskLabels
             this.label2 = new System.Windows.Forms.Label();
             this.minusButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // plusButton
@@ -69,7 +70,7 @@ namespace DayGame.TaskLabels
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(199, 33);
+            this.label2.Location = new System.Drawing.Point(172, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 4;
@@ -97,6 +98,18 @@ namespace DayGame.TaskLabels
             this.panel1.Size = new System.Drawing.Size(339, 1);
             this.panel1.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image) (resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(250, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // HabitTaskLabel
             // 
             this.AllowDrop = true;
@@ -104,6 +117,7 @@ namespace DayGame.TaskLabels
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(345, 57);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -122,5 +136,7 @@ namespace DayGame.TaskLabels
         private System.Windows.Forms.Button plusButton;
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
     }
 }

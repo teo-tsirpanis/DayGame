@@ -32,7 +32,8 @@ namespace DayGame
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationMenu));
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(NavigationMenu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.gameBalanceLabel = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -57,13 +58,15 @@ namespace DayGame
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))),
+                ((int) (((byte) (144)))));
             this.panel1.Controls.Add(this.gameBalanceLabel);
             this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.button4);
@@ -75,16 +78,17 @@ namespace DayGame
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1089, 60);
+            this.panel1.Size = new System.Drawing.Size(1270, 69);
             this.panel1.TabIndex = 0;
             // 
             // gameBalanceLabel
             // 
-            this.gameBalanceLabel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.gameBalanceLabel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.gameBalanceLabel.ForeColor = System.Drawing.Color.White;
-            this.gameBalanceLabel.Location = new System.Drawing.Point(921, 2);
+            this.gameBalanceLabel.Location = new System.Drawing.Point(1074, 3);
             this.gameBalanceLabel.Name = "gameBalanceLabel";
-            this.gameBalanceLabel.Size = new System.Drawing.Size(65, 43);
+            this.gameBalanceLabel.Size = new System.Drawing.Size(76, 50);
             this.gameBalanceLabel.TabIndex = 10;
             this.gameBalanceLabel.Text = "label1";
             this.gameBalanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -92,7 +96,7 @@ namespace DayGame
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(873, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(1018, 3);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -104,11 +108,12 @@ namespace DayGame
             this.button4.AutoSize = true;
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button4.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(392, 2);
+            this.button4.Location = new System.Drawing.Point(457, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(116, 57);
+            this.button4.Size = new System.Drawing.Size(135, 66);
             this.button4.TabIndex = 8;
             this.button4.Text = "Boss Battle\r\n";
             this.button4.UseVisualStyleBackColor = true;
@@ -118,11 +123,12 @@ namespace DayGame
             this.button3.AutoSize = true;
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button3.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(293, 0);
+            this.button3.Location = new System.Drawing.Point(342, 0);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 57);
+            this.button3.Size = new System.Drawing.Size(115, 66);
             this.button3.TabIndex = 7;
             this.button3.Text = "Inventory";
             this.button3.UseVisualStyleBackColor = true;
@@ -133,11 +139,12 @@ namespace DayGame
             this.button2.AutoSize = true;
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button2.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(200, 0);
+            this.button2.Location = new System.Drawing.Point(233, 0);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(92, 57);
+            this.button2.Size = new System.Drawing.Size(107, 66);
             this.button2.TabIndex = 6;
             this.button2.Text = "Shop";
             this.button2.UseVisualStyleBackColor = true;
@@ -147,11 +154,13 @@ namespace DayGame
             this.button5.AutoSize = true;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))), ((int) (((byte) (128)))));
-            this.button5.Location = new System.Drawing.Point(1017, 0);
+            this.button5.Font = new System.Drawing.Font("Arial Black", 9.75F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (255)))),
+                ((int) (((byte) (128)))));
+            this.button5.Location = new System.Drawing.Point(1186, 0);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(71, 59);
+            this.button5.Size = new System.Drawing.Size(83, 68);
             this.button5.TabIndex = 5;
             this.button5.Text = "Help";
             this.button5.UseVisualStyleBackColor = true;
@@ -161,11 +170,12 @@ namespace DayGame
             this.button1.AutoSize = true;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.button1.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(101, 0);
+            this.button1.Location = new System.Drawing.Point(118, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 57);
+            this.button1.Size = new System.Drawing.Size(121, 66);
             this.button1.TabIndex = 1;
             this.button1.Text = "Quest Log";
             this.button1.UseVisualStyleBackColor = true;
@@ -176,7 +186,7 @@ namespace DayGame
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(96, 59);
+            this.pictureBox1.Size = new System.Drawing.Size(112, 68);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -184,61 +194,65 @@ namespace DayGame
             // 
             this.panelChildForm.AutoScroll = true;
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelChildForm.Location = new System.Drawing.Point(0, 190);
+            this.panelChildForm.Location = new System.Drawing.Point(0, 219);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(1089, 600);
+            this.panelChildForm.Size = new System.Drawing.Size(1270, 693);
             this.panelChildForm.TabIndex = 2;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(10, 15);
+            this.pictureBox2.Location = new System.Drawing.Point(12, 17);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(94, 95);
+            this.pictureBox2.Size = new System.Drawing.Size(110, 110);
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // nameLabel
             // 
-            this.nameLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.nameLabel.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.nameLabel.ForeColor = System.Drawing.Color.White;
-            this.nameLabel.Location = new System.Drawing.Point(129, 15);
+            this.nameLabel.Location = new System.Drawing.Point(150, 17);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(265, 28);
+            this.nameLabel.Size = new System.Drawing.Size(309, 32);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "label1";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
-            this.panel3.Location = new System.Drawing.Point(129, 54);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))),
+                ((int) (((byte) (144)))));
+            this.panel3.Controls.Add(this.hpBar);
+            this.panel3.Location = new System.Drawing.Point(150, 62);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(150, 10);
+            this.panel3.Size = new System.Drawing.Size(175, 12);
             this.panel3.TabIndex = 2;
             // 
             // hpBar
             // 
             this.hpBar.BackColor = System.Drawing.Color.Red;
-            this.hpBar.Location = new System.Drawing.Point(129, 54);
+            this.hpBar.Location = new System.Drawing.Point(0, 0);
             this.hpBar.Name = "hpBar";
-            this.hpBar.Size = new System.Drawing.Size(150, 10);
+            this.hpBar.Size = new System.Drawing.Size(175, 12);
             this.hpBar.TabIndex = 3;
             // 
             // hpLabel
             // 
             this.hpLabel.ForeColor = System.Drawing.Color.White;
-            this.hpLabel.Location = new System.Drawing.Point(295, 54);
+            this.hpLabel.Location = new System.Drawing.Point(344, 62);
             this.hpLabel.Name = "hpLabel";
-            this.hpLabel.Size = new System.Drawing.Size(86, 13);
+            this.hpLabel.Size = new System.Drawing.Size(100, 15);
             this.hpLabel.TabIndex = 4;
             this.hpLabel.Text = "hpLabel";
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))),
+                ((int) (((byte) (144)))));
             this.panel5.Controls.Add(this.xpBar);
-            this.panel5.Location = new System.Drawing.Point(129, 90);
+            this.panel5.Location = new System.Drawing.Point(150, 104);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(150, 10);
+            this.panel5.Size = new System.Drawing.Size(175, 12);
             this.panel5.TabIndex = 5;
             // 
             // xpBar
@@ -246,46 +260,47 @@ namespace DayGame
             this.xpBar.BackColor = System.Drawing.Color.Yellow;
             this.xpBar.Location = new System.Drawing.Point(0, 0);
             this.xpBar.Name = "xpBar";
-            this.xpBar.Size = new System.Drawing.Size(1, 10);
+            this.xpBar.Size = new System.Drawing.Size(1, 12);
             this.xpBar.TabIndex = 6;
             // 
             // xpLabel
             // 
             this.xpLabel.ForeColor = System.Drawing.Color.White;
-            this.xpLabel.Location = new System.Drawing.Point(295, 88);
+            this.xpLabel.Location = new System.Drawing.Point(344, 102);
             this.xpLabel.Name = "xpLabel";
-            this.xpLabel.Size = new System.Drawing.Size(86, 13);
+            this.xpLabel.Size = new System.Drawing.Size(100, 15);
             this.xpLabel.TabIndex = 7;
             this.xpLabel.Text = "label1";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (2)))), ((int) (((byte) (230)))), ((int) (((byte) (124)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (227)))),
+                ((int) (((byte) (121)))));
             this.panel2.Controls.Add(this.xpLabel);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.hpLabel);
-            this.panel2.Controls.Add(this.hpBar);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.nameLabel);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 60);
+            this.panel2.Location = new System.Drawing.Point(0, 69);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1089, 130);
+            this.panel2.Size = new System.Drawing.Size(1270, 150);
             this.panel2.TabIndex = 1;
             // 
             // imageList1
             // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.ImageStream =
+                ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "maleOrc110.png");
             this.imageList1.Images.SetKeyName(1, "femaleOrc110.png");
             // 
             // NavigationMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1089, 790);
+            this.ClientSize = new System.Drawing.Size(1270, 912);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -299,6 +314,7 @@ namespace DayGame
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);

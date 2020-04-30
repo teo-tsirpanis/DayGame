@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using DayGame.Boss;
 
 namespace DayGame
 {
@@ -9,6 +10,7 @@ namespace DayGame
         private Character character;
         private QuestLog questLog;
         private inventoryGUI inventoryGui;
+        private BossBattleFrame bossBattleFrame;
 
         public NavigationMenu(Character character)
         {
@@ -22,7 +24,6 @@ namespace DayGame
             {
                 pictureBox2.Image = imageList1.Images[1];
             }
-            
             
             questLog = (new QuestLog(character, this));
             inventoryGui = new inventoryGUI();
@@ -63,9 +64,14 @@ namespace DayGame
         public void hpBarController()
         {
             hpBar.Width = character.GetCurrentHp() * 3;
-            if (hpBar.Width > 150)
+            if (hpBar.Width >= 175)
             {
-                hpBar.Width = 150;
+                hpBar.Width = 175;
+            }
+
+            if (character.GetCurrentHp() == character.LifePoints)
+            {
+                hpBar.Width = 175;
             }
         }
         

@@ -21,6 +21,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="BossBattle\BossBattleFrame.resx">
+      <DependentUpon>BossBattleFrame.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace DayGame
 {
-    class Weapon : NonConsumableItems
+    public class Weapon : NonConsumableItems
     {
         public int Damage { get; set; }
 

@@ -77,7 +77,7 @@ namespace DayGame
             this.label2.ForeColor = System.Drawing.Color.Red;
             this.label2.Location = new System.Drawing.Point(43, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 18);
+            this.label2.Size = new System.Drawing.Size(101, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "label2";
             // 

@@ -18,16 +18,9 @@ namespace DayGame
         int ChestButtonPressed = -1;//voithaei thn sunarthsh WeaponOrArmorEquip na katalavei poio button patithike, kai na kanei equip to item tou sugkekrimenou button, o arithmos ypologizete sthn sunarthsh GetTheButtonNumber
         public Button[] ChestButtonsArray; //array list me ta ChestButtons
         Inventory inv = new Inventory(); //ftiaxnoume ypothetiko Inventory
-        public Item spathi = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
-        public Item panoplia = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
-        public Weapon spathi2 = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
-
-        public int DamageBuff = 0;
-        public int ArmorBuff = 0;
 
         public inventoryGUI()
         {
-
             InitializeComponent();
 
 
@@ -40,7 +33,6 @@ namespace DayGame
             {
                 ChestButtonsArray[i].Click += GetTheButtonNumber;
                 ChestButtonsArray[i].Click += Equip;
-                //efoswn patithei kapoio koubi, apothikefse to koubi pou patithike, kai kane equip
             }
             ArmorButton.Click += UnequipArmor;
             WeaponButton.Click += UnequipWeapon;
@@ -95,38 +87,24 @@ namespace DayGame
         private void Equip(object sender, EventArgs e)
         {   //GIA THN WRA DOULEVEI MONO GIA WEAPONS KAI ARMOR//
             Button btn = sender as Button;
-            if (!(btn.BackColor == Color.FromKnownColor(KnownColor.Control)))//mono ean to button den einai keno(dhladh den exei item),ekteleitai o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
+            EquipUnequipGUI Equip = new EquipUnequipGUI(inv.ChestSpace[ChestButtonPressed - 1], "Equip");
+            if (Equip.ShowDialog(this) == DialogResult.OK)
             {
-                EquipUnequipGUI Equip = new EquipUnequipGUI(inv.ChestSpace[ChestButtonPressed - 1], "Equip");
-                if (Equip.ShowDialog(this) == DialogResult.OK)
+                if (WeaponButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Red))//ean to weaponbutton einai empty, kai to button pou pathses exei kokkino xrwma(dhladh einai weapon)
                 {
-                    if (WeaponButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Red))//ean to weaponbutton einai empty, kai to button pou pathses exei kokkino xrwma(dhladh einai weapon)
-                    {
-                        //test gia na dw an doulevei to stats menu
-                        if (inv.ChestSpace[ChestButtonPressed - 1].Name == spathi2.Name)
-                        {
-                            DamageBuff = DamageBuff + spathi2.Damage;
-                            DamageTextNumber.Text = DamageBuff.ToString();
-                        }
-
-
-
-
-
-                        inv.AddWeapon(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese sto WeaponButton to weapon pou epilexthike kai svistw apo ton katalogo
-                        WeaponButton.BackColor = Color.Red;//svise optika to weapon apo ton katalogo
-                        btn.BackColor = Color.FromKnownColor(KnownColor.Control);//vale optika sto weapon to weapon pou epelexes
-                    }
-                    else if (ArmorButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Blue))//ean to armorbutton einai empty, kai to button pou pathses exei ble xrwma(dhladh einai armor)
-                    {
-                        inv.AddArmor(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese sto WeaponArmor to armor pou epilexthike kai svistw apo ton katalogo
-                        ArmorButton.BackColor = Color.Blue;//svise optika to weapon apo ton katalogo
-                        btn.BackColor = Color.FromKnownColor(KnownColor.Control);//vale optika sto armor to armor pou epelexes
-                    }
-                    else
-                    {
-                        MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
-                    }
+                    inv.AddWeapon(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese sto WeaponButton to weapon pou epilexthike kai svistw apo ton katalogo
+                    WeaponButton.BackColor = Color.Red;//svise optika to weapon apo ton katalogo
+                    btn.BackColor = Color.FromKnownColor(KnownColor.Control);//vale optika sto weapon to weapon pou epelexes
+                }
+                else if (ArmorButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Blue))//ean to armorbutton einai empty, kai to button pou pathses exei ble xrwma(dhladh einai armor)
+                {
+                    inv.AddArmor(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese sto WeaponArmor to armor pou epilexthike kai svistw apo ton katalogo
+                    ArmorButton.BackColor = Color.Blue;//svise optika to weapon apo ton katalogo
+                    btn.BackColor = Color.FromKnownColor(KnownColor.Control);//vale optika sto armor to armor pou epelexes
+                }
+                else
+                {
+                    MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
                 }
             }
 
@@ -149,22 +127,19 @@ namespace DayGame
         private void UnequipWeapon(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if (!(btn.BackColor == Color.FromKnownColor(KnownColor.Control)))//mono ean to button den einai keno(dhladh den exei item),ekteleitai o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
+            EquipUnequipGUI UnequipArmor = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
+            if (UnequipArmor.ShowDialog(this) == DialogResult.OK)
             {
-                EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
-                if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
+                if (btn.BackColor == Color.Red)
                 {
-                    if (btn.BackColor == Color.Red)
+                    for (int i = 0; i < 42; i++)
                     {
-                        for (int i = 0; i < 42; i++)
+                        if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
                         {
-                            if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
-                            {
-                                inv.DeleteWeapon(inv.ChestSpace[i], i);
-                                btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-                                ChestButtonsArray[i].BackColor = Color.Red;
-                                break;
-                            }
+                            inv.DeleteWeapon(inv.ChestSpace[i], i);
+                            btn.BackColor = Color.FromKnownColor(KnownColor.Control);
+                            ChestButtonsArray[i].BackColor = Color.Red;
+                            break;
                         }
                     }
                 }
@@ -175,24 +150,21 @@ namespace DayGame
         private void UnequipArmor(object sender, EventArgs e)
         {//UNEQUIP, doulevei mono gia ARMORS
             Button btn = sender as Button;
-            if (!(btn.BackColor == Color.FromKnownColor(KnownColor.Control)))//mono ean to button den einai keno(dhladh den exei item),ekteleitai o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
+            EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
+            if (Unequip.ShowDialog(this) == DialogResult.OK)
             {
-                EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
-                if (Unequip.ShowDialog(this) == DialogResult.OK)
-                {
 
-                    //
-                    if (btn.BackColor == Color.Blue)
+                //
+                if (btn.BackColor == Color.Blue)
+                {
+                    for (int i = 0; i < 42; i++)
                     {
-                        for (int i = 0; i < 42; i++)
+                        if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
                         {
-                            if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
-                            {
-                                inv.DeleteArmor(inv.ChestSpace[i], i);
-                                btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-                                ChestButtonsArray[i].BackColor = Color.Blue;
-                                break;
-                            }
+                            inv.DeleteArmor(inv.ChestSpace[i], i);
+                            btn.BackColor = Color.FromKnownColor(KnownColor.Control);
+                            ChestButtonsArray[i].BackColor = Color.Blue;
+                            break;
                         }
                     }
                 }
@@ -204,6 +176,8 @@ namespace DayGame
         void InventorySpaceReload()
         {
             //TESTING GIA INVENTORY EPEIDH DEN YPARXEI HDH KAPOIO
+            Item spathi = new Weapon("Spathi", "spathi", 1, 3,3);
+            Item panoplia = new Armor("Armor D", "Armor", 1, 3,3);
 
 
             inv.InventoryAddItem(spathi);
@@ -230,7 +204,7 @@ namespace DayGame
                 else if (inv.ChestSpace[i].GetType() == typeof(Weapon)) {
                     ChestButtonsArray[i].BackColor = Color.Red;
                 }
-                    
+                    //efoswn patithei kapoio koubi, apothikefse to koubi pou patithike, kai kane equip
             }
 
         }

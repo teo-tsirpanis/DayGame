@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace DayGame
 {
-    public partial class StartUpMenu : Form
+    public partial class Form1 : Form
     {
-        public StartUpMenu()
+        public Form1()
         {
             InitializeComponent();
         }

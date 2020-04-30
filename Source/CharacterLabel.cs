@@ -15,13 +15,13 @@ namespace DayGame
             string text = "Name " + character.Name + "\nLevel " + character.Level;
             label1.Text = text;
             if (character.Gender == "Female")
-                pictureBox1.Image = imageList1.Images[1];
-            else pictureBox1.Image = imageList1.Images[0];
+                pictureBox1.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\femaleOrc.png");
+            else pictureBox1.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\maleOrc.png");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StartUpMenu obj = (StartUpMenu) Application.OpenForms["StartUpMenu"];
+            Form1 obj = (Form1) Application.OpenForms["Form1"];
             NavigationMenu navigationMenu = new NavigationMenu(character);
             navigationMenu.Show();
             obj.Hide();

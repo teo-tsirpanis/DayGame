@@ -40,12 +40,6 @@ namespace DayGame
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // addTaskButton
@@ -66,27 +60,27 @@ namespace DayGame
             // 
             this.panel1.AllowDrop = true;
             this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(8, 17);
+            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel1.Location = new System.Drawing.Point(32, 82);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 519);
+            this.panel1.Size = new System.Drawing.Size(364, 519);
             this.panel1.TabIndex = 1;
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(3, 17);
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel2.Location = new System.Drawing.Point(472, 82);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 519);
+            this.panel2.Size = new System.Drawing.Size(364, 519);
             this.panel2.TabIndex = 2;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(3, 17);
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.panel3.Location = new System.Drawing.Point(898, 82);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(355, 519);
+            this.panel3.Size = new System.Drawing.Size(364, 519);
             this.panel3.TabIndex = 3;
             // 
             // label1
@@ -94,7 +88,7 @@ namespace DayGame
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold,
                 System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(31, 31);
+            this.label1.Location = new System.Drawing.Point(32, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 28);
             this.label1.TabIndex = 4;
@@ -122,51 +116,21 @@ namespace DayGame
             this.label3.TabIndex = 6;
             this.label3.Text = "To-Dos";
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(31, 82);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(366, 539);
-            this.panel4.TabIndex = 7;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Location = new System.Drawing.Point(440, 82);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(366, 539);
-            this.panel5.TabIndex = 8;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Location = new System.Drawing.Point(881, 82);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(366, 539);
-            this.panel6.TabIndex = 9;
-            // 
             // QuestLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1274, 654);
-            this.Controls.Add(this.panel6);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.addTaskButton);
             this.Name = "QuestLog";
             this.Text = "QuestLog";
-            this.panel4.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
@@ -179,8 +143,5 @@ namespace DayGame
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button addTaskButton;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
     }
 }

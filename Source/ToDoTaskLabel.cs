@@ -17,7 +17,6 @@ namespace DayGame
             this.navigationMenu = navigationMenu;
             InitializeComponent();
             label2.Text = toDo.DueDate.Date.ToString();
-            label1.Text = toDo.Description;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

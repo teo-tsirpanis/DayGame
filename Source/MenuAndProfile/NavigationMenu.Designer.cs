@@ -64,8 +64,6 @@ namespace DayGame
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
-            this.panel1.Controls.Add(this.gameBalanceLabel);
-            this.panel1.Controls.Add(this.pictureBox3);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
@@ -82,7 +80,7 @@ namespace DayGame
             // 
             this.gameBalanceLabel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.gameBalanceLabel.ForeColor = System.Drawing.Color.White;
-            this.gameBalanceLabel.Location = new System.Drawing.Point(921, 2);
+            this.gameBalanceLabel.Location = new System.Drawing.Point(1024, 5);
             this.gameBalanceLabel.Name = "gameBalanceLabel";
             this.gameBalanceLabel.Size = new System.Drawing.Size(65, 43);
             this.gameBalanceLabel.TabIndex = 10;
@@ -92,7 +90,7 @@ namespace DayGame
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(873, 3);
+            this.pictureBox3.Location = new System.Drawing.Point(977, 6);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(50, 50);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -261,6 +259,8 @@ namespace DayGame
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (2)))), ((int) (((byte) (230)))), ((int) (((byte) (124)))));
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.gameBalanceLabel);
             this.panel2.Controls.Add(this.xpLabel);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.hpLabel);
@@ -301,6 +301,7 @@ namespace DayGame
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
         }
 

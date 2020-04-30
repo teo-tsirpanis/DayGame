@@ -8,7 +8,6 @@ namespace DayGame
     {
         private Character character;
         private QuestLog questLog;
-        private inventoryGUI inventoryGui;
 
         public NavigationMenu(Character character)
         {
@@ -16,16 +15,14 @@ namespace DayGame
             InitializeComponent();
             if (character.Gender == "Male")
             {
-                pictureBox2.Image = imageList1.Images[0];
+                pictureBox2.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\maleOrc110.png");
             }
             else
             {
-                pictureBox2.Image = imageList1.Images[1];
+                pictureBox2.Image = Image.FromFile(@"C:\Users\user\Desktop\DayGameDesign\femaleOrc110.png");
             }
-            
-            
+
             questLog = (new QuestLog(character, this));
-            inventoryGui = new inventoryGUI();
             openChildForm(questLog);
             
             nameLabel.Text = character.Name;
@@ -38,11 +35,10 @@ namespace DayGame
         private Form activeForm = null;
 
         private void openChildForm(Form childForm)
-        {    
-            
+        {
             if (childForm != activeForm)
             {
-                if (activeForm != null) activeForm.Hide();
+                if (activeForm != null) activeForm.Close();
                 activeForm = childForm;
                 childForm.TopLevel = false;
                 childForm.FormBorderStyle = FormBorderStyle.None;
@@ -87,11 +83,6 @@ namespace DayGame
         public void  xpLabelController()
         {
             xpLabel.Text = "" + character.ExpreriencePoints + " / " + character.Level * 100;
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            openChildForm(inventoryGui);
         }
     }
 }

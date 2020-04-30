@@ -1,6 +1,4 @@
-﻿using System.Drawing;
-
-namespace DayGame
+﻿namespace DayGame
 {
     class Armor : NonConsumableItems
     {

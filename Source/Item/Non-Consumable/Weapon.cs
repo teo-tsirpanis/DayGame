@@ -1,8 +1,6 @@
-﻿using System.Drawing;
-
-namespace DayGame
+﻿namespace DayGame
 {
-    public class Weapon : NonConsumableItems
+    class Weapon : NonConsumableItems
     {
         public int Damage { get; set; }
 

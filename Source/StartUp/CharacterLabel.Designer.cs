@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel;
 
 namespace DayGame
 {
@@ -96,9 +97,9 @@ namespace DayGame
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 96);
+            this.panel1.Location = new System.Drawing.Point(0, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(347, 2);
+            this.panel1.Size = new System.Drawing.Size(370, 2);
             this.panel1.TabIndex = 4;
             // 
             // imageList1
@@ -112,7 +113,7 @@ namespace DayGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (41)))), ((int) (((byte) (190)))), ((int) (((byte) (131)))));
-            this.ClientSize = new System.Drawing.Size(347, 98);
+            this.ClientSize = new System.Drawing.Size(370, 95);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -120,6 +121,8 @@ namespace DayGame
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MaximumSize = new System.Drawing.Size(370, 95);
+            this.MinimumSize = new System.Drawing.Size(370, 95);
             this.Name = "CharacterLabel";
             this.Text = "CharacterLabel";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();

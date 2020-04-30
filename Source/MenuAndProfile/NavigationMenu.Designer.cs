@@ -34,14 +34,14 @@ namespace DayGame
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NavigationMenu));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.gameBalanceLabel = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gameBalanceLabel = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelChildForm = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.nameLabel = new System.Windows.Forms.Label();
@@ -54,8 +54,8 @@ namespace DayGame
             this.panel2 = new System.Windows.Forms.Panel();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,27 +75,6 @@ namespace DayGame
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1089, 60);
             this.panel1.TabIndex = 0;
-            // 
-            // gameBalanceLabel
-            // 
-            this.gameBalanceLabel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.gameBalanceLabel.ForeColor = System.Drawing.Color.White;
-            this.gameBalanceLabel.Location = new System.Drawing.Point(1024, 5);
-            this.gameBalanceLabel.Name = "gameBalanceLabel";
-            this.gameBalanceLabel.Size = new System.Drawing.Size(65, 43);
-            this.gameBalanceLabel.TabIndex = 10;
-            this.gameBalanceLabel.Text = "label1";
-            this.gameBalanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(987, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
             // 
             // button4
             // 
@@ -177,6 +156,27 @@ namespace DayGame
             this.pictureBox1.Size = new System.Drawing.Size(96, 59);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // gameBalanceLabel
+            // 
+            this.gameBalanceLabel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.gameBalanceLabel.ForeColor = System.Drawing.Color.White;
+            this.gameBalanceLabel.Location = new System.Drawing.Point(1024, 5);
+            this.gameBalanceLabel.Name = "gameBalanceLabel";
+            this.gameBalanceLabel.Size = new System.Drawing.Size(65, 43);
+            this.gameBalanceLabel.TabIndex = 10;
+            this.gameBalanceLabel.Text = "label1";
+            this.gameBalanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(987, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox3.TabIndex = 9;
+            this.pictureBox3.TabStop = false;
             // 
             // panelChildForm
             // 
@@ -296,8 +296,8 @@ namespace DayGame
             this.Text = "NavigationMenu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

@@ -1,4 +1,4 @@
-﻿namespace DayGame
+namespace DayGame
 {
     partial class EquipUnequipGUI
     {
@@ -35,6 +35,7 @@
             this.itemnamelabel = new System.Windows.Forms.Label();
             this.statlabel = new System.Windows.Forms.Label();
             this.itemdescriptionlabel = new System.Windows.Forms.Label();
+            this.cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -42,6 +43,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.Controls.Add(this.cancel);
             this.panel1.Controls.Add(this.equnbutton);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.statnumber);
@@ -50,14 +52,14 @@
             this.panel1.Controls.Add(this.itemdescriptionlabel);
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(280, 340);
+            this.panel1.Size = new System.Drawing.Size(281, 341);
             this.panel1.TabIndex = 6;
             // 
             // equnbutton
             // 
             this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.equnbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.equnbutton.Location = new System.Drawing.Point(88, 291);
+            this.equnbutton.Location = new System.Drawing.Point(88, 258);
             this.equnbutton.Name = "equnbutton";
             this.equnbutton.Size = new System.Drawing.Size(95, 35);
             this.equnbutton.TabIndex = 24;
@@ -69,47 +71,60 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(54, 14);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(167, 172);
+            this.pictureBox1.Size = new System.Drawing.Size(170, 170);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
             // statnumber
             // 
             this.statnumber.AutoSize = true;
-            this.statnumber.Location = new System.Drawing.Point(178, 261);
+            this.statnumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
+            this.statnumber.Location = new System.Drawing.Point(176, 229);
             this.statnumber.Name = "statnumber";
-            this.statnumber.Size = new System.Drawing.Size(32, 13);
+            this.statnumber.Size = new System.Drawing.Size(65, 26);
             this.statnumber.TabIndex = 23;
             this.statnumber.Text = "+Stat";
             // 
             // itemnamelabel
             // 
             this.itemnamelabel.AutoSize = true;
-            this.itemnamelabel.Location = new System.Drawing.Point(106, 199);
+            this.itemnamelabel.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
+            this.itemnamelabel.Location = new System.Drawing.Point(83, 189);
             this.itemnamelabel.Name = "itemnamelabel";
-            this.itemnamelabel.Size = new System.Drawing.Size(55, 13);
+            this.itemnamelabel.Size = new System.Drawing.Size(114, 26);
             this.itemnamelabel.TabIndex = 20;
             this.itemnamelabel.Text = "ItemName";
             // 
             // statlabel
             // 
             this.statlabel.AutoSize = true;
-            this.statlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.statlabel.Location = new System.Drawing.Point(50, 256);
+            this.statlabel.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
+            this.statlabel.Location = new System.Drawing.Point(38, 229);
             this.statlabel.Name = "statlabel";
-            this.statlabel.Size = new System.Drawing.Size(49, 20);
+            this.statlabel.Size = new System.Drawing.Size(67, 26);
             this.statlabel.TabIndex = 22;
             this.statlabel.Text = "(Stat)";
             // 
             // itemdescriptionlabel
             // 
             this.itemdescriptionlabel.AutoSize = true;
-            this.itemdescriptionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.itemdescriptionlabel.Location = new System.Drawing.Point(84, 222);
+            this.itemdescriptionlabel.Font = new System.Drawing.Font("Arial Black", 7F, System.Drawing.FontStyle.Bold);
+            this.itemdescriptionlabel.Location = new System.Drawing.Point(103, 215);
             this.itemdescriptionlabel.Name = "itemdescriptionlabel";
-            this.itemdescriptionlabel.Size = new System.Drawing.Size(99, 20);
+            this.itemdescriptionlabel.Size = new System.Drawing.Size(80, 14);
             this.itemdescriptionlabel.TabIndex = 21;
             this.itemdescriptionlabel.Text = "(Description)";
+            // 
+            // cancel
+            // 
+            this.cancel.BackColor = System.Drawing.Color.Red;
+            this.cancel.Location = new System.Drawing.Point(88, 299);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(95, 35);
+            this.cancel.TabIndex = 25;
+            this.cancel.Text = "cancel";
+            this.cancel.UseVisualStyleBackColor = false;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // EquipUnequipGUI
             // 
@@ -117,6 +132,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(278, 338);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EquipUnequipGUI";
             this.Text = "EquipUnequipGUI";
             this.Load += new System.EventHandler(this.EquipUnequipGUI_Load);
@@ -136,5 +152,6 @@
         private System.Windows.Forms.Label itemnamelabel;
         private System.Windows.Forms.Label statlabel;
         private System.Windows.Forms.Label itemdescriptionlabel;
+        private System.Windows.Forms.Button cancel;
     }
 }

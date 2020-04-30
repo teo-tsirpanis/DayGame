@@ -8,8 +8,6 @@
 
   <ItemGroup>
 
-    <Folder Include="BossBattle" />
-
     <Folder Include="Help" />
 
     <Folder Include="Images\WeaponImages" />

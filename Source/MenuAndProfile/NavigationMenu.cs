@@ -63,9 +63,9 @@ namespace DayGame
         public void hpBarController()
         {
             hpBar.Width = character.GetCurrentHp() * 3;
-            if (hpBar.Width > 175)
+            if (hpBar.Width > 150)
             {
-                hpBar.Width = 175;
+                hpBar.Width = 150;
             }
         }
         

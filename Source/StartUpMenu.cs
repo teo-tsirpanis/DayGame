@@ -33,6 +33,10 @@ namespace DayGame
         {
             //ControlPaint.DrawBorder(e.Graphics, this.panel1.ClientRectangle, Color.DarkSeaGreen, ButtonBorderStyle.Solid);
         }
-        
+
+        private void StartUpMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

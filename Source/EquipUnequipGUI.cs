@@ -16,7 +16,6 @@ namespace DayGame
         public EquipUnequipGUI(Item item,string buttontext)
         {
             InitializeComponent();
-            this.CenterToParent();//kwdikas gia na emfanizetai to minima sthn mesh tis othonis
             setup(item,buttontext);
         }
 
@@ -51,11 +50,6 @@ namespace DayGame
         private void button1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void cancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

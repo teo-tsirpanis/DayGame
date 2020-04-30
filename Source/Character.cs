@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace DayGame
+﻿namespace DayGame
 {
     public class Character
     {
@@ -32,7 +30,7 @@ namespace DayGame
         {
             get => experiencePoints;
             set
-            {
+            { 
                 experiencePoints = value;
                 LevelUp();
             }

@@ -161,7 +161,7 @@ namespace DayGame
             // 
             this.gameBalanceLabel.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.gameBalanceLabel.ForeColor = System.Drawing.Color.White;
-            this.gameBalanceLabel.Location = new System.Drawing.Point(1024, 5);
+            this.gameBalanceLabel.Location = new System.Drawing.Point(1024, 0);
             this.gameBalanceLabel.Name = "gameBalanceLabel";
             this.gameBalanceLabel.Size = new System.Drawing.Size(65, 43);
             this.gameBalanceLabel.TabIndex = 10;

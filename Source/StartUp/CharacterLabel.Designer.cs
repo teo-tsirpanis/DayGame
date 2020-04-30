@@ -71,7 +71,7 @@ namespace DayGame
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (7)))), ((int) (((byte) (171)))), ((int) (((byte) (18)))));
             this.button1.Image = ((System.Drawing.Image) (resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(230, 21);
+            this.button1.Location = new System.Drawing.Point(254, 21);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(48, 50);
             this.button1.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace DayGame
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (7)))), ((int) (((byte) (171)))), ((int) (((byte) (18)))));
             this.button2.Image = ((System.Drawing.Image) (resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(284, 21);
+            this.button2.Location = new System.Drawing.Point(308, 21);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(50, 50);
             this.button2.TabIndex = 3;
@@ -99,7 +99,7 @@ namespace DayGame
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(370, 2);
+            this.panel1.Size = new System.Drawing.Size(385, 2);
             this.panel1.TabIndex = 4;
             // 
             // imageList1
@@ -113,7 +113,7 @@ namespace DayGame
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (41)))), ((int) (((byte) (190)))), ((int) (((byte) (131)))));
-            this.ClientSize = new System.Drawing.Size(370, 95);
+            this.ClientSize = new System.Drawing.Size(385, 95);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -121,8 +121,8 @@ namespace DayGame
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(370, 95);
-            this.MinimumSize = new System.Drawing.Size(370, 95);
+            this.MaximumSize = new System.Drawing.Size(385, 95);
+            this.MinimumSize = new System.Drawing.Size(385, 95);
             this.Name = "CharacterLabel";
             this.Text = "CharacterLabel";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();

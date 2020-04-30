@@ -45,7 +45,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(151, 428);
+            this.button1.Location = new System.Drawing.Point(160, 404);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(176, 63);
             this.button1.TabIndex = 1;
@@ -59,7 +59,7 @@
             this.panel1.ForeColor = System.Drawing.Color.Linen;
             this.panel1.Location = new System.Drawing.Point(74, 23);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 392);
+            this.panel1.Size = new System.Drawing.Size(357, 375);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -98,6 +98,7 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(978, 502);
             this.Name = "StartUpMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Start Up";

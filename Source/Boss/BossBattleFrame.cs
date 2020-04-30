@@ -14,6 +14,8 @@ namespace DayGame.Boss
     {
         private Character character;
         private Boss boss;
+        private int maxCharHp;
+        private int maxBossHp;
         public BossBattleFrame(Character character, Boss boss)
         {
             this.character = character;
@@ -23,11 +25,15 @@ namespace DayGame.Boss
             this.CharName.Text = character.Name;
             this.BossLevel.Text = "Level " + boss.Level;
             this.CharLevel.Text = "Level " + character.Level;
+            maxCharHp = character.HitPoints;
+            maxBossHp = boss.HitPoints;
+            HpController();
+            
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-
+            
         }
 
         private void BossBattleFrame_Load(object sender, EventArgs e)
@@ -62,12 +68,22 @@ namespace DayGame.Boss
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            dialogue.Text
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void HpController()
+        {
+            int charHp = character.HitPoints;
+            int bossHp = boss.HitPoints;
+            this.CharHpLabel.Text = $"{character.HitPoints}/{maxCharHp}";
+            this.BossHpLabel.Text = $"{bossHp}/{boss.HitPoints}";
+            this.CharHpBar.Width = (int)(charHp / (float)maxCharHp * CharHpBar.Parent.Width);
+            this.BossHpBar.Width = (int)(bossHp / (float)maxBossHp * BossHpBar.Parent.Width);
         }
     }
 }

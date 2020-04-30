@@ -37,21 +37,26 @@
             this.AttackB = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.BossHpLabel = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.BossLevel = new System.Windows.Forms.Label();
             this.BossName = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.progressBar3 = new System.Windows.Forms.ProgressBar();
+            this.CharHpLabel = new System.Windows.Forms.Label();
             this.CharLevel = new System.Windows.Forms.Label();
             this.CharName = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.CharHpBar = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.BossHpBar = new System.Windows.Forms.Panel();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -66,10 +71,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dialogue);
             this.panel3.Location = new System.Drawing.Point(1, 511);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(475, 151);
+            this.panel3.Size = new System.Drawing.Size(475, 150);
             this.panel3.TabIndex = 2;
             // 
             // dialogue
@@ -85,6 +91,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(230)))), ((int)(((byte)(124)))));
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.PotionsB);
             this.panel4.Controls.Add(this.SpellsB);
             this.panel4.Controls.Add(this.AttackB);
@@ -143,7 +150,9 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.BurlyWood;
-            this.panel6.Controls.Add(this.label7);
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.panel10);
+            this.panel6.Controls.Add(this.BossHpLabel);
             this.panel6.Controls.Add(this.progressBar1);
             this.panel6.Controls.Add(this.BossLevel);
             this.panel6.Controls.Add(this.BossName);
@@ -153,15 +162,15 @@
             this.panel6.Size = new System.Drawing.Size(322, 105);
             this.panel6.TabIndex = 5;
             // 
-            // label7
+            // BossHpLabel
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label7.Location = new System.Drawing.Point(283, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 15);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "50/50";
+            this.BossHpLabel.AutoSize = true;
+            this.BossHpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.BossHpLabel.Location = new System.Drawing.Point(283, 78);
+            this.BossHpLabel.Name = "BossHpLabel";
+            this.BossHpLabel.Size = new System.Drawing.Size(38, 15);
+            this.BossHpLabel.TabIndex = 7;
+            this.BossHpLabel.Text = "50/50";
             // 
             // progressBar1
             // 
@@ -189,9 +198,9 @@
             this.BossName.ForeColor = System.Drawing.Color.White;
             this.BossName.Location = new System.Drawing.Point(12, 12);
             this.BossName.Name = "BossName";
-            this.BossName.Size = new System.Drawing.Size(85, 20);
+            this.BossName.Size = new System.Drawing.Size(49, 20);
             this.BossName.TabIndex = 4;
-            this.BossName.Text = "Skiakakis";
+            this.BossName.Text = "Boss";
             // 
             // label4
             // 
@@ -206,8 +215,9 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Yellow;
-            this.panel7.Controls.Add(this.label9);
-            this.panel7.Controls.Add(this.progressBar3);
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.panel2);
+            this.panel7.Controls.Add(this.CharHpLabel);
             this.panel7.Controls.Add(this.CharLevel);
             this.panel7.Controls.Add(this.CharName);
             this.panel7.Controls.Add(this.label12);
@@ -216,24 +226,15 @@
             this.panel7.Size = new System.Drawing.Size(322, 105);
             this.panel7.TabIndex = 8;
             // 
-            // label9
+            // CharHpLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.label9.Location = new System.Drawing.Point(283, 78);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 15);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "50/50";
-            // 
-            // progressBar3
-            // 
-            this.progressBar3.Location = new System.Drawing.Point(77, 78);
-            this.progressBar3.Maximum = 50;
-            this.progressBar3.Name = "progressBar3";
-            this.progressBar3.Size = new System.Drawing.Size(203, 16);
-            this.progressBar3.TabIndex = 6;
-            this.progressBar3.Value = 50;
+            this.CharHpLabel.AutoSize = true;
+            this.CharHpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CharHpLabel.Location = new System.Drawing.Point(283, 78);
+            this.CharHpLabel.Name = "CharHpLabel";
+            this.CharHpLabel.Size = new System.Drawing.Size(38, 15);
+            this.CharHpLabel.TabIndex = 7;
+            this.CharHpLabel.Text = "50/50";
             // 
             // CharLevel
             // 
@@ -253,9 +254,9 @@
             this.CharName.ForeColor = System.Drawing.Color.Black;
             this.CharName.Location = new System.Drawing.Point(12, 12);
             this.CharName.Name = "CharName";
-            this.CharName.Size = new System.Drawing.Size(49, 20);
+            this.CharName.Size = new System.Drawing.Size(88, 20);
             this.CharName.TabIndex = 4;
-            this.CharName.Text = "Mitro";
+            this.CharName.Text = "Character";
             // 
             // label12
             // 
@@ -267,6 +268,40 @@
             this.label12.TabIndex = 3;
             this.label12.Text = "Hit Points";
             this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.CharHpBar);
+            this.panel2.Location = new System.Drawing.Point(77, 78);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(203, 16);
+            this.panel2.TabIndex = 8;
+            // 
+            // CharHpBar
+            // 
+            this.CharHpBar.BackColor = System.Drawing.Color.Red;
+            this.CharHpBar.Location = new System.Drawing.Point(0, 0);
+            this.CharHpBar.Name = "CharHpBar";
+            this.CharHpBar.Size = new System.Drawing.Size(150, 16);
+            this.CharHpBar.TabIndex = 9;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel10.Controls.Add(this.BossHpBar);
+            this.panel10.Location = new System.Drawing.Point(77, 78);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(203, 16);
+            this.panel10.TabIndex = 10;
+            // 
+            // BossHpBar
+            // 
+            this.BossHpBar.BackColor = System.Drawing.Color.Red;
+            this.BossHpBar.Location = new System.Drawing.Point(0, 0);
+            this.BossHpBar.Name = "BossHpBar";
+            this.BossHpBar.Size = new System.Drawing.Size(150, 16);
+            this.BossHpBar.TabIndex = 9;
             // 
             // BossBattleFrame
             // 
@@ -290,6 +325,8 @@
             this.panel6.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -302,21 +339,22 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label dialogue;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label BossHpLabel;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label BossLevel;
         private System.Windows.Forms.Label BossName;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ProgressBar progressBar3;
+        private System.Windows.Forms.Label CharHpLabel;
         private System.Windows.Forms.Label CharLevel;
         private System.Windows.Forms.Label CharName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button PotionsB;
         private System.Windows.Forms.Button SpellsB;
         private System.Windows.Forms.Button AttackB;
-
-        
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel CharHpBar;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel BossHpBar;
     }
 }

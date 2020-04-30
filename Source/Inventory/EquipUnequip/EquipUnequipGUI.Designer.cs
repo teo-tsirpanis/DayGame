@@ -36,12 +36,12 @@
             this.statlabel = new System.Windows.Forms.Label();
             this.itemdescriptionlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
             this.panel1.Controls.Add(this.equnbutton);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.statnumber);
@@ -55,7 +55,7 @@
             // 
             // equnbutton
             // 
-            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
             this.equnbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.equnbutton.Location = new System.Drawing.Point(88, 291);
             this.equnbutton.Name = "equnbutton";
@@ -94,7 +94,7 @@
             // statlabel
             // 
             this.statlabel.AutoSize = true;
-            this.statlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.statlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.statlabel.Location = new System.Drawing.Point(50, 256);
             this.statlabel.Name = "statlabel";
             this.statlabel.Size = new System.Drawing.Size(49, 20);
@@ -104,7 +104,7 @@
             // itemdescriptionlabel
             // 
             this.itemdescriptionlabel.AutoSize = true;
-            this.itemdescriptionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.itemdescriptionlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.itemdescriptionlabel.Location = new System.Drawing.Point(84, 222);
             this.itemdescriptionlabel.Name = "itemdescriptionlabel";
             this.itemdescriptionlabel.Size = new System.Drawing.Size(99, 20);
@@ -122,19 +122,18 @@
             this.Load += new System.EventHandler(this.EquipUnequipGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button equnbutton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label statnumber;
-        private System.Windows.Forms.Label itemnamelabel;
-        private System.Windows.Forms.Label statlabel;
         private System.Windows.Forms.Label itemdescriptionlabel;
+        private System.Windows.Forms.Label itemnamelabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label statlabel;
+        private System.Windows.Forms.Label statnumber;
+
+        #endregion
     }
 }

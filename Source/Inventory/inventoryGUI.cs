@@ -36,9 +36,6 @@ namespace DayGame
             }
             ArmorButton.Click += UnequipArmor;
             WeaponButton.Click += UnequipWeapon;
-
-
-
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -80,10 +77,7 @@ namespace DayGame
         {
 
         }
-
-
-
-
+        
         private void Equip(object sender, EventArgs e)
         {   //GIA THN WRA DOULEVEI MONO GIA WEAPONS KAI ARMOR//
             Button btn = sender as Button;
@@ -206,14 +200,8 @@ namespace DayGame
                 }
                     //efoswn patithei kapoio koubi, apothikefse to koubi pou patithike, kai kane equip
             }
-
         }
-
-
-
-
-
-
+        
         private void chestbutton3_Click(object sender, EventArgs e)
         {
 

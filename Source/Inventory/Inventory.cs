@@ -53,11 +53,5 @@ namespace DayGame
                 ChestSpace[counter] = WeaponEquiped;
                 WeaponEquiped = null;
         }
-
-
-
-
     }
-
-
 }

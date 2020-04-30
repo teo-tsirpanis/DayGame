@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using DayGame.TaskLabels;
 
@@ -8,6 +9,8 @@ namespace DayGame
     {
         private Character character;
         private NavigationMenu navigationMenu;
+        private Control activateControl;
+        private Point previousPosition;
 
         public QuestLog(Character character, NavigationMenu navigationMenu)
         {
@@ -58,6 +61,6 @@ namespace DayGame
                 childForm.Show();
             }
         }
-
+        
     }
 }

@@ -12,25 +12,21 @@
             {
                 character.InGameBalance += 10;
                 character.ExpreriencePoints += 10;
-                character.TakenDamage -= 5;
             }
             else if (difficulty == TaskDifficulty.Medium)
             {
                 character.InGameBalance += 20;
                 character.ExpreriencePoints += 20;
-                character.TakenDamage -= 5;
             }
             else if (difficulty == TaskDifficulty.Hard)
             {
                 character.InGameBalance += 40;
                 character.ExpreriencePoints += 40;
-                character.TakenDamage -= 5;
             }
             else
             {
                 character.InGameBalance += 60;
                 character.ExpreriencePoints += 60;
-                character.TakenDamage -= 10;
             }
         }
 

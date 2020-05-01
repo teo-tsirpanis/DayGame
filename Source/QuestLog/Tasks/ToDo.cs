@@ -4,18 +4,12 @@ namespace DayGame
 {
     public class ToDo : Task
     {
-        private DateTime dueDate;
-
         public ToDo(string name, string description, TaskDifficulty difficulty, DateTime dateTime) : base(name, description, difficulty)
         {
-            this.dueDate = dateTime;
+            this.DueDate = dateTime.Date;
         }
 
-        public DateTime DueDate
-        {
-            get => dueDate;
-            set => dueDate = value;
-        }
+        public DateTime DueDate { get; set; }
 
         public override void Complete(Character character)
         {

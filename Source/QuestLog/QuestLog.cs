@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using DayGame.TaskLabels;
 
@@ -7,10 +6,8 @@ namespace DayGame
 {
     public partial class QuestLog : Form
     {
-        private Character character;
-        private NavigationMenu navigationMenu;
-        private Control activateControl;
-        private Point previousPosition;
+        private readonly Character character;
+        private readonly NavigationMenu navigationMenu;
 
         public QuestLog(Character character, NavigationMenu navigationMenu)
         {
@@ -36,7 +33,7 @@ namespace DayGame
                 HabitTaskLabel childForm = new HabitTaskLabel(temp, character, navigationMenu);
                 childForm.TopLevel = false;
                 panel1.Controls.Add(childForm);
-                childForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Top;
                 childForm.Show();
             }
@@ -46,7 +43,7 @@ namespace DayGame
                 DailyTaskLabel childForm = new DailyTaskLabel(temp, character, navigationMenu);
                 childForm.TopLevel = false;
                 panel2.Controls.Add(childForm);
-                childForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Top;
                 childForm.Show();
             }
@@ -56,11 +53,11 @@ namespace DayGame
                 ToDoTaskLabel childForm = new ToDoTaskLabel(temp, character, navigationMenu);
                 childForm.TopLevel = false;
                 panel3.Controls.Add(childForm);
-                childForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                childForm.FormBorderStyle = FormBorderStyle.None;
                 childForm.Dock = DockStyle.Top;
                 childForm.Show();
             }
         }
-        
+
     }
 }

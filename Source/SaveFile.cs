@@ -33,6 +33,15 @@ namespace DayGame
         }
 
         /// <summary>
+        /// Updates the file on the disk with the
+        /// data this <see cref="SaveFile"/> currently has.
+        /// </summary>
+        public void Save()
+        {
+            File.WriteAllText(FileName, JsonConvert.SerializeObject(_data));
+        }
+
+        /// <summary>
         /// Creates a new <see cref="SaveFile"/>.
         /// </summary>
         /// <param name="fileName">The path the save file is going to be saved.</param>
@@ -61,13 +70,25 @@ namespace DayGame
         }
 
         /// <summary>
-        /// Updates the file on the disk with the
-        /// data this <see cref="SaveFile"/> currently has.
+        /// Finds all DayGame save files at a given directory.
         /// </summary>
-        public void Save()
-        {
-            File.WriteAllText(FileName, JsonConvert.SerializeObject(_data));
-        }
+        /// <param name="directory">The directory to find. Subdirectories are not searched.</param>
+        /// <param name="onError">An optional delegate that gets called for every exception during
+        /// the reading of the file. It accepts the path of the faulty file and the exception's message.</param>
+        /// <returns></returns>
+        public static SaveFile[] ListSaveFiles(string directory, Action<string, string> onError = null) =>
+            Directory.EnumerateFiles(directory, "*.daygame").Select(path =>
+            {
+                try
+                {
+                    return OpenExisting(path);
+                }
+                catch (Exception e)
+                {
+                    onError?.Invoke(path, e.Message);
+                    return null;
+                }
+            }).Where(x => x != null).ToArray();
 
         sealed class TaskConverter : JsonConverter
         {

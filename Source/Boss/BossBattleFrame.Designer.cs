@@ -51,6 +51,8 @@
             this.CharLevel = new System.Windows.Forms.Label();
             this.CharName = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.ContinueAfterChar = new System.Windows.Forms.Button();
+            this.ContinueAfterBoss = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -62,9 +64,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(706, 107);
+            this.panel1.Location = new System.Drawing.Point(605, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 155);
+            this.panel1.Size = new System.Drawing.Size(188, 134);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -73,17 +75,16 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.dialogue);
-            this.panel3.Location = new System.Drawing.Point(1, 590);
+            this.panel3.Location = new System.Drawing.Point(1, 511);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(553, 172);
+            this.panel3.Size = new System.Drawing.Size(475, 150);
             this.panel3.TabIndex = 2;
             // 
             // dialogue
             // 
             this.dialogue.AutoSize = true;
-            this.dialogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.dialogue.Location = new System.Drawing.Point(66, 65);
+            this.dialogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.dialogue.Location = new System.Drawing.Point(57, 56);
             this.dialogue.Name = "dialogue";
             this.dialogue.Size = new System.Drawing.Size(315, 29);
             this.dialogue.TabIndex = 0;
@@ -91,26 +92,26 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (2)))), ((int) (((byte) (230)))),
-                ((int) (((byte) (124)))));
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(230)))), ((int)(((byte)(124)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.ContinueAfterBoss);
+            this.panel4.Controls.Add(this.ContinueAfterChar);
             this.panel4.Controls.Add(this.PotionsB);
             this.panel4.Controls.Add(this.SpellsB);
             this.panel4.Controls.Add(this.AttackB);
-            this.panel4.Location = new System.Drawing.Point(554, 590);
+            this.panel4.Location = new System.Drawing.Point(475, 511);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(476, 172);
+            this.panel4.Size = new System.Drawing.Size(409, 150);
             this.panel4.TabIndex = 3;
             // 
             // PotionsB
             // 
             this.PotionsB.BackColor = System.Drawing.Color.SaddleBrown;
-            this.PotionsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.PotionsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.PotionsB.ForeColor = System.Drawing.Color.White;
-            this.PotionsB.Location = new System.Drawing.Point(163, 118);
+            this.PotionsB.Location = new System.Drawing.Point(140, 102);
             this.PotionsB.Name = "PotionsB";
-            this.PotionsB.Size = new System.Drawing.Size(129, 42);
+            this.PotionsB.Size = new System.Drawing.Size(111, 36);
             this.PotionsB.TabIndex = 2;
             this.PotionsB.Text = "Potions";
             this.PotionsB.UseVisualStyleBackColor = false;
@@ -119,12 +120,11 @@
             // SpellsB
             // 
             this.SpellsB.BackColor = System.Drawing.Color.SaddleBrown;
-            this.SpellsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.SpellsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.SpellsB.ForeColor = System.Drawing.Color.White;
-            this.SpellsB.Location = new System.Drawing.Point(280, 30);
+            this.SpellsB.Location = new System.Drawing.Point(240, 26);
             this.SpellsB.Name = "SpellsB";
-            this.SpellsB.Size = new System.Drawing.Size(129, 42);
+            this.SpellsB.Size = new System.Drawing.Size(111, 36);
             this.SpellsB.TabIndex = 1;
             this.SpellsB.Text = "Spells";
             this.SpellsB.UseVisualStyleBackColor = false;
@@ -133,12 +133,11 @@
             // AttackB
             // 
             this.AttackB.BackColor = System.Drawing.Color.SaddleBrown;
-            this.AttackB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.AttackB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.AttackB.ForeColor = System.Drawing.Color.White;
-            this.AttackB.Location = new System.Drawing.Point(36, 30);
+            this.AttackB.Location = new System.Drawing.Point(31, 26);
             this.AttackB.Name = "AttackB";
-            this.AttackB.Size = new System.Drawing.Size(129, 42);
+            this.AttackB.Size = new System.Drawing.Size(111, 36);
             this.AttackB.TabIndex = 0;
             this.AttackB.Text = "Attack";
             this.AttackB.UseVisualStyleBackColor = false;
@@ -147,9 +146,9 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(125, 378);
+            this.panel5.Location = new System.Drawing.Point(107, 328);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(219, 155);
+            this.panel5.Size = new System.Drawing.Size(188, 134);
             this.panel5.TabIndex = 1;
             // 
             // panel6
@@ -162,19 +161,18 @@
             this.panel6.Controls.Add(this.BossLevel);
             this.panel6.Controls.Add(this.BossName);
             this.panel6.Controls.Add(this.label4);
-            this.panel6.Location = new System.Drawing.Point(90, 107);
+            this.panel6.Location = new System.Drawing.Point(77, 93);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(375, 121);
+            this.panel6.Size = new System.Drawing.Size(322, 105);
             this.panel6.TabIndex = 5;
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))),
-                ((int) (((byte) (0)))));
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panel10.Controls.Add(this.BossHpBar);
-            this.panel10.Location = new System.Drawing.Point(90, 90);
+            this.panel10.Location = new System.Drawing.Point(77, 78);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(237, 18);
+            this.panel10.Size = new System.Drawing.Size(203, 16);
             this.panel10.TabIndex = 10;
             // 
             // BossHpBar
@@ -182,15 +180,14 @@
             this.BossHpBar.BackColor = System.Drawing.Color.Red;
             this.BossHpBar.Location = new System.Drawing.Point(0, 0);
             this.BossHpBar.Name = "BossHpBar";
-            this.BossHpBar.Size = new System.Drawing.Size(175, 18);
+            this.BossHpBar.Size = new System.Drawing.Size(150, 16);
             this.BossHpBar.TabIndex = 9;
             // 
             // BossHpLabel
             // 
             this.BossHpLabel.AutoSize = true;
-            this.BossHpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F,
-                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.BossHpLabel.Location = new System.Drawing.Point(330, 90);
+            this.BossHpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.BossHpLabel.Location = new System.Drawing.Point(283, 78);
             this.BossHpLabel.Name = "BossHpLabel";
             this.BossHpLabel.Size = new System.Drawing.Size(38, 15);
             this.BossHpLabel.TabIndex = 7;
@@ -198,19 +195,18 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(90, 90);
+            this.progressBar1.Location = new System.Drawing.Point(77, 78);
             this.progressBar1.Maximum = 50;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(237, 18);
+            this.progressBar1.Size = new System.Drawing.Size(203, 16);
             this.progressBar1.TabIndex = 6;
             this.progressBar1.Value = 50;
             // 
             // BossLevel
             // 
             this.BossLevel.AutoSize = true;
-            this.BossLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.BossLevel.Location = new System.Drawing.Point(281, 15);
+            this.BossLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.BossLevel.Location = new System.Drawing.Point(241, 13);
             this.BossLevel.Name = "BossLevel";
             this.BossLevel.Size = new System.Drawing.Size(68, 20);
             this.BossLevel.TabIndex = 5;
@@ -219,10 +215,9 @@
             // BossName
             // 
             this.BossName.AutoSize = true;
-            this.BossName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.BossName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.BossName.ForeColor = System.Drawing.Color.White;
-            this.BossName.Location = new System.Drawing.Point(14, 14);
+            this.BossName.Location = new System.Drawing.Point(12, 12);
             this.BossName.Name = "BossName";
             this.BossName.Size = new System.Drawing.Size(49, 20);
             this.BossName.TabIndex = 4;
@@ -231,9 +226,8 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.label4.Location = new System.Drawing.Point(3, 88);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label4.Location = new System.Drawing.Point(3, 76);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(77, 20);
             this.label4.TabIndex = 3;
@@ -248,19 +242,18 @@
             this.panel7.Controls.Add(this.CharLevel);
             this.panel7.Controls.Add(this.CharName);
             this.panel7.Controls.Add(this.label12);
-            this.panel7.Location = new System.Drawing.Point(591, 412);
+            this.panel7.Location = new System.Drawing.Point(507, 357);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(375, 121);
+            this.panel7.Size = new System.Drawing.Size(322, 105);
             this.panel7.TabIndex = 8;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))),
-                ((int) (((byte) (0)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.panel2.Controls.Add(this.CharHpBar);
-            this.panel2.Location = new System.Drawing.Point(90, 90);
+            this.panel2.Location = new System.Drawing.Point(77, 78);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(237, 18);
+            this.panel2.Size = new System.Drawing.Size(203, 16);
             this.panel2.TabIndex = 8;
             // 
             // CharHpBar
@@ -268,15 +261,14 @@
             this.CharHpBar.BackColor = System.Drawing.Color.Red;
             this.CharHpBar.Location = new System.Drawing.Point(0, 0);
             this.CharHpBar.Name = "CharHpBar";
-            this.CharHpBar.Size = new System.Drawing.Size(175, 18);
+            this.CharHpBar.Size = new System.Drawing.Size(150, 16);
             this.CharHpBar.TabIndex = 9;
             // 
             // CharHpLabel
             // 
             this.CharHpLabel.AutoSize = true;
-            this.CharHpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F,
-                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.CharHpLabel.Location = new System.Drawing.Point(330, 90);
+            this.CharHpLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CharHpLabel.Location = new System.Drawing.Point(283, 78);
             this.CharHpLabel.Name = "CharHpLabel";
             this.CharHpLabel.Size = new System.Drawing.Size(38, 15);
             this.CharHpLabel.TabIndex = 7;
@@ -285,9 +277,8 @@
             // CharLevel
             // 
             this.CharLevel.AutoSize = true;
-            this.CharLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.CharLevel.Location = new System.Drawing.Point(281, 15);
+            this.CharLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.CharLevel.Location = new System.Drawing.Point(241, 13);
             this.CharLevel.Name = "CharLevel";
             this.CharLevel.Size = new System.Drawing.Size(68, 20);
             this.CharLevel.TabIndex = 5;
@@ -297,10 +288,9 @@
             // CharName
             // 
             this.CharName.AutoSize = true;
-            this.CharName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.CharName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.CharName.ForeColor = System.Drawing.Color.Black;
-            this.CharName.Location = new System.Drawing.Point(14, 14);
+            this.CharName.Location = new System.Drawing.Point(12, 12);
             this.CharName.Name = "CharName";
             this.CharName.Size = new System.Drawing.Size(88, 20);
             this.CharName.TabIndex = 4;
@@ -309,21 +299,48 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.label12.Location = new System.Drawing.Point(3, 88);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.label12.Location = new System.Drawing.Point(3, 76);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(77, 20);
             this.label12.TabIndex = 3;
             this.label12.Text = "Hit Points";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // ContinueAfterChar
+            // 
+            this.ContinueAfterChar.BackColor = System.Drawing.Color.SaddleBrown;
+            this.ContinueAfterChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ContinueAfterChar.ForeColor = System.Drawing.Color.White;
+            this.ContinueAfterChar.Location = new System.Drawing.Point(140, 60);
+            this.ContinueAfterChar.Name = "ContinueAfterChar";
+            this.ContinueAfterChar.Size = new System.Drawing.Size(111, 36);
+            this.ContinueAfterChar.TabIndex = 3;
+            this.ContinueAfterChar.Text = "Continue";
+            this.ContinueAfterChar.UseVisualStyleBackColor = false;
+            this.ContinueAfterChar.Visible = false;
+            this.ContinueAfterChar.Click += new System.EventHandler(this.continue_after_char_click);
+            // 
+            // ContinueAfterBoss
+            // 
+            this.ContinueAfterBoss.BackColor = System.Drawing.Color.SaddleBrown;
+            this.ContinueAfterBoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ContinueAfterBoss.ForeColor = System.Drawing.Color.White;
+            this.ContinueAfterBoss.Location = new System.Drawing.Point(140, 60);
+            this.ContinueAfterBoss.Name = "ContinueAfterBoss";
+            this.ContinueAfterBoss.Size = new System.Drawing.Size(111, 36);
+            this.ContinueAfterBoss.TabIndex = 4;
+            this.ContinueAfterBoss.Text = "Continue";
+            this.ContinueAfterBoss.UseVisualStyleBackColor = false;
+            this.ContinueAfterBoss.Visible = false;
+            this.ContinueAfterBoss.Click += new System.EventHandler(this.continue_after_boss_click);
+            // 
             // BossBattleFrame
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1031, 763);
+            this.ClientSize = new System.Drawing.Size(884, 661);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -343,6 +360,7 @@
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -370,5 +388,7 @@
         private System.Windows.Forms.Panel CharHpBar;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel BossHpBar;
+        private System.Windows.Forms.Button ContinueAfterChar;
+        private System.Windows.Forms.Button ContinueAfterBoss;
     }
 }

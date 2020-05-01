@@ -22,5 +22,7 @@ namespace DayGame
         public string Description => description;
 
         public int Image => image;
+
+        public int Price => price;
     }
 }

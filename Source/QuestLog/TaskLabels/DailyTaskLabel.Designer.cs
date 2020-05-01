@@ -68,7 +68,7 @@ namespace DayGame.TaskLabels
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 56);
             this.panel1.Name = "panel1";
@@ -88,7 +88,7 @@ namespace DayGame.TaskLabels
             this.button1.Image = ((System.Drawing.Image) (resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(313, 30);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 25);
+            this.button1.Size = new System.Drawing.Size(24, 25);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);

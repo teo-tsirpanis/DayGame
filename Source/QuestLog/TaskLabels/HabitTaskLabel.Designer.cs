@@ -38,6 +38,8 @@ namespace DayGame.TaskLabels
             this.label2 = new System.Windows.Forms.Label();
             this.minusButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // plusButton
@@ -69,7 +71,7 @@ namespace DayGame.TaskLabels
             // 
             this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(199, 33);
+            this.label2.Location = new System.Drawing.Point(171, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 4;
@@ -92,10 +94,31 @@ namespace DayGame.TaskLabels
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            this.panel1.Location = new System.Drawing.Point(0, 55);
+            this.panel1.Location = new System.Drawing.Point(0, 57);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(339, 1);
             this.panel1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image) (resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(250, 28);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 25);
+            this.button1.TabIndex = 7;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel2.Location = new System.Drawing.Point(0, 57);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(345, 1);
+            this.panel2.TabIndex = 8;
             // 
             // HabitTaskLabel
             // 
@@ -104,6 +127,8 @@ namespace DayGame.TaskLabels
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(345, 57);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -122,5 +147,8 @@ namespace DayGame.TaskLabels
         private System.Windows.Forms.Button plusButton;
 
         #endregion
+
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

@@ -4,18 +4,12 @@ namespace DayGame
 {
     public class ToDo : Task
     {
-        private DateTime dueDate;
-
         public ToDo(string name, string description, TaskDifficulty difficulty, DateTime dateTime) : base(name, description, difficulty)
         {
-            this.dueDate = dateTime;
+            this.DueDate = dateTime.Date;
         }
 
-        public DateTime DueDate
-        {
-            get => dueDate;
-            set => dueDate = value;
-        }
+        public DateTime DueDate { get; set; }
 
         public override void Complete(Character character)
         {
@@ -23,19 +17,16 @@ namespace DayGame
             {
                 character.InGameBalance += 10;
                 character.ExpreriencePoints += 10;
-                character.TakenDamage -= 5;
             }
             else if (difficulty == TaskDifficulty.Medium)
             {
                 character.InGameBalance += 20;
                 character.ExpreriencePoints += 20;
-                character.TakenDamage -= 5;
             }
             else if (difficulty == TaskDifficulty.Hard)
             {
                 character.InGameBalance += 40;
                 character.ExpreriencePoints += 40;
-                character.TakenDamage -= 5;
             }
             else
             {

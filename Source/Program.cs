@@ -19,8 +19,8 @@ namespace DayGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new StartUpMenu());
-            //Application.Run(new BossBattleFrame(new Character("CharNamee", "Male"), new Boss.Boss("bosss", 7, 45, 3)));
+            //Application.Run(new StartUpMenu());
+            Application.Run(new BossBattleFrame(new Character("CharNamee", "Male"), new Boss.Boss("bosss", 7, 45, 3, 6)));
         }
     }
 }

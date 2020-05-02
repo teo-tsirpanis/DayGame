@@ -27,37 +27,39 @@ namespace DayGame
 
         private void addLabel(Task task)
         {
-            if (task.GetType() == typeof(Habit))
+            switch (task)
             {
-                Habit temp = (Habit) Convert.ChangeType(task, typeof(Habit));
-                HabitTaskLabel childForm = new HabitTaskLabel(temp, character, navigationMenu);
-                childForm.TopLevel = false;
-                panel1.Controls.Add(childForm);
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Top;
-                childForm.Show();
-            }
-            else if (task.GetType() == typeof(Daily))
-            {
-                Daily temp = (Daily) Convert.ChangeType(task, typeof(Daily));
-                DailyTaskLabel childForm = new DailyTaskLabel(temp, character, navigationMenu);
-                childForm.TopLevel = false;
-                panel2.Controls.Add(childForm);
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Top;
-                childForm.Show();
-            }
-            else if(task.GetType() == typeof(ToDo))
-            {
-                ToDo temp = (ToDo) Convert.ChangeType(task, typeof(ToDo));
-                ToDoTaskLabel childForm = new ToDoTaskLabel(temp, character, navigationMenu);
-                childForm.TopLevel = false;
-                panel3.Controls.Add(childForm);
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Top;
-                childForm.Show();
+                case Habit h:
+                {
+                    HabitTaskLabel childForm = new HabitTaskLabel(h, character, navigationMenu);
+                    childForm.TopLevel = false;
+                    panel1.Controls.Add(childForm);
+                    childForm.FormBorderStyle = FormBorderStyle.None;
+                    childForm.Dock = DockStyle.Top;
+                    childForm.Show();
+                    break;
+                }
+                case Daily d:
+                {
+                    DailyTaskLabel childForm = new DailyTaskLabel(d, character, navigationMenu);
+                    childForm.TopLevel = false;
+                    panel2.Controls.Add(childForm);
+                    childForm.FormBorderStyle = FormBorderStyle.None;
+                    childForm.Dock = DockStyle.Top;
+                    childForm.Show();
+                    break;
+                }
+                case ToDo t:
+                {
+                    ToDoTaskLabel childForm = new ToDoTaskLabel(t, character, navigationMenu);
+                    childForm.TopLevel = false;
+                    panel3.Controls.Add(childForm);
+                    childForm.FormBorderStyle = FormBorderStyle.None;
+                    childForm.Dock = DockStyle.Top;
+                    childForm.Show();
+                    break;
+                }
             }
         }
-
     }
 }

@@ -9,7 +9,7 @@ namespace DayGame
     {
         private Character character;
         private QuestLog questLog;
-        private inventoryGUI inventoryGui;
+        private InventoryGUI inventoryGui;
         private BossBattleFrame bossBattleFrame;
 
         public NavigationMenu(Character character)
@@ -26,7 +26,7 @@ namespace DayGame
             }
 
             questLog = new QuestLog(character, this);
-            inventoryGui = new inventoryGUI();
+            inventoryGui = new InventoryGUI();
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;

@@ -7,16 +7,17 @@ namespace DayGame
 {
     public partial class NavigationMenu : Form
     {
-        private Character character;
-        private QuestLog questLog;
-        private InventoryGUI inventoryGui;
+        private readonly SaveFile saveFile;
+        private Character character => saveFile.Character;
+        private readonly QuestLog questLog;
+        private readonly InventoryGUI inventoryGui;
         private BossBattleFrame bossBattleFrame;
 
-        public NavigationMenu(Character character)
+        public NavigationMenu(SaveFile saveFile)
         {
-            this.character = character;
+            this.saveFile = saveFile;
             InitializeComponent();
-            if (character.Gender == "Male")
+            if (saveFile.Character.Gender == "Male")
             {
                 pictureBox2.Image = imageList1.Images[0];
             }
@@ -54,7 +55,7 @@ namespace DayGame
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void questLogButton_Click(object sender, EventArgs e)
         {
             openChildForm(questLog);
         }

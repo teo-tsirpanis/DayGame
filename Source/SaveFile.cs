@@ -46,8 +46,7 @@ namespace DayGame
         /// </summary>
         public void Delete()
         {
-            // if (File.Exists(FileName))
-                File.Delete(FileName);
+            File.Delete(FileName);
         }
 
         /// <summary>

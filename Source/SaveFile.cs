@@ -13,7 +13,7 @@ namespace DayGame
     /// </summary>
     /// <remarks>This class is the root of DayGame's hierarchy. All other
     /// non-GUI objects are (in)directly contained here.</remarks>
-    sealed class SaveFile
+    public sealed class SaveFile
     {
         private Data _data;
         private string FileName { get; set; }
@@ -42,13 +42,39 @@ namespace DayGame
         }
 
         /// <summary>
+        /// Deletes the <see cref="SaveFile"/>'s corresponding file on the disk.
+        /// </summary>
+        public void Delete()
+        {
+            // if (File.Exists(FileName))
+                File.Delete(FileName);
+        }
+
+        /// <summary>
+        /// The default directory where save files for DayGame reside.
+        /// </summary>
+        /// <remarks>It is the current directory on Debug mode
+        /// and a "DayGame" directory inside My Documents in Release mode.</remarks>
+        public static string SaveFileDirectory =>
+#if DEBUG
+            Environment.CurrentDirectory;
+#else
+            Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "DayGame");
+#endif
+
+        /// <summary>
         /// Creates a new <see cref="SaveFile"/>.
         /// </summary>
-        /// <param name="fileName">The path the save file is going to be saved.</param>
         /// <param name="name">The character's name.</param>
         /// <param name="gender">The character's gender.</param>
-        public static SaveFile CreateNew(string fileName, string name, string gender)
+        /// <remarks>The save file will be stored at a file named after <paramref name="name"/>,
+        /// or a random name if another save file with that name already exists.</remarks>
+        public static SaveFile CreateNew(string name, string gender)
         {
+            var fileName = Path.Combine(SaveFileDirectory, $"{name}.daygame");
+            if (File.Exists(fileName))
+                fileName = Path.Combine(SaveFileDirectory,
+                    Path.ChangeExtension(Path.GetRandomFileName(), ".daygame"));
             var data = new Data
             {
                 Character = new Character(name, gender),
@@ -75,7 +101,6 @@ namespace DayGame
         /// <param name="directory">The directory to find. Subdirectories are not searched.</param>
         /// <param name="onError">An optional delegate that gets called for every exception during
         /// the reading of the file. It accepts the path of the faulty file and the exception's message.</param>
-        /// <returns></returns>
         public static SaveFile[] ListSaveFiles(string directory, Action<string, string> onError = null) =>
             Directory.EnumerateFiles(directory, "*.daygame").Select(path =>
             {

@@ -98,5 +98,10 @@ namespace DayGame
         {
             openChildForm(inventoryGui);
         }
+
+        private void NavigationMenu_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            saveFile.Save();
+        }
     }
 }

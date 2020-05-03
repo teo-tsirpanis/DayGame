@@ -295,6 +295,7 @@ namespace DayGame
             this.Name = "NavigationMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NavigationMenu";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NavigationMenu_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();

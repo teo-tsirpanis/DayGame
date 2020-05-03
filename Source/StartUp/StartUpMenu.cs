@@ -5,28 +5,33 @@ namespace DayGame
 {
     public partial class StartUpMenu : Form
     {
+        private SaveFile chosenSaveFile;
+
         public StartUpMenu()
         {
             InitializeComponent();
         }
-        
+
         private void button1_Click(object sender, EventArgs e)
         {
-            CreateCharacterMenu createCharMenu = new CreateCharacterMenu();
-            if (createCharMenu.ShowDialog(this) == DialogResult.OK)
-            {
-                addLabel(createCharMenu.Character);
-            }
-        }    
+            var saveFile = CreateCharacterMenu.CreateCharacter(this);
+            if (saveFile != null) addLabel(saveFile);
+        }
 
-        private void addLabel(Character character)
+        private void addLabel(SaveFile saveFile)
         {
-            CharacterLabel childForm = new CharacterLabel(character);
-            childForm.TopLevel = false;
+            CharacterLabel childForm = new CharacterLabel(saveFile, SaveFileChosen) {TopLevel = false};
             panel1.Controls.Add(childForm);
-            childForm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Top;
             childForm.Show();
+        }
+
+        private void SaveFileChosen(SaveFile sf)
+        {
+            DialogResult = DialogResult.OK;
+            chosenSaveFile = sf;
+            Close();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -36,7 +41,14 @@ namespace DayGame
 
         private void StartUpMenu_Load(object sender, EventArgs e)
         {
+        }
 
+        public static SaveFile ChooseSaveFile()
+        {
+            using var sm = new StartUpMenu();
+            if (sm.ShowDialog(null) == DialogResult.OK)
+                return sm.chosenSaveFile;
+            return null;
         }
     }
 }

@@ -1,5 +1,5 @@
+using DayGame.Boss;
 using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -18,7 +18,8 @@ namespace DayGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new StartUpMenu());
+          Application.Run(new StartUpMenu());
+            //Application.Run(new BossBattleFrame(new Character("CharNamee", "Male"), new Boss.Boss("bosss", 7, 45, 3, 6)));
 
         }
     }

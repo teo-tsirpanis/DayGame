@@ -804,7 +804,7 @@ namespace DayGame
             this.BagButton5.TabIndex = 38;
             this.BagButton5.UseVisualStyleBackColor = false;
             // 
-            // inventoryGUI
+            // InventoryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -817,7 +817,7 @@ namespace DayGame
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "inventoryGUI";
+            this.Name = "InventoryGUI";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.inventoryGUI_Load);
             this.panel1.ResumeLayout(false);

@@ -1,12 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace DayGame
 {
-    class Inventory
+    public class Inventory
     {
         public int counter_inventory = 0;
         public Item[] ChestSpace = new Item[42];

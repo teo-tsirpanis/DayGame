@@ -21,6 +21,9 @@ namespace DayGame
         public Item spathi = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
         public Item panoplia = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
         public Weapon spathi2 = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
+        public Armor armor = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
+        public Weapon[] Items = new Weapon[20];
+
 
         public int DamageBuff = 0;
         public int ArmorBuff = 0;
@@ -108,7 +111,7 @@ namespace DayGame
                             DamageBuff = DamageBuff + spathi2.Damage;
                             DamageTextNumber.Text = DamageBuff.ToString();
                         }
-
+                        //
 
 
 
@@ -160,6 +163,12 @@ namespace DayGame
                         {
                             if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
                             {
+                                //test na dw an doulevei to unequip menu
+                                DamageBuff = DamageBuff - spathi2.Damage;
+                                DamageTextNumber.Text = DamageBuff.ToString();
+                                //
+
+
                                 inv.DeleteWeapon(inv.ChestSpace[i], i);
                                 btn.BackColor = Color.FromKnownColor(KnownColor.Control);
                                 ChestButtonsArray[i].BackColor = Color.Red;

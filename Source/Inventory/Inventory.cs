@@ -16,12 +16,16 @@ namespace DayGame
 
         public void InventoryAddItem(Item Item)
         {
-            //if(Item.GetType()== typeof(Armor)){
-            ChestSpace[counter_inventory] = Item;
+
+            if (counter_inventory < 42)
+            {
+                ChestSpace[counter_inventory] = Item;
+                counter_inventory++;
+            }
 
 
 
-            counter_inventory++;
+            
         }
 
         public void AddWeapon(Item item,int counter)

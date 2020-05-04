@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DayGame
 {
-    
+
     public partial class EquipUnequipGUI : Form
     {
         public EquipUnequipGUI(Item item,string buttontext)

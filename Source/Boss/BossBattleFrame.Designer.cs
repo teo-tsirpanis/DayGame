@@ -30,8 +30,18 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.BagButton7 = new System.Windows.Forms.Button();
             this.dialogue = new System.Windows.Forms.Label();
+            this.BagButton6 = new System.Windows.Forms.Button();
+            this.BagButton0 = new System.Windows.Forms.Button();
+            this.BagButton3 = new System.Windows.Forms.Button();
+            this.BagButton4 = new System.Windows.Forms.Button();
+            this.BagButton2 = new System.Windows.Forms.Button();
+            this.BagButton5 = new System.Windows.Forms.Button();
+            this.BagButton1 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.ContinueAfterBoss = new System.Windows.Forms.Button();
+            this.ContinueAfterChar = new System.Windows.Forms.Button();
             this.PotionsB = new System.Windows.Forms.Button();
             this.SpellsB = new System.Windows.Forms.Button();
             this.AttackB = new System.Windows.Forms.Button();
@@ -51,8 +61,7 @@
             this.CharLevel = new System.Windows.Forms.Label();
             this.CharName = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.ContinueAfterChar = new System.Windows.Forms.Button();
-            this.ContinueAfterBoss = new System.Windows.Forms.Button();
+            this.BackB = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -74,11 +83,30 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.BagButton7);
             this.panel3.Controls.Add(this.dialogue);
+            this.panel3.Controls.Add(this.BagButton6);
+            this.panel3.Controls.Add(this.BagButton0);
+            this.panel3.Controls.Add(this.BagButton3);
+            this.panel3.Controls.Add(this.BagButton4);
+            this.panel3.Controls.Add(this.BagButton2);
+            this.panel3.Controls.Add(this.BagButton5);
+            this.panel3.Controls.Add(this.BagButton1);
             this.panel3.Location = new System.Drawing.Point(1, 511);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(475, 150);
             this.panel3.TabIndex = 2;
+            // 
+            // BagButton7
+            // 
+            this.BagButton7.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton7.Location = new System.Drawing.Point(312, 78);
+            this.BagButton7.Name = "BagButton7";
+            this.BagButton7.Size = new System.Drawing.Size(67, 67);
+            this.BagButton7.TabIndex = 49;
+            this.BagButton7.UseVisualStyleBackColor = false;
+            this.BagButton7.Visible = false;
+            this.BagButton7.Click += new System.EventHandler(this.BagButton_Click);
             // 
             // dialogue
             // 
@@ -90,10 +118,88 @@
             this.dialogue.TabIndex = 0;
             this.dialogue.Text = "Whoa! You dealt 15 damage";
             // 
+            // BagButton6
+            // 
+            this.BagButton6.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton6.Location = new System.Drawing.Point(238, 78);
+            this.BagButton6.Name = "BagButton6";
+            this.BagButton6.Size = new System.Drawing.Size(67, 67);
+            this.BagButton6.TabIndex = 48;
+            this.BagButton6.UseVisualStyleBackColor = false;
+            this.BagButton6.Visible = false;
+            this.BagButton6.Click += new System.EventHandler(this.BagButton_Click);
+            // 
+            // BagButton0
+            // 
+            this.BagButton0.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton0.Location = new System.Drawing.Point(91, 3);
+            this.BagButton0.Name = "BagButton0";
+            this.BagButton0.Size = new System.Drawing.Size(67, 67);
+            this.BagButton0.TabIndex = 50;
+            this.BagButton0.UseVisualStyleBackColor = false;
+            this.BagButton0.Visible = false;
+            this.BagButton0.Click += new System.EventHandler(this.BagButton_Click);
+            // 
+            // BagButton3
+            // 
+            this.BagButton3.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton3.Location = new System.Drawing.Point(312, 3);
+            this.BagButton3.Name = "BagButton3";
+            this.BagButton3.Size = new System.Drawing.Size(67, 67);
+            this.BagButton3.TabIndex = 53;
+            this.BagButton3.UseVisualStyleBackColor = false;
+            this.BagButton3.Visible = false;
+            this.BagButton3.Click += new System.EventHandler(this.BagButton_Click);
+            // 
+            // BagButton4
+            // 
+            this.BagButton4.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton4.Location = new System.Drawing.Point(91, 78);
+            this.BagButton4.Name = "BagButton4";
+            this.BagButton4.Size = new System.Drawing.Size(67, 67);
+            this.BagButton4.TabIndex = 46;
+            this.BagButton4.UseVisualStyleBackColor = false;
+            this.BagButton4.Visible = false;
+            this.BagButton4.Click += new System.EventHandler(this.BagButton_Click);
+            // 
+            // BagButton2
+            // 
+            this.BagButton2.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton2.Location = new System.Drawing.Point(238, 3);
+            this.BagButton2.Name = "BagButton2";
+            this.BagButton2.Size = new System.Drawing.Size(67, 67);
+            this.BagButton2.TabIndex = 52;
+            this.BagButton2.UseVisualStyleBackColor = false;
+            this.BagButton2.Visible = false;
+            this.BagButton2.Click += new System.EventHandler(this.BagButton_Click);
+            // 
+            // BagButton5
+            // 
+            this.BagButton5.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton5.Location = new System.Drawing.Point(164, 78);
+            this.BagButton5.Name = "BagButton5";
+            this.BagButton5.Size = new System.Drawing.Size(67, 67);
+            this.BagButton5.TabIndex = 47;
+            this.BagButton5.UseVisualStyleBackColor = false;
+            this.BagButton5.Visible = false;
+            this.BagButton5.Click += new System.EventHandler(this.BagButton_Click);
+            // 
+            // BagButton1
+            // 
+            this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton1.Location = new System.Drawing.Point(164, 3);
+            this.BagButton1.Name = "BagButton1";
+            this.BagButton1.Size = new System.Drawing.Size(67, 67);
+            this.BagButton1.TabIndex = 51;
+            this.BagButton1.UseVisualStyleBackColor = false;
+            this.BagButton1.Visible = false;
+            this.BagButton1.Click += new System.EventHandler(this.BagButton_Click);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(2)))), ((int)(((byte)(230)))), ((int)(((byte)(124)))));
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.BackB);
             this.panel4.Controls.Add(this.ContinueAfterBoss);
             this.panel4.Controls.Add(this.ContinueAfterChar);
             this.panel4.Controls.Add(this.PotionsB);
@@ -103,6 +209,34 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(409, 150);
             this.panel4.TabIndex = 3;
+            // 
+            // ContinueAfterBoss
+            // 
+            this.ContinueAfterBoss.BackColor = System.Drawing.Color.SaddleBrown;
+            this.ContinueAfterBoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ContinueAfterBoss.ForeColor = System.Drawing.Color.White;
+            this.ContinueAfterBoss.Location = new System.Drawing.Point(140, 60);
+            this.ContinueAfterBoss.Name = "ContinueAfterBoss";
+            this.ContinueAfterBoss.Size = new System.Drawing.Size(111, 36);
+            this.ContinueAfterBoss.TabIndex = 4;
+            this.ContinueAfterBoss.Text = "Continue";
+            this.ContinueAfterBoss.UseVisualStyleBackColor = false;
+            this.ContinueAfterBoss.Visible = false;
+            this.ContinueAfterBoss.Click += new System.EventHandler(this.continue_after_boss_click);
+            // 
+            // ContinueAfterChar
+            // 
+            this.ContinueAfterChar.BackColor = System.Drawing.Color.SaddleBrown;
+            this.ContinueAfterChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.ContinueAfterChar.ForeColor = System.Drawing.Color.White;
+            this.ContinueAfterChar.Location = new System.Drawing.Point(140, 60);
+            this.ContinueAfterChar.Name = "ContinueAfterChar";
+            this.ContinueAfterChar.Size = new System.Drawing.Size(111, 36);
+            this.ContinueAfterChar.TabIndex = 3;
+            this.ContinueAfterChar.Text = "Continue";
+            this.ContinueAfterChar.UseVisualStyleBackColor = false;
+            this.ContinueAfterChar.Visible = false;
+            this.ContinueAfterChar.Click += new System.EventHandler(this.continue_after_char_click);
             // 
             // PotionsB
             // 
@@ -115,7 +249,7 @@
             this.PotionsB.TabIndex = 2;
             this.PotionsB.Text = "Potions";
             this.PotionsB.UseVisualStyleBackColor = false;
-            this.PotionsB.Click += new System.EventHandler(this.button3_Click);
+            this.PotionsB.Click += new System.EventHandler(this.potionsB_Click);
             // 
             // SpellsB
             // 
@@ -128,7 +262,7 @@
             this.SpellsB.TabIndex = 1;
             this.SpellsB.Text = "Spells";
             this.SpellsB.UseVisualStyleBackColor = false;
-            this.SpellsB.Click += new System.EventHandler(this.button2_Click);
+            this.SpellsB.Click += new System.EventHandler(this.spellB_Click);
             // 
             // AttackB
             // 
@@ -153,7 +287,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.BurlyWood;
+            this.panel6.BackColor = System.Drawing.Color.Yellow;
             this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.panel10);
             this.panel6.Controls.Add(this.BossHpLabel);
@@ -215,8 +349,9 @@
             // BossName
             // 
             this.BossName.AutoSize = true;
+            this.BossName.BackColor = System.Drawing.Color.Yellow;
             this.BossName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.BossName.ForeColor = System.Drawing.Color.White;
+            this.BossName.ForeColor = System.Drawing.Color.Black;
             this.BossName.Location = new System.Drawing.Point(12, 12);
             this.BossName.Name = "BossName";
             this.BossName.Size = new System.Drawing.Size(49, 20);
@@ -307,33 +442,19 @@
             this.label12.Text = "Hit Points";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
-            // ContinueAfterChar
+            // BackB
             // 
-            this.ContinueAfterChar.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ContinueAfterChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ContinueAfterChar.ForeColor = System.Drawing.Color.White;
-            this.ContinueAfterChar.Location = new System.Drawing.Point(140, 60);
-            this.ContinueAfterChar.Name = "ContinueAfterChar";
-            this.ContinueAfterChar.Size = new System.Drawing.Size(111, 36);
-            this.ContinueAfterChar.TabIndex = 3;
-            this.ContinueAfterChar.Text = "Continue";
-            this.ContinueAfterChar.UseVisualStyleBackColor = false;
-            this.ContinueAfterChar.Visible = false;
-            this.ContinueAfterChar.Click += new System.EventHandler(this.continue_after_char_click);
-            // 
-            // ContinueAfterBoss
-            // 
-            this.ContinueAfterBoss.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ContinueAfterBoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ContinueAfterBoss.ForeColor = System.Drawing.Color.White;
-            this.ContinueAfterBoss.Location = new System.Drawing.Point(140, 60);
-            this.ContinueAfterBoss.Name = "ContinueAfterBoss";
-            this.ContinueAfterBoss.Size = new System.Drawing.Size(111, 36);
-            this.ContinueAfterBoss.TabIndex = 4;
-            this.ContinueAfterBoss.Text = "Continue";
-            this.ContinueAfterBoss.UseVisualStyleBackColor = false;
-            this.ContinueAfterBoss.Visible = false;
-            this.ContinueAfterBoss.Click += new System.EventHandler(this.continue_after_boss_click);
+            this.BackB.BackColor = System.Drawing.Color.SaddleBrown;
+            this.BackB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.BackB.ForeColor = System.Drawing.Color.White;
+            this.BackB.Location = new System.Drawing.Point(140, 60);
+            this.BackB.Name = "BackB";
+            this.BackB.Size = new System.Drawing.Size(111, 36);
+            this.BackB.TabIndex = 5;
+            this.BackB.Text = "Back";
+            this.BackB.UseVisualStyleBackColor = false;
+            this.BackB.Visible = false;
+            this.BackB.Click += new System.EventHandler(this.BackB_Click);
             // 
             // BossBattleFrame
             // 
@@ -390,5 +511,14 @@
         private System.Windows.Forms.Panel BossHpBar;
         private System.Windows.Forms.Button ContinueAfterChar;
         private System.Windows.Forms.Button ContinueAfterBoss;
+        private System.Windows.Forms.Button BagButton7;
+        private System.Windows.Forms.Button BagButton6;
+        private System.Windows.Forms.Button BagButton0;
+        private System.Windows.Forms.Button BagButton3;
+        private System.Windows.Forms.Button BagButton4;
+        private System.Windows.Forms.Button BagButton2;
+        private System.Windows.Forms.Button BagButton5;
+        private System.Windows.Forms.Button BagButton1;
+        private System.Windows.Forms.Button BackB;
     }
 }

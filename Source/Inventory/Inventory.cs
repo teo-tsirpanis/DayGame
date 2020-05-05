@@ -60,6 +60,7 @@ namespace DayGame
                 else
                 {
                     Bag[i] = item;
+                    break;
                 }
             }
         }

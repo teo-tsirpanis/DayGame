@@ -2,7 +2,7 @@
 
 namespace DayGame
 {
-    class Potion : ConsumableItems
+    public class Potion : ConsumableItems
     {
         public int Hit_point_regain { get; set; }
 

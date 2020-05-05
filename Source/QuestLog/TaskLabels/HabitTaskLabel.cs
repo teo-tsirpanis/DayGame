@@ -6,44 +6,38 @@ namespace DayGame.TaskLabels
 {
     public partial class HabitTaskLabel : Form
     {
-        private int positive;
-        private int negative;
         private Habit habit;
         private Character character;
         private NavigationMenu navigationMenu;
 
         public HabitTaskLabel(Habit habit,Character character,NavigationMenu navigationMenu)
         {
-            positive = 0;
-            negative = 0;
             this.habit = habit;
             this.character = character;
             this.navigationMenu = navigationMenu;
             InitializeComponent();
-            label2.Text = "+" + positive + " | -" + negative;
+            label2.Text = "+" + habit.Positive + " | -" + habit.Negative;
             label1.Text = habit.Description;
         }
 
 
         private void plusButton_Click(object sender, EventArgs e)
         {
-            positive++;
             habit.UpdateTask(true, character);
             navigationMenuUpdater();
-            label2.Text = "+" + positive + " | -" + negative;
-            checkKarma(positive - negative);
+            label2.Text = "+" + habit.Positive + " | -" + habit.Negative;
+            checkKarma(habit.Positive - habit.Negative);
         }
 
 
         private void minusButton_Click(object sender, EventArgs e)
         {
-            negative++;
             habit.UpdateTask(false,character);
             navigationMenu.hpBarController();
             navigationMenu.gameLabelController();
             navigationMenu.hpLabelController();
-            label2.Text = "+" + positive + " | -" + negative;
-            checkKarma(positive - negative);
+            label2.Text = "+" + habit.Positive + " | -" + habit.Negative;
+            checkKarma(habit.Positive - habit.Negative);
         }
 
         private void checkKarma(int karma)

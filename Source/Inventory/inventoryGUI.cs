@@ -37,8 +37,10 @@ namespace DayGame
                 chestbutton36, chestbutton37, chestbutton38, chestbutton39, chestbutton40, chestbutton41, chestbutton42
             };
             //edw oloklirwnete h diadikasia tou ArrayList me ola ta ChestButtons
-
+            proswrinh_sunarthsh_prosthiki_antikeimenwn_se_inventory();
             InventorySpaceReload();
+
+            
 
             for (int i = 0; i < 42; i++)
             {
@@ -88,54 +90,49 @@ namespace DayGame
         {
             //GIA THN WRA DOULEVEI MONO GIA WEAPONS KAI ARMOR//
             Button btn = sender as Button;
-            if (btn.BackColor != Color.FromKnownColor(KnownColor.Control))
+            if (inv.ChestSpace[ChestButtonPressed-1] != null)
             //mono ean to button den einai keno(dhladh den exei item),ekteleitai o parakatw kodikas.
             //(epeidh an einai keno, dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
             {
                 EquipUnequipGUI Equip = new EquipUnequipGUI(inv.ChestSpace[ChestButtonPressed - 1], "Equip");
                 if (Equip.ShowDialog(this) == DialogResult.OK)
                 {
-                    if (WeaponButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Red))
+                    if ((inv.WeaponEquiped == null) && (inv.ChestSpace[ChestButtonPressed-1].GetType() == typeof(Weapon)))
                         //ean to weaponbutton einai empty, kai to button pou
                         //pathses exei kokkino xrwma(dhladh einai weapon)
-                    {
-                        //kwdikas gia na prosthetei to buff tou weapon
-                        Weapon weapon = (Weapon)inv.ChestSpace[ChestButtonPressed - 1];
-                        DamageBuff = DamageBuff + weapon.Damage;
-                        DamageTextNumber.Text = DamageBuff.ToString();
-                        //
+                        {
+                            //kwdikas gia na prosthetei to buff tou weapon
+                            Weapon weapon = (Weapon)inv.ChestSpace[ChestButtonPressed - 1];
+                            DamageBuff = DamageBuff + weapon.Damage;
+                            DamageTextNumber.Text = DamageBuff.ToString();
+                            //
 
-
-                        inv.AddWeapon(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);
-                        //prosthese sto WeaponButton to weapon pou epilexthike kai svistw apo ton katalogo
-                        WeaponButton.BackColor = Color.Red; //svise optika to weapon apo ton katalogo
-                        btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-                        //vale optika sto weapon to weapon pou epelexes
+                            inv.AddWeapon(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese to Weapon pou foreses sto WeaponButton kai afairese to apo to inventory
+                            
+                            InventorySpaceReload();//allaxe tis allages sto GUI
                     }
-                    else if (ArmorButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Blue))
-                        //ean to armorbutton einai empty, kai to button pou pathses exei ble xrwma(dhladh einai armor)
+                    else if ((inv.ArmorEquiped == null) && (inv.ChestSpace[ChestButtonPressed - 1].GetType() == typeof(Armor)))
+                    //ean to armorbutton einai empty, kai to button pou pathses exei ble xrwma(dhladh einai armor)
                     {
-                        //kwdikas gia na prosthetei to buff tou Armor
-                        Armor Armor = (Armor)inv.ChestSpace[ChestButtonPressed - 1];
-                        ArmorBuff = ArmorBuff + Armor.Defence;
-                        DefenceTextNumber.Text = ArmorBuff.ToString();
-                        //
+                            //kwdikas gia na prosthetei to buff tou Armor
+                            Armor Armor = (Armor)inv.ChestSpace[ChestButtonPressed - 1];
+                            ArmorBuff = ArmorBuff + Armor.Defence;
+                            DefenceTextNumber.Text = ArmorBuff.ToString();
+                            //
 
 
 
-                        inv.AddArmor(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);
-                        //prosthese sto WeaponArmor to armor pou epilexthike kai svistw apo ton katalogo
-                        ArmorButton.BackColor = Color.Blue; //svise optika to weapon apo ton katalogo
-                        btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-                        //vale optika sto armor to armor pou epelexes
+                            inv.AddArmor(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);//prosthese to armor pou foreses sto ArmorButton kai afairese to apo to inventory
+
+                        InventorySpaceReload();//allaxe tis allages sto GUI
                     }
-                    else
-                    {
-                        MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
+                        else
+                        {
+                            MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
+                        }
                     }
                 }
             }
-        }
 
         private void GetTheButtonNumber(object sender, EventArgs e)
             //DINEI STO INT ChestButtonPressed to Chestbutton pou epilexthike(1-42), etsi wste h sunarthsh Equip na mporei na leitourghsei
@@ -153,7 +150,7 @@ namespace DayGame
         private void UnequipWeapon(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            if (!(btn.BackColor == Color.FromKnownColor(KnownColor.Control)))
+            if ((inv.WeaponEquiped!=null))
                 //mono ean to button den einai keno(dhladh den exei item),ekteleitai
                 //o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote
                 //to item einai = me null, kai buggarei to programma)
@@ -161,30 +158,25 @@ namespace DayGame
                 EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
                 if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
                 {
-                    if (btn.BackColor == Color.Red)
-                    {
                         for (int i = 0; i < 42; i++)
                         {
-                            if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
+                            if (inv.ChestSpace[i]==null)
                             {
 
-                                //kwdikas gia na afairei to buff tou weapon
-                                Weapon weapon = (Weapon)inv.WeaponEquiped;
-                                DamageBuff = DamageBuff - weapon.Damage;
-                                DamageTextNumber.Text = DamageBuff.ToString();
-                                //
+                            //kwdikas gia na afairei to buff tou weapon
+                            Weapon weapon = (Weapon)inv.WeaponEquiped;
+                            DamageBuff = DamageBuff - weapon.Damage;
+                            DamageTextNumber.Text = DamageBuff.ToString();
 
 
 
-                                inv.DeleteWeapon(inv.ChestSpace[i], i);
-                                btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-                                ChestButtonsArray[i].BackColor = Color.Red;
-                                break;
+                            inv.DeleteWeapon(inv.WeaponEquiped, i);
+                            InventorySpaceReload();//kane reload to GUI
+                            break;
                             }
                         }
                     }
                 }
-            }
         }
 
 
@@ -192,42 +184,34 @@ namespace DayGame
         {
             //UNEQUIP, doulevei mono gia ARMORS
             Button btn = sender as Button;
-            if (btn.BackColor != Color.FromKnownColor(KnownColor.Control))
-                //mono ean to button den einai keno(dhladh den exei item),
-                //ekteleitai o parakatw kodikas.(epeidh an einai keno,
-                //dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
+            if ((inv.ArmorEquiped != null))
+            //mono ean to button den einai keno(dhladh den exei item),
+            //ekteleitai o parakatw kodikas.(epeidh an einai keno,
+            //dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
             {
                 EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
                 if (Unequip.ShowDialog(this) == DialogResult.OK)
                 {
-                    //
-                    if (btn.BackColor == Color.Blue)
-                    {
                         for (int i = 0; i < 42; i++)
                         {
-                            if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
+                            if (inv.ChestSpace[i] == null)
                             {
-                                //kwdikas gia na afairei to buff tou Armor
-                                Armor Armor = (Armor)inv.ArmorEquiped;
-                                ArmorBuff = ArmorBuff - Armor.Defence;
-                                DefenceTextNumber.Text = ArmorBuff.ToString();
-                                //
+                            //kwdikas gia na afairei to buff tou Armor
+                            Armor Armor = (Armor)inv.ArmorEquiped;
+                            ArmorBuff = ArmorBuff - Armor.Defence;
+                            DefenceTextNumber.Text = ArmorBuff.ToString();
+                            //
 
-
-
-                                inv.DeleteArmor(inv.ChestSpace[i], i);
-                                btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-                                ChestButtonsArray[i].BackColor = Color.Blue;
-                                break;
+                            inv.DeleteArmor(inv.ArmorEquiped, i);
+                            InventorySpaceReload();//kane reload to GUI
+                            break;
                             }
                         }
                     }
-                }
             }
         }
 
-
-        void InventorySpaceReload()
+        void proswrinh_sunarthsh_prosthiki_antikeimenwn_se_inventory()
         {
             //prosthesi adikeimenwn sto inventory
 
@@ -245,8 +229,18 @@ namespace DayGame
             inv.InventoryAddItem(panoplia);
             inv.InventoryAddItem(spathi);
             //prosthesi adikeimenwn sto inventory
+        }
 
-
+        void InventorySpaceReload()
+        {
+            //arxika kanei ola ta buttons me colour Default
+            for (int i = 0; i < 42; i++)
+            {
+                ChestButtonsArray[i].BackColor = Color.FromKnownColor(KnownColor.Control);
+            }
+            WeaponButton.BackColor= Color.FromKnownColor(KnownColor.Control);
+            ArmorButton.BackColor= Color.FromKnownColor(KnownColor.Control);
+            // sth sunexeia prosthetei to xrwma analoga me to Inventory
             for (int i = 0; i < 42; i++)
             {
                 if ((inv.ChestSpace[i] != null))
@@ -258,6 +252,14 @@ namespace DayGame
                         _ => ChestButtonsArray[i].BackColor
                     };
                 }
+            }
+            if (inv.WeaponEquiped != null)
+            {
+                WeaponButton.BackColor = Color.Red;
+            }
+            if (inv.ArmorEquiped!= null)
+            {
+                ArmorButton.BackColor = Color.Blue;
             }
         }
 

@@ -11,12 +11,6 @@ namespace DayGame
 
         public void InventoryAddItem(Item Item)
         {
-            //if (counter_inventory < 42)
-            //{
-               // ChestSpace[counter_inventory] = Item;
-               // counter_inventory++;
-           // }
-
             for (int i = 0; i < 42; i++)
             {
                 if (ChestSpace[i] != null)

@@ -11,14 +11,14 @@ namespace DayGame
         /// </summary>
         [STAThread]
         static void Main()
-        {
+        {    
+
             #if NETCOREAPP3_1
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             #endif
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-          Application.Run(new StartUpMenu());
+            Application.Run(new StartUpMenu());
             //Application.Run(new BossBattleFrame(new Character("CharNamee", "Male"), new Boss.Boss("bosss", 7, 45, 3, 6)));
 
         }

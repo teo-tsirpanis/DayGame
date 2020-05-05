@@ -17,7 +17,9 @@ namespace DayGame
         Inventory inv = new Inventory(); //ftiaxnoume ypothetiko Inventory
         public Item spathi = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
         public Item panoplia = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
-        public Weapon spathi2 = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
+        public Armor armor = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
+        public Weapon[] Items = new Weapon[20];
+
 
         public int DamageBuff = 0;
         public int ArmorBuff = 0;
@@ -38,7 +40,7 @@ namespace DayGame
 
             InventorySpaceReload();
 
-            for (int i = 0; i < inv.counter_inventory; i++)
+            for (int i = 0; i < 42; i++)
             {
                 ChestButtonsArray[i].Click += GetTheButtonNumber;
                 ChestButtonsArray[i].Click += Equip;
@@ -97,12 +99,11 @@ namespace DayGame
                         //ean to weaponbutton einai empty, kai to button pou
                         //pathses exei kokkino xrwma(dhladh einai weapon)
                     {
-                        //test gia na dw an doulevei to stats menu
-                        if (inv.ChestSpace[ChestButtonPressed - 1].Name == spathi2.Name)
-                        {
-                            DamageBuff = DamageBuff + spathi2.Damage;
-                            DamageTextNumber.Text = DamageBuff.ToString();
-                        }
+                        //kwdikas gia na prosthetei to buff tou weapon
+                        Weapon weapon = (Weapon)inv.ChestSpace[ChestButtonPressed - 1];
+                        DamageBuff = DamageBuff + weapon.Damage;
+                        DamageTextNumber.Text = DamageBuff.ToString();
+                        //
 
 
                         inv.AddWeapon(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);
@@ -114,6 +115,14 @@ namespace DayGame
                     else if (ArmorButton.BackColor == Color.FromKnownColor(KnownColor.Control) && (btn.BackColor == Color.Blue))
                         //ean to armorbutton einai empty, kai to button pou pathses exei ble xrwma(dhladh einai armor)
                     {
+                        //kwdikas gia na prosthetei to buff tou Armor
+                        Armor Armor = (Armor)inv.ChestSpace[ChestButtonPressed - 1];
+                        ArmorBuff = ArmorBuff + Armor.Defence;
+                        DefenceTextNumber.Text = ArmorBuff.ToString();
+                        //
+
+
+
                         inv.AddArmor(inv.ChestSpace[ChestButtonPressed - 1], ChestButtonPressed - 1);
                         //prosthese sto WeaponArmor to armor pou epilexthike kai svistw apo ton katalogo
                         ArmorButton.BackColor = Color.Blue; //svise optika to weapon apo ton katalogo
@@ -158,6 +167,15 @@ namespace DayGame
                         {
                             if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
                             {
+
+                                //kwdikas gia na afairei to buff tou weapon
+                                Weapon weapon = (Weapon)inv.WeaponEquiped;
+                                DamageBuff = DamageBuff - weapon.Damage;
+                                DamageTextNumber.Text = DamageBuff.ToString();
+                                //
+
+
+
                                 inv.DeleteWeapon(inv.ChestSpace[i], i);
                                 btn.BackColor = Color.FromKnownColor(KnownColor.Control);
                                 ChestButtonsArray[i].BackColor = Color.Red;
@@ -189,6 +207,14 @@ namespace DayGame
                         {
                             if (ChestButtonsArray[i].BackColor == Color.FromKnownColor(KnownColor.Control))
                             {
+                                //kwdikas gia na afairei to buff tou Armor
+                                Armor Armor = (Armor)inv.ArmorEquiped;
+                                ArmorBuff = ArmorBuff - Armor.Defence;
+                                DefenceTextNumber.Text = ArmorBuff.ToString();
+                                //
+
+
+
                                 inv.DeleteArmor(inv.ChestSpace[i], i);
                                 btn.BackColor = Color.FromKnownColor(KnownColor.Control);
                                 ChestButtonsArray[i].BackColor = Color.Blue;
@@ -203,7 +229,7 @@ namespace DayGame
 
         void InventorySpaceReload()
         {
-            //TESTING GIA INVENTORY EPEIDH DEN YPARXEI HDH KAPOIO
+            //prosthesi adikeimenwn sto inventory
 
 
             inv.InventoryAddItem(spathi);
@@ -218,17 +244,20 @@ namespace DayGame
             inv.InventoryAddItem(spathi);
             inv.InventoryAddItem(panoplia);
             inv.InventoryAddItem(spathi);
-            //TELOS TESTING GIA INVENTORY
+            //prosthesi adikeimenwn sto inventory
 
 
-            for (int i = 0; i < inv.counter_inventory; i++)
+            for (int i = 0; i < 42; i++)
             {
-                ChestButtonsArray[i].BackColor = inv.ChestSpace[i] switch
+                if ((inv.ChestSpace[i] != null))
                 {
-                    Armor _ => Color.Blue,
-                    Weapon _ => Color.Red,
-                    _ => ChestButtonsArray[i].BackColor
-                };
+                    ChestButtonsArray[i].BackColor = inv.ChestSpace[i] switch
+                    {
+                        Armor _ => Color.Blue,
+                        Weapon _ => Color.Red,
+                        _ => ChestButtonsArray[i].BackColor
+                    };
+                }
             }
         }
 

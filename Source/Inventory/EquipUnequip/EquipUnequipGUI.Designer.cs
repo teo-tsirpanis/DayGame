@@ -29,13 +29,13 @@ namespace DayGame
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cancel = new System.Windows.Forms.Button();
             this.equnbutton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statnumber = new System.Windows.Forms.Label();
             this.itemnamelabel = new System.Windows.Forms.Label();
             this.statlabel = new System.Windows.Forms.Label();
             this.itemdescriptionlabel = new System.Windows.Forms.Label();
-            this.cancel = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,17 @@ namespace DayGame
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(281, 341);
             this.panel1.TabIndex = 6;
+            // 
+            // cancel
+            // 
+            this.cancel.BackColor = System.Drawing.Color.Red;
+            this.cancel.Location = new System.Drawing.Point(88, 299);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(95, 35);
+            this.cancel.TabIndex = 25;
+            this.cancel.Text = "cancel";
+            this.cancel.UseVisualStyleBackColor = false;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // equnbutton
             // 
@@ -115,22 +126,11 @@ namespace DayGame
             this.itemdescriptionlabel.TabIndex = 21;
             this.itemdescriptionlabel.Text = "(Description)";
             // 
-            // cancel
-            // 
-            this.cancel.BackColor = System.Drawing.Color.Red;
-            this.cancel.Location = new System.Drawing.Point(88, 299);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(95, 35);
-            this.cancel.TabIndex = 25;
-            this.cancel.Text = "cancel";
-            this.cancel.UseVisualStyleBackColor = false;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
-            // 
             // EquipUnequipGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 338);
+            this.ClientSize = new System.Drawing.Size(279, 337);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EquipUnequipGUI";

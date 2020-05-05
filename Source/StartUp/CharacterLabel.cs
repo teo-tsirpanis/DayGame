@@ -1,40 +1,36 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace DayGame
 {
     public partial class CharacterLabel : Form
     {
-        private Character character;
+        private readonly SaveFile saveFile;
+        private readonly Action<SaveFile> fChosen;
 
-        public CharacterLabel(Character character)
+        public CharacterLabel(SaveFile saveFile, Action<SaveFile> fChosen)
         {
             InitializeComponent();
-            this.character = character;
-            string text = "Name " + character.Name + "\nLevel " + character.Level;
+            this.saveFile = saveFile;
+            this.fChosen = fChosen;
+            string text = $"Name {saveFile.Character.Name}\nLevel {saveFile.Character.Level}";
             label1.Text = text;
-            if (character.Gender == "Female")
-                pictureBox1.Image = imageList1.Images[1];
-            else pictureBox1.Image = imageList1.Images[0];
+            pictureBox1.Image = imageList1.Images[saveFile.Character.Gender == "Female" ? 1 : 0];
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StartUpMenu obj = (StartUpMenu) Application.OpenForms["StartUpMenu"];
-            NavigationMenu navigationMenu = new NavigationMenu(character);
-            navigationMenu.Show();
-            obj.Hide();
-            
+            fChosen(saveFile);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Are you sure you want delete this character?", "Warning",
-                MessageBoxButtons.YesNo);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
             if (dialogResult == DialogResult.Yes)
             {
+                saveFile.Delete();
                 this.Close();
             }
         }

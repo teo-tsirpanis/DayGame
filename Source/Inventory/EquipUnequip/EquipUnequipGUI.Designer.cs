@@ -59,9 +59,10 @@ namespace DayGame
             // cancel
             // 
             this.cancel.BackColor = System.Drawing.Color.Red;
-            this.cancel.Location = new System.Drawing.Point(103, 345);
+
+            this.cancel.Location = new System.Drawing.Point(88, 299);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(111, 40);
+            this.cancel.Size = new System.Drawing.Size(95, 35);
             this.cancel.TabIndex = 25;
             this.cancel.Text = "cancel";
             this.cancel.UseVisualStyleBackColor = false;
@@ -132,7 +133,8 @@ namespace DayGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(324, 390);
+
+            this.ClientSize = new System.Drawing.Size(279, 339);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EquipUnequipGUI";

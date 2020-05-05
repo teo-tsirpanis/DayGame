@@ -18,10 +18,10 @@ namespace DayGame
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            CreateTaskMenu createTaskMenu = new CreateTaskMenu();
-            if (createTaskMenu.ShowDialog(this) == DialogResult.OK)
+            var task = CreateTaskMenu.CreateTask(this);
+            if (task != null)
             {
-                addLabel(createTaskMenu.LastTask);
+                addLabel(task);
             }
         }
 

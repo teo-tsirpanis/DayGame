@@ -9,11 +9,9 @@ namespace DayGame.TaskLabels
         private Daily daily;
         private Character character;
         private NavigationMenu navigationMenu;
-        private int ticks;
 
         public DailyTaskLabel(Daily daily, Character character, NavigationMenu navigationMenu)
         {
-            ticks = -1000000;
             this.daily = daily;
             this.character = character;
             this.navigationMenu = navigationMenu;
@@ -29,7 +27,7 @@ namespace DayGame.TaskLabels
                 checkBox1.Enabled = false;
                 daily.UpdateTask(true, character);
                 navigationMenuUpdater();
-                ticks = 0;
+                timer1.Enabled = true;
             }
         }
 
@@ -44,14 +42,10 @@ namespace DayGame.TaskLabels
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            ticks++;
-            if (ticks == 10)
-            {
-                checkBox1.Checked = false;
-                checkBox1.Enabled = true;
-                checkBox1.BackColor = Color.FromArgb(247, 163, 27);
-                ticks = 0;
-            }
+            checkBox1.Checked = false;
+            checkBox1.Enabled = true;
+            checkBox1.BackColor = Color.FromArgb(247, 163, 27);
+            timer1.Enabled = false;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -11,28 +11,34 @@ namespace DayGame
 
         public void InventoryAddItem(Item Item)
         {
-            //if(Item.GetType()== typeof(Armor)){
-            ChestSpace[counter_inventory] = Item;
-
-
-
-            counter_inventory++;
+            for (int i = 0; i < 42; i++)
+            {
+                if (ChestSpace[i] != null)
+                {
+                    continue;
+                }
+                else
+                {
+                    ChestSpace[i] = Item;
+                    break;
+                }
+            }
         }
 
-        public void AddWeapon(Item item,int counter)
+        public void AddWeapon(Item Item, int counter)
         {
             if (WeaponEquiped == null)
             {
-                WeaponEquiped = item;
+                WeaponEquiped = Item;
                 ChestSpace[counter] = null;
             }
         }
 
-        public void AddArmor(Item item, int counter)
+        public void AddArmor(Item Item, int counter)
         {
             if (ArmorEquiped == null)
             {
-                ArmorEquiped = item;
+                ArmorEquiped = Item;
                 ChestSpace[counter] = null;
             }
         }

@@ -6,6 +6,5 @@
         Medium = 1,
         Hard = 2,
         DarkSouls = 3
-        
     }
 }

@@ -13,12 +13,13 @@ namespace DayGame.Boss
         public int HitPoints { get; set; }
         public int Level { get; set; }
 
-        public Boss(string Name, int image, int Hit_points, int Level)
+        public Boss(string Name, int image, int Hit_points, int Level, int Damage)
             {
                 this.Name = Name;
                 this._image = image;
                 this.HitPoints = Hit_points;
                 this.Level = Level;
+                this.Damage = Damage;
             }
 
         //dummy method, to be changed

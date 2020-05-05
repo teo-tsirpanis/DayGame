@@ -1,6 +1,6 @@
 namespace DayGame
 {
-    partial class inventoryGUI
+    partial class InventoryGUI
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace DayGame
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Filterlabel = new System.Windows.Forms.Label();
             this.potionscheckbox = new System.Windows.Forms.CheckBox();
             this.spellscheckbox = new System.Windows.Forms.CheckBox();
             this.weaponscheckbox = new System.Windows.Forms.CheckBox();
@@ -99,7 +100,6 @@ namespace DayGame
             this.BagButton2 = new System.Windows.Forms.Button();
             this.BagButton3 = new System.Windows.Forms.Button();
             this.BagButton5 = new System.Windows.Forms.Button();
-            this.Filterlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -120,6 +120,16 @@ namespace DayGame
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 591);
             this.panel1.TabIndex = 0;
+            // 
+            // Filterlabel
+            // 
+            this.Filterlabel.AutoSize = true;
+            this.Filterlabel.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold);
+            this.Filterlabel.Location = new System.Drawing.Point(26, 19);
+            this.Filterlabel.Name = "Filterlabel";
+            this.Filterlabel.Size = new System.Drawing.Size(78, 28);
+            this.Filterlabel.TabIndex = 6;
+            this.Filterlabel.Text = "Filter:";
             // 
             // potionscheckbox
             // 
@@ -170,7 +180,7 @@ namespace DayGame
             // 
             this.FilterText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.FilterText.AutoSize = true;
-            this.FilterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.FilterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.FilterText.Location = new System.Drawing.Point(22, -22);
             this.FilterText.Name = "FilterText";
             this.FilterText.Size = new System.Drawing.Size(68, 29);
@@ -794,17 +804,7 @@ namespace DayGame
             this.BagButton5.TabIndex = 38;
             this.BagButton5.UseVisualStyleBackColor = false;
             // 
-            // Filterlabel
-            // 
-            this.Filterlabel.AutoSize = true;
-            this.Filterlabel.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold);
-            this.Filterlabel.Location = new System.Drawing.Point(26, 19);
-            this.Filterlabel.Name = "Filterlabel";
-            this.Filterlabel.Size = new System.Drawing.Size(78, 28);
-            this.Filterlabel.TabIndex = 6;
-            this.Filterlabel.Text = "Filter:";
-            // 
-            // inventoryGUI
+            // InventoryGUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -817,7 +817,7 @@ namespace DayGame
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "inventoryGUI";
+            this.Name = "InventoryGUI";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.inventoryGUI_Load);
             this.panel1.ResumeLayout(false);
@@ -831,82 +831,81 @@ namespace DayGame
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label FilterText;
-        private System.Windows.Forms.CheckBox potionscheckbox;
-        private System.Windows.Forms.CheckBox spellscheckbox;
-        private System.Windows.Forms.CheckBox weaponscheckbox;
-        private System.Windows.Forms.CheckBox armorcheckbox;
-        private System.Windows.Forms.Label ChestText;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button chestbutton42;
-        private System.Windows.Forms.Button chestbutton41;
-        private System.Windows.Forms.Button chestbutton36;
-        private System.Windows.Forms.Button chestbutton40;
-        private System.Windows.Forms.Button chestbutton35;
-        private System.Windows.Forms.Button chestbutton39;
-        private System.Windows.Forms.Button chestbutton34;
-        private System.Windows.Forms.Button chestbutton38;
-        private System.Windows.Forms.Button chestbutton33;
-        private System.Windows.Forms.Button chestbutton37;
-        private System.Windows.Forms.Button chestbutton32;
-        private System.Windows.Forms.Button chestbutton31;
-        private System.Windows.Forms.Button chestbutton30;
-        private System.Windows.Forms.Button chestbutton29;
-        private System.Windows.Forms.Button chestbutton28;
-        private System.Windows.Forms.Button chestbutton27;
-        private System.Windows.Forms.Button chestbutton26;
-        private System.Windows.Forms.Button chestbutton25;
-        private System.Windows.Forms.Button chestbutton24;
-        private System.Windows.Forms.Button chestbutton23;
-        private System.Windows.Forms.Button chestbutton22;
-        private System.Windows.Forms.Button chestbutton21;
-        private System.Windows.Forms.Button chestbutton20;
-        private System.Windows.Forms.Button chestbutton19;
-        private System.Windows.Forms.Button chestbutton18;
-        private System.Windows.Forms.Button chestbutton17;
-        private System.Windows.Forms.Button chestbutton16;
-        private System.Windows.Forms.Button chestbutton15;
-        private System.Windows.Forms.Button chestbutton14;
-        private System.Windows.Forms.Button chestbutton13;
-        private System.Windows.Forms.Button chestbutton12;
-        private System.Windows.Forms.Button chestbutton11;
-        private System.Windows.Forms.Button chestbutton10;
-        private System.Windows.Forms.Button chestbutton9;
-        private System.Windows.Forms.Button chestbutton8;
-        private System.Windows.Forms.Button chestbutton7;
-        private System.Windows.Forms.Button chestbutton6;
-        private System.Windows.Forms.Button chestbutton5;
-        private System.Windows.Forms.Button chestbutton4;
-        private System.Windows.Forms.Button chestbutton3;
-        private System.Windows.Forms.Button chestbutton1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label WeaponText;
-        private System.Windows.Forms.Label ArmorText;
-        private System.Windows.Forms.Button WeaponButton;
         private System.Windows.Forms.Button ArmorButton;
-        private System.Windows.Forms.Label EquipedText;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label DefenceText;
-        private System.Windows.Forms.Label DamageText;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label BagText;
-        private System.Windows.Forms.Button BagButton8;
-        private System.Windows.Forms.Button BagButton7;
-        private System.Windows.Forms.Button BagButton4;
+        private System.Windows.Forms.CheckBox armorcheckbox;
+        private System.Windows.Forms.Label ArmorText;
         private System.Windows.Forms.Button BagButton1;
-        private System.Windows.Forms.Button BagButton6;
         private System.Windows.Forms.Button BagButton2;
         private System.Windows.Forms.Button BagButton3;
+        private System.Windows.Forms.Button BagButton4;
         private System.Windows.Forms.Button BagButton5;
-        private System.Windows.Forms.Label DefenceTextNumber;
-        private System.Windows.Forms.Label DamageTextNumber;
+        private System.Windows.Forms.Button BagButton6;
+        private System.Windows.Forms.Button BagButton7;
+        private System.Windows.Forms.Button BagButton8;
+        private System.Windows.Forms.Label BagText;
+        private System.Windows.Forms.Button chestbutton1;
+        private System.Windows.Forms.Button chestbutton10;
+        private System.Windows.Forms.Button chestbutton11;
+        private System.Windows.Forms.Button chestbutton12;
+        private System.Windows.Forms.Button chestbutton13;
+        private System.Windows.Forms.Button chestbutton14;
+        private System.Windows.Forms.Button chestbutton15;
+        private System.Windows.Forms.Button chestbutton16;
+        private System.Windows.Forms.Button chestbutton17;
+        private System.Windows.Forms.Button chestbutton18;
+        private System.Windows.Forms.Button chestbutton19;
         private System.Windows.Forms.Button chestbutton2;
+        private System.Windows.Forms.Button chestbutton20;
+        private System.Windows.Forms.Button chestbutton21;
+        private System.Windows.Forms.Button chestbutton22;
+        private System.Windows.Forms.Button chestbutton23;
+        private System.Windows.Forms.Button chestbutton24;
+        private System.Windows.Forms.Button chestbutton25;
+        private System.Windows.Forms.Button chestbutton26;
+        private System.Windows.Forms.Button chestbutton27;
+        private System.Windows.Forms.Button chestbutton28;
+        private System.Windows.Forms.Button chestbutton29;
+        private System.Windows.Forms.Button chestbutton3;
+        private System.Windows.Forms.Button chestbutton30;
+        private System.Windows.Forms.Button chestbutton31;
+        private System.Windows.Forms.Button chestbutton32;
+        private System.Windows.Forms.Button chestbutton33;
+        private System.Windows.Forms.Button chestbutton34;
+        private System.Windows.Forms.Button chestbutton35;
+        private System.Windows.Forms.Button chestbutton36;
+        private System.Windows.Forms.Button chestbutton37;
+        private System.Windows.Forms.Button chestbutton38;
+        private System.Windows.Forms.Button chestbutton39;
+        private System.Windows.Forms.Button chestbutton4;
+        private System.Windows.Forms.Button chestbutton40;
+        private System.Windows.Forms.Button chestbutton41;
+        private System.Windows.Forms.Button chestbutton42;
+        private System.Windows.Forms.Button chestbutton5;
+        private System.Windows.Forms.Button chestbutton6;
+        private System.Windows.Forms.Button chestbutton7;
+        private System.Windows.Forms.Button chestbutton8;
+        private System.Windows.Forms.Button chestbutton9;
+        private System.Windows.Forms.Label ChestText;
+        private System.Windows.Forms.Label DamageText;
+        private System.Windows.Forms.Label DamageTextNumber;
+        private System.Windows.Forms.Label DefenceText;
+        private System.Windows.Forms.Label DefenceTextNumber;
+        private System.Windows.Forms.Label EquipedText;
         private System.Windows.Forms.Label Filterlabel;
+        private System.Windows.Forms.Label FilterText;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.CheckBox potionscheckbox;
+        private System.Windows.Forms.CheckBox spellscheckbox;
+        private System.Windows.Forms.Button WeaponButton;
+        private System.Windows.Forms.CheckBox weaponscheckbox;
+        private System.Windows.Forms.Label WeaponText;
+
+        #endregion
     }
 }

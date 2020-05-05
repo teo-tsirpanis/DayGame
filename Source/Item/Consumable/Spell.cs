@@ -2,7 +2,7 @@
 
 namespace DayGame
 {
-    class Spell : ConsumableItems
+    public class Spell : ConsumableItems
     {
         public int Damage { get; set; }
 

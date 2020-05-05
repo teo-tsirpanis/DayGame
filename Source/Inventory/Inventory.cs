@@ -43,15 +43,13 @@ namespace DayGame
             }
         }
 
-        public void DeleteArmor(Item item, int counter)
+        public void DeleteArmor(Item item)
         {
-                ChestSpace[counter] = ArmorEquiped;
                 ArmorEquiped = null;
         }
 
-        public void DeleteWeapon(Item item, int counter)
+        public void DeleteWeapon(Item item)
         {
-                ChestSpace[counter] = WeaponEquiped;
                 WeaponEquiped = null;
         }
 

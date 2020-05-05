@@ -1,17 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace DayGame
 {
-    class Inventory
+    public class Inventory
     {
         public int counter_inventory = 0;
         public Item[] ChestSpace = new Item[42];
         public Item ArmorEquiped;
         public Item WeaponEquiped;
+        public ConsumableItems[] Bag = new ConsumableItems[8];
 
 
         public void InventoryAddItem(Item Item)
@@ -58,8 +53,38 @@ namespace DayGame
                 WeaponEquiped = null;
         }
 
+        public void AddToBag(ConsumableItems item)
+        {
+            for (int i = 0; i<Bag.Length; i++)
+            {
+                if (Bag[i] != null)
+                {
+                    continue;
+                }
+                else
+                {
+                    Bag[i] = item;
+                    break;
+                }
+            }
+        }
 
+        public ConsumableItems[] GetBag()
+        {
+            return Bag;
+        }
 
+        public void RemoveFromBag(ConsumableItems item)
+        {
+            for (int i = 0; i<Bag.Length; i++)
+            {
+                if (Bag[i] == item)
+                {
+                    Bag[i] = null;
+                    break;
+                }
+            }
+        }
 
     }
 

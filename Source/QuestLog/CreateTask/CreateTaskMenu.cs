@@ -7,25 +7,15 @@ namespace DayGame
 {
     public partial class CreateTaskMenu : Form
     {
-        private Habit habitTask;
-        private Daily dailyTask;
         private Task lastTask;
-        private ToDo toDoTask;
-        public CreateTaskMenu()
+
+        private CreateTaskMenu()
         {
             InitializeComponent();
             radioHabits.Checked = true;
             radioEasy.Checked = true;
             dateTimePicker1.MinDate = DateTime.Now;
         }
-
-        public Habit HabitTask => habitTask;
-
-        public Daily DailyTask => dailyTask;
-
-        public ToDo ToDoTask1 => toDoTask;
-
-        public Task LastTask => lastTask;
 
         private void radioEasy_CheckedChanged(object sender, EventArgs e)
         {
@@ -93,41 +83,41 @@ namespace DayGame
 
         private void button2_Click(object sender, EventArgs e)
         {
-            TaskDifficulty diff = 0;
+            TaskDifficulty diff;
+            RadioButton rb = groupBox1.Controls.OfType<RadioButton>().Single(x => x.Checked);
 
-            foreach (RadioButton rdo in groupBox1.Controls.OfType<RadioButton>())
-            {
-                if (rdo.Checked)
-                {
-                    if (rdo.Text == "Easy")
-                        diff = TaskDifficulty.Easy;
-                    else if (rdo.Text == "Medium")
-                        diff = TaskDifficulty.Medium;
-                    else if (rdo.Text == "Hard")
-                        diff = TaskDifficulty.Hard;
-                    else
-                        diff = TaskDifficulty.DarkSouls;
-                }
-            }
+            if (rb.Text == "Easy")
+                diff = TaskDifficulty.Easy;
+            else if (rb.Text == "Medium")
+                diff = TaskDifficulty.Medium;
+            else if (rb.Text == "Hard")
+                diff = TaskDifficulty.Hard;
+            else
+                diff = TaskDifficulty.DarkSouls;
 
             if (radioHabits.Checked)
             {
-                habitTask = new Habit(textBox1.Text,textBox2.Text,diff);
-                lastTask = habitTask;
+                lastTask = new Habit(textBox1.Text, textBox2.Text, diff);
                 this.Close();
             }
             else if (radioDailies.Checked)
             {
-                dailyTask = new Daily(textBox1.Text,textBox2.Text,diff);
-                lastTask = dailyTask;
+                lastTask = new Daily(textBox1.Text, textBox2.Text, diff);
                 this.Close();
             }
             else if (radioToDos.Checked)
             {
-                toDoTask = new ToDo(textBox1.Text,textBox2.Text,diff,dateTimePicker1.Value);
-                lastTask = toDoTask;
+                lastTask = new ToDo(textBox1.Text, textBox2.Text, diff, dateTimePicker1.Value);
                 this.Close();
             }
+        }
+
+        public static Task CreateTask(IWin32Window owner)
+        {
+            using var ctm = new CreateTaskMenu();
+            if (ctm.ShowDialog(owner) == DialogResult.OK)
+                return ctm.lastTask;
+            return null;
         }
     }
 }

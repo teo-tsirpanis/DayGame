@@ -1,38 +1,37 @@
 ﻿using System;
-using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DayGame
 {
     public partial class CreateCharacterMenu : Form
     {
+        public SaveFile SaveFile { get; private set; }
 
-        private Character character;
-        public CreateCharacterMenu()
+        private CreateCharacterMenu()
         {
             InitializeComponent();
             radioMale.Checked = true;
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
-            string gender;
+            var gender = radioMale.Checked ? radioMale.Text : radioFemale.Text;
 
-            if (radioMale.Checked)
+            var characterName = nameBox.Text.Trim();
+            var isValidName = characterName.IndexOfAny(Path.GetInvalidFileNameChars()) == -1;
+
+            if (isValidName)
             {
-                gender = radioMale.Text;
+                SaveFile = SaveFile.CreateNew(nameBox.Text.Trim(), gender);
+                this.Close();
             }
             else
-            {
-                gender = radioFemale.Text;
-            }
-
-            character = new Character(nameBox.Text, gender);
-            this.Close();
+                MessageBox.Show(this,
+                    "The character's name contains invalid special characters. Try to name " +
+                    "your character with a simpler name containing letters and numbers.",
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
-        public Character Character => character;
 
         private void radioMale_CheckedChanged(object sender, EventArgs e)
         {
@@ -44,5 +43,12 @@ namespace DayGame
             pictureBox2.Image = imageList1.Images[1];
         }
 
+        public static SaveFile CreateCharacter(IWin32Window owner)
+        {
+            using var ccm = new CreateCharacterMenu();
+            if (ccm.ShowDialog(owner) == DialogResult.OK)
+                return ccm.SaveFile;
+            return null;
+        }
     }
 }

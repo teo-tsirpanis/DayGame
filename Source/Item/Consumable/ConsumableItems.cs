@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace DayGame
 {
-    class ConsumableItems : Item
+    public class ConsumableItems : Item
     {
         public ConsumableItems(string name, string description, int image, int price) : base(name, description, image, price)
         {

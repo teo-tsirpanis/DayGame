@@ -37,13 +37,12 @@ namespace DayGame
             this.statlabel = new System.Windows.Forms.Label();
             this.itemdescriptionlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))),
-                ((int) (((byte) (0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.cancel);
             this.panel1.Controls.Add(this.equnbutton);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -53,16 +52,15 @@ namespace DayGame
             this.panel1.Controls.Add(this.itemdescriptionlabel);
             this.panel1.Location = new System.Drawing.Point(-2, -2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(328, 393);
+            this.panel1.Size = new System.Drawing.Size(263, 334);
             this.panel1.TabIndex = 6;
             // 
             // cancel
             // 
             this.cancel.BackColor = System.Drawing.Color.Red;
-
-            this.cancel.Location = new System.Drawing.Point(88, 299);
+            this.cancel.Location = new System.Drawing.Point(88, 292);
             this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(95, 35);
+            this.cancel.Size = new System.Drawing.Size(81, 30);
             this.cancel.TabIndex = 25;
             this.cancel.Text = "cancel";
             this.cancel.UseVisualStyleBackColor = false;
@@ -70,12 +68,11 @@ namespace DayGame
             // 
             // equnbutton
             // 
-            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))),
-                ((int) (((byte) (0)))));
+            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.equnbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.equnbutton.Location = new System.Drawing.Point(103, 298);
+            this.equnbutton.Location = new System.Drawing.Point(75, 251);
             this.equnbutton.Name = "equnbutton";
-            this.equnbutton.Size = new System.Drawing.Size(111, 40);
+            this.equnbutton.Size = new System.Drawing.Size(108, 35);
             this.equnbutton.TabIndex = 24;
             this.equnbutton.Text = "s";
             this.equnbutton.UseVisualStyleBackColor = false;
@@ -83,9 +80,9 @@ namespace DayGame
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(63, 16);
+            this.pictureBox1.Location = new System.Drawing.Point(45, 16);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(198, 196);
+            this.pictureBox1.Size = new System.Drawing.Size(170, 170);
             this.pictureBox1.TabIndex = 19;
             this.pictureBox1.TabStop = false;
             // 
@@ -93,7 +90,7 @@ namespace DayGame
             // 
             this.statnumber.AutoSize = true;
             this.statnumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
-            this.statnumber.Location = new System.Drawing.Point(205, 264);
+            this.statnumber.Location = new System.Drawing.Point(172, 222);
             this.statnumber.Name = "statnumber";
             this.statnumber.Size = new System.Drawing.Size(65, 26);
             this.statnumber.TabIndex = 23;
@@ -102,10 +99,10 @@ namespace DayGame
             // itemnamelabel
             // 
             this.itemnamelabel.AutoSize = true;
-            this.itemnamelabel.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
-            this.itemnamelabel.Location = new System.Drawing.Point(97, 218);
+            this.itemnamelabel.Font = new System.Drawing.Font("Arial Black", 8F, System.Drawing.FontStyle.Bold);
+            this.itemnamelabel.Location = new System.Drawing.Point(103, 189);
             this.itemnamelabel.Name = "itemnamelabel";
-            this.itemnamelabel.Size = new System.Drawing.Size(114, 26);
+            this.itemnamelabel.Size = new System.Drawing.Size(68, 15);
             this.itemnamelabel.TabIndex = 20;
             this.itemnamelabel.Text = "ItemName";
             // 
@@ -113,7 +110,7 @@ namespace DayGame
             // 
             this.statlabel.AutoSize = true;
             this.statlabel.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
-            this.statlabel.Location = new System.Drawing.Point(44, 264);
+            this.statlabel.Location = new System.Drawing.Point(30, 222);
             this.statlabel.Name = "statlabel";
             this.statlabel.Size = new System.Drawing.Size(67, 26);
             this.statlabel.TabIndex = 22;
@@ -123,18 +120,18 @@ namespace DayGame
             // 
             this.itemdescriptionlabel.AutoSize = true;
             this.itemdescriptionlabel.Font = new System.Drawing.Font("Arial Black", 7F, System.Drawing.FontStyle.Bold);
-            this.itemdescriptionlabel.Location = new System.Drawing.Point(120, 248);
+            this.itemdescriptionlabel.Location = new System.Drawing.Point(91, 204);
             this.itemdescriptionlabel.Name = "itemdescriptionlabel";
             this.itemdescriptionlabel.Size = new System.Drawing.Size(80, 14);
             this.itemdescriptionlabel.TabIndex = 21;
             this.itemdescriptionlabel.Text = "(Description)";
+            this.itemdescriptionlabel.Click += new System.EventHandler(this.itemdescriptionlabel_Click);
             // 
             // EquipUnequipGUI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
-            this.ClientSize = new System.Drawing.Size(279, 339);
+            this.ClientSize = new System.Drawing.Size(261, 332);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EquipUnequipGUI";
@@ -142,8 +139,9 @@ namespace DayGame
             this.Load += new System.EventHandler(this.EquipUnequipGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion

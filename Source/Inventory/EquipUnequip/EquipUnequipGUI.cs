@@ -57,5 +57,10 @@ namespace DayGame
         {
             this.Close();
         }
+
+        private void itemdescriptionlabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

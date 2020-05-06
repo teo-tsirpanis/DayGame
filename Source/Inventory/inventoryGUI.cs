@@ -251,6 +251,22 @@ namespace DayGame
             {
                 ArmorButton.BackColor = Color.Blue;
             }
+            if (DamageTextNumber.Text == "0")
+            {
+                DamageTextNumber.ForeColor = Color.Red;
+            }
+            if (DefenceTextNumber.Text == "0")
+            {
+                DefenceTextNumber.ForeColor = Color.Red;
+            }
+            if (DamageTextNumber.Text != "0")
+            {
+                DamageTextNumber.ForeColor = Color.Black;
+            }
+            if (DefenceTextNumber.Text != "0")
+            {
+                DefenceTextNumber.ForeColor = Color.Black;
+            }
         }
 
         private void chestbutton3_Click(object sender, EventArgs e)

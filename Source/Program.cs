@@ -18,6 +18,7 @@ namespace DayGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+
             var sf = StartUpMenu.ChooseSaveFile();
             if (sf != null)
                 Application.Run(new NavigationMenu(sf));

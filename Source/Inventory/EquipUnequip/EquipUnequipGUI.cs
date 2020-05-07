@@ -41,6 +41,22 @@ namespace DayGame
 
                 pictureBox1.BackColor = Color.Red;
             }
+            else if (item.GetType() == typeof(Spell))
+            {
+                Spell spell = (Spell)item;
+                statlabel.Text = "Damage:";
+                statnumber.Text = spell.Damage.ToString();
+
+                pictureBox1.BackColor = Color.Yellow;
+            }
+            else if (item.GetType() == typeof(Potion))
+            {
+                Potion potion = (Potion)item;
+                statlabel.Text = "Regen:";
+                statnumber.Text = potion.Hit_point_regain.ToString();
+
+                pictureBox1.BackColor = Color.Green;
+            }
         }
         private void itemnamelabel_Click(object sender, EventArgs e)
         {

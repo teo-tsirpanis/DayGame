@@ -158,23 +158,16 @@ namespace DayGame
                 EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
                 if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
                 {
-                        for (int i = 0; i < 42; i++)
-                        {
-                            if (inv.ChestSpace[i]==null)
-                            {
-
-                            //kwdikas gia na afairei to buff tou weapon
-                            Weapon weapon = (Weapon)inv.WeaponEquiped;
-                            DamageBuff = DamageBuff - weapon.Damage;
-                            DamageTextNumber.Text = DamageBuff.ToString();
+                    inv.InventoryAddItem(inv.WeaponEquiped);
+                    //kwdikas gia na afairei to buff tou weapon
+                    Weapon weapon = (Weapon)inv.WeaponEquiped;
+                    DamageBuff = DamageBuff - weapon.Damage;
+                    DamageTextNumber.Text = DamageBuff.ToString();
 
 
 
-                            inv.DeleteWeapon(inv.WeaponEquiped, i);
-                            InventorySpaceReload();//kane reload to GUI
-                            break;
-                            }
-                        }
+                    inv.DeleteWeapon(inv.WeaponEquiped);
+                    InventorySpaceReload();//kane reload to GUI
                     }
                 }
         }
@@ -192,22 +185,19 @@ namespace DayGame
                 EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
                 if (Unequip.ShowDialog(this) == DialogResult.OK)
                 {
-                        for (int i = 0; i < 42; i++)
-                        {
-                            if (inv.ChestSpace[i] == null)
-                            {
-                            //kwdikas gia na afairei to buff tou Armor
-                            Armor Armor = (Armor)inv.ArmorEquiped;
-                            ArmorBuff = ArmorBuff - Armor.Defence;
-                            DefenceTextNumber.Text = ArmorBuff.ToString();
-                            //
 
-                            inv.DeleteArmor(inv.ArmorEquiped, i);
-                            InventorySpaceReload();//kane reload to GUI
-                            break;
-                            }
-                        }
-                    }
+                    inv.InventoryAddItem(inv.ArmorEquiped);
+                    //kwdikas gia na afairei to buff tou weapon
+                    Armor Armor = (Armor)inv.ArmorEquiped;
+                    ArmorBuff = ArmorBuff - Armor.Defence;
+                    DefenceTextNumber.Text = ArmorBuff.ToString();
+
+
+
+                    inv.DeleteArmor(inv.ArmorEquiped);
+                    InventorySpaceReload();//kane reload to GUI
+                }
+            
             }
         }
 
@@ -260,6 +250,22 @@ namespace DayGame
             if (inv.ArmorEquiped!= null)
             {
                 ArmorButton.BackColor = Color.Blue;
+            }
+            if (DamageTextNumber.Text == "0")
+            {
+                DamageTextNumber.ForeColor = Color.Red;
+            }
+            if (DefenceTextNumber.Text == "0")
+            {
+                DefenceTextNumber.ForeColor = Color.Red;
+            }
+            if (DamageTextNumber.Text != "0")
+            {
+                DamageTextNumber.ForeColor = Color.Black;
+            }
+            if (DefenceTextNumber.Text != "0")
+            {
+                DefenceTextNumber.ForeColor = Color.Black;
             }
         }
 

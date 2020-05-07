@@ -40,6 +40,7 @@ namespace DayGame.TaskLabels
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // plusButton
@@ -120,6 +121,15 @@ namespace DayGame.TaskLabels
             this.panel2.Size = new System.Drawing.Size(345, 1);
             this.panel2.TabIndex = 8;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel3.Location = new System.Drawing.Point(0, 56);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(345, 1);
+            this.panel3.TabIndex = 9;
+            // 
             // HabitTaskLabel
             // 
             this.AllowDrop = true;
@@ -127,6 +137,7 @@ namespace DayGame.TaskLabels
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(345, 57);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
@@ -150,5 +161,6 @@ namespace DayGame.TaskLabels
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel3;
     }
 }

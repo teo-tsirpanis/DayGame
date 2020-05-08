@@ -34,7 +34,6 @@ namespace DayGame
             this.spellscheckbox = new System.Windows.Forms.CheckBox();
             this.weaponscheckbox = new System.Windows.Forms.CheckBox();
             this.armorcheckbox = new System.Windows.Forms.CheckBox();
-            this.FilterText = new System.Windows.Forms.Label();
             this.ChestText = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.chestbutton42 = new System.Windows.Forms.Button();
@@ -109,16 +108,17 @@ namespace DayGame
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.Filterlabel);
             this.panel1.Controls.Add(this.potionscheckbox);
             this.panel1.Controls.Add(this.spellscheckbox);
             this.panel1.Controls.Add(this.weaponscheckbox);
             this.panel1.Controls.Add(this.armorcheckbox);
-            this.panel1.Controls.Add(this.FilterText);
-            this.panel1.Location = new System.Drawing.Point(0, 1);
+            this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(167, 591);
+            this.panel1.Size = new System.Drawing.Size(167, 593);
             this.panel1.TabIndex = 0;
             // 
             // Filterlabel
@@ -176,20 +176,9 @@ namespace DayGame
             this.armorcheckbox.UseVisualStyleBackColor = true;
             this.armorcheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // FilterText
-            // 
-            this.FilterText.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.FilterText.AutoSize = true;
-            this.FilterText.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.FilterText.Location = new System.Drawing.Point(22, -22);
-            this.FilterText.Name = "FilterText";
-            this.FilterText.Size = new System.Drawing.Size(68, 29);
-            this.FilterText.TabIndex = 1;
-            this.FilterText.Text = "Filter";
-            this.FilterText.Click += new System.EventHandler(this.label1_Click);
-            // 
             // ChestText
             // 
+            this.ChestText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ChestText.AutoSize = true;
             this.ChestText.Font = new System.Drawing.Font("Arial Black", 14F, System.Drawing.FontStyle.Bold);
             this.ChestText.Location = new System.Drawing.Point(8, 10);
@@ -200,6 +189,7 @@ namespace DayGame
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.Controls.Add(this.chestbutton42);
             this.panel2.Controls.Add(this.chestbutton41);
             this.panel2.Controls.Add(this.chestbutton36);
@@ -250,6 +240,7 @@ namespace DayGame
             // 
             // chestbutton42
             // 
+            this.chestbutton42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton42.Location = new System.Drawing.Point(378, 484);
             this.chestbutton42.Name = "chestbutton42";
             this.chestbutton42.Size = new System.Drawing.Size(67, 67);
@@ -258,6 +249,7 @@ namespace DayGame
             // 
             // chestbutton41
             // 
+            this.chestbutton41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton41.Location = new System.Drawing.Point(305, 484);
             this.chestbutton41.Name = "chestbutton41";
             this.chestbutton41.Size = new System.Drawing.Size(67, 67);
@@ -266,6 +258,7 @@ namespace DayGame
             // 
             // chestbutton36
             // 
+            this.chestbutton36.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton36.Location = new System.Drawing.Point(378, 411);
             this.chestbutton36.Name = "chestbutton36";
             this.chestbutton36.Size = new System.Drawing.Size(67, 67);
@@ -274,6 +267,7 @@ namespace DayGame
             // 
             // chestbutton40
             // 
+            this.chestbutton40.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton40.Location = new System.Drawing.Point(232, 484);
             this.chestbutton40.Name = "chestbutton40";
             this.chestbutton40.Size = new System.Drawing.Size(67, 67);
@@ -282,6 +276,7 @@ namespace DayGame
             // 
             // chestbutton35
             // 
+            this.chestbutton35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton35.Location = new System.Drawing.Point(305, 411);
             this.chestbutton35.Name = "chestbutton35";
             this.chestbutton35.Size = new System.Drawing.Size(67, 67);
@@ -290,6 +285,7 @@ namespace DayGame
             // 
             // chestbutton39
             // 
+            this.chestbutton39.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton39.Location = new System.Drawing.Point(159, 484);
             this.chestbutton39.Name = "chestbutton39";
             this.chestbutton39.Size = new System.Drawing.Size(67, 67);
@@ -298,6 +294,7 @@ namespace DayGame
             // 
             // chestbutton34
             // 
+            this.chestbutton34.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton34.Location = new System.Drawing.Point(232, 411);
             this.chestbutton34.Name = "chestbutton34";
             this.chestbutton34.Size = new System.Drawing.Size(67, 67);
@@ -306,6 +303,7 @@ namespace DayGame
             // 
             // chestbutton38
             // 
+            this.chestbutton38.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton38.Location = new System.Drawing.Point(86, 484);
             this.chestbutton38.Name = "chestbutton38";
             this.chestbutton38.Size = new System.Drawing.Size(67, 67);
@@ -314,6 +312,7 @@ namespace DayGame
             // 
             // chestbutton33
             // 
+            this.chestbutton33.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton33.Location = new System.Drawing.Point(159, 411);
             this.chestbutton33.Name = "chestbutton33";
             this.chestbutton33.Size = new System.Drawing.Size(67, 67);
@@ -322,6 +321,7 @@ namespace DayGame
             // 
             // chestbutton37
             // 
+            this.chestbutton37.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton37.Location = new System.Drawing.Point(13, 484);
             this.chestbutton37.Name = "chestbutton37";
             this.chestbutton37.Size = new System.Drawing.Size(67, 67);
@@ -330,6 +330,7 @@ namespace DayGame
             // 
             // chestbutton32
             // 
+            this.chestbutton32.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton32.Location = new System.Drawing.Point(86, 411);
             this.chestbutton32.Name = "chestbutton32";
             this.chestbutton32.Size = new System.Drawing.Size(67, 67);
@@ -338,6 +339,7 @@ namespace DayGame
             // 
             // chestbutton31
             // 
+            this.chestbutton31.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton31.Location = new System.Drawing.Point(13, 412);
             this.chestbutton31.Name = "chestbutton31";
             this.chestbutton31.Size = new System.Drawing.Size(67, 67);
@@ -346,6 +348,7 @@ namespace DayGame
             // 
             // chestbutton30
             // 
+            this.chestbutton30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton30.Location = new System.Drawing.Point(378, 339);
             this.chestbutton30.Name = "chestbutton30";
             this.chestbutton30.Size = new System.Drawing.Size(67, 67);
@@ -354,6 +357,7 @@ namespace DayGame
             // 
             // chestbutton29
             // 
+            this.chestbutton29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton29.Location = new System.Drawing.Point(305, 339);
             this.chestbutton29.Name = "chestbutton29";
             this.chestbutton29.Size = new System.Drawing.Size(67, 67);
@@ -362,6 +366,7 @@ namespace DayGame
             // 
             // chestbutton28
             // 
+            this.chestbutton28.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton28.Location = new System.Drawing.Point(232, 339);
             this.chestbutton28.Name = "chestbutton28";
             this.chestbutton28.Size = new System.Drawing.Size(67, 67);
@@ -370,6 +375,7 @@ namespace DayGame
             // 
             // chestbutton27
             // 
+            this.chestbutton27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton27.Location = new System.Drawing.Point(159, 339);
             this.chestbutton27.Name = "chestbutton27";
             this.chestbutton27.Size = new System.Drawing.Size(67, 67);
@@ -378,6 +384,7 @@ namespace DayGame
             // 
             // chestbutton26
             // 
+            this.chestbutton26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton26.Location = new System.Drawing.Point(86, 339);
             this.chestbutton26.Name = "chestbutton26";
             this.chestbutton26.Size = new System.Drawing.Size(67, 67);
@@ -386,6 +393,7 @@ namespace DayGame
             // 
             // chestbutton25
             // 
+            this.chestbutton25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton25.Location = new System.Drawing.Point(13, 339);
             this.chestbutton25.Name = "chestbutton25";
             this.chestbutton25.Size = new System.Drawing.Size(67, 67);
@@ -394,6 +402,7 @@ namespace DayGame
             // 
             // chestbutton24
             // 
+            this.chestbutton24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton24.Location = new System.Drawing.Point(378, 266);
             this.chestbutton24.Name = "chestbutton24";
             this.chestbutton24.Size = new System.Drawing.Size(67, 67);
@@ -402,6 +411,7 @@ namespace DayGame
             // 
             // chestbutton23
             // 
+            this.chestbutton23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton23.Location = new System.Drawing.Point(305, 266);
             this.chestbutton23.Name = "chestbutton23";
             this.chestbutton23.Size = new System.Drawing.Size(67, 67);
@@ -410,6 +420,7 @@ namespace DayGame
             // 
             // chestbutton22
             // 
+            this.chestbutton22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton22.Location = new System.Drawing.Point(232, 266);
             this.chestbutton22.Name = "chestbutton22";
             this.chestbutton22.Size = new System.Drawing.Size(67, 67);
@@ -418,6 +429,7 @@ namespace DayGame
             // 
             // chestbutton21
             // 
+            this.chestbutton21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton21.Location = new System.Drawing.Point(159, 266);
             this.chestbutton21.Name = "chestbutton21";
             this.chestbutton21.Size = new System.Drawing.Size(67, 67);
@@ -426,6 +438,7 @@ namespace DayGame
             // 
             // chestbutton20
             // 
+            this.chestbutton20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton20.Location = new System.Drawing.Point(86, 266);
             this.chestbutton20.Name = "chestbutton20";
             this.chestbutton20.Size = new System.Drawing.Size(67, 67);
@@ -434,6 +447,7 @@ namespace DayGame
             // 
             // chestbutton19
             // 
+            this.chestbutton19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton19.Location = new System.Drawing.Point(13, 266);
             this.chestbutton19.Name = "chestbutton19";
             this.chestbutton19.Size = new System.Drawing.Size(67, 67);
@@ -442,6 +456,7 @@ namespace DayGame
             // 
             // chestbutton18
             // 
+            this.chestbutton18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton18.Location = new System.Drawing.Point(378, 193);
             this.chestbutton18.Name = "chestbutton18";
             this.chestbutton18.Size = new System.Drawing.Size(67, 67);
@@ -450,6 +465,7 @@ namespace DayGame
             // 
             // chestbutton17
             // 
+            this.chestbutton17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton17.Location = new System.Drawing.Point(305, 193);
             this.chestbutton17.Name = "chestbutton17";
             this.chestbutton17.Size = new System.Drawing.Size(67, 67);
@@ -458,6 +474,7 @@ namespace DayGame
             // 
             // chestbutton16
             // 
+            this.chestbutton16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton16.Location = new System.Drawing.Point(232, 193);
             this.chestbutton16.Name = "chestbutton16";
             this.chestbutton16.Size = new System.Drawing.Size(67, 67);
@@ -466,6 +483,7 @@ namespace DayGame
             // 
             // chestbutton15
             // 
+            this.chestbutton15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton15.Location = new System.Drawing.Point(159, 193);
             this.chestbutton15.Name = "chestbutton15";
             this.chestbutton15.Size = new System.Drawing.Size(67, 67);
@@ -474,6 +492,7 @@ namespace DayGame
             // 
             // chestbutton14
             // 
+            this.chestbutton14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton14.Location = new System.Drawing.Point(86, 193);
             this.chestbutton14.Name = "chestbutton14";
             this.chestbutton14.Size = new System.Drawing.Size(67, 67);
@@ -482,6 +501,7 @@ namespace DayGame
             // 
             // chestbutton13
             // 
+            this.chestbutton13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton13.Location = new System.Drawing.Point(13, 193);
             this.chestbutton13.Name = "chestbutton13";
             this.chestbutton13.Size = new System.Drawing.Size(67, 67);
@@ -490,6 +510,7 @@ namespace DayGame
             // 
             // chestbutton12
             // 
+            this.chestbutton12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton12.Location = new System.Drawing.Point(378, 120);
             this.chestbutton12.Name = "chestbutton12";
             this.chestbutton12.Size = new System.Drawing.Size(67, 67);
@@ -498,6 +519,7 @@ namespace DayGame
             // 
             // chestbutton11
             // 
+            this.chestbutton11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton11.Location = new System.Drawing.Point(305, 120);
             this.chestbutton11.Name = "chestbutton11";
             this.chestbutton11.Size = new System.Drawing.Size(67, 67);
@@ -506,6 +528,7 @@ namespace DayGame
             // 
             // chestbutton10
             // 
+            this.chestbutton10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton10.Location = new System.Drawing.Point(232, 120);
             this.chestbutton10.Name = "chestbutton10";
             this.chestbutton10.Size = new System.Drawing.Size(67, 67);
@@ -514,6 +537,7 @@ namespace DayGame
             // 
             // chestbutton9
             // 
+            this.chestbutton9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton9.Location = new System.Drawing.Point(159, 120);
             this.chestbutton9.Name = "chestbutton9";
             this.chestbutton9.Size = new System.Drawing.Size(67, 67);
@@ -522,6 +546,7 @@ namespace DayGame
             // 
             // chestbutton8
             // 
+            this.chestbutton8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton8.Location = new System.Drawing.Point(86, 120);
             this.chestbutton8.Name = "chestbutton8";
             this.chestbutton8.Size = new System.Drawing.Size(67, 67);
@@ -530,6 +555,7 @@ namespace DayGame
             // 
             // chestbutton7
             // 
+            this.chestbutton7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton7.Location = new System.Drawing.Point(13, 120);
             this.chestbutton7.Name = "chestbutton7";
             this.chestbutton7.Size = new System.Drawing.Size(67, 67);
@@ -538,6 +564,7 @@ namespace DayGame
             // 
             // chestbutton6
             // 
+            this.chestbutton6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton6.Location = new System.Drawing.Point(378, 47);
             this.chestbutton6.Name = "chestbutton6";
             this.chestbutton6.Size = new System.Drawing.Size(67, 67);
@@ -546,6 +573,7 @@ namespace DayGame
             // 
             // chestbutton5
             // 
+            this.chestbutton5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton5.Location = new System.Drawing.Point(305, 47);
             this.chestbutton5.Name = "chestbutton5";
             this.chestbutton5.Size = new System.Drawing.Size(67, 67);
@@ -554,6 +582,7 @@ namespace DayGame
             // 
             // chestbutton4
             // 
+            this.chestbutton4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton4.Location = new System.Drawing.Point(232, 47);
             this.chestbutton4.Name = "chestbutton4";
             this.chestbutton4.Size = new System.Drawing.Size(67, 67);
@@ -562,6 +591,7 @@ namespace DayGame
             // 
             // chestbutton3
             // 
+            this.chestbutton3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton3.Location = new System.Drawing.Point(159, 47);
             this.chestbutton3.Name = "chestbutton3";
             this.chestbutton3.Size = new System.Drawing.Size(67, 67);
@@ -571,6 +601,7 @@ namespace DayGame
             // 
             // chestbutton2
             // 
+            this.chestbutton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton2.Location = new System.Drawing.Point(86, 47);
             this.chestbutton2.Name = "chestbutton2";
             this.chestbutton2.Size = new System.Drawing.Size(67, 67);
@@ -580,6 +611,7 @@ namespace DayGame
             // 
             // chestbutton1
             // 
+            this.chestbutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton1.BackColor = System.Drawing.SystemColors.Control;
             this.chestbutton1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.chestbutton1.Location = new System.Drawing.Point(13, 47);
@@ -591,6 +623,8 @@ namespace DayGame
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel3.Controls.Add(this.WeaponText);
             this.panel3.Controls.Add(this.ArmorText);
@@ -654,6 +688,8 @@ namespace DayGame
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel4.Controls.Add(this.DefenceTextNumber);
             this.panel4.Controls.Add(this.DamageTextNumber);
@@ -679,6 +715,7 @@ namespace DayGame
             this.DamageTextNumber.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.DamageTextNumber.AutoSize = true;
             this.DamageTextNumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
+            this.DamageTextNumber.ForeColor = System.Drawing.SystemColors.ControlText;
             this.DamageTextNumber.Location = new System.Drawing.Point(93, 50);
             this.DamageTextNumber.Name = "DamageTextNumber";
             this.DamageTextNumber.Size = new System.Drawing.Size(24, 26);
@@ -707,6 +744,8 @@ namespace DayGame
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.OrangeRed;
             this.panel5.Controls.Add(this.BagButton8);
             this.panel5.Controls.Add(this.BagButton7);
@@ -831,6 +870,7 @@ namespace DayGame
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button ArmorButton;
@@ -894,7 +934,6 @@ namespace DayGame
         private System.Windows.Forms.Label DefenceTextNumber;
         private System.Windows.Forms.Label EquipedText;
         private System.Windows.Forms.Label Filterlabel;
-        private System.Windows.Forms.Label FilterText;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

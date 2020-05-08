@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace DayGame
 {
-    
+
     public partial class EquipUnequipGUI : Form
     {
         public EquipUnequipGUI(Item item,string buttontext)
@@ -27,10 +27,18 @@ namespace DayGame
             equnbutton.Text = buttontext;
             if (item.GetType() == typeof(Armor))
             {
+                Armor armor = (Armor)item;
+                statlabel.Text = "Defence:";
+                statnumber.Text = armor.Defence.ToString();
+
                 pictureBox1.BackColor = Color.Blue;
             }
             else if (item.GetType() == typeof(Weapon))
             {
+                Weapon weapon = (Weapon)item;
+                statlabel.Text = "Damage:";
+                statnumber.Text = weapon.Damage.ToString();
+
                 pictureBox1.BackColor = Color.Red;
             }
         }
@@ -48,6 +56,11 @@ namespace DayGame
         private void cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void itemdescriptionlabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

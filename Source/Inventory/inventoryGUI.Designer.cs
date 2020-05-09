@@ -141,6 +141,7 @@ namespace DayGame
             this.potionscheckbox.TabIndex = 5;
             this.potionscheckbox.Text = "Potions";
             this.potionscheckbox.UseVisualStyleBackColor = true;
+            this.potionscheckbox.CheckedChanged += filter_checked_changed;
             // 
             // spellscheckbox
             // 
@@ -152,6 +153,7 @@ namespace DayGame
             this.spellscheckbox.TabIndex = 4;
             this.spellscheckbox.Text = "Spells";
             this.spellscheckbox.UseVisualStyleBackColor = true;
+            this.spellscheckbox.CheckedChanged += filter_checked_changed;
             // 
             // weaponscheckbox
             // 
@@ -163,6 +165,7 @@ namespace DayGame
             this.weaponscheckbox.TabIndex = 3;
             this.weaponscheckbox.Text = "Weapons";
             this.weaponscheckbox.UseVisualStyleBackColor = true;
+            this.weaponscheckbox.CheckedChanged += filter_checked_changed;
             // 
             // armorcheckbox
             // 
@@ -175,6 +178,7 @@ namespace DayGame
             this.armorcheckbox.Text = "Armor";
             this.armorcheckbox.UseVisualStyleBackColor = true;
             this.armorcheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.armorcheckbox.CheckedChanged += filter_checked_changed;
             // 
             // ChestText
             // 
@@ -944,7 +948,6 @@ namespace DayGame
         private System.Windows.Forms.Button WeaponButton;
         private System.Windows.Forms.CheckBox weaponscheckbox;
         private System.Windows.Forms.Label WeaponText;
-
         #endregion
     }
 }

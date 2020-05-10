@@ -19,7 +19,6 @@ namespace DayGame
         public Item spathi = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
         public Item panoplia = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
         public Armor armor = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
-        public Weapon[] Items = new Weapon[20];
         public Spell spell = new Spell("SpellName", "This is a spell", 6, 0, 15);
         public Potion potion = new Potion("PotionName", "This is a potion", 6, 0, 15);
 

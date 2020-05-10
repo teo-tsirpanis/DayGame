@@ -12,18 +12,20 @@ namespace DayGame
         //kai na kanei equip to item tou sugkekrimenou button,
         //o arithmos ypologizete sthn sunarthsh GetTheButtonNumber
         int ChestButtonPressed = -1;
+        int BagButtonPressed = -1;
 
         public Button[] ChestButtonsArray; //array list me ta ChestButtons
+        public Button[] BagButtonArray;
         public CheckBox[] CheckBoxArray;
         Inventory inv = new Inventory(); //ftiaxnoume ypothetiko Inventory
         public Item spathi = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
         public Item panoplia = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
         public Armor armor = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
-        public Weapon[] Items = new Weapon[20];
         public Spell spell = new Spell("SpellName", "This is a spell", 6, 0, 15);
         public Potion potion = new Potion("PotionName", "This is a potion", 6, 0, 15);
 
-        public int[] ButtonToBag = new int[42];
+        public int[] ButtonToChest = new int[42];
+        public int[] ButtonToBag = new int[8];
         public int DamageBuff = 0;
         public int ArmorBuff = 0;
 
@@ -40,6 +42,10 @@ namespace DayGame
                 chestbutton29, chestbutton30, chestbutton31, chestbutton32, chestbutton33, chestbutton34, chestbutton35,
                 chestbutton36, chestbutton37, chestbutton38, chestbutton39, chestbutton40, chestbutton41, chestbutton42
             };
+            BagButtonArray = new[]
+            {
+                BagButton1,BagButton2,BagButton3,BagButton4,BagButton5,BagButton6,BagButton7,BagButton8
+            };
             //edw oloklirwnete h diadikasia tou ArrayList me ola ta ChestButtons
             proswrinh_sunarthsh_prosthiki_antikeimenwn_se_inventory();
             
@@ -53,8 +59,15 @@ namespace DayGame
 
             for (int i = 0; i < 42; i++)
             {
-                ChestButtonsArray[i].Click += GetTheButtonNumber;
+                ChestButtonsArray[i].Click += GetTheButtonNumberChest;
                 ChestButtonsArray[i].Click += Equip;
+                //efoswn patithei kapoio koubi, apothikefse to koubi pou patithike, kai kane equip
+            }
+
+            for (int i = 0; i < 8; i++)
+            {
+                BagButtonArray[i].Click += GetTheButtonNumberBag;
+                BagButtonArray[i].Click += UnequipConsumable;
                 //efoswn patithei kapoio koubi, apothikefse to koubi pou patithike, kai kane equip
             }
 
@@ -99,43 +112,63 @@ namespace DayGame
         {
             //GIA THN WRA DOULEVEI MONO GIA WEAPONS KAI ARMOR//
             Button btn = sender as Button;
-            if (ButtonToBag[ChestButtonPressed] != -1)
+            if (ButtonToChest[ChestButtonPressed] != -1)
             //mono ean to button den einai keno(dhladh den exei item),ekteleitai o parakatw kodikas.
             //(epeidh an einai keno, dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
             {
-                EquipUnequipGUI Equip = new EquipUnequipGUI(inv.ChestSpace[ButtonToBag[ChestButtonPressed]], "Equip");
+                EquipUnequipGUI Equip = new EquipUnequipGUI(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], "Equip");
                 if (Equip.ShowDialog(this) == DialogResult.OK)
                 {
-                    if ((inv.WeaponEquiped == null) && (inv.ChestSpace[ButtonToBag[ChestButtonPressed]].GetType() == typeof(Weapon)))
+                    if ((inv.WeaponEquiped == null) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Weapon)))
                         //ean to weaponbutton einai empty, kai to button pou
-                        //pathses exei kokkino xrwma(dhladh einai weapon)
+                        //pathses einai Weapon
                         {
                             //kwdikas gia na prosthetei to buff tou weapon
-                            Weapon weapon = (Weapon)inv.ChestSpace[ButtonToBag[ChestButtonPressed]];
+                            Weapon weapon = (Weapon)inv.ChestSpace[ButtonToChest[ChestButtonPressed]];
                             DamageBuff = DamageBuff + weapon.Damage;
                             DamageTextNumber.Text = DamageBuff.ToString();
                             //
 
-                            inv.AddWeapon(inv.ChestSpace[ButtonToBag[ChestButtonPressed]], ButtonToBag[ChestButtonPressed]);//prosthese to Weapon pou foreses sto WeaponButton kai afairese to apo to inventory
+                            inv.AddWeapon(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], ButtonToChest[ChestButtonPressed]);//prosthese to Weapon pou foreses sto WeaponButton kai afairese to apo to inventory
                             
                             InventorySpaceReload();//allaxe tis allages sto GUI
                     }
-                    else if ((inv.ArmorEquiped == null) && (inv.ChestSpace[ButtonToBag[ChestButtonPressed]].GetType() == typeof(Armor)))
-                    //ean to armorbutton einai empty, kai to button pou pathses exei ble xrwma(dhladh einai armor)
+                    else if ((inv.ArmorEquiped == null) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Armor)))
+                    //ean to armorbutton einai empty, kai to button pou pathses einai Armor
                     {
-                            //kwdikas gia na prosthetei to buff tou Armor
-                            Armor Armor = (Armor)inv.ChestSpace[ButtonToBag[ChestButtonPressed]];
+                        //kwdikas gia na prosthetei to buff tou Armor
+                        Armor Armor = (Armor)inv.ChestSpace[ButtonToChest[ChestButtonPressed]];
                             ArmorBuff = ArmorBuff + Armor.Defence;
                             DefenceTextNumber.Text = ArmorBuff.ToString();
                             //
 
 
 
-                            inv.AddArmor(inv.ChestSpace[ButtonToBag[ChestButtonPressed]], ButtonToBag[ChestButtonPressed]);//prosthese to armor pou foreses sto ArmorButton kai afairese to apo to inventory
+                            inv.AddArmor(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], ButtonToChest[ChestButtonPressed]);//prosthese to armor pou foreses sto ArmorButton kai afairese to apo to inventory
 
                         InventorySpaceReload();//allaxe tis allages sto GUI
                     }
-                        else
+                    else if ((inv.BagNotFull()) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Spell)))
+                    //ean to bag einai empty, kai to button pou pathses exei einai NonConsumableItems
+                    {
+
+
+
+                        inv.AddToBagFromInventory(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], ButtonToChest[ChestButtonPressed]);//prosthese to armor pou foreses sto ArmorButton kai afairese to apo to inventory
+
+                        InventorySpaceReload();//allaxe tis allages sto GUI
+                    }
+                    else if ((inv.BagNotFull()) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Potion)))
+                    //ean to bag einai empty, kai to button pou pathses exei einai NonConsumableItems
+                    {
+
+
+
+                        inv.AddToBagFromInventory(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], ButtonToChest[ChestButtonPressed]);//prosthese to armor pou foreses sto ArmorButton kai afairese to apo to inventory
+
+                        InventorySpaceReload();//allaxe tis allages sto GUI
+                    }
+                    else
                         {
                             MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
                         }
@@ -191,7 +224,7 @@ namespace DayGame
             }
         }*/
 
-        private void GetTheButtonNumber(object sender, EventArgs e)
+        private void GetTheButtonNumberChest(object sender, EventArgs e)
             //DINEI STO INT ChestButtonPressed to Chestbutton pou epilexthike(1-42), etsi wste h sunarthsh Equip na mporei na leitourghsei
         {
             Button btn = sender as Button;
@@ -202,6 +235,19 @@ namespace DayGame
             GETCHESTBUTTON = loadingonlythelettersofthebutton;
 
             ChestButtonPressed = Int32.Parse(GETCHESTBUTTON)-1;
+        }
+
+        private void GetTheButtonNumberBag(object sender, EventArgs e)
+        //DINEI STO INT ChestButtonPressed to Chestbutton pou epilexthike(1-42), etsi wste h sunarthsh Equip na mporei na leitourghsei
+        {
+            Button btn = sender as Button;
+            string GETCHESTBUTTON = btn.Name;
+
+            string loadingonlythelettersofthebutton = Regex.Replace(GETCHESTBUTTON, "[^0-9]", "");
+
+            GETCHESTBUTTON = loadingonlythelettersofthebutton;
+
+            BagButtonPressed = Int32.Parse(GETCHESTBUTTON) - 1;
         }
 
         private void UnequipWeapon(object sender, EventArgs e)
@@ -227,6 +273,26 @@ namespace DayGame
                     InventorySpaceReload();//kane reload to GUI
                     }
                 }
+        }
+
+        private void UnequipConsumable(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            if ((ButtonToBag[BagButtonPressed] != -1))
+            //mono ean to button den einai keno(dhladh den exei item),ekteleitai
+            //o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote
+            //to item einai = me null, kai buggarei to programma)
+            {
+                EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.Bag[ButtonToBag[BagButtonPressed]], "Unequip");
+                if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
+                {
+                    inv.InventoryAddItem(inv.Bag[ButtonToBag[BagButtonPressed]]);
+                    inv.DeleteBagItem(inv.Bag[ButtonToBag[BagButtonPressed]], ButtonToBag[BagButtonPressed]);
+
+
+                    InventorySpaceReload();//kane reload to GUI
+                }
+            }
         }
 
 
@@ -269,38 +335,6 @@ namespace DayGame
             inv.InventoryAddItem(spell);
             inv.InventoryAddItem(potion);
             inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(spathi);
-            inv.InventoryAddItem(potion);
-            inv.InventoryAddItem(panoplia);
-            inv.InventoryAddItem(spell);
-            inv.InventoryAddItem(spathi);
             //prosthesi adikeimenwn sto inventory
         }
 
@@ -310,6 +344,11 @@ namespace DayGame
             for (int i = 0; i < 42; i++)
             {
                 ChestButtonsArray[i].BackColor = Color.FromKnownColor(KnownColor.Control);
+                ButtonToChest[i] = -1;
+            }
+            for (int i = 0; i < 8; i++)
+            {
+                BagButtonArray[i].BackColor = Color.FromKnownColor(KnownColor.Control);
                 ButtonToBag[i] = -1;
             }
             WeaponButton.BackColor= Color.FromKnownColor(KnownColor.Control);
@@ -323,25 +362,25 @@ namespace DayGame
                     if (inv.ChestSpace[i] is Armor && armorcheckbox.Checked)
                     {
                         ChestButtonsArray[ButtonIndex].BackColor = Color.Blue;
-                        ButtonToBag[ButtonIndex] = i;
+                        ButtonToChest[ButtonIndex] = i;
                         ButtonIndex++;
                     }
                     else if (inv.ChestSpace[i] is Weapon && weaponscheckbox.Checked)
                     {
                         ChestButtonsArray[ButtonIndex].BackColor = Color.Red;
-                        ButtonToBag[ButtonIndex] = i;
+                        ButtonToChest[ButtonIndex] = i;
                         ButtonIndex++;
                     }
                     else if (inv.ChestSpace[i] is Spell && spellscheckbox.Checked)
                     {
                         ChestButtonsArray[ButtonIndex].BackColor = Color.Yellow;
-                        ButtonToBag[ButtonIndex] = i;
+                        ButtonToChest[ButtonIndex] = i;
                         ButtonIndex++;
                     }
                     else if (inv.ChestSpace[i] is Potion && potionscheckbox.Checked)
                     {
                         ChestButtonsArray[ButtonIndex].BackColor = Color.Green;
-                        ButtonToBag[ButtonIndex] = i;
+                        ButtonToChest[ButtonIndex] = i;
                         ButtonIndex++;
                     }
 
@@ -353,6 +392,25 @@ namespace DayGame
                         Potion _ => Color.Green,
                         _ => ChestButtonsArray[i].BackColor
                     };*/
+                }
+            }
+            int ButtonBagIndex = 0;
+            for (int i=0; i<8; i++)
+            {
+                if ((inv.Bag[i] != null))
+                {
+                    if (inv.Bag[i] is Potion)
+                    {
+                        BagButtonArray[ButtonBagIndex].BackColor = Color.Green;
+                        ButtonToBag[ButtonBagIndex] = i;
+                        ButtonBagIndex++;
+                    }
+                    if (inv.Bag[i] is Spell)
+                    {
+                        BagButtonArray[ButtonBagIndex].BackColor = Color.Yellow;
+                        ButtonToBag[ButtonBagIndex] = i;
+                        ButtonBagIndex++;
+                    }
                 }
             }
             if (inv.WeaponEquiped != null)

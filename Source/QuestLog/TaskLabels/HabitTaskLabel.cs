@@ -9,15 +9,24 @@ namespace DayGame.TaskLabels
         private Habit habit;
         private Character character;
         private NavigationMenu navigationMenu;
+        private SaveFile saveFile;
 
-        public HabitTaskLabel(Habit habit,Character character,NavigationMenu navigationMenu)
+        public HabitTaskLabel(Habit habit, Character character, NavigationMenu navigationMenu, SaveFile saveFile)
         {
             this.habit = habit;
             this.character = character;
             this.navigationMenu = navigationMenu;
+            this.saveFile = saveFile;
             InitializeComponent();
-            label2.Text = "+" + habit.Positive + " | -" + habit.Negative;
-            label1.Text = habit.Description;
+            statsLabel.Text = $"+{habit.Positive} | -{habit.Negative}";
+            descriptionLabel.Text = habit.Description;
+            if (habit.Description.Length > 20)
+            {
+                descriptionLabel.Text = $"{descriptionLabel.Text.Substring(0, 20)}...";
+            }
+
+            nameLabel.Text = habit.Name;
+            checkKarma(habit.Positive - habit.Negative);
         }
 
 
@@ -25,18 +34,18 @@ namespace DayGame.TaskLabels
         {
             habit.UpdateTask(true, character);
             navigationMenuUpdater();
-            label2.Text = "+" + habit.Positive + " | -" + habit.Negative;
+            statsLabel.Text = $"+{habit.Positive} | -{habit.Negative}";
             checkKarma(habit.Positive - habit.Negative);
         }
 
 
         private void minusButton_Click(object sender, EventArgs e)
         {
-            habit.UpdateTask(false,character);
+            habit.UpdateTask(false, character);
             navigationMenu.hpBarController();
             navigationMenu.gameLabelController();
             navigationMenu.hpLabelController();
-            label2.Text = "+" + habit.Positive + " | -" + habit.Negative;
+            statsLabel.Text = $"+{habit.Positive} | -{habit.Negative}";
             checkKarma(habit.Positive - habit.Negative);
         }
 
@@ -70,7 +79,14 @@ namespace DayGame.TaskLabels
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            saveFile.Tasks.Remove(habit);
+            Close();
+        }
+
+
+        private void descriptionLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(habit.Description, "Description");
         }
     }
 }

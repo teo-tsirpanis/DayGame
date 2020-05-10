@@ -9,14 +9,21 @@ namespace DayGame.TaskLabels
         private Daily daily;
         private Character character;
         private NavigationMenu navigationMenu;
+        private SaveFile saveFile;
 
-        public DailyTaskLabel(Daily daily, Character character, NavigationMenu navigationMenu)
+        public DailyTaskLabel(Daily daily, Character character, NavigationMenu navigationMenu, SaveFile saveFile)
         {
             this.daily = daily;
             this.character = character;
             this.navigationMenu = navigationMenu;
+            this.saveFile = saveFile;
             InitializeComponent();
-            label1.Text = daily.Description;
+            descriptionLabel.Text = daily.Description;
+            if (daily.Description.Length > 50)
+            {
+                descriptionLabel.Text = $"{descriptionLabel.Text.Substring(0, 50)}...";
+            }
+            nameLabel.Text = daily.Name;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -50,7 +57,13 @@ namespace DayGame.TaskLabels
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            saveFile.Tasks.Remove(daily);
+            Close();
+        }
+
+        private void descriptionLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(daily.Description, "Description");
         }
     }
 }

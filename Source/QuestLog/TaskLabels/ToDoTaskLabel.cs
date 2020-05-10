@@ -9,15 +9,25 @@ namespace DayGame
         private ToDo toDo;
         private Character character;
         private NavigationMenu navigationMenu;
-
-        public ToDoTaskLabel(ToDo toDo, Character character, NavigationMenu navigationMenu)
+        private SaveFile saveFile;
+        
+        public ToDoTaskLabel(ToDo toDo, Character character, NavigationMenu navigationMenu ,SaveFile saveFile)
         {
             this.toDo = toDo;
             this.character = character;
             this.navigationMenu = navigationMenu;
+            this.saveFile = saveFile;
             InitializeComponent();
-            label2.Text = toDo.DueDate.Date.ToString();
-            label1.Text = toDo.Description;
+            timeLabel.Text = toDo.DueDate.Date.ToString();
+            nameLabel.Text = toDo.Name;
+            
+            descriptionLabel.Text = toDo.Description;
+            if (toDo.Description.Length > 50)
+            {
+                descriptionLabel.Text = $"{descriptionLabel.Text.Substring(0, 50)}...";
+            }
+            
+            nameLabel.Text = toDo.Name;
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -25,7 +35,8 @@ namespace DayGame
             checkBox1.BackColor = Color.LightGray;
             toDo.UpdateTask(true, character);
             navigationMenuUpdater();
-            this.Close();
+            saveFile.Tasks.Remove(toDo);
+            Close();
         }
 
         private void navigationMenuUpdater()
@@ -39,7 +50,14 @@ namespace DayGame
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            saveFile.Tasks.Remove(toDo);
+            Close();
+        }
+
+
+        private void descriptionLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(toDo.Description, "Description");
         }
     }
 }

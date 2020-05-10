@@ -34,13 +34,14 @@ namespace DayGame.TaskLabels
             System.ComponentModel.ComponentResourceManager resources =
                 new System.ComponentModel.ComponentResourceManager(typeof(HabitTaskLabel));
             this.plusButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.descriptionLabel = new System.Windows.Forms.Label();
+            this.statsLabel = new System.Windows.Forms.Label();
             this.minusButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.nameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // plusButton
@@ -57,26 +58,27 @@ namespace DayGame.TaskLabels
             this.plusButton.UseVisualStyleBackColor = false;
             this.plusButton.Click += new System.EventHandler(this.plusButton_Click);
             // 
-            // label1
+            // descriptionLabel
             // 
-            this.label1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(65, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(215, 57);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "label1";
+            this.descriptionLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.descriptionLabel.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.descriptionLabel.ForeColor = System.Drawing.Color.Gray;
+            this.descriptionLabel.Location = new System.Drawing.Point(65, 14);
+            this.descriptionLabel.Name = "descriptionLabel";
+            this.descriptionLabel.Size = new System.Drawing.Size(215, 42);
+            this.descriptionLabel.TabIndex = 3;
+            this.descriptionLabel.Text = "label1";
+            this.descriptionLabel.Click += new System.EventHandler(this.descriptionLabel_Click);
             // 
-            // label2
+            // statsLabel
             // 
-            this.label2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.ForeColor = System.Drawing.Color.DarkGray;
-            this.label2.Location = new System.Drawing.Point(171, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 23);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.statsLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.statsLabel.ForeColor = System.Drawing.Color.DarkGray;
+            this.statsLabel.Location = new System.Drawing.Point(183, 33);
+            this.statsLabel.Name = "statsLabel";
+            this.statsLabel.Size = new System.Drawing.Size(61, 23);
+            this.statsLabel.TabIndex = 4;
+            this.statsLabel.Text = "label2";
             // 
             // minusButton
             // 
@@ -130,6 +132,17 @@ namespace DayGame.TaskLabels
             this.panel3.Size = new System.Drawing.Size(345, 1);
             this.panel3.TabIndex = 9;
             // 
+            // nameLabel
+            // 
+            this.nameLabel.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))),
+                ((int) (((byte) (144)))));
+            this.nameLabel.Location = new System.Drawing.Point(65, 0);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(215, 14);
+            this.nameLabel.TabIndex = 10;
+            this.nameLabel.Text = "nameLabel";
+            // 
             // HabitTaskLabel
             // 
             this.AllowDrop = true;
@@ -137,12 +150,13 @@ namespace DayGame.TaskLabels
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(345, 57);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.statsLabel);
+            this.Controls.Add(this.descriptionLabel);
             this.Controls.Add(this.minusButton);
             this.Controls.Add(this.plusButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -151,8 +165,7 @@ namespace DayGame.TaskLabels
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label statsLabel;
         private System.Windows.Forms.Button minusButton;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button plusButton;
@@ -162,5 +175,7 @@ namespace DayGame.TaskLabels
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label descriptionLabel;
     }
 }

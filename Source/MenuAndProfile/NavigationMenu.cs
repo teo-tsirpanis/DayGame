@@ -26,12 +26,16 @@ namespace DayGame
                 pictureBox2.Image = imageList1.Images[1];
             }
 
-            questLog = new QuestLog(character, this);
+
+            questLog = new QuestLog(saveFile, this);
             inventoryGui = new InventoryGUI();
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
+            levelLabel.Text = @"Level : " + character.Level;
             gameBalanceLabel.Text = character.InGameBalance.ToString();
+            xpBarController();
+            hpBarController();
             hpLabel.Text = $"{character.GetCurrentHp()} / {character.LifePoints}";
             xpLabel.Text = $"{character.ExpreriencePoints} / {character.Level * 100}";
         }
@@ -94,7 +98,7 @@ namespace DayGame
             xpLabel.Text = $"{character.ExpreriencePoints} / {character.Level * 100}";
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void inventoryButton_Click(object sender, EventArgs e)
         {
             openChildForm(inventoryGui);
         }

@@ -7,22 +7,16 @@ namespace DayGame
         public Item[] ChestSpace = new Item[42];
         public Item ArmorEquiped;
         public Item WeaponEquiped;
-        public ConsumableItems[] Bag = new ConsumableItems[8];
+        public ConsumableItem[] Bag = new ConsumableItem[8];
 
 
         public void InventoryAddItem(Item Item)
         {
             for (int i = 0; i < 42; i++)
             {
-                if (ChestSpace[i] != null)
-                {
-                    continue;
-                }
-                else
-                {
-                    ChestSpace[i] = Item;
-                    break;
-                }
+                if (ChestSpace[i] != null) continue;
+                ChestSpace[i] = Item;
+                break;
             }
         }
 
@@ -48,7 +42,7 @@ namespace DayGame
 
         public void AddToBagFromInventory(Item item, int counter)
         {
-            ConsumableItems NonCon = (ConsumableItems) item;
+            ConsumableItem NonCon = (ConsumableItem) item;
 
             ChestSpace[counter] = null;
             AddToBag(NonCon);
@@ -82,7 +76,7 @@ namespace DayGame
             WeaponEquiped = null;
         }
 
-        public void AddToBag(ConsumableItems item)
+        public void AddToBag(ConsumableItem item)
         {
             for (int i = 0; i < Bag.Length; i++)
             {
@@ -98,12 +92,12 @@ namespace DayGame
             }
         }
 
-        public ConsumableItems[] GetBag()
+        public ConsumableItem[] GetBag()
         {
             return Bag;
         }
 
-        public void RemoveFromBag(ConsumableItems item)
+        public void RemoveFromBag(ConsumableItem item)
         {
             for (int i = 0; i < Bag.Length; i++)
             {

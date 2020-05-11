@@ -21,7 +21,7 @@ namespace DayGame.Boss
         private Boolean isPotion;
         //Array mapping button to bag indexes
         private int[] ButtonToBag;
-        private ConsumableItems[] Bag;
+        private ConsumableItem[] Bag;
         public BossBattleFrame(Character character, Boss boss)
         {
             InitializeComponent();
@@ -171,7 +171,7 @@ namespace DayGame.Boss
             {
                 t = typeof(Spell);
             }*/
-            foreach (ConsumableItems ci in Bag)
+            foreach (ConsumableItem ci in Bag)
             {
                 if (ci != null)
                 {
@@ -241,7 +241,7 @@ namespace DayGame.Boss
             int index = Convert.ToInt32(name.Substring(name.Length - 1)); //Gets index from name
             if (ButtonToBag[index] != -1) // if the button is mapped to a bag item
             {
-                ConsumableItems item = Bag[ButtonToBag[index]];
+                ConsumableItem item = Bag[ButtonToBag[index]];
                 if (item is Potion)
                 {
                     UsePotion((Potion)item);

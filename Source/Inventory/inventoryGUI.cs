@@ -149,7 +149,7 @@ namespace DayGame
                         InventorySpaceReload();//allaxe tis allages sto GUI
                     }
                     else if ((inv.BagNotFull()) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Spell)))
-                    //ean to bag einai empty, kai to button pou pathses exei einai NonConsumableItems
+                    //ean to bag einai empty, kai to button pou pathses exei einai NonConsumableItem
                     {
 
 
@@ -159,7 +159,7 @@ namespace DayGame
                         InventorySpaceReload();//allaxe tis allages sto GUI
                     }
                     else if ((inv.BagNotFull()) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Potion)))
-                    //ean to bag einai empty, kai to button pou pathses exei einai NonConsumableItems
+                    //ean to bag einai empty, kai to button pou pathses exei einai NonConsumableItem
                     {
 
 

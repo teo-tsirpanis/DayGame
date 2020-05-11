@@ -2,7 +2,7 @@
 
 namespace DayGame
 {
-    public class Armor : NonConsumableItems
+    public class Armor : NonConsumableItem
     {
         public int Defence { get; }
 

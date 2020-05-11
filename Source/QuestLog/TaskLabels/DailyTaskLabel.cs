@@ -23,24 +23,17 @@ namespace DayGame.TaskLabels
             nameLabel.Text = daily.Name;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private async void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                checkBox1.BackColor = Color.LightGray;
-                checkBox1.Enabled = false;
-                daily.UpdateTask(true, character);
-                onUpdate();
-                timer1.Enabled = true;
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
+            if (!checkBox1.Checked) return;
+            checkBox1.BackColor = Color.LightGray;
+            checkBox1.Enabled = false;
+            daily.UpdateTask(true, character);
+            onUpdate();
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(10));
             checkBox1.Checked = false;
-            checkBox1.Enabled = true;
             checkBox1.BackColor = Color.FromArgb(247, 163, 27);
-            timer1.Enabled = false;
+            checkBox1.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)

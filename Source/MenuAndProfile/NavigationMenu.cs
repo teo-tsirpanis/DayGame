@@ -10,6 +10,7 @@ namespace DayGame
         private Character character => saveFile.Character;
         private readonly QuestLog questLog;
         private readonly InventoryGUI inventoryGui;
+        private ShopGUI shopGui;
         private BossBattleFrame bossBattleFrame;
 
         public NavigationMenu(SaveFile saveFile)
@@ -28,6 +29,7 @@ namespace DayGame
 
             questLog = new QuestLog(saveFile, UpdateStats);
             inventoryGui = new InventoryGUI(saveFile);
+            shopGui = new ShopGUI(saveFile);
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
@@ -114,6 +116,11 @@ namespace DayGame
         private void NavigationMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
             saveFile.Save();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(shopGui);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Windows.Forms;
 using DayGame.TaskLabels;
 
@@ -9,7 +8,7 @@ namespace DayGame
     {
         private Character character => saveFile.Character;
         private readonly Action onUpdate;
-        private SaveFile saveFile;
+        private readonly SaveFile saveFile;
 
         public QuestLog(SaveFile saveFile, Action onUpdate)
         {
@@ -17,10 +16,7 @@ namespace DayGame
             this.saveFile = saveFile;
             InitializeComponent();
 
-            foreach (var task in saveFile.Tasks.ToList())
-            {
-                AddLabel(task);
-            }
+            saveFile.Tasks.ForEach(AddLabel);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -33,39 +29,30 @@ namespace DayGame
 
         private void AddLabel(Task task)
         {
+            Form label;
+            Control panel;
             switch (task)
             {
                 case Habit h:
-                {
-                    HabitTaskLabel childForm = new HabitTaskLabel(h, character, onUpdate, saveFile);
-                    childForm.TopLevel = false;
-                    panel1.Controls.Add(childForm);
-                    childForm.FormBorderStyle = FormBorderStyle.None;
-                    childForm.Dock = DockStyle.Top;
-                    childForm.Show();
+                    label = new HabitTaskLabel(h, character, onUpdate, saveFile);
+                    panel = habitPanel;
                     break;
-                }
                 case Daily d:
-                {
-                    DailyTaskLabel childForm = new DailyTaskLabel(d, character, onUpdate, saveFile);
-                    childForm.TopLevel = false;
-                    panel2.Controls.Add(childForm);
-                    childForm.FormBorderStyle = FormBorderStyle.None;
-                    childForm.Dock = DockStyle.Top;
-                    childForm.Show();
+                    label = new DailyTaskLabel(d, character, onUpdate, saveFile);
+                    panel = dailyPanel;
                     break;
-                }
                 case ToDo t:
-                {
-                    ToDoTaskLabel childForm = new ToDoTaskLabel(t, character, onUpdate, saveFile);
-                    childForm.TopLevel = false;
-                    panel3.Controls.Add(childForm);
-                    childForm.FormBorderStyle = FormBorderStyle.None;
-                    childForm.Dock = DockStyle.Top;
-                    childForm.Show();
+                    label = new ToDoTaskLabel(t, character, onUpdate, saveFile);
+                    panel = todoPanel;
                     break;
-                }
+                default:
+                    return;
             }
+            label.TopLevel = false;
+            label.FormBorderStyle = FormBorderStyle.None;
+            label.Dock = DockStyle.Top;
+            label.Show();
+            panel.Controls.Add(label);
         }
     }
 }

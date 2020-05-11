@@ -33,9 +33,9 @@ namespace DayGame
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestLog));
             this.addTaskButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.habitPanel = new System.Windows.Forms.Panel();
+            this.dailyPanel = new System.Windows.Forms.Panel();
+            this.todoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -60,32 +60,32 @@ namespace DayGame
             this.addTaskButton.UseVisualStyleBackColor = false;
             this.addTaskButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // panel1
+            // habitPanel
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(7, 15);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 450);
-            this.panel1.TabIndex = 1;
+            this.habitPanel.AllowDrop = true;
+            this.habitPanel.AutoScroll = true;
+            this.habitPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.habitPanel.Location = new System.Drawing.Point(7, 15);
+            this.habitPanel.Name = "habitPanel";
+            this.habitPanel.Size = new System.Drawing.Size(304, 450);
+            this.habitPanel.TabIndex = 1;
             // 
-            // panel2
+            // dailyPanel
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(3, 15);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(304, 450);
-            this.panel2.TabIndex = 2;
+            this.dailyPanel.AutoScroll = true;
+            this.dailyPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dailyPanel.Location = new System.Drawing.Point(3, 15);
+            this.dailyPanel.Name = "dailyPanel";
+            this.dailyPanel.Size = new System.Drawing.Size(304, 450);
+            this.dailyPanel.TabIndex = 2;
             // 
-            // panel3
+            // todoPanel
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(3, 15);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(304, 450);
-            this.panel3.TabIndex = 3;
+            this.todoPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.todoPanel.Location = new System.Drawing.Point(3, 15);
+            this.todoPanel.Name = "todoPanel";
+            this.todoPanel.Size = new System.Drawing.Size(304, 450);
+            this.todoPanel.TabIndex = 3;
             // 
             // label1
             // 
@@ -120,7 +120,7 @@ namespace DayGame
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.panel1);
+            this.panel4.Controls.Add(this.habitPanel);
             this.panel4.Location = new System.Drawing.Point(27, 71);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(314, 467);
@@ -129,7 +129,7 @@ namespace DayGame
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Controls.Add(this.panel2);
+            this.panel5.Controls.Add(this.dailyPanel);
             this.panel5.Location = new System.Drawing.Point(393, 71);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(314, 467);
@@ -138,7 +138,7 @@ namespace DayGame
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Controls.Add(this.todoPanel);
             this.panel6.Location = new System.Drawing.Point(755, 71);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(314, 467);
@@ -166,15 +166,15 @@ namespace DayGame
         }
 
         private System.Windows.Forms.Button addTaskButton;
+        private System.Windows.Forms.Panel dailyPanel;
+        private System.Windows.Forms.Panel habitPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel todoPanel;
 
         #endregion
     }

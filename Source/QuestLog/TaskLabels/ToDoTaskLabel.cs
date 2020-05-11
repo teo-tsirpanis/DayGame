@@ -11,7 +11,7 @@ namespace DayGame
         private readonly Action onUpdate;
         private readonly SaveFile saveFile;
 
-        public ToDoTaskLabel(ToDo toDo, Character character, Action onUpdate ,SaveFile saveFile)
+        public ToDoTaskLabel(ToDo toDo, Character character, Action onUpdate, SaveFile saveFile)
         {
             this.toDo = toDo;
             this.character = character;

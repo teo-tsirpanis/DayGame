@@ -23,9 +23,9 @@ namespace DayGame
             inGameBalance = 0;
             //testing for bossbattleframe
             inv = new Inventory();
-            inv.AddToBag(new Spell("Spell", "Spell", null, 7, 17));
-            inv.AddToBag(new Spell("Spell", "Spell", null, 7, 17));
-            inv.AddToBag(new Potion("", "", null, 0, 26));
+            inv.TryAddToBag(new Spell("Spell", "Spell", null, 7, 17));
+            inv.TryAddToBag(new Spell("Spell", "Spell", null, 7, 17));
+            inv.TryAddToBag(new Potion("", "", null, 0, 26));
         }
 
         public string Name { get; }

@@ -26,7 +26,7 @@ namespace DayGame.Boss
         {
             InitializeComponent();
             BagButtons = new[] {BagButton0, BagButton1, BagButton2, BagButton3, BagButton4, BagButton5, BagButton6, BagButton7};
-            
+
             ButtonToBag = new int[8];
             this.character = character;
             this.boss = boss;
@@ -38,12 +38,12 @@ namespace DayGame.Boss
             maxCharHp = character.HitPoints;
             maxBossHp = boss.HitPoints;
             HpController();
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void BossBattleFrame_Load(object sender, EventArgs e)
@@ -123,7 +123,7 @@ namespace DayGame.Boss
         {
             ContinueAfterChar.Visible = false;
             BossAttack();
-            
+
         }
 
         private void continue_after_boss_click(object sender, EventArgs e)
@@ -180,14 +180,14 @@ namespace DayGame.Boss
                         return false;
                     }
                 }
-                
+
             }
             return true;
         }
         //Shows buttons with the appropriate consumables in them
         public void ShowBag(Boolean isPotion)
         {
-            
+
             Type t = isPotion ? typeof(Potion) : typeof(Spell);
             //temporary until we find icons
             Color c = isPotion ? Color.Green : Color.Yellow;
@@ -221,7 +221,7 @@ namespace DayGame.Boss
         public void UseConsumable(Boolean isPotion)
         {
             hideButtons();
-            Bag = character.inv.GetBag();
+            Bag = character.inv.Bag;
             String text = isPotion ? "potions" : "spells";
             BackB.Visible = true;
             if (IsEmpty(isPotion)){
@@ -251,7 +251,7 @@ namespace DayGame.Boss
                     UseSpell((Spell)item);
                 }
             }
-            
+
         }
 
         public void UsePotion(Potion potion)
@@ -270,7 +270,7 @@ namespace DayGame.Boss
         {
             int damage = spell.Damage;
             boss.HitPoints -= damage;
-            
+
             if (boss.HitPoints <= 0)
             {
                 dialogue.Text = $"Whoa! You killed the boss";
@@ -300,6 +300,6 @@ namespace DayGame.Boss
             SelectAction();
         }
 
-        
+
     }
 }

@@ -16,11 +16,10 @@ namespace DayGame
         private readonly Button[] ChestButtons;
         private readonly Button[] BagButtons;
         private readonly Inventory inv;
-
-        public int[] ButtonToChest = new int[42];
-        public int[] ButtonToBag = new int[8];
-        public int DamageBuff = 0;
-        public int ArmorBuff = 0;
+        private readonly int[] ButtonToChest = new int[42];
+        private readonly int[] ButtonToBag = new int[8];
+        private int DamageBuff = 0;
+        private int ArmorBuff = 0;
 
         public InventoryGUI(SaveFile sf)
         {
@@ -69,38 +68,9 @@ namespace DayGame
             WeaponButton.Click += UnequipWeapon;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void button43_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void chestbutton2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
         private void inventoryGUI_Load(object sender, EventArgs e)
         {
         }
-
 
         private void Equip(object sender, EventArgs e)
         {
@@ -394,10 +364,6 @@ namespace DayGame
             {
                 DefenceTextNumber.ForeColor = Color.Black;
             }
-        }
-
-        private void chestbutton3_Click(object sender, EventArgs e)
-        {
         }
 
         private void filter_checked_changed(object sender, EventArgs e)

@@ -140,6 +140,7 @@ namespace DayGame
             this.potionscheckbox.TabIndex = 5;
             this.potionscheckbox.Text = "Potions";
             this.potionscheckbox.UseVisualStyleBackColor = true;
+            this.potionscheckbox.CheckedChanged += new System.EventHandler(this.filter_checked_changed);
             // 
             // spellscheckbox
             // 
@@ -151,6 +152,7 @@ namespace DayGame
             this.spellscheckbox.TabIndex = 4;
             this.spellscheckbox.Text = "Spells";
             this.spellscheckbox.UseVisualStyleBackColor = true;
+            this.spellscheckbox.CheckedChanged += new System.EventHandler(this.filter_checked_changed);
             // 
             // weaponscheckbox
             // 
@@ -162,6 +164,7 @@ namespace DayGame
             this.weaponscheckbox.TabIndex = 3;
             this.weaponscheckbox.Text = "Weapons";
             this.weaponscheckbox.UseVisualStyleBackColor = true;
+            this.weaponscheckbox.CheckedChanged += new System.EventHandler(this.filter_checked_changed);
             // 
             // armorcheckbox
             // 
@@ -173,7 +176,7 @@ namespace DayGame
             this.armorcheckbox.TabIndex = 2;
             this.armorcheckbox.Text = "Armor";
             this.armorcheckbox.UseVisualStyleBackColor = true;
-            this.armorcheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.armorcheckbox.CheckedChanged += new System.EventHandler(this.filter_checked_changed);
             // 
             // ChestText
             // 
@@ -596,7 +599,6 @@ namespace DayGame
             this.chestbutton3.Size = new System.Drawing.Size(67, 67);
             this.chestbutton3.TabIndex = 4;
             this.chestbutton3.UseVisualStyleBackColor = true;
-            this.chestbutton3.Click += new System.EventHandler(this.chestbutton3_Click);
             // 
             // chestbutton2
             // 
@@ -606,7 +608,6 @@ namespace DayGame
             this.chestbutton2.Size = new System.Drawing.Size(67, 67);
             this.chestbutton2.TabIndex = 3;
             this.chestbutton2.UseVisualStyleBackColor = true;
-            this.chestbutton2.Click += new System.EventHandler(this.chestbutton2_Click);
             // 
             // chestbutton1
             // 
@@ -618,7 +619,6 @@ namespace DayGame
             this.chestbutton1.Size = new System.Drawing.Size(67, 67);
             this.chestbutton1.TabIndex = 2;
             this.chestbutton1.UseVisualStyleBackColor = true;
-            this.chestbutton1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -643,7 +643,6 @@ namespace DayGame
             this.WeaponText.Size = new System.Drawing.Size(90, 26);
             this.WeaponText.TabIndex = 41;
             this.WeaponText.Text = "Weapon";
-            this.WeaponText.Click += new System.EventHandler(this.label8_Click);
             // 
             // ArmorText
             // 
@@ -672,7 +671,6 @@ namespace DayGame
             this.ArmorButton.Size = new System.Drawing.Size(80, 80);
             this.ArmorButton.TabIndex = 38;
             this.ArmorButton.UseVisualStyleBackColor = false;
-            this.ArmorButton.Click += new System.EventHandler(this.button43_Click);
             // 
             // EquipedText
             // 

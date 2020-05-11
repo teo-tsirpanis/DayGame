@@ -56,6 +56,7 @@
             this.radioDailies = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -371,6 +372,15 @@
             this.panel5.Size = new System.Drawing.Size(1, 216);
             this.panel5.TabIndex = 16;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))),
+                ((int) (((byte) (144)))));
+            this.panel6.Location = new System.Drawing.Point(345, 265);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1, 216);
+            this.panel6.TabIndex = 17;
+            // 
             // CreateTaskMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -378,6 +388,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(346, 575);
+            this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.groupBox2);
@@ -423,5 +434,7 @@
         private System.Windows.Forms.TextBox textBox2;
 
         #endregion
+
+        private System.Windows.Forms.Panel panel6;
     }
 }

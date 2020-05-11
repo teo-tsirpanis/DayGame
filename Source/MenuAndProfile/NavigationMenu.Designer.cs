@@ -53,8 +53,8 @@ namespace DayGame
             this.xpBar = new System.Windows.Forms.Panel();
             this.xpLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.levelLabel = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
@@ -149,6 +149,7 @@ namespace DayGame
             this.button2.TabIndex = 6;
             this.button2.Text = "Shop";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button5
             // 
@@ -215,7 +216,7 @@ namespace DayGame
             this.nameLabel.ForeColor = System.Drawing.Color.White;
             this.nameLabel.Location = new System.Drawing.Point(150, 17);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(309, 26);
+            this.nameLabel.Size = new System.Drawing.Size(309, 27);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "label1";
             // 
@@ -290,14 +291,6 @@ namespace DayGame
             this.panel2.Size = new System.Drawing.Size(1270, 150);
             this.panel2.TabIndex = 1;
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream =
-                ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "maleOrc110.png");
-            this.imageList1.Images.SetKeyName(1, "femaleOrc110.png");
-            // 
             // levelLabel
             // 
             this.levelLabel.ForeColor = System.Drawing.Color.DimGray;
@@ -306,6 +299,14 @@ namespace DayGame
             this.levelLabel.Size = new System.Drawing.Size(100, 23);
             this.levelLabel.TabIndex = 8;
             this.levelLabel.Text = "label1";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream =
+                ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "maleOrc110.png");
+            this.imageList1.Images.SetKeyName(1, "femaleOrc110.png");
             // 
             // NavigationMenu
             // 

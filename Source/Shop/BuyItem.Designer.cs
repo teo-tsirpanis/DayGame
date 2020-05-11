@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuyItem));
+            System.ComponentModel.ComponentResourceManager resources =
+                new System.ComponentModel.ComponentResourceManager(typeof(BuyItem));
             this.NameLabel = new System.Windows.Forms.Label();
             this.DescriptionLabel = new System.Windows.Forms.Label();
             this.StatLabel = new System.Windows.Forms.Label();
@@ -37,14 +38,15 @@
             this.BuyButton = new System.Windows.Forms.Button();
             this.BalanceLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.NameLabel.Location = new System.Drawing.Point(108, 100);
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.NameLabel.Location = new System.Drawing.Point(126, 115);
             this.NameLabel.Name = "NameLabel";
             this.NameLabel.Size = new System.Drawing.Size(104, 24);
             this.NameLabel.TabIndex = 0;
@@ -54,8 +56,9 @@
             // DescriptionLabel
             // 
             this.DescriptionLabel.AutoSize = true;
-            this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(103, 138);
+            this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.DescriptionLabel.Location = new System.Drawing.Point(120, 159);
             this.DescriptionLabel.Name = "DescriptionLabel";
             this.DescriptionLabel.Size = new System.Drawing.Size(109, 17);
             this.DescriptionLabel.TabIndex = 1;
@@ -65,8 +68,9 @@
             // StatLabel
             // 
             this.StatLabel.AutoSize = true;
-            this.StatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.StatLabel.Location = new System.Drawing.Point(51, 218);
+            this.StatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.StatLabel.Location = new System.Drawing.Point(59, 252);
             this.StatLabel.Name = "StatLabel";
             this.StatLabel.Size = new System.Drawing.Size(81, 24);
             this.StatLabel.TabIndex = 2;
@@ -75,9 +79,10 @@
             // StatAmountLabel
             // 
             this.StatAmountLabel.AutoSize = true;
-            this.StatAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.StatAmountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.StatAmountLabel.ForeColor = System.Drawing.Color.Teal;
-            this.StatAmountLabel.Location = new System.Drawing.Point(181, 218);
+            this.StatAmountLabel.Location = new System.Drawing.Point(211, 252);
             this.StatAmountLabel.Name = "StatAmountLabel";
             this.StatAmountLabel.Size = new System.Drawing.Size(31, 24);
             this.StatAmountLabel.TabIndex = 3;
@@ -86,9 +91,11 @@
             // PriceLabel
             // 
             this.PriceLabel.AutoSize = true;
-            this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.PriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.PriceLabel.Location = new System.Drawing.Point(159, 278);
+            this.PriceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.PriceLabel.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))),
+                ((int) (((byte) (192)))), ((int) (((byte) (0)))));
+            this.PriceLabel.Location = new System.Drawing.Point(185, 321);
             this.PriceLabel.Name = "PriceLabel";
             this.PriceLabel.Size = new System.Drawing.Size(53, 24);
             this.PriceLabel.TabIndex = 4;
@@ -97,12 +104,14 @@
             // BuyButton
             // 
             this.BuyButton.AutoSize = true;
-            this.BuyButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.BuyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.BuyButton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))),
+                ((int) (((byte) (0)))));
+            this.BuyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.BuyButton.ForeColor = System.Drawing.SystemColors.Control;
-            this.BuyButton.Location = new System.Drawing.Point(106, 355);
+            this.BuyButton.Location = new System.Drawing.Point(124, 410);
             this.BuyButton.Name = "BuyButton";
-            this.BuyButton.Size = new System.Drawing.Size(103, 40);
+            this.BuyButton.Size = new System.Drawing.Size(120, 46);
             this.BuyButton.TabIndex = 5;
             this.BuyButton.Text = "Buy Now";
             this.BuyButton.UseVisualStyleBackColor = false;
@@ -111,8 +120,9 @@
             // BalanceLabel
             // 
             this.BalanceLabel.AutoSize = true;
-            this.BalanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.BalanceLabel.Location = new System.Drawing.Point(51, 408);
+            this.BalanceLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F,
+                System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.BalanceLabel.Location = new System.Drawing.Point(59, 471);
             this.BalanceLabel.Name = "BalanceLabel";
             this.BalanceLabel.Size = new System.Drawing.Size(128, 24);
             this.BalanceLabel.TabIndex = 6;
@@ -120,18 +130,18 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(112, 264);
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(131, 305);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(52, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(61, 58);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // BuyItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(304, 441);
+            this.ClientSize = new System.Drawing.Size(355, 509);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.BalanceLabel);
             this.Controls.Add(this.BuyButton);
@@ -144,10 +154,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buy Item";
             this.Load += new System.EventHandler(this.BuyItem_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

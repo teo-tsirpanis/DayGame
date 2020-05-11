@@ -8,12 +8,12 @@ namespace DayGame
     public partial class QuestLog : Form
     {
         private Character character => saveFile.Character;
-        private readonly NavigationMenu navigationMenu;
-        private SaveFile saveFile;    
+        private readonly Action onUpdate;
+        private SaveFile saveFile;
 
-        public QuestLog(SaveFile saveFile, NavigationMenu navigationMenu)
+        public QuestLog(SaveFile saveFile, Action onUpdate)
         {
-            this.navigationMenu = navigationMenu;
+            this.onUpdate = onUpdate;
             this.saveFile = saveFile;
             InitializeComponent();
 
@@ -37,7 +37,7 @@ namespace DayGame
             {
                 case Habit h:
                 {
-                    HabitTaskLabel childForm = new HabitTaskLabel(h, character, navigationMenu, saveFile);
+                    HabitTaskLabel childForm = new HabitTaskLabel(h, character, onUpdate, saveFile);
                     childForm.TopLevel = false;
                     panel1.Controls.Add(childForm);
                     childForm.FormBorderStyle = FormBorderStyle.None;
@@ -47,7 +47,7 @@ namespace DayGame
                 }
                 case Daily d:
                 {
-                    DailyTaskLabel childForm = new DailyTaskLabel(d, character, navigationMenu, saveFile);
+                    DailyTaskLabel childForm = new DailyTaskLabel(d, character, onUpdate, saveFile);
                     childForm.TopLevel = false;
                     panel2.Controls.Add(childForm);
                     childForm.FormBorderStyle = FormBorderStyle.None;
@@ -57,7 +57,7 @@ namespace DayGame
                 }
                 case ToDo t:
                 {
-                    ToDoTaskLabel childForm = new ToDoTaskLabel(t, character, navigationMenu, saveFile);
+                    ToDoTaskLabel childForm = new ToDoTaskLabel(t, character, onUpdate, saveFile);
                     childForm.TopLevel = false;
                     panel3.Controls.Add(childForm);
                     childForm.FormBorderStyle = FormBorderStyle.None;

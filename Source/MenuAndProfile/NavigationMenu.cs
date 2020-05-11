@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using DayGame.Boss;
 
@@ -27,7 +26,7 @@ namespace DayGame
             }
 
 
-            questLog = new QuestLog(saveFile, this);
+            questLog = new QuestLog(saveFile, UpdateStats);
             inventoryGui = new InventoryGUI();
             openChildForm(questLog);
 
@@ -36,8 +35,8 @@ namespace DayGame
             gameBalanceLabel.Text = character.InGameBalance.ToString();
             xpBarController();
             hpBarController();
-            hpLabel.Text = $"{character.GetCurrentHp()} / {character.LifePoints}";
-            xpLabel.Text = $"{character.ExpreriencePoints} / {character.Level * 100}";
+            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
+            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
         }
 
 
@@ -64,7 +63,7 @@ namespace DayGame
             openChildForm(questLog);
         }
 
-        public void hpBarController()
+        private void hpBarController()
         {
             hpBar.Width = character.GetCurrentHp() * 3;
             if (hpBar.Width >= 175)
@@ -78,24 +77,33 @@ namespace DayGame
             }
         }
 
-        public void xpBarController()
+        private void xpBarController()
         {
             xpBar.Width = (int) (character.ExpreriencePoints * 2 / (character.Level + 0.5));
         }
 
-        public void gameLabelController()
+        private void gameLabelController()
         {
             gameBalanceLabel.Text = character.InGameBalance.ToString();
         }
 
-        public void hpLabelController()
+        private void hpLabelController()
         {
-            hpLabel.Text = $"{character.GetCurrentHp()} / {character.LifePoints}";
+            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
         }
 
-        public void xpLabelController()
+        private void xpLabelController()
         {
-            xpLabel.Text = $"{character.ExpreriencePoints} / {character.Level * 100}";
+            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
+        }
+
+        private void UpdateStats()
+        {
+            xpBarController();
+            hpBarController();
+            gameLabelController();
+            xpLabelController();
+            hpLabelController();
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)

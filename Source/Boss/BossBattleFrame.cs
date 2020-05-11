@@ -262,7 +262,7 @@ namespace DayGame.Boss
             dialogue.Text = $"You have regenerated {heal} hit points";
             HpController();
             HideBag();
-            character.inv.RemoveFromBag(potion);
+            character.inv.DiscardFromBag(potion);
             ContinueAfterChar.Visible = true;
         }
 
@@ -281,7 +281,7 @@ namespace DayGame.Boss
             }
             HpController();
             HideBag();
-            character.inv.RemoveFromBag(spell);
+            character.inv.DiscardFromBag(spell);
             ContinueAfterChar.Visible = true;
         }
         //hides the bag and back buttons

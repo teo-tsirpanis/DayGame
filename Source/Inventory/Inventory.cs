@@ -11,15 +11,18 @@ namespace DayGame
         private const int DefaultBagCapacity = 8;
         public int BagCapacity { get; }
 
-        [Obsolete("Use bag.")] public readonly ConsumableItem[] Bag = new ConsumableItem[8];
-        [Obsolete("Use chest.")] public readonly Item[] ChestSpace = new Item[42];
+        [Obsolete] public readonly ConsumableItem[] Bag = new ConsumableItem[8];
+        [Obsolete] public readonly Item[] ChestSpace = new Item[42];
         private readonly List<Item> chest = new List<Item>();
         private readonly List<ConsumableItem> bag = new List<ConsumableItem>();
+
         public Armor ArmorEquiped { get; private set; }
         public Weapon WeaponEquiped { get; private set; }
 
-        public bool IsBagFull => bag.Count == BagCapacity;
+        public IReadOnlyList<Item> Chest => chest;
+        public IReadOnlyList<ConsumableItem> Bag2 => bag;
 
+        public bool IsBagFull => bag.Count == BagCapacity;
         public bool IsChestFull => chest.Count == ChestCapacity;
 
         public Inventory(int chestCapacity = DefaultChestCapacity, int bagCapacity = DefaultBagCapacity)
@@ -48,43 +51,27 @@ namespace DayGame
 
         public bool RemoveFromChest(Item item) => chest.Remove(item);
 
-        [Obsolete]
-        public void DeleteBagItem(ConsumableItem item, int counter)
-        {
-            bag.Remove(item);
-        }
-
-        [Obsolete]
-        public void AddToBagFromInventory(Item item, int counter)
-        {
-            ConsumableItem NonCon = (ConsumableItem) item;
-
-            ChestSpace[counter] = null;
-            TryAddToBag(NonCon);
-        }
-
         public bool TryAddToBag(ConsumableItem item)
         {
             if (IsBagFull) return false;
             // The item will be removed if at
             // least one instance of it exists.
-            chest.Remove(item);
-            bag.Add(item);
+            if (chest.Remove(item))
+                bag.Add(item);
             return true;
         }
 
-        public void RemoveFromBag(ConsumableItem item) => bag.Remove(item);
-
-        [Obsolete]
-        public void AddWeapon(Item Item, int counter)
+        public bool TryRemoveFromBag(ConsumableItem item)
         {
-            if (WeaponEquiped == null)
-            {
-                WeaponEquiped = (Weapon) Item;
-                ChestSpace[counter] = null;
-            }
+            if (IsChestFull) return false;
+            if (bag.Remove(item))
+                chest.Add(item);
+            return true;
         }
 
+        public void DiscardFromBag(ConsumableItem item) => bag.Remove(item);
+
+        public int WeaponBuff => WeaponEquiped?.Damage ?? 0;
 
         public void EquipWeapon(Weapon weapon)
         {
@@ -111,15 +98,7 @@ namespace DayGame
             return true;
         }
 
-        [Obsolete]
-        public void AddArmor(Item Item, int counter)
-        {
-            if (ArmorEquiped == null)
-            {
-                ArmorEquiped = (Armor) Item;
-                ChestSpace[counter] = null;
-            }
-        }
+        public int ArmorBuff => ArmorEquiped?.Defence ?? 0;
 
         public void EquipArmor(Armor armor)
         {
@@ -144,18 +123,6 @@ namespace DayGame
             chest.Add(ArmorEquiped);
             ArmorEquiped = null;
             return true;
-        }
-
-        [Obsolete]
-        public void DeleteArmor(Item item)
-        {
-            ArmorEquiped = null;
-        }
-
-        [Obsolete]
-        public void DeleteWeapon(Item item)
-        {
-            WeaponEquiped = null;
         }
     }
 }

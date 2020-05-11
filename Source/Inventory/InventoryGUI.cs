@@ -7,16 +7,14 @@ namespace DayGame
 {
     public partial class InventoryGUI : Form
     {
-        int ChestButtonPressed = -1;
-        int BagButtonPressed = -1;
-
+        private static readonly Regex buttonNumberExtractor = new Regex(@"\w*(\d+)", RegexOptions.Compiled);
         private readonly Button[] ChestButtons;
         private readonly Button[] BagButtons;
         private readonly Inventory inv;
         private readonly int[] ButtonToChest = new int[42];
         private readonly int[] ButtonToBag = new int[8];
-        private int DamageBuff = 0;
-        private int ArmorBuff = 0;
+        private int DamageBuff;
+        private int ArmorBuff;
 
         public InventoryGUI(SaveFile sf)
         {
@@ -38,7 +36,6 @@ namespace DayGame
             };
             AddSampleItems();
 
-
             foreach (CheckBox cb in checkBoxes)
             {
                 cb.Checked = true;
@@ -48,13 +45,11 @@ namespace DayGame
 
             for (int i = 0; i < 42; i++)
             {
-                ChestButtons[i].Click += GetTheButtonNumberChest;
                 ChestButtons[i].Click += Equip;
             }
 
             for (int i = 0; i < 8; i++)
             {
-                BagButtons[i].Click += GetTheButtonNumberBag;
                 BagButtons[i].Click += UnequipConsumable;
             }
 
@@ -62,147 +57,90 @@ namespace DayGame
             WeaponButton.Click += UnequipWeapon;
         }
 
-        private void inventoryGUI_Load(object sender, EventArgs e)
-        {
-        }
-
         private void Equip(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (ButtonToChest[ChestButtonPressed] != -1)
+            var ChestButtonPressed = GetButtonIndex((Control) sender);
+            var counter = ButtonToChest[ChestButtonPressed];
+            if (counter == -1) return;
+            using EquipUnequipGUI Equip =
+                new EquipUnequipGUI(inv.ChestSpace[counter], "Equip");
+            if (Equip.ShowDialog(this) != DialogResult.OK) return;
+
+            if (inv.WeaponEquiped == null && inv.ChestSpace[counter] is Weapon weapon)
             {
-                EquipUnequipGUI Equip = new EquipUnequipGUI(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], "Equip");
-                if (Equip.ShowDialog(this) == DialogResult.OK)
-                {
-                    if (inv.WeaponEquiped == null &&
-                        inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Weapon))
-                    {
-                        Weapon weapon = (Weapon) inv.ChestSpace[ButtonToChest[ChestButtonPressed]];
-                        DamageBuff = DamageBuff + weapon.Damage;
-                        DamageTextNumber.Text = DamageBuff.ToString();
-                        inv.AddWeapon(inv.ChestSpace[ButtonToChest[ChestButtonPressed]],
-                            ButtonToChest[
-                                ChestButtonPressed]);
-
-                        InventorySpaceReload();
-                    }
-                    else if (inv.ArmorEquiped == null &&
-                             inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Armor))
-                    {
-                        Armor Armor = (Armor) inv.ChestSpace[ButtonToChest[ChestButtonPressed]];
-                        ArmorBuff = ArmorBuff + Armor.Defence;
-                        DefenceTextNumber.Text = ArmorBuff.ToString();
-                        inv.AddArmor(inv.ChestSpace[ButtonToChest[ChestButtonPressed]],
-                            ButtonToChest[
-                                ChestButtonPressed]);
-                        InventorySpaceReload();
-                    }
-                    else if (!inv.IsBagFull &&
-                             inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Spell))
-                    {
-                        inv.AddToBagFromInventory(inv.ChestSpace[ButtonToChest[ChestButtonPressed]],
-                            ButtonToChest[
-                                ChestButtonPressed]);
-
-                        InventorySpaceReload();
-                    }
-                    else if (!inv.IsBagFull &&
-                             inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Potion))
-                    {
-                        inv.AddToBagFromInventory(inv.ChestSpace[ButtonToChest[ChestButtonPressed]],
-                            ButtonToChest[
-                                ChestButtonPressed]);
-
-                        InventorySpaceReload();
-                    }
-                    else
-                    {
-                        MessageBox.Show("You cannot equip the item.", "Error", MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
-                    }
-                }
+                DamageBuff += weapon.Damage;
+                DamageTextNumber.Text = DamageBuff.ToString();
+                inv.AddWeapon(weapon, counter);
             }
+            else if (inv.ArmorEquiped == null && inv.ChestSpace[counter] is Armor armor)
+            {
+                ArmorBuff += armor.Defence;
+                DefenceTextNumber.Text = ArmorBuff.ToString();
+                inv.AddArmor(armor, counter);
+            }
+            else if (!inv.IsBagFull && inv.ChestSpace[counter] is Spell spell)
+                inv.AddToBagFromInventory(spell, counter);
+            else if (!inv.IsBagFull && inv.ChestSpace[counter] is Potion potion)
+                inv.AddToBagFromInventory(potion, counter);
+            else
+            {
+                MessageBox.Show("You cannot equip the item.", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            InventorySpaceReload();
         }
 
-        private void GetTheButtonNumberChest(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            string GETCHESTBUTTON = btn.Name;
-
-            string loadingonlythelettersofthebutton = Regex.Replace(GETCHESTBUTTON, "[^0-9]", "");
-
-            GETCHESTBUTTON = loadingonlythelettersofthebutton;
-
-            ChestButtonPressed = Int32.Parse(GETCHESTBUTTON) - 1;
-        }
-
-        private void GetTheButtonNumberBag(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-            string GETCHESTBUTTON = btn.Name;
-
-            string loadingonlythelettersofthebutton = Regex.Replace(GETCHESTBUTTON, "[^0-9]", "");
-
-            GETCHESTBUTTON = loadingonlythelettersofthebutton;
-
-            BagButtonPressed = Int32.Parse(GETCHESTBUTTON) - 1;
-        }
+        private static int GetButtonIndex(Control btn) =>
+            int.Parse(buttonNumberExtractor.Match(btn.Name).Groups[0].Value) - 1;
 
         private void UnequipWeapon(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (inv.WeaponEquiped != null)
+            if (inv.WeaponEquiped == null) return;
+            using EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
+            if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
             {
-                EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
-                if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
-                {
-                    inv.InventoryAddItem(inv.WeaponEquiped);
-                    Weapon weapon = inv.WeaponEquiped;
-                    DamageBuff = DamageBuff - weapon.Damage;
-                    DamageTextNumber.Text = DamageBuff.ToString();
+                inv.InventoryAddItem(inv.WeaponEquiped);
+                Weapon weapon = inv.WeaponEquiped;
+                DamageBuff -= weapon.Damage;
+                DamageTextNumber.Text = DamageBuff.ToString();
 
 
-                    inv.DeleteWeapon(inv.WeaponEquiped);
-                    InventorySpaceReload();
-                }
+                inv.DeleteWeapon(inv.WeaponEquiped);
+                InventorySpaceReload();
             }
         }
 
         private void UnequipConsumable(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (ButtonToBag[BagButtonPressed] != -1)
+            var BagButtonPressed = GetButtonIndex((Control) sender);
+            if (ButtonToBag[BagButtonPressed] == -1) return;
+
+            using EquipUnequipGUI UnequipWeapon =
+                new EquipUnequipGUI(inv.Bag[ButtonToBag[BagButtonPressed]], "Unequip");
+            if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
             {
-                EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.Bag[ButtonToBag[BagButtonPressed]], "Unequip");
-                if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
-                {
-                    inv.InventoryAddItem(inv.Bag[ButtonToBag[BagButtonPressed]]);
-                    inv.DeleteBagItem(inv.Bag[ButtonToBag[BagButtonPressed]], ButtonToBag[BagButtonPressed]);
-
-
-                    InventorySpaceReload();
-                }
+                inv.InventoryAddItem(inv.Bag[ButtonToBag[BagButtonPressed]]);
+                inv.DeleteBagItem(inv.Bag[ButtonToBag[BagButtonPressed]], ButtonToBag[BagButtonPressed]);
+                InventorySpaceReload();
             }
         }
 
-
         private void UnequipArmor(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
-            if (inv.ArmorEquiped != null)
+            var armor = inv.ArmorEquiped;
+            if (armor == null) return;
+
+            using EquipUnequipGUI Unequip = new EquipUnequipGUI(armor, "Unequip");
+            if (Unequip.ShowDialog(this) == DialogResult.OK)
             {
-                EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
-                if (Unequip.ShowDialog(this) == DialogResult.OK)
-                {
-                    inv.InventoryAddItem(inv.ArmorEquiped);
-                    Armor Armor = (Armor) inv.ArmorEquiped;
-                    ArmorBuff = ArmorBuff - Armor.Defence;
-                    DefenceTextNumber.Text = ArmorBuff.ToString();
+                inv.InventoryAddItem(armor);
+                ArmorBuff -= armor.Defence;
+                DefenceTextNumber.Text = ArmorBuff.ToString();
 
-
-                    inv.DeleteArmor(inv.ArmorEquiped);
-                    InventorySpaceReload();
-                }
+                inv.DeleteArmor(armor);
+                InventorySpaceReload();
             }
         }
 
@@ -239,34 +177,33 @@ namespace DayGame
             int ButtonIndex = 0;
             for (int i = 0; i < 42; i++)
             {
-                if ((inv.ChestSpace[i] != null))
+                if ((inv.ChestSpace[i] == null)) continue;
+                if (inv.ChestSpace[i] is Armor && armorcheckbox.Checked)
                 {
-                    if (inv.ChestSpace[i] is Armor && armorcheckbox.Checked)
-                    {
-                        ChestButtons[ButtonIndex].BackColor = Color.Blue;
-                        ButtonToChest[ButtonIndex] = i;
-                        ButtonIndex++;
-                    }
-                    else if (inv.ChestSpace[i] is Weapon && weaponscheckbox.Checked)
-                    {
-                        ChestButtons[ButtonIndex].BackColor = Color.Red;
-                        ButtonToChest[ButtonIndex] = i;
-                        ButtonIndex++;
-                    }
-                    else if (inv.ChestSpace[i] is Spell && spellscheckbox.Checked)
-                    {
-                        ChestButtons[ButtonIndex].BackColor = Color.Yellow;
-                        ButtonToChest[ButtonIndex] = i;
-                        ButtonIndex++;
-                    }
-                    else if (inv.ChestSpace[i] is Potion && potionscheckbox.Checked)
-                    {
-                        ChestButtons[ButtonIndex].BackColor = Color.Green;
-                        ButtonToChest[ButtonIndex] = i;
-                        ButtonIndex++;
-                    }
+                    ChestButtons[ButtonIndex].BackColor = Color.Blue;
+                    ButtonToChest[ButtonIndex] = i;
+                    ButtonIndex++;
+                }
+                else if (inv.ChestSpace[i] is Weapon && weaponscheckbox.Checked)
+                {
+                    ChestButtons[ButtonIndex].BackColor = Color.Red;
+                    ButtonToChest[ButtonIndex] = i;
+                    ButtonIndex++;
+                }
+                else if (inv.ChestSpace[i] is Spell && spellscheckbox.Checked)
+                {
+                    ChestButtons[ButtonIndex].BackColor = Color.Yellow;
+                    ButtonToChest[ButtonIndex] = i;
+                    ButtonIndex++;
+                }
+                else if (inv.ChestSpace[i] is Potion && potionscheckbox.Checked)
+                {
+                    ChestButtons[ButtonIndex].BackColor = Color.Green;
+                    ButtonToChest[ButtonIndex] = i;
+                    ButtonIndex++;
+                }
 
-                    /*ChestButtons[i].BackColor = inv.ChestSpace[i] switch
+                /*ChestButtons[i].BackColor = inv.ChestSpace[i] switch
                     {
                         Armor _ => Color.Blue,
                         Weapon _ => Color.Red,
@@ -274,27 +211,25 @@ namespace DayGame
                         Potion _ => Color.Green,
                         _ => ChestButtons[i].BackColor
                     };*/
-                }
             }
 
             int ButtonBagIndex = 0;
             for (int i = 0; i < 8; i++)
             {
-                if (inv.Bag[i] != null)
-                {
-                    if (inv.Bag[i] is Potion)
-                    {
-                        BagButtons[ButtonBagIndex].BackColor = Color.Green;
-                        ButtonToBag[ButtonBagIndex] = i;
-                        ButtonBagIndex++;
-                    }
+                if (inv.Bag[i] == null) continue;
 
-                    if (inv.Bag[i] is Spell)
-                    {
-                        BagButtons[ButtonBagIndex].BackColor = Color.Yellow;
-                        ButtonToBag[ButtonBagIndex] = i;
-                        ButtonBagIndex++;
-                    }
+                if (inv.Bag[i] is Potion)
+                {
+                    BagButtons[ButtonBagIndex].BackColor = Color.Green;
+                    ButtonToBag[ButtonBagIndex] = i;
+                    ButtonBagIndex++;
+                }
+
+                if (inv.Bag[i] is Spell)
+                {
+                    BagButtons[ButtonBagIndex].BackColor = Color.Yellow;
+                    ButtonToBag[ButtonBagIndex] = i;
+                    ButtonBagIndex++;
                 }
             }
 

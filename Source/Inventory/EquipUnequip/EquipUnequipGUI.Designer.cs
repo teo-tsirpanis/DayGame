@@ -37,12 +37,12 @@ namespace DayGame
             this.statlabel = new System.Windows.Forms.Label();
             this.itemdescriptionlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
             this.panel1.Controls.Add(this.cancel);
             this.panel1.Controls.Add(this.equnbutton);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -68,7 +68,7 @@ namespace DayGame
             // 
             // equnbutton
             // 
-            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
             this.equnbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.equnbutton.Location = new System.Drawing.Point(75, 251);
             this.equnbutton.Name = "equnbutton";
@@ -139,20 +139,19 @@ namespace DayGame
             this.Load += new System.EventHandler(this.EquipUnequipGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button equnbutton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label statnumber;
-        private System.Windows.Forms.Label itemnamelabel;
-        private System.Windows.Forms.Label statlabel;
-        private System.Windows.Forms.Label itemdescriptionlabel;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Button equnbutton;
+        private System.Windows.Forms.Label itemdescriptionlabel;
+        private System.Windows.Forms.Label itemnamelabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label statlabel;
+        private System.Windows.Forms.Label statnumber;
+
+        #endregion
     }
 }

@@ -18,16 +18,16 @@ namespace DayGame
 
         private BuyItem buyItem;
         //forma pou tha anoigei otan epilegetai kapoio item apo to magazi
-        private Character character;
+        private readonly SaveFile saveFile;
         //o xaraktiras pernietai wste na mporoume na allaksoume to inventory kai to InGameBalance tou
 
 
-        public ShopGUI(Character character)
+        public ShopGUI(SaveFile saveFile)
         {
             InitializeComponent();
 
 
-            this.character = character;
+            this.saveFile = saveFile;
 
             ShopButtonsArray = new[]
            {
@@ -57,7 +57,7 @@ namespace DayGame
 
         private void ShopButtonClicked(int index)
         {
-            buyItem = new BuyItem(ItemsArray[index], character);
+            buyItem = new BuyItem(ItemsArray[index], saveFile.Character, saveFile.Inventory);
             buyItem.ShowDialog();
         }
         //anoigei to form opou o xristis epilegei ean tha agorasei to item

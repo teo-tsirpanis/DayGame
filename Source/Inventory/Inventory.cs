@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace DayGame
@@ -10,9 +9,6 @@ namespace DayGame
 
         private const int DefaultBagCapacity = 8;
         public int BagCapacity { get; }
-
-        [Obsolete] public readonly ConsumableItem[] Bag = new ConsumableItem[8];
-        [Obsolete] public readonly Item[] ChestSpace = new Item[42];
         private readonly List<Item> chest = new List<Item>();
         private readonly List<ConsumableItem> bag = new List<ConsumableItem>();
 
@@ -20,7 +16,7 @@ namespace DayGame
         public Weapon WeaponEquiped { get; private set; }
 
         public IReadOnlyList<Item> Chest => chest;
-        public IReadOnlyList<ConsumableItem> Bag2 => bag;
+        public IReadOnlyList<ConsumableItem> Bag => bag;
 
         public bool IsBagFull => bag.Count == BagCapacity;
         public bool IsChestFull => chest.Count == ChestCapacity;
@@ -31,17 +27,6 @@ namespace DayGame
             bag.Capacity = BagCapacity = bagCapacity;
         }
 
-        [Obsolete]
-        public void InventoryAddItem(Item Item)
-        {
-            for (int i = 0; i < 42; i++)
-            {
-                if (ChestSpace[i] != null) continue;
-                ChestSpace[i] = Item;
-                break;
-            }
-        }
-
         public bool TryAddToChest(Item item)
         {
             if (IsChestFull) return false;
@@ -49,7 +34,7 @@ namespace DayGame
             return true;
         }
 
-        public bool RemoveFromChest(Item item) => chest.Remove(item);
+        public bool DiscardFromChest(Item item) => chest.Remove(item);
 
         public bool TryAddToBag(ConsumableItem item)
         {

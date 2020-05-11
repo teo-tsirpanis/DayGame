@@ -8,7 +8,6 @@ namespace DayGame
         private double inGameBalance;
         public int Damage { get; set; }
         public int HitPoints;
-        public Inventory inv;
 
         public Character(string name, string gender)
         {
@@ -21,11 +20,6 @@ namespace DayGame
             TakenDamage = 0;
             experiencePoints = 0;
             inGameBalance = 0;
-            //testing for bossbattleframe
-            inv = new Inventory();
-            inv.TryAddToBag(new Spell("Spell", "Spell", null, 7, 17));
-            inv.TryAddToBag(new Spell("Spell", "Spell", null, 7, 17));
-            inv.TryAddToBag(new Potion("", "", null, 0, 26));
         }
 
         public string Name { get; }

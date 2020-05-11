@@ -158,7 +158,7 @@ namespace DayGame
         private void InventorySpaceReload()
         {
             UpdateButtons(inv.Chest, ChestButtons);
-            UpdateButtons(inv.Bag2, BagButtons);
+            UpdateButtons(inv.Bag, BagButtons);
             UpdateButtonFromItem(inv.WeaponEquiped, WeaponButton);
             UpdateButtonFromItem(inv.ArmorEquiped, ArmorButton);
             UpdateStatText(inv.WeaponBuff, DamageTextNumber);

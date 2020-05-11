@@ -155,9 +155,19 @@ namespace DayGame
             label.ForeColor = stat == 0 ? Color.Red : Color.Black;
         }
 
+        private bool ShouldShow(Item item) =>
+            item switch
+            {
+                Armor _ => armorcheckbox.Checked,
+                Weapon _ => weaponscheckbox.Checked,
+                Spell _ => spellscheckbox.Checked,
+                Potion _ => potionscheckbox.Checked,
+                _ => true
+            };
+
         private void InventorySpaceReload()
         {
-            UpdateButtons(inv.Chest, ChestButtons);
+            UpdateButtons(inv.Chest.Where(ShouldShow).ToArray(), ChestButtons);
             UpdateButtons(inv.Bag, BagButtons);
             UpdateButtonFromItem(inv.WeaponEquiped, WeaponButton);
             UpdateButtonFromItem(inv.ArmorEquiped, ArmorButton);

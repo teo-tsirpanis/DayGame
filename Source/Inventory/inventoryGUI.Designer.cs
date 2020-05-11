@@ -108,8 +108,7 @@ namespace DayGame
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.Filterlabel);
             this.panel1.Controls.Add(this.potionscheckbox);
@@ -141,7 +140,6 @@ namespace DayGame
             this.potionscheckbox.TabIndex = 5;
             this.potionscheckbox.Text = "Potions";
             this.potionscheckbox.UseVisualStyleBackColor = true;
-            this.potionscheckbox.CheckedChanged += filter_checked_changed;
             // 
             // spellscheckbox
             // 
@@ -153,7 +151,6 @@ namespace DayGame
             this.spellscheckbox.TabIndex = 4;
             this.spellscheckbox.Text = "Spells";
             this.spellscheckbox.UseVisualStyleBackColor = true;
-            this.spellscheckbox.CheckedChanged += filter_checked_changed;
             // 
             // weaponscheckbox
             // 
@@ -165,7 +162,6 @@ namespace DayGame
             this.weaponscheckbox.TabIndex = 3;
             this.weaponscheckbox.Text = "Weapons";
             this.weaponscheckbox.UseVisualStyleBackColor = true;
-            this.weaponscheckbox.CheckedChanged += filter_checked_changed;
             // 
             // armorcheckbox
             // 
@@ -178,7 +174,6 @@ namespace DayGame
             this.armorcheckbox.Text = "Armor";
             this.armorcheckbox.UseVisualStyleBackColor = true;
             this.armorcheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            this.armorcheckbox.CheckedChanged += filter_checked_changed;
             // 
             // ChestText
             // 
@@ -193,7 +188,7 @@ namespace DayGame
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.panel2.Controls.Add(this.chestbutton42);
             this.panel2.Controls.Add(this.chestbutton41);
             this.panel2.Controls.Add(this.chestbutton36);
@@ -627,8 +622,7 @@ namespace DayGame
             // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel3.Controls.Add(this.WeaponText);
             this.panel3.Controls.Add(this.ArmorText);
@@ -692,8 +686,7 @@ namespace DayGame
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel4.Controls.Add(this.DefenceTextNumber);
             this.panel4.Controls.Add(this.DamageTextNumber);
@@ -748,8 +741,7 @@ namespace DayGame
             // 
             // panel5
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.OrangeRed;
             this.panel5.Controls.Add(this.BagButton8);
             this.panel5.Controls.Add(this.BagButton7);
@@ -874,7 +866,6 @@ namespace DayGame
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         private System.Windows.Forms.Button ArmorButton;
@@ -948,6 +939,7 @@ namespace DayGame
         private System.Windows.Forms.Button WeaponButton;
         private System.Windows.Forms.CheckBox weaponscheckbox;
         private System.Windows.Forms.Label WeaponText;
+
         #endregion
     }
 }

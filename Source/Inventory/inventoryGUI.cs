@@ -18,11 +18,11 @@ namespace DayGame
         public Button[] BagButtonArray;
         public CheckBox[] CheckBoxArray;
         Inventory inv = new Inventory(); //ftiaxnoume ypothetiko Inventory
-        public Item spathi = new Weapon("Spathi", "spathi dou takesi", 1, 15, 5);
-        public Item panoplia = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
-        public Armor armor = new Armor("Armor D", "Armor tou takesi", 1, 3, 5);
-        public Spell spell = new Spell("SpellName", "This is a spell", 6, 0, 15);
-        public Potion potion = new Potion("PotionName", "This is a potion", 6, 0, 15);
+        public Item spathi = new Weapon("Spathi", "spathi dou takesi", null, 15, 5);
+        public Item panoplia = new Armor("Armor D", "Armor tou takesi", null, 3, 5);
+        public Armor armor = new Armor("Armor D", "Armor tou takesi", null, 3, 5);
+        public Spell spell = new Spell("SpellName", "This is a spell", null, 0, 15);
+        public Potion potion = new Potion("PotionName", "This is a potion", null, 0, 15);
 
         public int[] ButtonToChest = new int[42];
         public int[] ButtonToBag = new int[8];
@@ -48,7 +48,7 @@ namespace DayGame
             };
             //edw oloklirwnete h diadikasia tou ArrayList me ola ta ChestButtons
             proswrinh_sunarthsh_prosthiki_antikeimenwn_se_inventory();
-            
+
 
             foreach (CheckBox cb in CheckBoxArray)
             {
@@ -122,16 +122,16 @@ namespace DayGame
                     if ((inv.WeaponEquiped == null) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Weapon)))
                         //ean to weaponbutton einai empty, kai to button pou
                         //pathses einai Weapon
-                        {
-                            //kwdikas gia na prosthetei to buff tou weapon
-                            Weapon weapon = (Weapon)inv.ChestSpace[ButtonToChest[ChestButtonPressed]];
-                            DamageBuff = DamageBuff + weapon.Damage;
-                            DamageTextNumber.Text = DamageBuff.ToString();
-                            //
+                    {
+                        //kwdikas gia na prosthetei to buff tou weapon
+                        Weapon weapon = (Weapon)inv.ChestSpace[ButtonToChest[ChestButtonPressed]];
+                        DamageBuff = DamageBuff + weapon.Damage;
+                        DamageTextNumber.Text = DamageBuff.ToString();
+                        //
 
-                            inv.AddWeapon(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], ButtonToChest[ChestButtonPressed]);//prosthese to Weapon pou foreses sto WeaponButton kai afairese to apo to inventory
-                            
-                            InventorySpaceReload();//allaxe tis allages sto GUI
+                        inv.AddWeapon(inv.ChestSpace[ButtonToChest[ChestButtonPressed]], ButtonToChest[ChestButtonPressed]);//prosthese to Weapon pou foreses sto WeaponButton kai afairese to apo to inventory
+
+                        InventorySpaceReload();//allaxe tis allages sto GUI
                     }
                     else if ((inv.ArmorEquiped == null) && (inv.ChestSpace[ButtonToChest[ChestButtonPressed]].GetType() == typeof(Armor)))
                     //ean to armorbutton einai empty, kai to button pou pathses einai Armor
@@ -169,12 +169,12 @@ namespace DayGame
                         InventorySpaceReload();//allaxe tis allages sto GUI
                     }
                     else
-                        {
-                            MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
-                        }
+                    {
+                        MessageBox.Show("Δεν Μπορεις να βάλεις το αντικείμενο");
                     }
                 }
             }
+        }
         /*
         private void Equip(object sender, EventArgs e)
         {
@@ -238,7 +238,7 @@ namespace DayGame
         }
 
         private void GetTheButtonNumberBag(object sender, EventArgs e)
-        //DINEI STO INT ChestButtonPressed to Chestbutton pou epilexthike(1-42), etsi wste h sunarthsh Equip na mporei na leitourghsei
+            //DINEI STO INT ChestButtonPressed to Chestbutton pou epilexthike(1-42), etsi wste h sunarthsh Equip na mporei na leitourghsei
         {
             Button btn = sender as Button;
             string GETCHESTBUTTON = btn.Name;
@@ -271,17 +271,17 @@ namespace DayGame
 
                     inv.DeleteWeapon(inv.WeaponEquiped);
                     InventorySpaceReload();//kane reload to GUI
-                    }
                 }
+            }
         }
 
         private void UnequipConsumable(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             if ((ButtonToBag[BagButtonPressed] != -1))
-            //mono ean to button den einai keno(dhladh den exei item),ekteleitai
-            //o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote
-            //to item einai = me null, kai buggarei to programma)
+                //mono ean to button den einai keno(dhladh den exei item),ekteleitai
+                //o parakatw kodikas.(epeidh an einai keno, dhladh xwris item, tote
+                //to item einai = me null, kai buggarei to programma)
             {
                 EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.Bag[ButtonToBag[BagButtonPressed]], "Unequip");
                 if (UnequipWeapon.ShowDialog(this) == DialogResult.OK)
@@ -301,9 +301,9 @@ namespace DayGame
             //UNEQUIP, doulevei mono gia ARMORS
             Button btn = sender as Button;
             if ((inv.ArmorEquiped != null))
-            //mono ean to button den einai keno(dhladh den exei item),
-            //ekteleitai o parakatw kodikas.(epeidh an einai keno,
-            //dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
+                //mono ean to button den einai keno(dhladh den exei item),
+                //ekteleitai o parakatw kodikas.(epeidh an einai keno,
+                //dhladh xwris item, tote to item einai = me null, kai buggarei to programma)
             {
                 EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
                 if (Unequip.ShowDialog(this) == DialogResult.OK)
@@ -320,7 +320,7 @@ namespace DayGame
                     inv.DeleteArmor(inv.ArmorEquiped);
                     InventorySpaceReload();//kane reload to GUI
                 }
-            
+
             }
         }
 

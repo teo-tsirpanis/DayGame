@@ -11,7 +11,7 @@ namespace DayGame.Boss
         private Boss boss;
         private string dialogue; //to be changed to gui component
 
-        public BossBattle(Boss boss, Character character) 
+        public BossBattle(Boss boss, Character character)
         {
             this.boss = boss;
             this.character = character;
@@ -27,11 +27,11 @@ namespace DayGame.Boss
             }
             else if (action == "Spells")
             {
-                UseSpells(new Spell("sample", "a sample spell", 0, 10, 10));
+                UseSpells(new Spell("sample", "a sample spell", null, 10, 10));
             }
             else if (action == "Potions")
             {
-                UsePotions(new Potion("sample", "a sample potion", 0, 10, 10));
+                UsePotions(new Potion("sample", "a sample potion", null, 10, 10));
             }
         }
 
@@ -40,15 +40,15 @@ namespace DayGame.Boss
             int damage = character.Damage;
             boss.HitPoints -= damage;
 
-            if (boss.HitPoints <= 0) 
+            if (boss.HitPoints <= 0)
             {
                 dialogue = "Whoa! You killed the boss";
             }
             else
             {
                 dialogue = $"Whoa! You  have dealt {damage} damage";
-            } 
-                 
+            }
+
         }
 
         public void UseSpells(Spell spell)

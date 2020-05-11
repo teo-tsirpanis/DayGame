@@ -26,7 +26,7 @@ namespace DayGame
             }
         }
 
-        public void DeleteBagItem(Item Item,int counter)
+        public void DeleteBagItem(Item Item, int counter)
         {
             Bag[counter] = null;
         }
@@ -34,20 +34,21 @@ namespace DayGame
         public Boolean BagNotFull()
         {
             Boolean check = false;
-            for(int i=0; i<8; i++)
+            for (int i = 0; i < 8; i++)
             {
                 if (Bag[i] == null)
                 {
                     check = true;
                 }
             }
+
             return check;
         }
 
 
         public void AddToBagFromInventory(Item item, int counter)
         {
-            ConsumableItems NonCon = (ConsumableItems)item;
+            ConsumableItems NonCon = (ConsumableItems) item;
 
             ChestSpace[counter] = null;
             AddToBag(NonCon);
@@ -73,17 +74,17 @@ namespace DayGame
 
         public void DeleteArmor(Item item)
         {
-                ArmorEquiped = null;
+            ArmorEquiped = null;
         }
 
         public void DeleteWeapon(Item item)
         {
-                WeaponEquiped = null;
+            WeaponEquiped = null;
         }
 
         public void AddToBag(ConsumableItems item)
         {
-            for (int i = 0; i<Bag.Length; i++)
+            for (int i = 0; i < Bag.Length; i++)
             {
                 if (Bag[i] != null)
                 {
@@ -104,7 +105,7 @@ namespace DayGame
 
         public void RemoveFromBag(ConsumableItems item)
         {
-            for (int i = 0; i<Bag.Length; i++)
+            for (int i = 0; i < Bag.Length; i++)
             {
                 if (Bag[i] == item)
                 {
@@ -113,8 +114,5 @@ namespace DayGame
                 }
             }
         }
-
     }
-
-
 }

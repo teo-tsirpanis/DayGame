@@ -4,25 +4,20 @@ namespace DayGame
 {
     public class Item
     {
-        protected string name;
-        protected string description;
-        protected int image;
-        protected int price;
-
-        public Item(string name, string description, int image, int price)
+        public Item(string name, string description, Image image, int price)
         {
-            this.name = name;
-            this.description = description;
-            this.image = image;
-            this.price = price;
+            this.Name = name;
+            this.Description = description;
+            this.Image = image;
+            this.Price = price;
         }
 
-        public string Name => name;
+        public string Name { get; }
 
-        public string Description => description;
+        public string Description { get; }
 
-        public int Image => image;
+        public Image Image { get; }
 
-        public int Price => price;
+        public int Price { get; }
     }
 }

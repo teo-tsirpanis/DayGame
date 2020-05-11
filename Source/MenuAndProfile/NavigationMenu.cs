@@ -27,7 +27,7 @@ namespace DayGame
 
 
             questLog = new QuestLog(saveFile, UpdateStats);
-            inventoryGui = new InventoryGUI();
+            inventoryGui = new InventoryGUI(saveFile);
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;

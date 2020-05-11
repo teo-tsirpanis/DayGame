@@ -1,5 +1,6 @@
 using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
@@ -16,45 +17,33 @@ namespace DayGame
         private int DamageBuff;
         private int ArmorBuff;
 
+        private static Button[] GetButtonsInOrder(Control parent) =>
+            parent
+                .Controls.OfType<Button>()
+                .OrderBy(btn => btn.Location.Y)
+                .ThenBy(btn => btn.Location.X)
+                .ToArray();
+
         public InventoryGUI(SaveFile sf)
         {
             InitializeComponent();
             inv = sf.Inventory;
-            var checkBoxes = new[] {armorcheckbox, weaponscheckbox, spellscheckbox, potionscheckbox};
-            ChestButtons = new[]
-            {
-                chestbutton1, chestbutton2, chestbutton3, chestbutton4, chestbutton5, chestbutton6, chestbutton7,
-                chestbutton8, chestbutton9, chestbutton10, chestbutton11, chestbutton12, chestbutton13, chestbutton14,
-                chestbutton15, chestbutton16, chestbutton17, chestbutton18, chestbutton19, chestbutton20, chestbutton21,
-                chestbutton22, chestbutton23, chestbutton24, chestbutton25, chestbutton26, chestbutton27, chestbutton28,
-                chestbutton29, chestbutton30, chestbutton31, chestbutton32, chestbutton33, chestbutton34, chestbutton35,
-                chestbutton36, chestbutton37, chestbutton38, chestbutton39, chestbutton40, chestbutton41, chestbutton42
-            };
-            BagButtons = new[]
-            {
-                BagButton1, BagButton2, BagButton3, BagButton4, BagButton5, BagButton6, BagButton7, BagButton8
-            };
+            ChestButtons = GetButtonsInOrder(buttonPanel);
+            BagButtons = GetButtonsInOrder(bagPanel);
             AddSampleItems();
 
-            foreach (CheckBox cb in checkBoxes)
+            var checkBoxes = new[] {armorcheckbox, weaponscheckbox, spellscheckbox, potionscheckbox};
+
+            foreach (var cb in checkBoxes)
             {
                 cb.Checked = true;
+                cb.CheckedChanged += filter_checked_changed;
             }
-
-            InventorySpaceReload();
-
-            for (int i = 0; i < 42; i++)
-            {
-                ChestButtons[i].Click += Equip;
-            }
-
-            for (int i = 0; i < 8; i++)
-            {
-                BagButtons[i].Click += UnequipConsumable;
-            }
-
+            foreach (var t in ChestButtons) t.Click += Equip;
+            foreach (var t in BagButtons) t.Click += UnequipConsumable;
             ArmorButton.Click += UnequipArmor;
             WeaponButton.Click += UnequipWeapon;
+            InventorySpaceReload();
         }
 
         private void Equip(object sender, EventArgs e)
@@ -93,7 +82,7 @@ namespace DayGame
         }
 
         private static int GetButtonIndex(Control btn) =>
-            int.Parse(buttonNumberExtractor.Match(btn.Name).Groups[0].Value) - 1;
+            int.Parse(buttonNumberExtractor.Match(btn.Name).Groups[1].Value) - 1;
 
         private void UnequipWeapon(object sender, EventArgs e)
         {
@@ -105,7 +94,6 @@ namespace DayGame
                 Weapon weapon = inv.WeaponEquiped;
                 DamageBuff -= weapon.Damage;
                 DamageTextNumber.Text = DamageBuff.ToString();
-
 
                 inv.DeleteWeapon(inv.WeaponEquiped);
                 InventorySpaceReload();

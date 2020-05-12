@@ -8,7 +8,7 @@ namespace DayGame
     {
         private SaveFile chosenSaveFile;
 
-        public StartUpMenu()
+        private StartUpMenu()
         {
             InitializeComponent();
         }

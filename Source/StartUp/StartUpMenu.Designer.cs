@@ -36,9 +36,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (30)))), ((int) (((byte) (186)))), ((int) (((byte) (124)))));
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.ForestGreen;
             this.button1.FlatAppearance.BorderSize = 0;
@@ -52,18 +52,18 @@
             this.button1.Text = "Create New Character";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.AutoScroll = true;
             this.panel1.ForeColor = System.Drawing.Color.Linen;
             this.panel1.Location = new System.Drawing.Point(74, 23);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(357, 375);
             this.panel1.TabIndex = 3;
-            // 
+            //
             // pictureBox1
-            // 
+            //
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(472, 0);
@@ -74,18 +74,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            // 
+            //
             // panel2
-            // 
+            //
             this.panel2.BackColor = System.Drawing.Color.Gray;
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(471, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1, 473);
             this.panel2.TabIndex = 6;
-            // 
+            //
             // StartUpMenu
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
@@ -97,10 +97,11 @@
             this.Controls.Add(this.button1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(978, 502);
             this.Name = "StartUpMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Start Up";
+            this.Text = "DayGame - Start Up";
             this.Load += new System.EventHandler(this.StartUpMenu_Load);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

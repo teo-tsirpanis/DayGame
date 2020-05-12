@@ -9,6 +9,7 @@ namespace DayGame
         {
             InitializeComponent();
             CenterToParent();
+            ShowInTaskbar = false;
             Setup(item, buttontext);
         }
 

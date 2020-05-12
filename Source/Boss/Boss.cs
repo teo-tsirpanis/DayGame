@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DayGame.Boss
+namespace DayGame
 
 {
     public class Boss
@@ -29,7 +27,7 @@ namespace DayGame.Boss
         }
     }
 
-    
-    
+
+
 }
 

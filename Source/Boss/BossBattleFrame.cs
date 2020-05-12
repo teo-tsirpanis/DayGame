@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DayGame.Boss
+namespace DayGame
 {
     public partial class BossBattleFrame : Form
     {

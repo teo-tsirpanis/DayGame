@@ -1,4 +1,4 @@
-﻿namespace DayGame.Boss
+﻿namespace DayGame
 {
     partial class BossBattleFrame
     {

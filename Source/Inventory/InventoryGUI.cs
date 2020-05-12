@@ -37,8 +37,8 @@ namespace DayGame
 
             foreach (var t in ChestButtons) t.Click += Equip;
             foreach (var t in BagButtons) t.Click += UnequipConsumable;
-            ArmorButton.Click += UnequipArmor;
-            WeaponButton.Click += UnequipWeapon;
+            ArmorButton.Click += (_, __) => UnequipNonConsumable(inv.ArmorEquiped, inv.TryUnequipArmor);
+            WeaponButton.Click += (_, __) => UnequipNonConsumable(inv.WeaponEquiped, inv.TryUnequipWeapon);
             InventorySpaceReload();
         }
 
@@ -85,24 +85,16 @@ namespace DayGame
             InventorySpaceReload();
         }
 
-        private void UnequipWeapon(object sender, EventArgs e)
+        private void UnequipNonConsumable(NonConsumableItem item, Func<bool> fUnequip)
         {
-            if (inv.WeaponEquiped == null) return;
-            using EquipUnequipGUI UnequipWeapon = new EquipUnequipGUI(inv.WeaponEquiped, "Unequip");
-            if (UnequipWeapon.ShowDialog(this) != DialogResult.OK) return;
+            if (item == null) return;
+            using var dialog = new EquipUnequipGUI(item, "Unequip");
+            if (dialog.ShowDialog(this) != DialogResult.OK) return;
 
-            if (!inv.TryUnequipWeapon()) FullChestError();
-            InventorySpaceReload();
-        }
-
-        private void UnequipArmor(object sender, EventArgs e)
-        {
-            if (inv.ArmorEquiped == null) return;
-            using EquipUnequipGUI Unequip = new EquipUnequipGUI(inv.ArmorEquiped, "Unequip");
-            if (Unequip.ShowDialog(this) != DialogResult.OK) return;
-
-            if (!inv.TryUnequipArmor()) FullChestError();
-            InventorySpaceReload();
+            if (fUnequip())
+                InventorySpaceReload();
+            else
+                FullChestError();
         }
 
         void AddSampleItems()
@@ -122,25 +114,16 @@ namespace DayGame
         private static void UpdateButtonFromItem(Item item, Button btn)
         {
             btn.Tag = item;
-            if (item == null)
+            btn.BackColor = item switch
             {
-                btn.Enabled = false;
-                btn.Image = null;
-                btn.BackColor = Color.FromKnownColor(KnownColor.Control);
-            }
-            else
-            {
-                btn.BackColor = item switch
-                {
-                    Armor _ => Color.Blue,
-                    Weapon _ => Color.Red,
-                    Spell _ => Color.Yellow,
-                    Potion _ => Color.Green,
-                    _ => btn.BackColor
-                };
-                btn.Image = item.Image;
-                btn.Enabled = true;
-            }
+                Armor _ => Color.Blue,
+                Weapon _ => Color.Red,
+                Spell _ => Color.Yellow,
+                Potion _ => Color.Green,
+                _ => Color.FromKnownColor(KnownColor.Control)
+            };
+            btn.Image = item?.Image;
+            btn.Enabled = item != null;
         }
 
         private static void UpdateButtons(IReadOnlyList<Item> items, Button[] buttons)

@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace DayGame
+﻿namespace DayGame
 {
     public class Character
     {

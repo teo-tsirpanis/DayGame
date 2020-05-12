@@ -28,6 +28,8 @@ namespace DayGame
         /// </summary>
         private void InitializeComponent()
         {
+            this.BagButton1 = new System.Windows.Forms.Button();
+            this.chestbutton1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Filterlabel = new System.Windows.Forms.Label();
             this.potionscheckbox = new System.Windows.Forms.CheckBox();
@@ -35,7 +37,7 @@ namespace DayGame
             this.weaponscheckbox = new System.Windows.Forms.CheckBox();
             this.armorcheckbox = new System.Windows.Forms.CheckBox();
             this.ChestText = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.buttonPanel = new System.Windows.Forms.Panel();
             this.chestbutton42 = new System.Windows.Forms.Button();
             this.chestbutton41 = new System.Windows.Forms.Button();
             this.chestbutton36 = new System.Windows.Forms.Button();
@@ -77,7 +79,6 @@ namespace DayGame
             this.chestbutton4 = new System.Windows.Forms.Button();
             this.chestbutton3 = new System.Windows.Forms.Button();
             this.chestbutton2 = new System.Windows.Forms.Button();
-            this.chestbutton1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.WeaponText = new System.Windows.Forms.Label();
             this.ArmorText = new System.Windows.Forms.Label();
@@ -89,22 +90,41 @@ namespace DayGame
             this.DamageTextNumber = new System.Windows.Forms.Label();
             this.DefenceText = new System.Windows.Forms.Label();
             this.DamageText = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.bagPanel = new System.Windows.Forms.Panel();
             this.BagButton8 = new System.Windows.Forms.Button();
             this.BagButton7 = new System.Windows.Forms.Button();
             this.BagText = new System.Windows.Forms.Label();
             this.BagButton4 = new System.Windows.Forms.Button();
-            this.BagButton1 = new System.Windows.Forms.Button();
             this.BagButton6 = new System.Windows.Forms.Button();
             this.BagButton2 = new System.Windows.Forms.Button();
             this.BagButton3 = new System.Windows.Forms.Button();
             this.BagButton5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.buttonPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.bagPanel.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // BagButton1
+            // 
+            this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
+            this.BagButton1.Location = new System.Drawing.Point(71, 33);
+            this.BagButton1.Name = "BagButton1";
+            this.BagButton1.Size = new System.Drawing.Size(67, 67);
+            this.BagButton1.TabIndex = 42;
+            this.BagButton1.UseVisualStyleBackColor = false;
+            // 
+            // chestbutton1
+            // 
+            this.chestbutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chestbutton1.BackColor = System.Drawing.SystemColors.Control;
+            this.chestbutton1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.chestbutton1.Location = new System.Drawing.Point(13, 47);
+            this.chestbutton1.Name = "chestbutton1";
+            this.chestbutton1.Size = new System.Drawing.Size(67, 67);
+            this.chestbutton1.TabIndex = 2;
+            this.chestbutton1.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -133,6 +153,8 @@ namespace DayGame
             // potionscheckbox
             // 
             this.potionscheckbox.AutoSize = true;
+            this.potionscheckbox.Checked = true;
+            this.potionscheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.potionscheckbox.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.potionscheckbox.Location = new System.Drawing.Point(31, 173);
             this.potionscheckbox.Name = "potionscheckbox";
@@ -144,6 +166,8 @@ namespace DayGame
             // spellscheckbox
             // 
             this.spellscheckbox.AutoSize = true;
+            this.spellscheckbox.Checked = true;
+            this.spellscheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.spellscheckbox.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.spellscheckbox.Location = new System.Drawing.Point(31, 135);
             this.spellscheckbox.Name = "spellscheckbox";
@@ -155,6 +179,8 @@ namespace DayGame
             // weaponscheckbox
             // 
             this.weaponscheckbox.AutoSize = true;
+            this.weaponscheckbox.Checked = true;
+            this.weaponscheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.weaponscheckbox.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.weaponscheckbox.Location = new System.Drawing.Point(31, 95);
             this.weaponscheckbox.Name = "weaponscheckbox";
@@ -166,6 +192,8 @@ namespace DayGame
             // armorcheckbox
             // 
             this.armorcheckbox.AutoSize = true;
+            this.armorcheckbox.Checked = true;
+            this.armorcheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.armorcheckbox.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.armorcheckbox.Location = new System.Drawing.Point(31, 57);
             this.armorcheckbox.Name = "armorcheckbox";
@@ -173,7 +201,6 @@ namespace DayGame
             this.armorcheckbox.TabIndex = 2;
             this.armorcheckbox.Text = "Armor";
             this.armorcheckbox.UseVisualStyleBackColor = true;
-            this.armorcheckbox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // ChestText
             // 
@@ -186,56 +213,56 @@ namespace DayGame
             this.ChestText.TabIndex = 1;
             this.ChestText.Text = "Chest:";
             // 
-            // panel2
+            // buttonPanel
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.panel2.Controls.Add(this.chestbutton42);
-            this.panel2.Controls.Add(this.chestbutton41);
-            this.panel2.Controls.Add(this.chestbutton36);
-            this.panel2.Controls.Add(this.chestbutton40);
-            this.panel2.Controls.Add(this.chestbutton35);
-            this.panel2.Controls.Add(this.chestbutton39);
-            this.panel2.Controls.Add(this.chestbutton34);
-            this.panel2.Controls.Add(this.chestbutton38);
-            this.panel2.Controls.Add(this.chestbutton33);
-            this.panel2.Controls.Add(this.chestbutton37);
-            this.panel2.Controls.Add(this.chestbutton32);
-            this.panel2.Controls.Add(this.chestbutton31);
-            this.panel2.Controls.Add(this.chestbutton30);
-            this.panel2.Controls.Add(this.chestbutton29);
-            this.panel2.Controls.Add(this.chestbutton28);
-            this.panel2.Controls.Add(this.chestbutton27);
-            this.panel2.Controls.Add(this.chestbutton26);
-            this.panel2.Controls.Add(this.chestbutton25);
-            this.panel2.Controls.Add(this.chestbutton24);
-            this.panel2.Controls.Add(this.chestbutton23);
-            this.panel2.Controls.Add(this.chestbutton22);
-            this.panel2.Controls.Add(this.chestbutton21);
-            this.panel2.Controls.Add(this.chestbutton20);
-            this.panel2.Controls.Add(this.chestbutton19);
-            this.panel2.Controls.Add(this.chestbutton18);
-            this.panel2.Controls.Add(this.chestbutton17);
-            this.panel2.Controls.Add(this.chestbutton16);
-            this.panel2.Controls.Add(this.chestbutton15);
-            this.panel2.Controls.Add(this.chestbutton14);
-            this.panel2.Controls.Add(this.chestbutton13);
-            this.panel2.Controls.Add(this.chestbutton12);
-            this.panel2.Controls.Add(this.chestbutton11);
-            this.panel2.Controls.Add(this.chestbutton10);
-            this.panel2.Controls.Add(this.chestbutton9);
-            this.panel2.Controls.Add(this.chestbutton8);
-            this.panel2.Controls.Add(this.chestbutton7);
-            this.panel2.Controls.Add(this.chestbutton6);
-            this.panel2.Controls.Add(this.chestbutton5);
-            this.panel2.Controls.Add(this.chestbutton4);
-            this.panel2.Controls.Add(this.chestbutton3);
-            this.panel2.Controls.Add(this.chestbutton2);
-            this.panel2.Controls.Add(this.chestbutton1);
-            this.panel2.Controls.Add(this.ChestText);
-            this.panel2.Location = new System.Drawing.Point(165, -1);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(457, 593);
-            this.panel2.TabIndex = 2;
+            this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.buttonPanel.Controls.Add(this.chestbutton42);
+            this.buttonPanel.Controls.Add(this.chestbutton41);
+            this.buttonPanel.Controls.Add(this.chestbutton36);
+            this.buttonPanel.Controls.Add(this.chestbutton40);
+            this.buttonPanel.Controls.Add(this.chestbutton35);
+            this.buttonPanel.Controls.Add(this.chestbutton39);
+            this.buttonPanel.Controls.Add(this.chestbutton34);
+            this.buttonPanel.Controls.Add(this.chestbutton38);
+            this.buttonPanel.Controls.Add(this.chestbutton33);
+            this.buttonPanel.Controls.Add(this.chestbutton37);
+            this.buttonPanel.Controls.Add(this.chestbutton32);
+            this.buttonPanel.Controls.Add(this.chestbutton31);
+            this.buttonPanel.Controls.Add(this.chestbutton30);
+            this.buttonPanel.Controls.Add(this.chestbutton29);
+            this.buttonPanel.Controls.Add(this.chestbutton28);
+            this.buttonPanel.Controls.Add(this.chestbutton27);
+            this.buttonPanel.Controls.Add(this.chestbutton26);
+            this.buttonPanel.Controls.Add(this.chestbutton25);
+            this.buttonPanel.Controls.Add(this.chestbutton24);
+            this.buttonPanel.Controls.Add(this.chestbutton23);
+            this.buttonPanel.Controls.Add(this.chestbutton22);
+            this.buttonPanel.Controls.Add(this.chestbutton21);
+            this.buttonPanel.Controls.Add(this.chestbutton20);
+            this.buttonPanel.Controls.Add(this.chestbutton19);
+            this.buttonPanel.Controls.Add(this.chestbutton18);
+            this.buttonPanel.Controls.Add(this.chestbutton17);
+            this.buttonPanel.Controls.Add(this.chestbutton16);
+            this.buttonPanel.Controls.Add(this.chestbutton15);
+            this.buttonPanel.Controls.Add(this.chestbutton14);
+            this.buttonPanel.Controls.Add(this.chestbutton13);
+            this.buttonPanel.Controls.Add(this.chestbutton12);
+            this.buttonPanel.Controls.Add(this.chestbutton11);
+            this.buttonPanel.Controls.Add(this.chestbutton10);
+            this.buttonPanel.Controls.Add(this.chestbutton9);
+            this.buttonPanel.Controls.Add(this.chestbutton8);
+            this.buttonPanel.Controls.Add(this.chestbutton7);
+            this.buttonPanel.Controls.Add(this.chestbutton6);
+            this.buttonPanel.Controls.Add(this.chestbutton5);
+            this.buttonPanel.Controls.Add(this.chestbutton4);
+            this.buttonPanel.Controls.Add(this.chestbutton3);
+            this.buttonPanel.Controls.Add(this.chestbutton2);
+            this.buttonPanel.Controls.Add(this.chestbutton1);
+            this.buttonPanel.Controls.Add(this.ChestText);
+            this.buttonPanel.Location = new System.Drawing.Point(165, -1);
+            this.buttonPanel.Name = "buttonPanel";
+            this.buttonPanel.Size = new System.Drawing.Size(457, 593);
+            this.buttonPanel.TabIndex = 2;
             // 
             // chestbutton42
             // 
@@ -596,7 +623,6 @@ namespace DayGame
             this.chestbutton3.Size = new System.Drawing.Size(67, 67);
             this.chestbutton3.TabIndex = 4;
             this.chestbutton3.UseVisualStyleBackColor = true;
-            this.chestbutton3.Click += new System.EventHandler(this.chestbutton3_Click);
             // 
             // chestbutton2
             // 
@@ -606,19 +632,6 @@ namespace DayGame
             this.chestbutton2.Size = new System.Drawing.Size(67, 67);
             this.chestbutton2.TabIndex = 3;
             this.chestbutton2.UseVisualStyleBackColor = true;
-            this.chestbutton2.Click += new System.EventHandler(this.chestbutton2_Click);
-            // 
-            // chestbutton1
-            // 
-            this.chestbutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chestbutton1.BackColor = System.Drawing.SystemColors.Control;
-            this.chestbutton1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.chestbutton1.Location = new System.Drawing.Point(13, 47);
-            this.chestbutton1.Name = "chestbutton1";
-            this.chestbutton1.Size = new System.Drawing.Size(67, 67);
-            this.chestbutton1.TabIndex = 2;
-            this.chestbutton1.UseVisualStyleBackColor = true;
-            this.chestbutton1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel3
             // 
@@ -643,7 +656,6 @@ namespace DayGame
             this.WeaponText.Size = new System.Drawing.Size(90, 26);
             this.WeaponText.TabIndex = 41;
             this.WeaponText.Text = "Weapon";
-            this.WeaponText.Click += new System.EventHandler(this.label8_Click);
             // 
             // ArmorText
             // 
@@ -672,7 +684,6 @@ namespace DayGame
             this.ArmorButton.Size = new System.Drawing.Size(80, 80);
             this.ArmorButton.TabIndex = 38;
             this.ArmorButton.UseVisualStyleBackColor = false;
-            this.ArmorButton.Click += new System.EventHandler(this.button43_Click);
             // 
             // EquipedText
             // 
@@ -701,7 +712,7 @@ namespace DayGame
             // 
             this.DefenceTextNumber.AutoSize = true;
             this.DefenceTextNumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
-            this.DefenceTextNumber.Location = new System.Drawing.Point(287, 45);
+            this.DefenceTextNumber.Location = new System.Drawing.Point(292, 50);
             this.DefenceTextNumber.Name = "DefenceTextNumber";
             this.DefenceTextNumber.Size = new System.Drawing.Size(24, 26);
             this.DefenceTextNumber.TabIndex = 42;
@@ -713,7 +724,7 @@ namespace DayGame
             this.DamageTextNumber.AutoSize = true;
             this.DamageTextNumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
             this.DamageTextNumber.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.DamageTextNumber.Location = new System.Drawing.Point(93, 50);
+            this.DamageTextNumber.Location = new System.Drawing.Point(114, 50);
             this.DamageTextNumber.Name = "DamageTextNumber";
             this.DamageTextNumber.Size = new System.Drawing.Size(24, 26);
             this.DamageTextNumber.TabIndex = 41;
@@ -723,39 +734,39 @@ namespace DayGame
             // 
             this.DefenceText.AutoSize = true;
             this.DefenceText.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
-            this.DefenceText.Location = new System.Drawing.Point(256, 23);
+            this.DefenceText.Location = new System.Drawing.Point(265, 23);
             this.DefenceText.Name = "DefenceText";
-            this.DefenceText.Size = new System.Drawing.Size(78, 22);
+            this.DefenceText.Size = new System.Drawing.Size(77, 22);
             this.DefenceText.TabIndex = 40;
-            this.DefenceText.Text = "Defence";
+            this.DefenceText.Text = "Defense";
             // 
             // DamageText
             // 
             this.DamageText.AutoSize = true;
             this.DamageText.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
-            this.DamageText.Location = new System.Drawing.Point(71, 23);
+            this.DamageText.Location = new System.Drawing.Point(88, 22);
             this.DamageText.Name = "DamageText";
             this.DamageText.Size = new System.Drawing.Size(77, 22);
             this.DamageText.TabIndex = 39;
             this.DamageText.Text = "Damage";
             // 
-            // panel5
+            // bagPanel
             // 
-            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel5.BackColor = System.Drawing.Color.OrangeRed;
-            this.panel5.Controls.Add(this.BagButton8);
-            this.panel5.Controls.Add(this.BagButton7);
-            this.panel5.Controls.Add(this.BagText);
-            this.panel5.Controls.Add(this.BagButton4);
-            this.panel5.Controls.Add(this.BagButton1);
-            this.panel5.Controls.Add(this.BagButton6);
-            this.panel5.Controls.Add(this.BagButton2);
-            this.panel5.Controls.Add(this.BagButton3);
-            this.panel5.Controls.Add(this.BagButton5);
-            this.panel5.Location = new System.Drawing.Point(628, 358);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(450, 234);
-            this.panel5.TabIndex = 5;
+            this.bagPanel.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
+            this.bagPanel.BackColor = System.Drawing.Color.OrangeRed;
+            this.bagPanel.Controls.Add(this.BagButton8);
+            this.bagPanel.Controls.Add(this.BagButton7);
+            this.bagPanel.Controls.Add(this.BagText);
+            this.bagPanel.Controls.Add(this.BagButton4);
+            this.bagPanel.Controls.Add(this.BagButton1);
+            this.bagPanel.Controls.Add(this.BagButton6);
+            this.bagPanel.Controls.Add(this.BagButton2);
+            this.bagPanel.Controls.Add(this.BagButton3);
+            this.bagPanel.Controls.Add(this.BagButton5);
+            this.bagPanel.Location = new System.Drawing.Point(628, 358);
+            this.bagPanel.Name = "bagPanel";
+            this.bagPanel.Size = new System.Drawing.Size(450, 234);
+            this.bagPanel.TabIndex = 5;
             // 
             // BagButton8
             // 
@@ -793,15 +804,6 @@ namespace DayGame
             this.BagButton4.Size = new System.Drawing.Size(67, 67);
             this.BagButton4.TabIndex = 45;
             this.BagButton4.UseVisualStyleBackColor = false;
-            // 
-            // BagButton1
-            // 
-            this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
-            this.BagButton1.Location = new System.Drawing.Point(71, 33);
-            this.BagButton1.Name = "BagButton1";
-            this.BagButton1.Size = new System.Drawing.Size(67, 67);
-            this.BagButton1.TabIndex = 42;
-            this.BagButton1.UseVisualStyleBackColor = false;
             // 
             // BagButton6
             // 
@@ -845,26 +847,25 @@ namespace DayGame
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1078, 592);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.bagPanel);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.buttonPanel);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "InventoryGUI";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.inventoryGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
+            this.buttonPanel.ResumeLayout(false);
+            this.buttonPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.bagPanel.ResumeLayout(false);
+            this.bagPanel.PerformLayout();
             this.ResumeLayout(false);
         }
 
@@ -879,7 +880,9 @@ namespace DayGame
         private System.Windows.Forms.Button BagButton6;
         private System.Windows.Forms.Button BagButton7;
         private System.Windows.Forms.Button BagButton8;
+        private System.Windows.Forms.Panel bagPanel;
         private System.Windows.Forms.Label BagText;
+        private System.Windows.Forms.Panel buttonPanel;
         private System.Windows.Forms.Button chestbutton1;
         private System.Windows.Forms.Button chestbutton10;
         private System.Windows.Forms.Button chestbutton11;
@@ -930,10 +933,8 @@ namespace DayGame
         private System.Windows.Forms.Label EquipedText;
         private System.Windows.Forms.Label Filterlabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.CheckBox potionscheckbox;
         private System.Windows.Forms.CheckBox spellscheckbox;
         private System.Windows.Forms.Button WeaponButton;

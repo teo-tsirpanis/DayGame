@@ -159,15 +159,15 @@
             this.PerformLayout();
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.Label DescriptionLabel;
-        private System.Windows.Forms.Label StatLabel;
-        private System.Windows.Forms.Label StatAmountLabel;
-        private System.Windows.Forms.Label PriceLabel;
-        private System.Windows.Forms.Button BuyButton;
         private System.Windows.Forms.Label BalanceLabel;
+        private System.Windows.Forms.Button BuyButton;
+        private System.Windows.Forms.Label DescriptionLabel;
+        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label PriceLabel;
+        private System.Windows.Forms.Label StatAmountLabel;
+        private System.Windows.Forms.Label StatLabel;
+
+        #endregion
     }
 }

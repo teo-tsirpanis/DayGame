@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices;
-
-namespace DayGame
+﻿namespace DayGame
 {
     public class Character
     {
@@ -8,7 +6,6 @@ namespace DayGame
         private double inGameBalance;
         public int Damage { get; set; }
         public int HitPoints;
-        public Inventory inv;
 
         public Character(string name, string gender)
         {
@@ -21,11 +18,6 @@ namespace DayGame
             TakenDamage = 0;
             experiencePoints = 0;
             inGameBalance = 0;
-            //testing for bossbattleframe
-            inv = new Inventory();
-            inv.AddToBag(new Spell("Spell", "Spell", null, 7, 17));
-            inv.AddToBag(new Spell("Spell", "Spell", null, 7, 17));
-            inv.AddToBag(new Potion("", "", null, 0, 26));
         }
 
         public string Name { get; }

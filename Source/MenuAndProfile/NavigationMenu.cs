@@ -10,54 +10,40 @@ namespace DayGame
         private Character character => saveFile.Character;
         private readonly QuestLog questLog;
         private readonly InventoryGUI inventoryGui;
-        private ShopGUI shopGui;
+        private readonly ShopGUI shopGui;
         private BossBattleFrame bossBattleFrame;
 
         public NavigationMenu(SaveFile saveFile)
         {
             this.saveFile = saveFile;
             InitializeComponent();
-            if (saveFile.Character.Gender == "Male")
-            {
-                pictureBox2.Image = imageList1.Images[0];
-            }
-            else
-            {
-                pictureBox2.Image = imageList1.Images[1];
-            }
-
+            pictureBox2.Image = imageList1.Images[character.Gender == "Male" ? 0 : 1];
 
             questLog = new QuestLog(saveFile, UpdateStats);
-            inventoryGui = new InventoryGUI();
-            shopGui = new ShopGUI(character);
+            inventoryGui = new InventoryGUI(saveFile);
+            shopGui = new ShopGUI(saveFile);
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
-            levelLabel.Text = @"Level : " + character.Level;
-            gameBalanceLabel.Text = character.InGameBalance.ToString();
-            xpBarController();
-            hpBarController();
-            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
-            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
+            UpdateStats();
         }
 
 
-        private Form activeForm = null;
+        private Form activeForm;
 
         private void openChildForm(Form childForm)
         {
-            if (childForm != activeForm)
-            {
-                activeForm?.Hide();
-                activeForm = childForm;
-                childForm.TopLevel = false;
-                childForm.FormBorderStyle = FormBorderStyle.None;
-                childForm.Dock = DockStyle.Fill;
-                panelChildForm.Controls.Add(childForm);
-                panelChildForm.Tag = childForm;
-                childForm.BringToFront();
-                childForm.Show();
-            }
+            if (childForm == activeForm) return;
+
+            activeForm?.Hide();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelChildForm.Controls.Add(childForm);
+            panelChildForm.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
 
         private void questLogButton_Click(object sender, EventArgs e)
@@ -79,33 +65,14 @@ namespace DayGame
             }
         }
 
-        private void xpBarController()
-        {
-            xpBar.Width = (int) (character.ExpreriencePoints * 2 / (character.Level + 0.5));
-        }
-
-        private void gameLabelController()
-        {
-            gameBalanceLabel.Text = character.InGameBalance.ToString();
-        }
-
-        private void hpLabelController()
-        {
-            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
-        }
-
-        private void xpLabelController()
-        {
-            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
-        }
-
         private void UpdateStats()
         {
-            xpBarController();
             hpBarController();
-            gameLabelController();
-            xpLabelController();
-            hpLabelController();
+            levelLabel.Text = $"Level : {character.Level}";
+            xpBar.Width = (int) (character.ExpreriencePoints * 2 / (character.Level + 0.5));
+            gameBalanceLabel.Text = character.InGameBalance.ToString();
+            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
+            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)

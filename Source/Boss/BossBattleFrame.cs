@@ -21,14 +21,17 @@ namespace DayGame.Boss
         private Boolean isPotion;
         //Array mapping button to bag indexes
         private int[] ButtonToBag;
-        private ConsumableItem[] Bag;
-        public BossBattleFrame(Character character, Boss boss)
+        private readonly Inventory inventory;
+        private IReadOnlyList<ConsumableItem> Bag => inventory.Bag;
+
+        public BossBattleFrame(Character character, Inventory inventory, Boss boss)
         {
             InitializeComponent();
             BagButtons = new[] {BagButton0, BagButton1, BagButton2, BagButton3, BagButton4, BagButton5, BagButton6, BagButton7};
-            
+
             ButtonToBag = new int[8];
             this.character = character;
+            this.inventory = inventory;
             this.boss = boss;
             dialogue.Text = "Select Action!";
             this.BossName.Text = boss.Name;
@@ -38,12 +41,12 @@ namespace DayGame.Boss
             maxCharHp = character.HitPoints;
             maxBossHp = boss.HitPoints;
             HpController();
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void BossBattleFrame_Load(object sender, EventArgs e)
@@ -123,7 +126,7 @@ namespace DayGame.Boss
         {
             ContinueAfterChar.Visible = false;
             BossAttack();
-            
+
         }
 
         private void continue_after_boss_click(object sender, EventArgs e)
@@ -180,14 +183,14 @@ namespace DayGame.Boss
                         return false;
                     }
                 }
-                
+
             }
             return true;
         }
         //Shows buttons with the appropriate consumables in them
         public void ShowBag(Boolean isPotion)
         {
-            
+
             Type t = isPotion ? typeof(Potion) : typeof(Spell);
             //temporary until we find icons
             Color c = isPotion ? Color.Green : Color.Yellow;
@@ -204,7 +207,7 @@ namespace DayGame.Boss
             }
 
             //fill buttons
-            for (int i = 0; i<Bag.Length; i++)
+            for (int i = 0; i<Bag.Count; i++)
             {
                 if (Bag[i] != null)
                 {
@@ -221,7 +224,6 @@ namespace DayGame.Boss
         public void UseConsumable(Boolean isPotion)
         {
             hideButtons();
-            Bag = character.inv.GetBag();
             String text = isPotion ? "potions" : "spells";
             BackB.Visible = true;
             if (IsEmpty(isPotion)){
@@ -251,7 +253,7 @@ namespace DayGame.Boss
                     UseSpell((Spell)item);
                 }
             }
-            
+
         }
 
         public void UsePotion(Potion potion)
@@ -262,7 +264,7 @@ namespace DayGame.Boss
             dialogue.Text = $"You have regenerated {heal} hit points";
             HpController();
             HideBag();
-            character.inv.RemoveFromBag(potion);
+            inventory.DiscardFromBag(potion);
             ContinueAfterChar.Visible = true;
         }
 
@@ -270,7 +272,7 @@ namespace DayGame.Boss
         {
             int damage = spell.Damage;
             boss.HitPoints -= damage;
-            
+
             if (boss.HitPoints <= 0)
             {
                 dialogue.Text = $"Whoa! You killed the boss";
@@ -281,7 +283,7 @@ namespace DayGame.Boss
             }
             HpController();
             HideBag();
-            character.inv.RemoveFromBag(spell);
+            inventory.DiscardFromBag(spell);
             ContinueAfterChar.Visible = true;
         }
         //hides the bag and back buttons
@@ -300,6 +302,6 @@ namespace DayGame.Boss
             SelectAction();
         }
 
-        
+
     }
 }

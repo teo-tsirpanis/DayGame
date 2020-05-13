@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,16 +13,17 @@ namespace DayGame
 {
     public partial class BossBattleFrame : Form
     {
-        private Character character;
-        private Boss boss;
-        private int maxCharHp;
-        private int maxBossHp;
-        private Button[] BagButtons;
-        //boolean showing if we are dealing with potions (1) or spells (0)
-        private Boolean isPotion;
+        private readonly Character character;
+        private readonly Boss boss;
+        private readonly int maxCharHp;
+        private readonly Button[] BagButtons;
         //Array mapping button to bag indexes
-        private int[] ButtonToBag;
+        private readonly int[] ButtonToBag;
         private readonly Inventory inventory;
+
+        private int HitPoints;
+        //boolean showing if we are dealing with potions (1) or spells (0)
+        private bool isPotion;
         private IReadOnlyList<ConsumableItem> Bag => inventory.Bag;
 
         public BossBattleFrame(Character character, Inventory inventory, Boss boss)
@@ -39,7 +41,7 @@ namespace DayGame
             this.BossLevel.Text = "Level " + boss.Level;
             this.CharLevel.Text = "Level " + character.Level;
             maxCharHp = character.HitPoints;
-            maxBossHp = boss.HitPoints;
+            HitPoints = boss.Health;
             HpController();
 
         }
@@ -50,16 +52,6 @@ namespace DayGame
         }
 
         private void BossBattleFrame_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -82,9 +74,9 @@ namespace DayGame
         private void button1_Click(object sender, EventArgs e)
         {
             int damage = character.Damage;
-            boss.HitPoints -= damage;
+            HitPoints -= damage;
 
-            if (boss.HitPoints <= 0)
+            if (HitPoints <= 0)
             {
                 dialogue.Text = "Whoa! You killed the boss";
             }
@@ -105,11 +97,11 @@ namespace DayGame
         public void HpController()
         {
             int charHp = character.HitPoints;
-            int bossHp = boss.HitPoints;
+            int bossHp = HitPoints;
             this.CharHpLabel.Text = $"{character.HitPoints}/{maxCharHp}";
-            this.BossHpLabel.Text = $"{bossHp}/{maxBossHp}";
+            this.BossHpLabel.Text = $"{bossHp}/{boss.Health}";
             this.CharHpBar.Width = (int)(charHp / (float)maxCharHp * CharHpBar.Parent.Width);
-            this.BossHpBar.Width = (int)(bossHp / (float)maxBossHp * BossHpBar.Parent.Width);
+            this.BossHpBar.Width = (int)(bossHp / (float)boss.Health * BossHpBar.Parent.Width);
         }
 
         public void SelectAction()
@@ -126,7 +118,6 @@ namespace DayGame
         {
             ContinueAfterChar.Visible = false;
             BossAttack();
-
         }
 
         private void continue_after_boss_click(object sender, EventArgs e)
@@ -271,9 +262,9 @@ namespace DayGame
         public void UseSpell(Spell spell)
         {
             int damage = spell.Damage;
-            boss.HitPoints -= damage;
+            HitPoints -= damage;
 
-            if (boss.HitPoints <= 0)
+            if (HitPoints <= 0)
             {
                 dialogue.Text = $"Whoa! You killed the boss";
             }

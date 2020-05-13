@@ -6,48 +6,31 @@ namespace DayGame.TaskLabels
 {
     public partial class HabitTaskLabel : Form
     {
-        private Habit habit;
-        private Character character;
-        private NavigationMenu navigationMenu;
-        private SaveFile saveFile;
+        private readonly Habit habit;
+        private readonly Character character;
+        private readonly Action onUpdate;
+        private readonly SaveFile saveFile;
 
-        public HabitTaskLabel(Habit habit, Character character, NavigationMenu navigationMenu, SaveFile saveFile)
+        public HabitTaskLabel(Habit habit, Character character, Action onUpdate, SaveFile saveFile)
         {
             this.habit = habit;
             this.character = character;
-            this.navigationMenu = navigationMenu;
+            this.onUpdate = onUpdate;
             this.saveFile = saveFile;
             InitializeComponent();
-            statsLabel.Text = $"+{habit.Positive} | -{habit.Negative}";
-            descriptionLabel.Text = habit.Description;
-            if (habit.Description.Length > 20)
-            {
-                descriptionLabel.Text = $"{descriptionLabel.Text.Substring(0, 20)}...";
-            }
+            statsLabel.Text = $@"+{habit.Positive} | -{habit.Negative}";
+            var descr = habit.Description;
+            descriptionLabel.Text = descr.Length > 50 ? $@"{descr.Substring(0, 50)}..." : descr;
 
             nameLabel.Text = habit.Name;
             checkKarma(habit.Positive - habit.Negative);
         }
 
 
-        private void plusButton_Click(object sender, EventArgs e)
-        {
-            habit.UpdateTask(true, character);
-            navigationMenuUpdater();
-            statsLabel.Text = $"+{habit.Positive} | -{habit.Negative}";
-            checkKarma(habit.Positive - habit.Negative);
-        }
+        private void plusButton_Click(object sender, EventArgs e) => Update(true);
 
 
-        private void minusButton_Click(object sender, EventArgs e)
-        {
-            habit.UpdateTask(false, character);
-            navigationMenu.hpBarController();
-            navigationMenu.gameLabelController();
-            navigationMenu.hpLabelController();
-            statsLabel.Text = $"+{habit.Positive} | -{habit.Negative}";
-            checkKarma(habit.Positive - habit.Negative);
-        }
+        private void minusButton_Click(object sender, EventArgs e) => Update(false);
 
         private void checkKarma(int karma)
         {
@@ -68,13 +51,12 @@ namespace DayGame.TaskLabels
             }
         }
 
-        private void navigationMenuUpdater()
+        private void Update(bool outcome)
         {
-            navigationMenu.xpBarController();
-            navigationMenu.hpBarController();
-            navigationMenu.gameLabelController();
-            navigationMenu.xpLabelController();
-            navigationMenu.hpLabelController();
+            habit.UpdateTask(outcome, character);
+            onUpdate();
+            statsLabel.Text = $@"+{habit.Positive} | -{habit.Negative}";
+            checkKarma(habit.Positive - habit.Negative);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -83,10 +65,9 @@ namespace DayGame.TaskLabels
             Close();
         }
 
-
         private void descriptionLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(habit.Description, "Description");
+            MessageBox.Show(habit.Description, habit.Name);
         }
     }
 }

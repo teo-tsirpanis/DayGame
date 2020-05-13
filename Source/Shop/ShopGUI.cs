@@ -18,16 +18,16 @@ namespace DayGame
 
         private BuyItem buyItem;
         //forma pou tha anoigei otan epilegetai kapoio item apo to magazi
-        private Character character;
+        private readonly SaveFile saveFile;
         //o xaraktiras pernietai wste na mporoume na allaksoume to inventory kai to InGameBalance tou
 
 
-        public ShopGUI(Character character)
+        public ShopGUI(SaveFile saveFile)
         {
             InitializeComponent();
 
 
-            this.character = character;
+            this.saveFile = saveFile;
 
             ShopButtonsArray = new[]
            {
@@ -42,7 +42,7 @@ namespace DayGame
             ItemsArray = new Item[48];
             for (i = 0; i < 48; i++)
             {
-                ItemsArray[i] = new Item("ironsword", "it's a sword made of iron", 1, 3000);
+                ItemsArray[i] = new Item("ironsword", "it's a sword made of iron", null, 3000);
                 ShopButtonsArray[i].Text = ItemsArray[i].Price.ToString();
             }
             //arxikopoiei ta items tou magaziou gia testing skopous, dinei se kathe koumpi to price tou item
@@ -57,12 +57,12 @@ namespace DayGame
 
         private void ShopButtonClicked(int index)
         {
-            buyItem = new BuyItem(ItemsArray[index], character);
+            buyItem = new BuyItem(ItemsArray[index], saveFile.Character, saveFile.Inventory);
             buyItem.ShowDialog();
         }
         //anoigei to form opou o xristis epilegei ean tha agorasei to item
 
-        
+
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 

@@ -8,7 +8,7 @@ namespace DayGame
     {
         private SaveFile chosenSaveFile;
 
-        public StartUpMenu()
+        private StartUpMenu()
         {
             InitializeComponent();
         }
@@ -35,16 +35,11 @@ namespace DayGame
             Close();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-            //ControlPaint.DrawBorder(e.Graphics, this.panel1.ClientRectangle, Color.DarkSeaGreen, ButtonBorderStyle.Solid);
-        }
-
         private void SaveFileError(string filename, string message)
         {
             var response = MessageBox.Show(this,
                 $"Error while reading {filename}.\n{message}\nShould the file be deleted?", "Corrupted save file",
-                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             if (response == DialogResult.Yes)
                 File.Delete(filename);
         }

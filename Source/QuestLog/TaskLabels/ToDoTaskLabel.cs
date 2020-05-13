@@ -6,27 +6,24 @@ namespace DayGame
 {
     public partial class ToDoTaskLabel : Form
     {
-        private ToDo toDo;
-        private Character character;
-        private NavigationMenu navigationMenu;
-        private SaveFile saveFile;
-        
-        public ToDoTaskLabel(ToDo toDo, Character character, NavigationMenu navigationMenu ,SaveFile saveFile)
+        private readonly ToDo toDo;
+        private readonly Character character;
+        private readonly Action onUpdate;
+        private readonly SaveFile saveFile;
+
+        public ToDoTaskLabel(ToDo toDo, Character character, Action onUpdate, SaveFile saveFile)
         {
             this.toDo = toDo;
             this.character = character;
-            this.navigationMenu = navigationMenu;
+            this.onUpdate = onUpdate;
             this.saveFile = saveFile;
             InitializeComponent();
             timeLabel.Text = toDo.DueDate.Date.ToString();
             nameLabel.Text = toDo.Name;
-            
-            descriptionLabel.Text = toDo.Description;
-            if (toDo.Description.Length > 50)
-            {
-                descriptionLabel.Text = $"{descriptionLabel.Text.Substring(0, 50)}...";
-            }
-            
+
+            var descr = toDo.Description;
+            descriptionLabel.Text = descr.Length > 50 ? $@"{descr.Substring(0, 50)}..." : descr;
+
             nameLabel.Text = toDo.Name;
         }
 
@@ -34,18 +31,8 @@ namespace DayGame
         {
             checkBox1.BackColor = Color.LightGray;
             toDo.UpdateTask(true, character);
-            navigationMenuUpdater();
-            saveFile.Tasks.Remove(toDo);
-            Close();
-        }
-
-        private void navigationMenuUpdater()
-        {
-            navigationMenu.xpBarController();
-            navigationMenu.hpBarController();
-            navigationMenu.gameLabelController();
-            navigationMenu.xpLabelController();
-            navigationMenu.hpLabelController();
+            onUpdate();
+            button1_Click(sender, e);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -57,7 +44,7 @@ namespace DayGame
 
         private void descriptionLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(toDo.Description, "Description");
+            MessageBox.Show(toDo.Description, toDo.Name);
         }
     }
 }

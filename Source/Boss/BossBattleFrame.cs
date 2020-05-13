@@ -4,31 +4,36 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DayGame.Boss
+namespace DayGame
 {
     public partial class BossBattleFrame : Form
     {
-        private Character character;
-        private Boss boss;
-        private int maxCharHp;
-        private int maxBossHp;
-        private Button[] BagButtons;
-        //boolean showing if we are dealing with potions (1) or spells (0)
-        private Boolean isPotion;
+        private readonly Character character;
+        private readonly Boss boss;
+        private readonly int maxCharHp;
+        private readonly Button[] BagButtons;
         //Array mapping button to bag indexes
-        private int[] ButtonToBag;
-        private ConsumableItems[] Bag;
-        public BossBattleFrame(Character character, Boss boss)
+        private readonly int[] ButtonToBag;
+        private readonly Inventory inventory;
+
+        private int HitPoints;
+        //boolean showing if we are dealing with potions (1) or spells (0)
+        private bool isPotion;
+        private IReadOnlyList<ConsumableItem> Bag => inventory.Bag;
+
+        public BossBattleFrame(Character character, Inventory inventory, Boss boss)
         {
             InitializeComponent();
             BagButtons = new[] {BagButton0, BagButton1, BagButton2, BagButton3, BagButton4, BagButton5, BagButton6, BagButton7};
-            
+
             ButtonToBag = new int[8];
             this.character = character;
+            this.inventory = inventory;
             this.boss = boss;
             dialogue.Text = "Select Action!";
             this.BossName.Text = boss.Name;
@@ -36,27 +41,17 @@ namespace DayGame.Boss
             this.BossLevel.Text = "Level " + boss.Level;
             this.CharLevel.Text = "Level " + character.Level;
             maxCharHp = character.HitPoints;
-            maxBossHp = boss.HitPoints;
+            HitPoints = boss.Health;
             HpController();
-            
+
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            
+
         }
 
         private void BossBattleFrame_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -79,9 +74,9 @@ namespace DayGame.Boss
         private void button1_Click(object sender, EventArgs e)
         {
             int damage = character.Damage;
-            boss.HitPoints -= damage;
+            HitPoints -= damage;
 
-            if (boss.HitPoints <= 0)
+            if (HitPoints <= 0)
             {
                 dialogue.Text = "Whoa! You killed the boss";
             }
@@ -102,11 +97,11 @@ namespace DayGame.Boss
         public void HpController()
         {
             int charHp = character.HitPoints;
-            int bossHp = boss.HitPoints;
+            int bossHp = HitPoints;
             this.CharHpLabel.Text = $"{character.HitPoints}/{maxCharHp}";
-            this.BossHpLabel.Text = $"{bossHp}/{maxBossHp}";
+            this.BossHpLabel.Text = $"{bossHp}/{boss.Health}";
             this.CharHpBar.Width = (int)(charHp / (float)maxCharHp * CharHpBar.Parent.Width);
-            this.BossHpBar.Width = (int)(bossHp / (float)maxBossHp * BossHpBar.Parent.Width);
+            this.BossHpBar.Width = (int)(bossHp / (float)boss.Health * BossHpBar.Parent.Width);
         }
 
         public void SelectAction()
@@ -123,7 +118,6 @@ namespace DayGame.Boss
         {
             ContinueAfterChar.Visible = false;
             BossAttack();
-            
         }
 
         private void continue_after_boss_click(object sender, EventArgs e)
@@ -171,7 +165,7 @@ namespace DayGame.Boss
             {
                 t = typeof(Spell);
             }*/
-            foreach (ConsumableItems ci in Bag)
+            foreach (ConsumableItem ci in Bag)
             {
                 if (ci != null)
                 {
@@ -180,14 +174,14 @@ namespace DayGame.Boss
                         return false;
                     }
                 }
-                
+
             }
             return true;
         }
         //Shows buttons with the appropriate consumables in them
         public void ShowBag(Boolean isPotion)
         {
-            
+
             Type t = isPotion ? typeof(Potion) : typeof(Spell);
             //temporary until we find icons
             Color c = isPotion ? Color.Green : Color.Yellow;
@@ -204,7 +198,7 @@ namespace DayGame.Boss
             }
 
             //fill buttons
-            for (int i = 0; i<Bag.Length; i++)
+            for (int i = 0; i<Bag.Count; i++)
             {
                 if (Bag[i] != null)
                 {
@@ -221,7 +215,6 @@ namespace DayGame.Boss
         public void UseConsumable(Boolean isPotion)
         {
             hideButtons();
-            Bag = character.inv.GetBag();
             String text = isPotion ? "potions" : "spells";
             BackB.Visible = true;
             if (IsEmpty(isPotion)){
@@ -241,7 +234,7 @@ namespace DayGame.Boss
             int index = Convert.ToInt32(name.Substring(name.Length - 1)); //Gets index from name
             if (ButtonToBag[index] != -1) // if the button is mapped to a bag item
             {
-                ConsumableItems item = Bag[ButtonToBag[index]];
+                ConsumableItem item = Bag[ButtonToBag[index]];
                 if (item is Potion)
                 {
                     UsePotion((Potion)item);
@@ -251,7 +244,7 @@ namespace DayGame.Boss
                     UseSpell((Spell)item);
                 }
             }
-            
+
         }
 
         public void UsePotion(Potion potion)
@@ -262,16 +255,16 @@ namespace DayGame.Boss
             dialogue.Text = $"You have regenerated {heal} hit points";
             HpController();
             HideBag();
-            character.inv.RemoveFromBag(potion);
+            inventory.DiscardFromBag(potion);
             ContinueAfterChar.Visible = true;
         }
 
         public void UseSpell(Spell spell)
         {
             int damage = spell.Damage;
-            boss.HitPoints -= damage;
-            
-            if (boss.HitPoints <= 0)
+            HitPoints -= damage;
+
+            if (HitPoints <= 0)
             {
                 dialogue.Text = $"Whoa! You killed the boss";
             }
@@ -281,7 +274,7 @@ namespace DayGame.Boss
             }
             HpController();
             HideBag();
-            character.inv.RemoveFromBag(spell);
+            inventory.DiscardFromBag(spell);
             ContinueAfterChar.Visible = true;
         }
         //hides the bag and back buttons
@@ -300,6 +293,6 @@ namespace DayGame.Boss
             SelectAction();
         }
 
-        
+
     }
 }

@@ -1,26 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Drawing;
 
-namespace DayGame.Boss
+namespace DayGame
 
 {
     public class Boss
     {
-        public string Name { get; set; }
-        private int _image;
-        public int Damage { get; set; }
-        public int HitPoints { get; set; }
-        public int Level { get; set; }
+        public string Name { get; }
 
-        public Boss(string Name, int image, int Hit_points, int Level, int Damage)
-            {
-                this.Name = Name;
-                this._image = image;
-                this.HitPoints = Hit_points;
-                this.Level = Level;
-                this.Damage = Damage;
-            }
+        private Image Image { get; }
+        public int Damage { get; }
+        public int Health { get; }
+        public int Level { get; }
+
+        public Boss(string Name, Image image, int health, int Level, int Damage)
+        {
+            this.Name = Name;
+            this.Image = image;
+            this.Health = health;
+            this.Level = Level;
+            this.Damage = Damage;
+        }
 
         //dummy method, to be changed
         public void BossDeath()
@@ -28,8 +28,4 @@ namespace DayGame.Boss
             Console.WriteLine("The boss died");
         }
     }
-
-    
-    
 }
-

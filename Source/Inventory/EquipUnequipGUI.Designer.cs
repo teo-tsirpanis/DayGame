@@ -29,22 +29,22 @@ namespace DayGame
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cancel = new System.Windows.Forms.Button();
-            this.equnbutton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.equipButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.statnumber = new System.Windows.Forms.Label();
             this.itemnamelabel = new System.Windows.Forms.Label();
             this.statlabel = new System.Windows.Forms.Label();
             this.itemdescriptionlabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.cancel);
-            this.panel1.Controls.Add(this.equnbutton);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (0)))));
+            this.panel1.Controls.Add(this.cancelButton);
+            this.panel1.Controls.Add(this.equipButton);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.statnumber);
             this.panel1.Controls.Add(this.itemnamelabel);
@@ -55,28 +55,27 @@ namespace DayGame
             this.panel1.Size = new System.Drawing.Size(263, 334);
             this.panel1.TabIndex = 6;
             // 
-            // cancel
+            // cancelButton
             // 
-            this.cancel.BackColor = System.Drawing.Color.Red;
-            this.cancel.Location = new System.Drawing.Point(88, 292);
-            this.cancel.Name = "cancel";
-            this.cancel.Size = new System.Drawing.Size(81, 30);
-            this.cancel.TabIndex = 25;
-            this.cancel.Text = "cancel";
-            this.cancel.UseVisualStyleBackColor = false;
-            this.cancel.Click += new System.EventHandler(this.cancel_Click);
+            this.cancelButton.BackColor = System.Drawing.Color.Red;
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.Location = new System.Drawing.Point(88, 292);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(81, 30);
+            this.cancelButton.TabIndex = 25;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = false;
             // 
-            // equnbutton
+            // equipButton
             // 
-            this.equnbutton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.equnbutton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.equnbutton.Location = new System.Drawing.Point(75, 251);
-            this.equnbutton.Name = "equnbutton";
-            this.equnbutton.Size = new System.Drawing.Size(108, 35);
-            this.equnbutton.TabIndex = 24;
-            this.equnbutton.Text = "s";
-            this.equnbutton.UseVisualStyleBackColor = false;
-            this.equnbutton.Click += new System.EventHandler(this.button1_Click);
+            this.equipButton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (0)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
+            this.equipButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.equipButton.Location = new System.Drawing.Point(75, 251);
+            this.equipButton.Name = "equipButton";
+            this.equipButton.Size = new System.Drawing.Size(108, 35);
+            this.equipButton.TabIndex = 24;
+            this.equipButton.Text = "s";
+            this.equipButton.UseVisualStyleBackColor = false;
             // 
             // pictureBox1
             // 
@@ -125,34 +124,33 @@ namespace DayGame
             this.itemdescriptionlabel.Size = new System.Drawing.Size(80, 14);
             this.itemdescriptionlabel.TabIndex = 21;
             this.itemdescriptionlabel.Text = "(Description)";
-            this.itemdescriptionlabel.Click += new System.EventHandler(this.itemdescriptionlabel_Click);
             // 
             // EquipUnequipGUI
             // 
+            this.AcceptButton = this.equipButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(261, 332);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EquipUnequipGUI";
             this.Text = "EquipUnequipGUI";
-            this.Load += new System.EventHandler(this.EquipUnequipGUI_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button equnbutton;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label statnumber;
-        private System.Windows.Forms.Label itemnamelabel;
-        private System.Windows.Forms.Label statlabel;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button equipButton;
         private System.Windows.Forms.Label itemdescriptionlabel;
-        private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Label itemnamelabel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label statlabel;
+        private System.Windows.Forms.Label statnumber;
+
+        #endregion
     }
 }

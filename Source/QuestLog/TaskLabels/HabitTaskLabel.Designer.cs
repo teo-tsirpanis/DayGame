@@ -165,17 +165,16 @@ namespace DayGame.TaskLabels
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Label statsLabel;
-        private System.Windows.Forms.Button minusButton;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button plusButton;
-
-        #endregion
-
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Button minusButton;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label nameLabel;
-        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Button plusButton;
+        private System.Windows.Forms.Label statsLabel;
+
+        #endregion
     }
 }

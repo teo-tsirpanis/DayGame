@@ -6,53 +6,34 @@ namespace DayGame.TaskLabels
 {
     public partial class DailyTaskLabel : Form
     {
-        private Daily daily;
-        private Character character;
-        private NavigationMenu navigationMenu;
-        private SaveFile saveFile;
+        private readonly Daily daily;
+        private readonly Character character;
+        private readonly Action onUpdate;
+        private readonly SaveFile saveFile;
 
-        public DailyTaskLabel(Daily daily, Character character, NavigationMenu navigationMenu, SaveFile saveFile)
+        public DailyTaskLabel(Daily daily, Character character, Action onUpdate, SaveFile saveFile)
         {
             this.daily = daily;
             this.character = character;
-            this.navigationMenu = navigationMenu;
+            this.onUpdate = onUpdate;
             this.saveFile = saveFile;
             InitializeComponent();
-            descriptionLabel.Text = daily.Description;
-            if (daily.Description.Length > 50)
-            {
-                descriptionLabel.Text = $"{descriptionLabel.Text.Substring(0, 50)}...";
-            }
+            var descr = daily.Description;
+            descriptionLabel.Text = descr.Length > 50 ? $@"{descr.Substring(0, 50)}..." : descr;
             nameLabel.Text = daily.Name;
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private async void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox1.Checked)
-            {
-                checkBox1.BackColor = Color.LightGray;
-                checkBox1.Enabled = false;
-                daily.UpdateTask(true, character);
-                navigationMenuUpdater();
-                timer1.Enabled = true;
-            }
-        }
-
-        private void navigationMenuUpdater()
-        {
-            navigationMenu.xpBarController();
-            navigationMenu.hpBarController();
-            navigationMenu.gameLabelController();
-            navigationMenu.xpLabelController();
-            navigationMenu.hpLabelController();
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
+            if (!checkBox1.Checked) return;
+            checkBox1.BackColor = Color.LightGray;
+            checkBox1.Enabled = false;
+            daily.UpdateTask(true, character);
+            onUpdate();
+            await System.Threading.Tasks.Task.Delay(TimeSpan.FromSeconds(10));
             checkBox1.Checked = false;
-            checkBox1.Enabled = true;
             checkBox1.BackColor = Color.FromArgb(247, 163, 27);
-            timer1.Enabled = false;
+            checkBox1.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -63,7 +44,7 @@ namespace DayGame.TaskLabels
 
         private void descriptionLabel_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(daily.Description, "Description");
+            MessageBox.Show(daily.Description, daily.Name);
         }
     }
 }

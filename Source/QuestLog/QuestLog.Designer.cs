@@ -31,12 +31,11 @@ namespace DayGame
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(QuestLog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestLog));
             this.addTaskButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.habitPanel = new System.Windows.Forms.Panel();
+            this.dailyPanel = new System.Windows.Forms.Panel();
+            this.todoPanel = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -50,111 +49,107 @@ namespace DayGame
             // 
             // addTaskButton
             // 
-            this.addTaskButton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (242)))),
-                ((int) (((byte) (230)))), ((int) (((byte) (0)))));
+            this.addTaskButton.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (242)))), ((int) (((byte) (230)))), ((int) (((byte) (0)))));
             this.addTaskButton.FlatAppearance.BorderSize = 0;
             this.addTaskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addTaskButton.Image = ((System.Drawing.Image) (resources.GetObject("addTaskButton.Image")));
-            this.addTaskButton.Location = new System.Drawing.Point(1206, 0);
+            this.addTaskButton.Location = new System.Drawing.Point(1034, 0);
             this.addTaskButton.Name = "addTaskButton";
-            this.addTaskButton.Size = new System.Drawing.Size(65, 59);
+            this.addTaskButton.Size = new System.Drawing.Size(56, 51);
             this.addTaskButton.TabIndex = 0;
             this.addTaskButton.UseVisualStyleBackColor = false;
             this.addTaskButton.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // panel1
+            // habitPanel
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.AutoScroll = true;
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel1.Location = new System.Drawing.Point(8, 17);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(355, 519);
-            this.panel1.TabIndex = 1;
+            this.habitPanel.AllowDrop = true;
+            this.habitPanel.AutoScroll = true;
+            this.habitPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.habitPanel.Location = new System.Drawing.Point(7, 15);
+            this.habitPanel.Name = "habitPanel";
+            this.habitPanel.Size = new System.Drawing.Size(304, 450);
+            this.habitPanel.TabIndex = 1;
             // 
-            // panel2
+            // dailyPanel
             // 
-            this.panel2.AutoScroll = true;
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel2.Location = new System.Drawing.Point(3, 17);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(355, 519);
-            this.panel2.TabIndex = 2;
+            this.dailyPanel.AutoScroll = true;
+            this.dailyPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.dailyPanel.Location = new System.Drawing.Point(3, 15);
+            this.dailyPanel.Name = "dailyPanel";
+            this.dailyPanel.Size = new System.Drawing.Size(304, 450);
+            this.dailyPanel.TabIndex = 2;
             // 
-            // panel3
+            // todoPanel
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel3.Location = new System.Drawing.Point(3, 17);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(355, 519);
-            this.panel3.TabIndex = 3;
+            this.todoPanel.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.todoPanel.Location = new System.Drawing.Point(3, 15);
+            this.todoPanel.Name = "todoPanel";
+            this.todoPanel.Size = new System.Drawing.Size(304, 450);
+            this.todoPanel.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label1.ForeColor = System.Drawing.Color.Gray;
-            this.label1.Location = new System.Drawing.Point(31, 31);
+            this.label1.Location = new System.Drawing.Point(27, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 28);
+            this.label1.Size = new System.Drawing.Size(88, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Habits";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.label2.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(490, 31);
+            this.label2.Location = new System.Drawing.Point(420, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 28);
+            this.label2.Size = new System.Drawing.Size(92, 24);
             this.label2.TabIndex = 5;
             this.label2.Text = "Dailies";
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.label3.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(898, 31);
+            this.label3.Location = new System.Drawing.Point(770, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 28);
+            this.label3.Size = new System.Drawing.Size(86, 24);
             this.label3.TabIndex = 6;
             this.label3.Text = "To-Dos";
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel4.Controls.Add(this.panel1);
-            this.panel4.Location = new System.Drawing.Point(31, 82);
+            this.panel4.Controls.Add(this.habitPanel);
+            this.panel4.Location = new System.Drawing.Point(27, 71);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(366, 539);
+            this.panel4.Size = new System.Drawing.Size(314, 467);
             this.panel4.TabIndex = 7;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel5.Controls.Add(this.panel2);
-            this.panel5.Location = new System.Drawing.Point(458, 82);
+            this.panel5.Controls.Add(this.dailyPanel);
+            this.panel5.Location = new System.Drawing.Point(393, 71);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(366, 539);
+            this.panel5.Size = new System.Drawing.Size(314, 467);
             this.panel5.TabIndex = 8;
             // 
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Location = new System.Drawing.Point(881, 82);
+            this.panel6.Controls.Add(this.todoPanel);
+            this.panel6.Location = new System.Drawing.Point(755, 71);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(366, 539);
+            this.panel6.Size = new System.Drawing.Size(314, 467);
             this.panel6.TabIndex = 9;
             // 
             // QuestLog
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1274, 654);
+            this.ClientSize = new System.Drawing.Size(1092, 567);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -171,15 +166,15 @@ namespace DayGame
         }
 
         private System.Windows.Forms.Button addTaskButton;
+        private System.Windows.Forms.Panel dailyPanel;
+        private System.Windows.Forms.Panel habitPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel todoPanel;
 
         #endregion
     }

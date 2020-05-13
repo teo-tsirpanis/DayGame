@@ -2,11 +2,11 @@
 
 namespace DayGame
 {
-    public class Weapon : NonConsumableItems
+    public class Weapon : NonConsumableItem
     {
-        public int Damage { get; set; }
+        public int Damage { get; }
 
-        public Weapon(string name, string description, int image, int price, int damage) : base(name, description,
+        public Weapon(string name, string description, Image image, int price, int damage) : base(name, description,
             image, price)
         {
             this.Damage = damage;

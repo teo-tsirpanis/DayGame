@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -26,7 +27,6 @@ namespace DayGame
         {
             InitializeComponent();
 
-
             this.saveFile = saveFile;
 
             ShopButtonsArray = new[]
@@ -40,19 +40,50 @@ namespace DayGame
            };
 
             ItemsArray = new Item[48];
-            for (i = 0; i < 48; i++)
+            for (i = 0; i < 12; i++)
             {
-                ItemsArray[i] = new Item("ironsword", "it's a sword made of iron", null, 3000);
-                ShopButtonsArray[i].Text = ItemsArray[i].Price.ToString();
+                ItemsArray[i] = new Weapon("ironsword", "it's a sword made of iron", null, 300, 25);
             }
-            //arxikopoiei ta items tou magaziou gia testing skopous, dinei se kathe koumpi to price tou item
+
+            for (i = 12; i < 24; i++)
+            {
+                ItemsArray[i] = new Armor("ironarmor", "it's armor made of iron", null, 500, 10);
+            }
+
+            for (i = 24; i < 36; i++)
+            {
+                ItemsArray[i] = new Potion("green potion", "it's a green potion", null, 100, 10);
+            }
+
+            for (i = 36; i < 48; i++)
+            {
+                ItemsArray[i] = new Spell("Naga", "summons a divine dragon", null, 1000, 100);
+            }
+
+            //arxikopoiei ta items tou magaziou gia testing skopous
 
             for (i = 0; i < 48; i++)
             {
                 int index = i;
+                ShopButtonsArray[i].Text = ItemsArray[i].Price.ToString();
+                switch (ItemsArray[i])
+                {
+                    case Armor armor:
+                        ShopButtonsArray[i].BackColor = Color.Blue;
+                        break;
+                    case Weapon weapon:
+                        ShopButtonsArray[i].BackColor = Color.Red;
+                        break;
+                    case Spell spell:
+                        ShopButtonsArray[i].BackColor = Color.Yellow;
+                        break;
+                    case Potion potion:
+                        ShopButtonsArray[i].BackColor = Color.Green;
+                        break;
+                }
                 ShopButtonsArray[index].Click += (sender, e) => ShopButtonClicked(index);
             }
-            //arxikopoiei to click function gia ola ta koumpia
+            //arxikopoiei ta koumpia kai to click function gia ola ta koumpia
         }
 
         private void ShopButtonClicked(int index)
@@ -61,8 +92,6 @@ namespace DayGame
             buyItem.ShowDialog();
         }
         //anoigei to form opou o xristis epilegei ean tha agorasei to item
-
-
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 

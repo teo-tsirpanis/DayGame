@@ -50,5 +50,10 @@ namespace DayGame
                 return ccm.SaveFile;
             return null;
         }
+
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = !String.IsNullOrWhiteSpace(nameBox.Text);
+        }
     }
 }

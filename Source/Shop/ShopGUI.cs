@@ -42,7 +42,7 @@ namespace DayGame
             ItemsArray = new Item[48];
             for (i = 0; i < 48; i++)
             {
-                ItemsArray[i] = new Weapon("ironsword", "it's a sword made of iron", null, 3000, 57);
+                ItemsArray[i] = new Item("ironsword", "it's a sword made of iron", null, 3000);
                 ShopButtonsArray[i].Text = ItemsArray[i].Price.ToString();
             }
             //arxikopoiei ta items tou magaziou gia testing skopous, dinei se kathe koumpi to price tou item

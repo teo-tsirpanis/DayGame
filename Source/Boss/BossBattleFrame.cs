@@ -78,7 +78,8 @@ namespace DayGame
 
             if (HitPoints <= 0)
             {
-                dialogue.Text = "Whoa! You killed the boss";
+                PlayerWon();
+                
             }
             else
             {
@@ -116,12 +117,22 @@ namespace DayGame
 
         private void continue_after_char_click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+            if (b.Text == "Close")
+            {
+                this.Close();
+            }
             ContinueAfterChar.Visible = false;
             BossAttack();
         }
 
         private void continue_after_boss_click(object sender, EventArgs e)
         {
+            Button b = (Button)sender;
+            if (b.Text == "Close")
+            {
+                this.Close();
+            }
             ContinueAfterBoss.Visible = false;
             //BossAttack();
             hideButtons();
@@ -142,7 +153,8 @@ namespace DayGame
 
             if (character.HitPoints <= 0)
             {
-                dialogue.Text = "You were killed by the boss";
+                BossWon();
+
             }
             else
             {
@@ -150,7 +162,7 @@ namespace DayGame
             }
             HpController();
             ContinueAfterBoss.Visible = true;
-            //changeVisibility();
+            
         }
         //Checks if bag has any consumables of selected type
         public Boolean IsEmpty(Boolean isPotion)
@@ -266,7 +278,7 @@ namespace DayGame
 
             if (HitPoints <= 0)
             {
-                dialogue.Text = $"Whoa! You killed the boss";
+                PlayerWon();
             }
             else
             {
@@ -293,6 +305,20 @@ namespace DayGame
             SelectAction();
         }
 
+        private void PlayerWon()
+        {
+            dialogue.Text = "Whoa! You killed the boss";
+            ContinueAfterChar.Text = "Close";
+            character.ExpreriencePoints += boss.Health * 3;
+            character.InGameBalance += boss.Health;
+        }
+
+        private void BossWon()
+        {
+            dialogue.Text = "You were killed by the boss";
+            ContinueAfterBoss.Text = "Close";
+            inventory.removeEquipped();
+        }
 
     }
 }

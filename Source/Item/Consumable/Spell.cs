@@ -10,5 +10,7 @@ namespace DayGame
         {
             this.Damage = damage;
         }
+
+        public override Color BackgroundColor => Color.Yellow;
     }
 }

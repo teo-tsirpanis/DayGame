@@ -114,14 +114,7 @@ namespace DayGame
         private static void UpdateButtonFromItem(Item item, Button btn)
         {
             btn.Tag = item;
-            btn.BackColor = item switch
-            {
-                Armor _ => Color.Blue,
-                Weapon _ => Color.Red,
-                Spell _ => Color.Yellow,
-                Potion _ => Color.Green,
-                _ => Color.FromKnownColor(KnownColor.Control)
-            };
+            btn.BackColor = item?.BackgroundColor ?? Color.FromKnownColor(KnownColor.Control);
             btn.Image = item?.Image;
             btn.Enabled = item != null;
         }

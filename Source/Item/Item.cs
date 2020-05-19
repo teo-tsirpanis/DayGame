@@ -2,7 +2,7 @@
 
 namespace DayGame
 {
-    public class Item
+    public abstract class Item
     {
         public Item(string name, string description, Image image, int price)
         {
@@ -19,5 +19,7 @@ namespace DayGame
         public Image Image { get; }
 
         public int Price { get; }
+
+        public abstract Color BackgroundColor { get; }
     }
 }

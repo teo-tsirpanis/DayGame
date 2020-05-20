@@ -12,19 +12,12 @@ namespace DayGame
         private readonly Button[] BagButtons;
         private readonly Inventory inv;
 
-        private static Button[] GetButtonsInOrder(Control parent) =>
-            parent
-                .Controls.OfType<Button>()
-                .OrderBy(btn => btn.Location.Y)
-                .ThenBy(btn => btn.Location.X)
-                .ToArray();
-
         public InventoryGUI(SaveFile sf)
         {
             InitializeComponent();
             inv = sf.Inventory;
-            ChestButtons = GetButtonsInOrder(buttonPanel);
-            BagButtons = GetButtonsInOrder(bagPanel);
+            ChestButtons = Utilities.GetButtonsInOrder(buttonPanel);
+            BagButtons = Utilities.GetButtonsInOrder(bagPanel);
             AddSampleItems();
 
             var checkBoxes = new[] {armorcheckbox, weaponscheckbox, spellscheckbox, potionscheckbox};
@@ -114,14 +107,7 @@ namespace DayGame
         private static void UpdateButtonFromItem(Item item, Button btn)
         {
             btn.Tag = item;
-            btn.BackColor = item switch
-            {
-                Armor _ => Color.Blue,
-                Weapon _ => Color.Red,
-                Spell _ => Color.Yellow,
-                Potion _ => Color.Green,
-                _ => Color.FromKnownColor(KnownColor.Control)
-            };
+            btn.BackColor = Utilities.GetItemBackgroundColor(item);
             btn.Image = item?.Image;
             btn.Enabled = item != null;
         }

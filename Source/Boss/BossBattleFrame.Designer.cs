@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.bagItemPanel = new System.Windows.Forms.Panel();
             this.BagButton7 = new System.Windows.Forms.Button();
             this.dialogue = new System.Windows.Forms.Label();
             this.BagButton6 = new System.Windows.Forms.Button();
@@ -62,7 +62,7 @@
             this.CharLevel = new System.Windows.Forms.Label();
             this.CharName = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.panel3.SuspendLayout();
+            this.bagItemPanel.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -79,23 +79,23 @@
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // panel3
+            // bagItemPanel
             // 
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.BagButton7);
-            this.panel3.Controls.Add(this.dialogue);
-            this.panel3.Controls.Add(this.BagButton6);
-            this.panel3.Controls.Add(this.BagButton0);
-            this.panel3.Controls.Add(this.BagButton3);
-            this.panel3.Controls.Add(this.BagButton4);
-            this.panel3.Controls.Add(this.BagButton2);
-            this.panel3.Controls.Add(this.BagButton5);
-            this.panel3.Controls.Add(this.BagButton1);
-            this.panel3.Location = new System.Drawing.Point(1, 511);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(475, 150);
-            this.panel3.TabIndex = 2;
+            this.bagItemPanel.BackColor = System.Drawing.Color.White;
+            this.bagItemPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.bagItemPanel.Controls.Add(this.BagButton7);
+            this.bagItemPanel.Controls.Add(this.dialogue);
+            this.bagItemPanel.Controls.Add(this.BagButton6);
+            this.bagItemPanel.Controls.Add(this.BagButton0);
+            this.bagItemPanel.Controls.Add(this.BagButton3);
+            this.bagItemPanel.Controls.Add(this.BagButton4);
+            this.bagItemPanel.Controls.Add(this.BagButton2);
+            this.bagItemPanel.Controls.Add(this.BagButton5);
+            this.bagItemPanel.Controls.Add(this.BagButton1);
+            this.bagItemPanel.Location = new System.Drawing.Point(1, 511);
+            this.bagItemPanel.Name = "bagItemPanel";
+            this.bagItemPanel.Size = new System.Drawing.Size(475, 150);
+            this.bagItemPanel.TabIndex = 2;
             // 
             // BagButton7
             // 
@@ -466,13 +466,14 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.bagItemPanel);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "BossBattleFrame";
             this.Text = "BossBattleFrame";
             this.Load += new System.EventHandler(this.BossBattleFrame_Load);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.bagItemPanel.ResumeLayout(false);
+            this.bagItemPanel.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
@@ -493,6 +494,7 @@
         private System.Windows.Forms.Button BagButton5;
         private System.Windows.Forms.Button BagButton6;
         private System.Windows.Forms.Button BagButton7;
+        private System.Windows.Forms.Panel bagItemPanel;
         private System.Windows.Forms.Panel BossHpBar;
         private System.Windows.Forms.Label BossHpLabel;
         private System.Windows.Forms.Label BossLevel;
@@ -509,7 +511,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;

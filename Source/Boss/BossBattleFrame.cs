@@ -29,7 +29,7 @@ namespace DayGame
         public BossBattleFrame(Character character, Inventory inventory, Boss boss)
         {
             InitializeComponent();
-            BagButtons = new[] {BagButton0, BagButton1, BagButton2, BagButton3, BagButton4, BagButton5, BagButton6, BagButton7};
+            BagButtons = Utilities.GetButtonsInOrder(bagItemPanel);
 
             ButtonToBag = new int[8];
             this.character = character;

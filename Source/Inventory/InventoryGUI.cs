@@ -50,12 +50,12 @@ namespace DayGame
             else if (!inv.IsBagFull && item is ConsumableItem spell)
             {
                 if (!inv.TryAddToBag(spell))
-                    MessageBox.Show(this, "Your bag is full.\nTry to unequip something from there.", "Error",
+                    MessageBox.Show("Your bag is full.\nTry to unequip something from there.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(this, "You cannot equip the item.", "Error", MessageBoxButtons.OK,
+                MessageBox.Show("You cannot equip the item.", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 return;
             }
@@ -64,7 +64,7 @@ namespace DayGame
         }
 
         private void FullChestError() =>
-            MessageBox.Show(this, "Your chest is full.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Your chest is full.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void UnequipConsumable(object sender, EventArgs e)
         {

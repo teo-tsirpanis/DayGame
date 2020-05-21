@@ -27,9 +27,8 @@ namespace DayGame
                 this.Close();
             }
             else
-                MessageBox.Show(this,
-                    "The character's name contains invalid special characters. Try to name " +
-                    "your character with a simpler name containing letters and numbers.",
+                MessageBox.Show("The character's name contains invalid special characters. Try to name " +
+                                "your character with a simpler name containing letters and numbers.",
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
@@ -49,6 +48,11 @@ namespace DayGame
             if (ccm.ShowDialog(owner) == DialogResult.OK)
                 return ccm.SaveFile;
             return null;
+        }
+
+        private void nameBox_TextChanged(object sender, EventArgs e)
+        {
+            button1.Enabled = !String.IsNullOrWhiteSpace(nameBox.Text);
         }
     }
 }

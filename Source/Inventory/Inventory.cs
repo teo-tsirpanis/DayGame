@@ -226,5 +226,12 @@ namespace DayGame
             ArmorEquiped = null;
             return true;
         }
+        //removes all equipped items, including the bag. Used as a punishment when losing a bossbattle
+        public void removeEquipped()
+        {
+            bag.Clear();
+            ArmorEquiped = null;
+            WeaponEquiped = null;
+        }
     }
 }

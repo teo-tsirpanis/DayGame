@@ -29,15 +29,7 @@ namespace DayGame
 
             this.saveFile = saveFile;
 
-            ShopButtonsArray = new[]
-           {
-                ShopButton0, ShopButton1, ShopButton2, ShopButton3, ShopButton4, ShopButton5, ShopButton6, ShopButton7,
-                ShopButton8, ShopButton9, ShopButton10, ShopButton11, ShopButton12, ShopButton13, ShopButton14, ShopButton15,
-                ShopButton16, ShopButton17, ShopButton18, ShopButton19, ShopButton20, ShopButton21, ShopButton22, ShopButton23,
-                ShopButton24, ShopButton25, ShopButton26, ShopButton27, ShopButton28, ShopButton29, ShopButton30, ShopButton31,
-                ShopButton32, ShopButton33, ShopButton34, ShopButton35, ShopButton36, ShopButton37, ShopButton38, ShopButton39,
-                ShopButton40, ShopButton41, ShopButton42, ShopButton43, ShopButton44, ShopButton45, ShopButton46, ShopButton47
-           };
+            ShopButtonsArray = Utilities.GetButtonsInOrder(this);
 
             ItemsArray = new Item[48];
             for (i = 0; i < 12; i++)

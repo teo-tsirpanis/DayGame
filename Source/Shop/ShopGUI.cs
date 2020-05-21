@@ -12,8 +12,10 @@ namespace DayGame
     public partial class ShopGUI : Form
     {
         private readonly Button[] ShopButtonsArray;
-        private readonly Item[] ItemsArray;
-        //arrays pou einai 1 pros 1, to kathe item antistoixizetai se ena koumpi
+        //array me ta koumpi
+        private readonly List<Item> items = new List<Item>();
+        private IReadOnlyList<Item> Items => items;
+        //ta items tou magaziou
 
         private readonly int i;
 
@@ -29,61 +31,87 @@ namespace DayGame
 
             this.saveFile = saveFile;
 
-            ShopButtonsArray = Utilities.GetButtonsInOrder(this);
+            var checkBoxes = new[] { ArmorFilter, WeaponsFilter, SpellsFilter, PotionsFilter };
 
-            ItemsArray = new Item[48];
+            foreach (var cb in checkBoxes)
+            {
+                cb.Checked = true;
+                cb.CheckedChanged += filter_checked_changed;
+            }
+
+            //etoimazei ta filter checkboxes
+
+            Weapon weapon = new Weapon("ironsword", "it's a sword made of iron", null, 300, 25);
+            Armor armor = new Armor("ironarmor", "it's armor made of iron", null, 500, 10);
+            Potion potion = new Potion("green potion", "it's a green potion", null, 100, 10);
+            Spell spell = new Spell("Naga", "summons a divine dragon", null, 1000, 100);
+
             for (i = 0; i < 12; i++)
             {
-                ItemsArray[i] = new Weapon("ironsword", "it's a sword made of iron", null, 300, 25);
+                items.Add(weapon);
             }
 
             for (i = 12; i < 24; i++)
             {
-                ItemsArray[i] = new Armor("ironarmor", "it's armor made of iron", null, 500, 10);
+                items.Add(armor);
             }
 
             for (i = 24; i < 36; i++)
             {
-                ItemsArray[i] = new Potion("green potion", "it's a green potion", null, 100, 10);
+                items.Add(potion);
             }
 
             for (i = 36; i < 48; i++)
             {
-                ItemsArray[i] = new Spell("Naga", "summons a divine dragon", null, 1000, 100);
+                items.Add(spell);
             }
 
             //arxikopoiei ta items tou magaziou gia testing skopous
 
-            for (i = 0; i < 48; i++)
-            {
-                int index = i;
-                ShopButtonsArray[i].Text = ItemsArray[i].Price.ToString();
-                switch (ItemsArray[i])
-                {
-                    case Armor armor:
-                        ShopButtonsArray[i].BackColor = Color.Blue;
-                        break;
-                    case Weapon weapon:
-                        ShopButtonsArray[i].BackColor = Color.Red;
-                        break;
-                    case Spell spell:
-                        ShopButtonsArray[i].BackColor = Color.Yellow;
-                        break;
-                    case Potion potion:
-                        ShopButtonsArray[i].BackColor = Color.Green;
-                        break;
-                }
-                ShopButtonsArray[index].Click += (sender, e) => ShopButtonClicked(index);
-            }
+            ShopButtonsArray = Utilities.GetButtonsInOrder(this);
+            foreach (var t in ShopButtonsArray) t.Click += buy;
+            UpdateButtons(Items, ShopButtonsArray);
             //arxikopoiei ta koumpia kai to click function gia ola ta koumpia
+
         }
 
-        private void ShopButtonClicked(int index)
+        private void buy(object sender, EventArgs e)
         {
-            buyItem = new BuyItem(ItemsArray[index], saveFile.Character, saveFile.Inventory);
+            if (!((sender as Control)?.Tag is Item item)) return;
+            buyItem = new BuyItem(item, saveFile.Character, saveFile.Inventory);
             buyItem.ShowDialog();
         }
         //anoigei to form opou o xristis epilegei ean tha agorasei to item
+        private static void UpdateButtonFromItem(Item item, Button btn)
+        {
+            btn.Tag = item;
+            btn.BackColor = Utilities.GetItemBackgroundColor(item);
+            btn.Text = item?.Price.ToString();
+            btn.Image = item?.Image;
+            btn.Enabled = item != null;
+        }
+        //enimerwnei to koumpi me vasi to item
+        private static void UpdateButtons(IReadOnlyList<Item> items, Button[] buttons)
+        {
+            for (int i = 0; i < items.Count; i++) UpdateButtonFromItem(items[i], buttons[i]);
+            for (int i = items.Count; i < buttons.Length; i++) UpdateButtonFromItem(null, buttons[i]);
+        }
+        //enimerwnei ola ta koumpia
+        private bool ShouldShow(Item item) =>
+            item switch
+            {
+                Armor _ => ArmorFilter.Checked,
+                Weapon _ => WeaponsFilter.Checked,
+                Spell _ => SpellsFilter.Checked,
+                Potion _ => PotionsFilter.Checked,
+                _ => true
+            };
+        //filtro
+        private void filter_checked_changed(object sender, EventArgs e)
+        {
+            UpdateButtons(Items.Where(ShouldShow).ToArray(), ShopButtonsArray);
+        }
+        //otan patietai kapoio checkbox, enimerwnei ola ta koumpia
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
 

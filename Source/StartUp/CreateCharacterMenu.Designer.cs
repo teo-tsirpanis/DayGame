@@ -45,18 +45,19 @@ namespace DayGame
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
+            //
             // imageList1
-            // 
+            //
             this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer) (resources.GetObject("imageList1.ImageStream")));
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             this.imageList1.Images.SetKeyName(0, "maleOrc110.png");
             this.imageList1.Images.SetKeyName(1, "femaleOrc110.png");
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (41)))), ((int) (((byte) (190)))), ((int) (((byte) (131)))));
             this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.button1.Enabled = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
@@ -68,26 +69,27 @@ namespace DayGame
             this.button1.Text = "CREATE";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // radioMale
-            // 
+            //
             this.radioMale.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioMale.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.radioMale.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (41)))), ((int) (((byte) (190)))), ((int) (((byte) (131)))));
-            this.radioMale.Location = new System.Drawing.Point(70, 466);
+            this.radioMale.Location = new System.Drawing.Point(40, 466);
             this.radioMale.Name = "radioMale";
             this.radioMale.Size = new System.Drawing.Size(104, 33);
             this.radioMale.TabIndex = 12;
             this.radioMale.TabStop = true;
             this.radioMale.Tag = "0";
             this.radioMale.Text = "Male";
+            this.radioMale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioMale.UseVisualStyleBackColor = true;
             this.radioMale.CheckedChanged += new System.EventHandler(this.radioMale_CheckedChanged);
-            // 
+            //
             // radioFemale
-            // 
+            //
             this.radioFemale.Appearance = System.Windows.Forms.Appearance.Button;
-            this.radioFemale.Font = new System.Drawing.Font("Segoe UI Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.radioFemale.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.radioFemale.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (41)))), ((int) (((byte) (190)))), ((int) (((byte) (131)))));
             this.radioFemale.Location = new System.Drawing.Point(214, 466);
             this.radioFemale.Name = "radioFemale";
@@ -96,11 +98,12 @@ namespace DayGame
             this.radioFemale.TabStop = true;
             this.radioFemale.Tag = "1";
             this.radioFemale.Text = "Female";
+            this.radioFemale.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioFemale.UseVisualStyleBackColor = true;
             this.radioFemale.CheckedChanged += new System.EventHandler(this.radioFemale_CheckedChanged);
-            // 
+            //
             // pictureBox1
-            // 
+            //
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
@@ -108,17 +111,17 @@ namespace DayGame
             this.pictureBox1.Size = new System.Drawing.Size(359, 205);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
-            // 
+            //
             // pictureBox2
-            // 
+            //
             this.pictureBox2.Location = new System.Drawing.Point(121, 234);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(110, 110);
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
-            // 
+            //
             // nameBox
-            // 
+            //
             this.nameBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nameBox.Font = new System.Drawing.Font("Segoe UI Black", 11.25F, ((System.Drawing.FontStyle) ((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.nameBox.Location = new System.Drawing.Point(91, 396);
@@ -126,9 +129,10 @@ namespace DayGame
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(164, 18);
             this.nameBox.TabIndex = 0;
-            // 
+            this.nameBox.TextChanged += new System.EventHandler(this.nameBox_TextChanged);
+            //
             // label1
-            // 
+            //
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (41)))), ((int) (((byte) (190)))), ((int) (((byte) (131)))));
@@ -138,19 +142,18 @@ namespace DayGame
             this.label1.TabIndex = 7;
             this.label1.Text = "Character Name";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
+            //
             // panel2
-            // 
+            //
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (18)))), ((int) (((byte) (156)))), ((int) (((byte) (41)))));
             this.panel2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (18)))), ((int) (((byte) (156)))), ((int) (((byte) (41)))));
             this.panel2.Location = new System.Drawing.Point(91, 417);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 1);
             this.panel2.TabIndex = 2;
-            // 
+            //
             // CreateCharacterMenu
-            // 
-            this.AcceptButton = this.button1;
+            //
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
@@ -165,9 +168,10 @@ namespace DayGame
             this.Controls.Add(this.nameBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "CreateCharacterMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CreateCharacterMenu";
+            this.Text = "Create new character";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
             this.ResumeLayout(false);

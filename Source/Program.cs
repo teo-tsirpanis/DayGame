@@ -21,7 +21,7 @@ namespace DayGame
             var sf = StartUpMenu.ChooseSaveFile();
             if (sf != null)
                Application.Run(new NavigationMenu(sf));
-            // Application.Run(new BossBattleFrame(new Character("CharNamee", "Male"), new Boss.Boss("bosss", 7, 45, 3, 6)));
+            // Application.Run(new BossBattleFrame(sf.Character, sf.Inventory, new Boss("bosss", null, 45, 3, 6)));
         }
     }
 }

@@ -26,6 +26,15 @@ namespace DayGame
             public Character Character { get; set; }
             public Inventory Inventory { get; set; }
             [JsonConverter(typeof(TaskConverter))] public List<Task> Tasks { get; set; }
+
+            public static void ConsistencyCheck(Data data)
+            {
+                if (data?.Character == null)
+                    throw new Exception("The save file contains no data.");
+
+                data.Inventory ??= new Inventory();
+                data.Tasks ??= new List<Task>();
+            }
         }
 
         private SaveFile()
@@ -91,6 +100,7 @@ namespace DayGame
         public static SaveFile OpenExisting(string fileName)
         {
             var data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(fileName));
+            Data.ConsistencyCheck(data);
             return new SaveFile {_data = data, FileName = fileName};
         }
 

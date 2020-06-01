@@ -317,7 +317,7 @@ namespace DayGame
         {
             dialogue.Text = "You were killed by the boss";
             ContinueAfterBoss.Text = "Close";
-            inventory.removeEquipped();
+            inventory.DiscardBagAndEquipped();
         }
 
     }

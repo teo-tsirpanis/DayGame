@@ -32,6 +32,7 @@ namespace DayGame
             foreach (var t in BagButtons) t.Click += UnequipConsumable;
             ArmorButton.Click += (_, __) => UnequipNonConsumable(inv.ArmorEquiped, inv.TryUnequipArmor);
             WeaponButton.Click += (_, __) => UnequipNonConsumable(inv.WeaponEquiped, inv.TryUnequipWeapon);
+            inv.OnInventoryChanged += InventorySpaceReload;
             InventorySpaceReload();
         }
 
@@ -57,10 +58,7 @@ namespace DayGame
             {
                 MessageBox.Show("You cannot equip the item.", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                return;
             }
-
-            InventorySpaceReload();
         }
 
         private void FullChestError() =>
@@ -75,7 +73,6 @@ namespace DayGame
             if (UnequipWeapon.ShowDialog(this) != DialogResult.OK) return;
 
             if (!inv.TryRemoveFromBag(item)) FullChestError();
-            InventorySpaceReload();
         }
 
         private void UnequipNonConsumable(NonConsumableItem item, Func<bool> fUnequip)
@@ -84,9 +81,7 @@ namespace DayGame
             using var dialog = new EquipUnequipGUI(item, "Unequip");
             if (dialog.ShowDialog(this) != DialogResult.OK) return;
 
-            if (fUnequip())
-                InventorySpaceReload();
-            else
+            if (!fUnequip())
                 FullChestError();
         }
 
@@ -147,6 +142,11 @@ namespace DayGame
         private void filter_checked_changed(object sender, EventArgs e)
         {
             InventorySpaceReload();
+        }
+
+        private void InventoryGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            inv.OnInventoryChanged -= InventorySpaceReload;
         }
     }
 }

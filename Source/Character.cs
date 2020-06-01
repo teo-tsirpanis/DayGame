@@ -1,123 +1,125 @@
-﻿using System.Runtime.InteropServices;
+﻿using System;
 
 namespace DayGame
 {
     public class Character
     {
-        private string name;
-        private string gender;
-        private int maxExperiencePoints;
-        private int maxLifePoints;
-        //private Inventory inventory;
-
-        private int damage;
-        private int defence;
-        private int level;
         private int lifePoints;
-        private int inGameBalance;
-        private int hitPoints;
-        private int hitPointRegain;
-        private int luck;
-        private int jackPot;
         private int experiencePoints;
+        private int _inGameBalance;
 
-        public string Name { get => name; set => name = value; }
-        public string Gender { get => gender; set => gender = value; }
-        public int MaxExperiencePoints { get => maxExperiencePoints; }
-        public int MaxLifePoints { get => maxLifePoints; }
-        public int Damage { get => damage; set => damage = value; }
-        public int Defence { get => defence; set => defence = value; }
-        public int Level { get => level; set => level = value; }
+        public string Name { get; }
+
+        public string Gender { get; }
+
+        public int MaxExperiencePoints { get; private set; }
+
+        public int MaxLifePoints { get; private set; }
+
+        public int Damage { get; private set; }
+
+        public int Defence { get; set; }
+
+        public int Level { get; set; }
+
         public int LifePoints
-        { get => lifePoints; 
+        {
+            get => lifePoints;
 
-          set { lifePoints = value;
-                if (lifePoints > maxLifePoints)
+            set
+            {
+                lifePoints = value;
+                if (lifePoints > MaxLifePoints)
                 {
-                    lifePoints = maxLifePoints;
+                    lifePoints = MaxLifePoints;
                 }
+
                 if (lifePoints <= 0)
                 {
-                    CharacterDeath(level);
+                    CharacterDeath();
                 }
-              } 
+            }
         }
-        public int InGameBalance { get => inGameBalance; set => inGameBalance = value; }
-        public int HitPoints { get => hitPoints; set => hitPoints = value; }
-        public int HitPointRegain { get => hitPointRegain; set => hitPointRegain = value; }
-        public int Luck { get => luck; set => luck = value; }
-        public int JackPot { get => jackPot; set => jackPot = value; }
-        public int ExperiencePoints 
-        { get => experiencePoints; 
-          
-          set {experiencePoints = value; 
-                
-                if(experiencePoints >= maxExperiencePoints)
+
+        public event Action<int> InGameBalanceChanged;
+
+        public int InGameBalance
+        {
+            get => _inGameBalance;
+            set { _inGameBalance = value;
+                InGameBalanceChanged?.Invoke(_inGameBalance);
+            }
+        }
+
+        public int HitPoints { get; set; }
+
+        public int HitPointRegain { get; set; }
+
+        public int Luck { get; set; }
+
+        public int JackPot { get; set; }
+
+        public int ExperiencePoints
+        {
+            get => experiencePoints;
+
+            set
+            {
+                experiencePoints = value;
+
+                if (experiencePoints >= MaxExperiencePoints)
                 {
                     LevelUp();
                 }
-              }      
+            }
         }
 
-        public Character (string name, string gender)
+        public Character(string name, string gender)
         {
-            this.name = name;
-            this.gender = gender;
-            this.maxExperiencePoints = 100;
-            this.maxLifePoints = 100;
-            this.damage = 30;
-            this.defence = 30;
-            this.level = 1;
-            this.LifePoints = maxLifePoints;
-            this.inGameBalance = 0;
-            this.hitPoints = maxLifePoints;
-            this.hitPointRegain = 30;
-            this.luck = 3;
-            this.jackPot = 3;
+            this.Name = name;
+            this.Gender = gender;
+            this.MaxExperiencePoints = 100;
+            this.MaxLifePoints = 100;
+            this.Damage = 30;
+            this.Defence = 30;
+            this.Level = 1;
+            this.LifePoints = MaxLifePoints;
+            this.InGameBalance = 0;
+            this.HitPoints = MaxLifePoints;
+            this.HitPointRegain = 30;
+            this.Luck = 3;
+            this.JackPot = 3;
             this.ExperiencePoints = 0;
         }
 
-        public int IncreaseStat(int stat, int number)
+        public void CharacterDeath()
         {
-            stat += number;
-            return stat;
-        }
-
-        public int DecreaseStat(int stat, int number)
-        {
-            stat += number;
-            return stat;
-        }
-
-        public void CharacterDeath(int level) 
-        {
-            level = DecreaseStat(level, 1);
-            maxExperiencePoints = DecreaseStat(maxExperiencePoints, 20);
-            maxLifePoints = DecreaseStat(maxLifePoints, 10);
-            damage = DecreaseStat(damage, 5);
-            defence = DecreaseStat(defence, 5);
-            lifePoints = maxLifePoints;
-            hitPoints = maxLifePoints;
-            hitPointRegain = DecreaseStat(hitPointRegain, 10);
-            luck = DecreaseStat(luck, 1);
-            jackPot = DecreaseStat(jackPot, 1);
+            Level -= 1;
+            MaxExperiencePoints -= 20;
+            MaxLifePoints -= 10;
+            Damage -= 5;
+            Defence -= 5;
+            lifePoints = MaxLifePoints;
+            HitPoints = MaxLifePoints;
+            HitPointRegain -= 10;
+            Luck -= 1;
+            JackPot -= 1;
             experiencePoints = 0;
         }
+
         public void LevelUp()
         {
-            level = IncreaseStat(level, 1);
-            maxExperiencePoints = IncreaseStat(maxExperiencePoints, 20);
-            damage = IncreaseStat(damage, 5);
-            defence = IncreaseStat(defence, 5);
-            maxLifePoints = IncreaseStat(maxLifePoints, 10);
-            lifePoints = maxLifePoints;
-            hitPoints = maxLifePoints;
-            hitPointRegain = IncreaseStat(hitPointRegain, 10);
-            luck = IncreaseStat(luck, 1);
-            jackPot = IncreaseStat(jackPot, 1);
+            Level += 1;
+            MaxExperiencePoints += 20;
+            Damage += 5;
+            Defence += 5;
+            MaxLifePoints += 10;
+            lifePoints = MaxLifePoints;
+            HitPoints = MaxLifePoints;
+            HitPointRegain += 10;
+            Luck += 1;
+            JackPot += 1;
             experiencePoints = 0;
         }
-
-        //DeleteCharacter will be added later
     }
 }

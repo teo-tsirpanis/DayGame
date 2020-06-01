@@ -24,9 +24,10 @@ namespace DayGame
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
+            character.InGameBalanceChanged += SetBalance;
+            SetBalance(character.InGameBalance);
             UpdateStats();
         }
-
 
         private Form activeForm;
 
@@ -69,7 +70,6 @@ namespace DayGame
             hpBarController();
             levelLabel.Text = $"Level : {character.Level}";
             xpBar.Width = (int) (character.ExperiencePoints * 2 / (character.Level + 0.5));
-            gameBalanceLabel.Text = character.InGameBalance.ToString();
             xpLabel.Text = $@"{character.ExperiencePoints} / {character.Level * 100}";
             hpLabel.Text = $@"{character.LifePoints} / {character.MaxLifePoints}";
         }
@@ -81,12 +81,18 @@ namespace DayGame
 
         private void NavigationMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
+            character.InGameBalanceChanged -= SetBalance;
             saveFile.Save();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             openChildForm(shopGui);
+        }
+
+        private void SetBalance(int balance)
+        {
+            gameBalanceLabel.Text = balance.ToString();
         }
     }
 }

@@ -52,13 +52,13 @@ namespace DayGame
 
         private void hpBarController()
         {
-            hpBar.Width = character.GetCurrentHp() * 3;
+            hpBar.Width = character.LifePoints * 3;
             if (hpBar.Width >= 175)
             {
                 hpBar.Width = 175;
             }
 
-            if (character.GetCurrentHp() == character.LifePoints)
+            if (character.MaxLifePoints == character.LifePoints)
             {
                 hpBar.Width = 175;
             }
@@ -68,10 +68,10 @@ namespace DayGame
         {
             hpBarController();
             levelLabel.Text = $"Level : {character.Level}";
-            xpBar.Width = (int) (character.ExpreriencePoints * 2 / (character.Level + 0.5));
+            xpBar.Width = (int) (character.ExperiencePoints * 2 / (character.Level + 0.5));
             gameBalanceLabel.Text = character.InGameBalance.ToString();
-            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
-            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
+            xpLabel.Text = $@"{character.ExperiencePoints} / {character.Level * 100}";
+            hpLabel.Text = $@"{character.LifePoints} / {character.MaxLifePoints}";
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)

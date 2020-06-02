@@ -87,10 +87,10 @@ namespace DayGame
 
         void AddSampleItems()
         {
-            var sampleSword = new Weapon("Spathi", "Sword tou takesi", null, 15, 5);
-            var sampleArmor = new Armor("Armor D", "Armor tou takesi", null, 3, 5);
-            var sampleSpell = new Spell("SpellName", "This is a spell", null, 0, 15);
-            var samplePotion = new Potion("PotionName", "This is a potion", null, 0, 15);
+            var sampleSword = new Weapon(0, "Spathi", "Sword tou takesi", null, 15, 5);
+            var sampleArmor = new Armor(0, "Armor D", "Armor tou takesi", null, 3, 5);
+            var sampleSpell = new Spell(0, "SpellName", "This is a spell", null, 0, 15);
+            var samplePotion = new Potion(0, "PotionName", "This is a potion", null, 0, 15);
             inv.TryAddToChest(sampleSword);
             inv.TryAddToChest(samplePotion);
             inv.TryAddToChest(sampleArmor);

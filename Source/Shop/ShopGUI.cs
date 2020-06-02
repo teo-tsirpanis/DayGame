@@ -41,10 +41,10 @@ namespace DayGame
 
             //etoimazei ta filter checkboxes
 
-            Weapon weapon = new Weapon("ironsword", "it's a sword made of iron", null, 300, 25);
-            Armor armor = new Armor("ironarmor", "it's armor made of iron", null, 500, 10);
-            Potion potion = new Potion("green potion", "it's a green potion", null, 100, 10);
-            Spell spell = new Spell("Naga", "summons a divine dragon", null, 1000, 100);
+            Weapon weapon = new Weapon(0, "ironsword", "it's a sword made of iron", null, 300, 25);
+            Armor armor = new Armor(0, "ironarmor", "it's armor made of iron", null, 500, 10);
+            Potion potion = new Potion(0, "green potion", "it's a green potion", null, 100, 10);
+            Spell spell = new Spell(0, "Naga", "summons a divine dragon", null, 1000, 100);
 
             for (i = 0; i < 12; i++)
             {

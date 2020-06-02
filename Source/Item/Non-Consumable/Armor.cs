@@ -6,7 +6,7 @@ namespace DayGame
     {
         public int Defence { get; }
 
-        public Armor(string name, string description, Image image, int price, int defence) : base(name, description, image, price)
+        public Armor(int id, string name, string description, Image image, int price, int defence) : base(id, name, description, image, price)
         {
             this.Defence = defence;
         }

@@ -4,7 +4,7 @@ namespace DayGame
 {
     public class ConsumableItem : Item
     {
-        public ConsumableItem(string name, string description, Image image, int price) : base(name, description, image, price)
+        public ConsumableItem(int id, string name, string description, Image image, int price) : base(id, name, description, image, price)
         {
         }
     }

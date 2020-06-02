@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -13,11 +9,8 @@ namespace DayGame
     {
         private readonly Button[] ShopButtonsArray;
         //array me ta koumpi
-        private readonly List<Item> items = new List<Item>();
-        private IReadOnlyList<Item> Items => items;
+        private readonly List<Item> items;
         //ta items tou magaziou
-
-        private readonly int i;
 
         private BuyItem buyItem;
         //forma pou tha anoigei otan epilegetai kapoio item apo to magazi
@@ -39,38 +32,11 @@ namespace DayGame
                 cb.CheckedChanged += filter_checked_changed;
             }
 
-            //etoimazei ta filter checkboxes
-
-            Weapon weapon = new Weapon(0, "ironsword", "it's a sword made of iron", null, 300, 25);
-            Armor armor = new Armor(0, "ironarmor", "it's armor made of iron", null, 500, 10);
-            Potion potion = new Potion(0, "green potion", "it's a green potion", null, 100, 10);
-            Spell spell = new Spell(0, "Naga", "summons a divine dragon", null, 1000, 100);
-
-            for (i = 0; i < 12; i++)
-            {
-                items.Add(weapon);
-            }
-
-            for (i = 12; i < 24; i++)
-            {
-                items.Add(armor);
-            }
-
-            for (i = 24; i < 36; i++)
-            {
-                items.Add(potion);
-            }
-
-            for (i = 36; i < 48; i++)
-            {
-                items.Add(spell);
-            }
-
-            //arxikopoiei ta items tou magaziou gia testing skopous
+            items = ItemRegistry.Items.Values.ToList();
 
             ShopButtonsArray = Utilities.GetButtonsInOrder(this);
             foreach (var t in ShopButtonsArray) t.Click += buy;
-            UpdateButtons(Items, ShopButtonsArray);
+            UpdateButtons(items, ShopButtonsArray);
             //arxikopoiei ta koumpia kai to click function gia ola ta koumpia
 
         }
@@ -109,7 +75,7 @@ namespace DayGame
         //filtro
         private void filter_checked_changed(object sender, EventArgs e)
         {
-            UpdateButtons(Items.Where(ShouldShow).ToArray(), ShopButtonsArray);
+            UpdateButtons(items.Where(ShouldShow).ToArray(), ShopButtonsArray);
         }
         //otan patietai kapoio checkbox, enimerwnei ola ta koumpia
         private void checkBox3_CheckedChanged(object sender, EventArgs e)

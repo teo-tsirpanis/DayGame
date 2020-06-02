@@ -59,8 +59,9 @@ namespace DayGame
             var id = GetProperty<int>("id");
             var name = GetProperty<string>("name");
             var description = GetProperty<string>("description");
-            var imagePath = GetProperty<string>("image_path");
-            var image = Image.FromFile(Path.Combine(imageDirectory, imagePath));
+            // The image path is optional.
+            var imagePath = o["image_path"]?.Value<string>();
+            var image = imagePath != null ? Image.FromFile(Path.Combine(imageDirectory, imagePath)) : null;
             var price = GetProperty<int>("price");
 
             var typeName = GetProperty<string>("type");

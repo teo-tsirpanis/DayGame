@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DayGame
 {
     /// <summary>
     /// The items a <see cref="Character"/> has.
     /// </summary>
+    [JsonObject(MemberSerialization.OptIn)]
     public class Inventory
     {
         private const int DefaultChestCapacity = 42;
@@ -16,6 +18,7 @@ namespace DayGame
         /// <remarks>At the moment, this number is fixed to 42,
         /// but can theoretically be increased by an upgrade in
         /// the shop for example.</remarks>
+        [JsonProperty]
         public int ChestCapacity { get; }
 
         private const int DefaultBagCapacity = 8;
@@ -26,21 +29,26 @@ namespace DayGame
         /// <remarks>At the moment, this number is fixed to 8,
         /// but can theoretically be increased by an upgrade in
         /// the shop for example.</remarks>
+        [JsonProperty]
         public int BagCapacity { get; }
 
+        [JsonProperty("Chest")]
         private readonly List<Item> chest = new List<Item>();
+        [JsonProperty("Bag")]
         private readonly List<ConsumableItem> bag = new List<ConsumableItem>();
 
         /// <summary>
         /// The character's equipped armor.
         /// </summary>
         /// <seealso cref="ArmorBuff"/>
+        [JsonProperty]
         public Armor ArmorEquiped { get; private set; }
 
         /// <summary>
         /// The character's equipped weapon.
         /// </summary>
         /// <seealso cref="WeaponBuff"/>
+        [JsonProperty]
         public Weapon WeaponEquiped { get; private set; }
 
         /// <summary>

@@ -25,7 +25,7 @@ namespace DayGame
         private ItemRegistry(string path)
         {
             var jsonData = JArray.Parse(File.ReadAllText(path)).Values<JObject>();
-            var imageDirectory = Directory.GetCurrentDirectory();
+            var imageDirectory = Path.GetDirectoryName(path.AsSpan());
             foreach (var o in jsonData)
             {
                 var item = ParseItem(o, imageDirectory);
@@ -46,7 +46,7 @@ namespace DayGame
             registry = new ItemRegistry(path);
         }
 
-        private static Item ParseItem(JObject o, string imageDirectory)
+        private static Item ParseItem(JObject o, ReadOnlySpan<char> imageDirectory)
         {
             T GetProperty<T>(string key)
             {
@@ -61,7 +61,9 @@ namespace DayGame
             var description = GetProperty<string>("description");
             // The image path is optional.
             var imagePath = o["image_path"]?.Value<string>();
-            var image = imagePath != null ? Image.FromFile(Path.Combine(imageDirectory, imagePath)) : null;
+            var image = imagePath != null
+                ? Image.FromFile(Path.Join(imageDirectory, Path.GetFileName(imagePath.AsSpan())))
+                : null;
             var price = GetProperty<int>("price");
 
             var typeName = GetProperty<string>("type");

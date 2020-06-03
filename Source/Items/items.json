@@ -1,3 +1,35 @@
 [
-  {"id": 0, "name": "Master Sword", "description": "The blade of evil's bane", "price": 5000, "type": "weapon", "damage": 59}
+  {
+    "id": 0,
+    "name": "Master Sword",
+    "description": "The blade of evil's bane",
+    "price": 5000,
+    "type": "weapon",
+    "damage": 59
+  },
+  {
+    "id": 1,
+    "name": "Diamond Armor",
+    "description": "Harder than life itself",
+    "price": 2400,
+    "type": "armor",
+    "defence": 30
+  },
+  {
+    "id": 2,
+    "name": "Volcano Dew",
+    "description": "Mountain Dew reloaded.\nMade from lava",
+    "image_path": "volcano_dew.png",
+    "price": 1144,
+    "type": "potion",
+    "hp_regain": 69
+  },
+  {
+    "id": 3,
+    "name": "Saria's song",
+    "description": "It fills you with DETERMINATION",
+    "price": 300,
+    "type": "spell",
+    "damage": 40
+  }
 ]

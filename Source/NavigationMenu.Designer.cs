@@ -90,6 +90,7 @@ namespace DayGame
             this.gameBalanceLabel.TabIndex = 10;
             this.gameBalanceLabel.Text = "label1";
             this.gameBalanceLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gameBalanceLabel.DoubleClick += new System.EventHandler(this.gameBalanceLabel_DoubleClick);
             // 
             // pictureBox3
             // 

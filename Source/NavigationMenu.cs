@@ -94,5 +94,12 @@ namespace DayGame
         {
             gameBalanceLabel.Text = balance.ToString();
         }
+
+        private void gameBalanceLabel_DoubleClick(object sender, EventArgs e)
+        {
+            #if DEBUG
+            character.InGameBalance += 1000;
+            #endif
+        }
     }
 }

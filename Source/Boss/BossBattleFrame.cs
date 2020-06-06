@@ -40,7 +40,7 @@ namespace DayGame
             this.CharName.Text = character.Name;
             this.BossLevel.Text = "Level " + boss.Level;
             this.CharLevel.Text = "Level " + character.Level;
-            maxCharHp = character.HitPoints;
+            maxCharHp = character.MaxLifePoints;
             HitPoints = boss.Health;
             HpController();
 
@@ -309,7 +309,7 @@ namespace DayGame
         {
             dialogue.Text = "Whoa! You killed the boss";
             ContinueAfterChar.Text = "Close";
-            character.ExpreriencePoints += boss.Health * 3;
+            character.ExperiencePoints += boss.Health * 3;
             character.InGameBalance += boss.Health;
         }
 
@@ -317,7 +317,7 @@ namespace DayGame
         {
             dialogue.Text = "You were killed by the boss";
             ContinueAfterBoss.Text = "Close";
-            inventory.removeEquipped();
+            inventory.DiscardBagAndEquipped();
         }
 
     }

@@ -105,18 +105,18 @@ namespace DayGame
             this.panel4.SuspendLayout();
             this.bagPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // BagButton1
-            // 
+            //
             this.BagButton1.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton1.Location = new System.Drawing.Point(71, 33);
             this.BagButton1.Name = "BagButton1";
             this.BagButton1.Size = new System.Drawing.Size(67, 67);
             this.BagButton1.TabIndex = 42;
             this.BagButton1.UseVisualStyleBackColor = false;
-            // 
+            //
             // chestbutton1
-            // 
+            //
             this.chestbutton1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton1.BackColor = System.Drawing.SystemColors.Control;
             this.chestbutton1.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -125,9 +125,9 @@ namespace DayGame
             this.chestbutton1.Size = new System.Drawing.Size(67, 67);
             this.chestbutton1.TabIndex = 2;
             this.chestbutton1.UseVisualStyleBackColor = true;
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Controls.Add(this.Filterlabel);
@@ -139,9 +139,9 @@ namespace DayGame
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 593);
             this.panel1.TabIndex = 0;
-            // 
+            //
             // Filterlabel
-            // 
+            //
             this.Filterlabel.AutoSize = true;
             this.Filterlabel.Font = new System.Drawing.Font("Arial Black", 15F, System.Drawing.FontStyle.Bold);
             this.Filterlabel.Location = new System.Drawing.Point(26, 19);
@@ -149,9 +149,9 @@ namespace DayGame
             this.Filterlabel.Size = new System.Drawing.Size(78, 28);
             this.Filterlabel.TabIndex = 6;
             this.Filterlabel.Text = "Filter:";
-            // 
+            //
             // potionscheckbox
-            // 
+            //
             this.potionscheckbox.AutoSize = true;
             this.potionscheckbox.Checked = true;
             this.potionscheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -162,9 +162,9 @@ namespace DayGame
             this.potionscheckbox.TabIndex = 5;
             this.potionscheckbox.Text = "Potions";
             this.potionscheckbox.UseVisualStyleBackColor = true;
-            // 
+            //
             // spellscheckbox
-            // 
+            //
             this.spellscheckbox.AutoSize = true;
             this.spellscheckbox.Checked = true;
             this.spellscheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -175,9 +175,9 @@ namespace DayGame
             this.spellscheckbox.TabIndex = 4;
             this.spellscheckbox.Text = "Spells";
             this.spellscheckbox.UseVisualStyleBackColor = true;
-            // 
+            //
             // weaponscheckbox
-            // 
+            //
             this.weaponscheckbox.AutoSize = true;
             this.weaponscheckbox.Checked = true;
             this.weaponscheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -188,9 +188,9 @@ namespace DayGame
             this.weaponscheckbox.TabIndex = 3;
             this.weaponscheckbox.Text = "Weapons";
             this.weaponscheckbox.UseVisualStyleBackColor = true;
-            // 
+            //
             // armorcheckbox
-            // 
+            //
             this.armorcheckbox.AutoSize = true;
             this.armorcheckbox.Checked = true;
             this.armorcheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -201,9 +201,9 @@ namespace DayGame
             this.armorcheckbox.TabIndex = 2;
             this.armorcheckbox.Text = "Armor";
             this.armorcheckbox.UseVisualStyleBackColor = true;
-            // 
+            //
             // ChestText
-            // 
+            //
             this.ChestText.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ChestText.AutoSize = true;
             this.ChestText.Font = new System.Drawing.Font("Arial Black", 14F, System.Drawing.FontStyle.Bold);
@@ -212,9 +212,9 @@ namespace DayGame
             this.ChestText.Size = new System.Drawing.Size(79, 27);
             this.ChestText.TabIndex = 1;
             this.ChestText.Text = "Chest:";
-            // 
+            //
             // buttonPanel
-            // 
+            //
             this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.buttonPanel.Controls.Add(this.chestbutton42);
             this.buttonPanel.Controls.Add(this.chestbutton41);
@@ -263,378 +263,378 @@ namespace DayGame
             this.buttonPanel.Name = "buttonPanel";
             this.buttonPanel.Size = new System.Drawing.Size(457, 593);
             this.buttonPanel.TabIndex = 2;
-            // 
+            //
             // chestbutton42
-            // 
+            //
             this.chestbutton42.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton42.Location = new System.Drawing.Point(378, 484);
             this.chestbutton42.Name = "chestbutton42";
             this.chestbutton42.Size = new System.Drawing.Size(67, 67);
             this.chestbutton42.TabIndex = 13;
             this.chestbutton42.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton41
-            // 
+            //
             this.chestbutton41.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton41.Location = new System.Drawing.Point(305, 484);
             this.chestbutton41.Name = "chestbutton41";
             this.chestbutton41.Size = new System.Drawing.Size(67, 67);
             this.chestbutton41.TabIndex = 12;
             this.chestbutton41.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton36
-            // 
+            //
             this.chestbutton36.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton36.Location = new System.Drawing.Point(378, 411);
             this.chestbutton36.Name = "chestbutton36";
             this.chestbutton36.Size = new System.Drawing.Size(67, 67);
             this.chestbutton36.TabIndex = 37;
             this.chestbutton36.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton40
-            // 
+            //
             this.chestbutton40.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton40.Location = new System.Drawing.Point(232, 484);
             this.chestbutton40.Name = "chestbutton40";
             this.chestbutton40.Size = new System.Drawing.Size(67, 67);
             this.chestbutton40.TabIndex = 11;
             this.chestbutton40.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton35
-            // 
+            //
             this.chestbutton35.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton35.Location = new System.Drawing.Point(305, 411);
             this.chestbutton35.Name = "chestbutton35";
             this.chestbutton35.Size = new System.Drawing.Size(67, 67);
             this.chestbutton35.TabIndex = 36;
             this.chestbutton35.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton39
-            // 
+            //
             this.chestbutton39.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton39.Location = new System.Drawing.Point(159, 484);
             this.chestbutton39.Name = "chestbutton39";
             this.chestbutton39.Size = new System.Drawing.Size(67, 67);
             this.chestbutton39.TabIndex = 10;
             this.chestbutton39.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton34
-            // 
+            //
             this.chestbutton34.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton34.Location = new System.Drawing.Point(232, 411);
             this.chestbutton34.Name = "chestbutton34";
             this.chestbutton34.Size = new System.Drawing.Size(67, 67);
             this.chestbutton34.TabIndex = 35;
             this.chestbutton34.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton38
-            // 
+            //
             this.chestbutton38.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton38.Location = new System.Drawing.Point(86, 484);
             this.chestbutton38.Name = "chestbutton38";
             this.chestbutton38.Size = new System.Drawing.Size(67, 67);
             this.chestbutton38.TabIndex = 9;
             this.chestbutton38.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton33
-            // 
+            //
             this.chestbutton33.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton33.Location = new System.Drawing.Point(159, 411);
             this.chestbutton33.Name = "chestbutton33";
             this.chestbutton33.Size = new System.Drawing.Size(67, 67);
             this.chestbutton33.TabIndex = 34;
             this.chestbutton33.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton37
-            // 
+            //
             this.chestbutton37.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton37.Location = new System.Drawing.Point(13, 484);
             this.chestbutton37.Name = "chestbutton37";
             this.chestbutton37.Size = new System.Drawing.Size(67, 67);
             this.chestbutton37.TabIndex = 8;
             this.chestbutton37.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton32
-            // 
+            //
             this.chestbutton32.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton32.Location = new System.Drawing.Point(86, 411);
             this.chestbutton32.Name = "chestbutton32";
             this.chestbutton32.Size = new System.Drawing.Size(67, 67);
             this.chestbutton32.TabIndex = 33;
             this.chestbutton32.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton31
-            // 
+            //
             this.chestbutton31.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton31.Location = new System.Drawing.Point(13, 412);
             this.chestbutton31.Name = "chestbutton31";
             this.chestbutton31.Size = new System.Drawing.Size(67, 67);
             this.chestbutton31.TabIndex = 32;
             this.chestbutton31.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton30
-            // 
+            //
             this.chestbutton30.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton30.Location = new System.Drawing.Point(378, 339);
             this.chestbutton30.Name = "chestbutton30";
             this.chestbutton30.Size = new System.Drawing.Size(67, 67);
             this.chestbutton30.TabIndex = 31;
             this.chestbutton30.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton29
-            // 
+            //
             this.chestbutton29.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton29.Location = new System.Drawing.Point(305, 339);
             this.chestbutton29.Name = "chestbutton29";
             this.chestbutton29.Size = new System.Drawing.Size(67, 67);
             this.chestbutton29.TabIndex = 30;
             this.chestbutton29.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton28
-            // 
+            //
             this.chestbutton28.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton28.Location = new System.Drawing.Point(232, 339);
             this.chestbutton28.Name = "chestbutton28";
             this.chestbutton28.Size = new System.Drawing.Size(67, 67);
             this.chestbutton28.TabIndex = 29;
             this.chestbutton28.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton27
-            // 
+            //
             this.chestbutton27.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton27.Location = new System.Drawing.Point(159, 339);
             this.chestbutton27.Name = "chestbutton27";
             this.chestbutton27.Size = new System.Drawing.Size(67, 67);
             this.chestbutton27.TabIndex = 28;
             this.chestbutton27.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton26
-            // 
+            //
             this.chestbutton26.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton26.Location = new System.Drawing.Point(86, 339);
             this.chestbutton26.Name = "chestbutton26";
             this.chestbutton26.Size = new System.Drawing.Size(67, 67);
             this.chestbutton26.TabIndex = 27;
             this.chestbutton26.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton25
-            // 
+            //
             this.chestbutton25.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton25.Location = new System.Drawing.Point(13, 339);
             this.chestbutton25.Name = "chestbutton25";
             this.chestbutton25.Size = new System.Drawing.Size(67, 67);
             this.chestbutton25.TabIndex = 26;
             this.chestbutton25.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton24
-            // 
+            //
             this.chestbutton24.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton24.Location = new System.Drawing.Point(378, 266);
             this.chestbutton24.Name = "chestbutton24";
             this.chestbutton24.Size = new System.Drawing.Size(67, 67);
             this.chestbutton24.TabIndex = 25;
             this.chestbutton24.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton23
-            // 
+            //
             this.chestbutton23.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton23.Location = new System.Drawing.Point(305, 266);
             this.chestbutton23.Name = "chestbutton23";
             this.chestbutton23.Size = new System.Drawing.Size(67, 67);
             this.chestbutton23.TabIndex = 24;
             this.chestbutton23.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton22
-            // 
+            //
             this.chestbutton22.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton22.Location = new System.Drawing.Point(232, 266);
             this.chestbutton22.Name = "chestbutton22";
             this.chestbutton22.Size = new System.Drawing.Size(67, 67);
             this.chestbutton22.TabIndex = 23;
             this.chestbutton22.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton21
-            // 
+            //
             this.chestbutton21.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton21.Location = new System.Drawing.Point(159, 266);
             this.chestbutton21.Name = "chestbutton21";
             this.chestbutton21.Size = new System.Drawing.Size(67, 67);
             this.chestbutton21.TabIndex = 22;
             this.chestbutton21.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton20
-            // 
+            //
             this.chestbutton20.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton20.Location = new System.Drawing.Point(86, 266);
             this.chestbutton20.Name = "chestbutton20";
             this.chestbutton20.Size = new System.Drawing.Size(67, 67);
             this.chestbutton20.TabIndex = 21;
             this.chestbutton20.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton19
-            // 
+            //
             this.chestbutton19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton19.Location = new System.Drawing.Point(13, 266);
             this.chestbutton19.Name = "chestbutton19";
             this.chestbutton19.Size = new System.Drawing.Size(67, 67);
             this.chestbutton19.TabIndex = 20;
             this.chestbutton19.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton18
-            // 
+            //
             this.chestbutton18.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton18.Location = new System.Drawing.Point(378, 193);
             this.chestbutton18.Name = "chestbutton18";
             this.chestbutton18.Size = new System.Drawing.Size(67, 67);
             this.chestbutton18.TabIndex = 19;
             this.chestbutton18.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton17
-            // 
+            //
             this.chestbutton17.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton17.Location = new System.Drawing.Point(305, 193);
             this.chestbutton17.Name = "chestbutton17";
             this.chestbutton17.Size = new System.Drawing.Size(67, 67);
             this.chestbutton17.TabIndex = 18;
             this.chestbutton17.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton16
-            // 
+            //
             this.chestbutton16.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton16.Location = new System.Drawing.Point(232, 193);
             this.chestbutton16.Name = "chestbutton16";
             this.chestbutton16.Size = new System.Drawing.Size(67, 67);
             this.chestbutton16.TabIndex = 17;
             this.chestbutton16.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton15
-            // 
+            //
             this.chestbutton15.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton15.Location = new System.Drawing.Point(159, 193);
             this.chestbutton15.Name = "chestbutton15";
             this.chestbutton15.Size = new System.Drawing.Size(67, 67);
             this.chestbutton15.TabIndex = 16;
             this.chestbutton15.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton14
-            // 
+            //
             this.chestbutton14.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton14.Location = new System.Drawing.Point(86, 193);
             this.chestbutton14.Name = "chestbutton14";
             this.chestbutton14.Size = new System.Drawing.Size(67, 67);
             this.chestbutton14.TabIndex = 15;
             this.chestbutton14.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton13
-            // 
+            //
             this.chestbutton13.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton13.Location = new System.Drawing.Point(13, 193);
             this.chestbutton13.Name = "chestbutton13";
             this.chestbutton13.Size = new System.Drawing.Size(67, 67);
             this.chestbutton13.TabIndex = 14;
             this.chestbutton13.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton12
-            // 
+            //
             this.chestbutton12.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton12.Location = new System.Drawing.Point(378, 120);
             this.chestbutton12.Name = "chestbutton12";
             this.chestbutton12.Size = new System.Drawing.Size(67, 67);
             this.chestbutton12.TabIndex = 13;
             this.chestbutton12.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton11
-            // 
+            //
             this.chestbutton11.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton11.Location = new System.Drawing.Point(305, 120);
             this.chestbutton11.Name = "chestbutton11";
             this.chestbutton11.Size = new System.Drawing.Size(67, 67);
             this.chestbutton11.TabIndex = 12;
             this.chestbutton11.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton10
-            // 
+            //
             this.chestbutton10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton10.Location = new System.Drawing.Point(232, 120);
             this.chestbutton10.Name = "chestbutton10";
             this.chestbutton10.Size = new System.Drawing.Size(67, 67);
             this.chestbutton10.TabIndex = 11;
             this.chestbutton10.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton9
-            // 
+            //
             this.chestbutton9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton9.Location = new System.Drawing.Point(159, 120);
             this.chestbutton9.Name = "chestbutton9";
             this.chestbutton9.Size = new System.Drawing.Size(67, 67);
             this.chestbutton9.TabIndex = 10;
             this.chestbutton9.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton8
-            // 
+            //
             this.chestbutton8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton8.Location = new System.Drawing.Point(86, 120);
             this.chestbutton8.Name = "chestbutton8";
             this.chestbutton8.Size = new System.Drawing.Size(67, 67);
             this.chestbutton8.TabIndex = 9;
             this.chestbutton8.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton7
-            // 
+            //
             this.chestbutton7.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton7.Location = new System.Drawing.Point(13, 120);
             this.chestbutton7.Name = "chestbutton7";
             this.chestbutton7.Size = new System.Drawing.Size(67, 67);
             this.chestbutton7.TabIndex = 8;
             this.chestbutton7.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton6
-            // 
+            //
             this.chestbutton6.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton6.Location = new System.Drawing.Point(378, 47);
             this.chestbutton6.Name = "chestbutton6";
             this.chestbutton6.Size = new System.Drawing.Size(67, 67);
             this.chestbutton6.TabIndex = 7;
             this.chestbutton6.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton5
-            // 
+            //
             this.chestbutton5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton5.Location = new System.Drawing.Point(305, 47);
             this.chestbutton5.Name = "chestbutton5";
             this.chestbutton5.Size = new System.Drawing.Size(67, 67);
             this.chestbutton5.TabIndex = 6;
             this.chestbutton5.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton4
-            // 
+            //
             this.chestbutton4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton4.Location = new System.Drawing.Point(232, 47);
             this.chestbutton4.Name = "chestbutton4";
             this.chestbutton4.Size = new System.Drawing.Size(67, 67);
             this.chestbutton4.TabIndex = 5;
             this.chestbutton4.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton3
-            // 
+            //
             this.chestbutton3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton3.Location = new System.Drawing.Point(159, 47);
             this.chestbutton3.Name = "chestbutton3";
             this.chestbutton3.Size = new System.Drawing.Size(67, 67);
             this.chestbutton3.TabIndex = 4;
             this.chestbutton3.UseVisualStyleBackColor = true;
-            // 
+            //
             // chestbutton2
-            // 
+            //
             this.chestbutton2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.chestbutton2.Location = new System.Drawing.Point(86, 47);
             this.chestbutton2.Name = "chestbutton2";
             this.chestbutton2.Size = new System.Drawing.Size(67, 67);
             this.chestbutton2.TabIndex = 3;
             this.chestbutton2.UseVisualStyleBackColor = true;
-            // 
+            //
             // panel3
-            // 
+            //
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
             this.panel3.Controls.Add(this.WeaponText);
@@ -646,9 +646,9 @@ namespace DayGame
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(450, 244);
             this.panel3.TabIndex = 3;
-            // 
+            //
             // WeaponText
-            // 
+            //
             this.WeaponText.AutoSize = true;
             this.WeaponText.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
             this.WeaponText.Location = new System.Drawing.Point(80, 75);
@@ -656,9 +656,9 @@ namespace DayGame
             this.WeaponText.Size = new System.Drawing.Size(90, 26);
             this.WeaponText.TabIndex = 41;
             this.WeaponText.Text = "Weapon";
-            // 
+            //
             // ArmorText
-            // 
+            //
             this.ArmorText.AutoSize = true;
             this.ArmorText.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
             this.ArmorText.Location = new System.Drawing.Point(261, 74);
@@ -666,27 +666,27 @@ namespace DayGame
             this.ArmorText.Size = new System.Drawing.Size(73, 26);
             this.ArmorText.TabIndex = 40;
             this.ArmorText.Text = "Armor";
-            // 
+            //
             // WeaponButton
-            // 
+            //
             this.WeaponButton.BackColor = System.Drawing.SystemColors.Control;
             this.WeaponButton.Location = new System.Drawing.Point(85, 107);
             this.WeaponButton.Name = "WeaponButton";
             this.WeaponButton.Size = new System.Drawing.Size(80, 80);
             this.WeaponButton.TabIndex = 39;
             this.WeaponButton.UseVisualStyleBackColor = false;
-            // 
+            //
             // ArmorButton
-            // 
+            //
             this.ArmorButton.BackColor = System.Drawing.SystemColors.Control;
             this.ArmorButton.Location = new System.Drawing.Point(262, 107);
             this.ArmorButton.Name = "ArmorButton";
             this.ArmorButton.Size = new System.Drawing.Size(80, 80);
             this.ArmorButton.TabIndex = 38;
             this.ArmorButton.UseVisualStyleBackColor = false;
-            // 
+            //
             // EquipedText
-            // 
+            //
             this.EquipedText.AutoSize = true;
             this.EquipedText.Font = new System.Drawing.Font("Arial Black", 20F, System.Drawing.FontStyle.Bold);
             this.EquipedText.Location = new System.Drawing.Point(149, 19);
@@ -694,9 +694,9 @@ namespace DayGame
             this.EquipedText.Size = new System.Drawing.Size(136, 38);
             this.EquipedText.TabIndex = 38;
             this.EquipedText.Text = "Equiped";
-            // 
+            //
             // panel4
-            // 
+            //
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
             this.panel4.Controls.Add(this.DefenceTextNumber);
@@ -707,9 +707,9 @@ namespace DayGame
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(450, 119);
             this.panel4.TabIndex = 4;
-            // 
+            //
             // DefenceTextNumber
-            // 
+            //
             this.DefenceTextNumber.AutoSize = true;
             this.DefenceTextNumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
             this.DefenceTextNumber.Location = new System.Drawing.Point(292, 50);
@@ -717,9 +717,9 @@ namespace DayGame
             this.DefenceTextNumber.Size = new System.Drawing.Size(24, 26);
             this.DefenceTextNumber.TabIndex = 42;
             this.DefenceTextNumber.Text = "0";
-            // 
+            //
             // DamageTextNumber
-            // 
+            //
             this.DamageTextNumber.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.DamageTextNumber.AutoSize = true;
             this.DamageTextNumber.Font = new System.Drawing.Font("Arial Black", 13F, System.Drawing.FontStyle.Bold);
@@ -729,9 +729,9 @@ namespace DayGame
             this.DamageTextNumber.Size = new System.Drawing.Size(24, 26);
             this.DamageTextNumber.TabIndex = 41;
             this.DamageTextNumber.Text = "0";
-            // 
+            //
             // DefenceText
-            // 
+            //
             this.DefenceText.AutoSize = true;
             this.DefenceText.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.DefenceText.Location = new System.Drawing.Point(265, 23);
@@ -739,9 +739,9 @@ namespace DayGame
             this.DefenceText.Size = new System.Drawing.Size(77, 22);
             this.DefenceText.TabIndex = 40;
             this.DefenceText.Text = "Defense";
-            // 
+            //
             // DamageText
-            // 
+            //
             this.DamageText.AutoSize = true;
             this.DamageText.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.DamageText.Location = new System.Drawing.Point(88, 22);
@@ -749,9 +749,9 @@ namespace DayGame
             this.DamageText.Size = new System.Drawing.Size(77, 22);
             this.DamageText.TabIndex = 39;
             this.DamageText.Text = "Damage";
-            // 
+            //
             // bagPanel
-            // 
+            //
             this.bagPanel.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
             this.bagPanel.BackColor = System.Drawing.Color.OrangeRed;
             this.bagPanel.Controls.Add(this.BagButton8);
@@ -767,27 +767,27 @@ namespace DayGame
             this.bagPanel.Name = "bagPanel";
             this.bagPanel.Size = new System.Drawing.Size(450, 234);
             this.bagPanel.TabIndex = 5;
-            // 
+            //
             // BagButton8
-            // 
+            //
             this.BagButton8.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton8.Location = new System.Drawing.Point(292, 108);
             this.BagButton8.Name = "BagButton8";
             this.BagButton8.Size = new System.Drawing.Size(67, 67);
             this.BagButton8.TabIndex = 41;
             this.BagButton8.UseVisualStyleBackColor = false;
-            // 
+            //
             // BagButton7
-            // 
+            //
             this.BagButton7.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton7.Location = new System.Drawing.Point(218, 108);
             this.BagButton7.Name = "BagButton7";
             this.BagButton7.Size = new System.Drawing.Size(67, 67);
             this.BagButton7.TabIndex = 40;
             this.BagButton7.UseVisualStyleBackColor = false;
-            // 
+            //
             // BagText
-            // 
+            //
             this.BagText.AutoSize = true;
             this.BagText.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
             this.BagText.Location = new System.Drawing.Point(6, 4);
@@ -795,54 +795,54 @@ namespace DayGame
             this.BagText.Size = new System.Drawing.Size(42, 22);
             this.BagText.TabIndex = 41;
             this.BagText.Text = "Bag";
-            // 
+            //
             // BagButton4
-            // 
+            //
             this.BagButton4.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton4.Location = new System.Drawing.Point(292, 33);
             this.BagButton4.Name = "BagButton4";
             this.BagButton4.Size = new System.Drawing.Size(67, 67);
             this.BagButton4.TabIndex = 45;
             this.BagButton4.UseVisualStyleBackColor = false;
-            // 
+            //
             // BagButton6
-            // 
+            //
             this.BagButton6.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton6.Location = new System.Drawing.Point(144, 108);
             this.BagButton6.Name = "BagButton6";
             this.BagButton6.Size = new System.Drawing.Size(67, 67);
             this.BagButton6.TabIndex = 39;
             this.BagButton6.UseVisualStyleBackColor = false;
-            // 
+            //
             // BagButton2
-            // 
+            //
             this.BagButton2.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton2.Location = new System.Drawing.Point(144, 33);
             this.BagButton2.Name = "BagButton2";
             this.BagButton2.Size = new System.Drawing.Size(67, 67);
             this.BagButton2.TabIndex = 43;
             this.BagButton2.UseVisualStyleBackColor = false;
-            // 
+            //
             // BagButton3
-            // 
+            //
             this.BagButton3.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton3.Location = new System.Drawing.Point(218, 33);
             this.BagButton3.Name = "BagButton3";
             this.BagButton3.Size = new System.Drawing.Size(67, 67);
             this.BagButton3.TabIndex = 44;
             this.BagButton3.UseVisualStyleBackColor = false;
-            // 
+            //
             // BagButton5
-            // 
+            //
             this.BagButton5.BackColor = System.Drawing.SystemColors.Control;
             this.BagButton5.Location = new System.Drawing.Point(71, 108);
             this.BagButton5.Name = "BagButton5";
             this.BagButton5.Size = new System.Drawing.Size(67, 67);
             this.BagButton5.TabIndex = 38;
             this.BagButton5.UseVisualStyleBackColor = false;
-            // 
+            //
             // InventoryGUI
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
@@ -856,6 +856,8 @@ namespace DayGame
             this.MinimizeBox = false;
             this.Name = "InventoryGUI";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InventoryGUI_FormClosed);
+            this.Shown += new System.EventHandler(this.filter_checked_changed);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.buttonPanel.ResumeLayout(false);

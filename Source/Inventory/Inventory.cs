@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DayGame
 {
     /// <summary>
     /// The items a <see cref="Character"/> has.
     /// </summary>
+    [JsonObject(MemberSerialization.OptIn)]
     public class Inventory
     {
         private const int DefaultChestCapacity = 42;
@@ -15,6 +18,7 @@ namespace DayGame
         /// <remarks>At the moment, this number is fixed to 42,
         /// but can theoretically be increased by an upgrade in
         /// the shop for example.</remarks>
+        [JsonProperty]
         public int ChestCapacity { get; }
 
         private const int DefaultBagCapacity = 8;
@@ -25,21 +29,26 @@ namespace DayGame
         /// <remarks>At the moment, this number is fixed to 8,
         /// but can theoretically be increased by an upgrade in
         /// the shop for example.</remarks>
+        [JsonProperty]
         public int BagCapacity { get; }
 
+        [JsonProperty("Chest")]
         private readonly List<Item> chest = new List<Item>();
+        [JsonProperty("Bag")]
         private readonly List<ConsumableItem> bag = new List<ConsumableItem>();
 
         /// <summary>
         /// The character's equipped armor.
         /// </summary>
         /// <seealso cref="ArmorBuff"/>
+        [JsonProperty]
         public Armor ArmorEquiped { get; private set; }
 
         /// <summary>
         /// The character's equipped weapon.
         /// </summary>
         /// <seealso cref="WeaponBuff"/>
+        [JsonProperty]
         public Weapon WeaponEquiped { get; private set; }
 
         /// <summary>
@@ -61,6 +70,16 @@ namespace DayGame
 
         /// <returns>Whether the bag has reached its capacity.</returns>
         public bool IsBagFull => bag.Count == BagCapacity;
+
+        /// <summary>
+        /// This event is fired every time this inventory's content is changed.
+        /// </summary>
+        public event Action OnInventoryChanged;
+
+        private void InventoryChanged()
+        {
+            OnInventoryChanged?.Invoke();
+        }
 
         /// <summary>
         /// Creates an inventory with the specified storage capacities.
@@ -87,6 +106,7 @@ namespace DayGame
         {
             if (IsChestFull) return false;
             chest.Add(item);
+            InventoryChanged();
             return true;
         }
 
@@ -94,7 +114,11 @@ namespace DayGame
         /// Removes an <see cref="Item"/> from the chest.
         /// </summary>
         /// <param name="item">The <see cref="Item"/> in question.</param>
-        public void DiscardFromChest(Item item) => chest.Remove(item);
+        public void DiscardFromChest(Item item)
+        {
+            if (chest.Remove(item))
+                InventoryChanged();
+        }
 
         /// <summary>
         /// Adds a <see cref="ConsumableItem"/> to the bag.
@@ -110,8 +134,9 @@ namespace DayGame
             if (IsBagFull) return false;
             // The item will be removed if at
             // least one instance of it exists.
-            if (chest.Remove(item))
-                bag.Add(item);
+            if (!chest.Remove(item)) return true;
+            bag.Add(item);
+            InventoryChanged();
             return true;
         }
 
@@ -128,6 +153,7 @@ namespace DayGame
             if (IsChestFull) return false;
             if (!bag.Remove(item)) return false;
             chest.Add(item);
+            InventoryChanged();
             return true;
         }
 
@@ -135,7 +161,11 @@ namespace DayGame
         /// Removes a <see cref="ConsumableItem"/> from the bag.
         /// </summary>
         /// <param name="item">The <see cref="ConsumableItem"/> in question.</param>
-        public void DiscardFromBag(ConsumableItem item) => bag.Remove(item);
+        public void DiscardFromBag(ConsumableItem item)
+        {
+            if (bag.Remove(item))
+                InventoryChanged();
+        }
 
         /// <summary>
         /// The increase in <see cref="Character.Damage"/>
@@ -167,6 +197,7 @@ namespace DayGame
                 chest[weaponPos] = WeaponEquiped;
                 WeaponEquiped = weapon;
             }
+            InventoryChanged();
         }
 
         public bool TryUnequipWeapon()
@@ -175,6 +206,7 @@ namespace DayGame
             if (IsChestFull) return false;
             chest.Add(WeaponEquiped);
             WeaponEquiped = null;
+            InventoryChanged();
             return true;
         }
 
@@ -208,6 +240,8 @@ namespace DayGame
                 chest[weaponPos] = ArmorEquiped;
                 ArmorEquiped = armor;
             }
+
+            InventoryChanged();
         }
 
         /// <summary>
@@ -224,14 +258,17 @@ namespace DayGame
             if (IsChestFull) return false;
             chest.Add(ArmorEquiped);
             ArmorEquiped = null;
+            InventoryChanged();
             return true;
         }
-        //removes all equipped items, including the bag. Used as a punishment when losing a bossbattle
-        public void removeEquipped()
+        /// <summary>Discard the equipped items and those in the bag.</summary>
+        /// <remarks>Used to punish players when losing a boss battle.</remarks>
+        public void DiscardBagAndEquipped()
         {
             bag.Clear();
             ArmorEquiped = null;
             WeaponEquiped = null;
+            InventoryChanged();
         }
     }
 }

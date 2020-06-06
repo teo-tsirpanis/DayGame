@@ -1,65 +1,125 @@
-﻿namespace DayGame
+﻿using System;
+
+namespace DayGame
 {
     public class Character
     {
+        private int lifePoints;
         private int experiencePoints;
-        private double inGameBalance;
-        public int Damage { get; set; }
-        public int HitPoints;
-
-        public Character(string name, string gender)
-        {
-
-            this.Damage = 10;
-            this.Name = name;
-            this.Gender = gender;
-            Level = 1;
-            LifePoints = Level * 50;
-            TakenDamage = 0;
-            experiencePoints = 0;
-            inGameBalance = 0;
-        }
+        private int _inGameBalance;
 
         public string Name { get; }
 
         public string Gender { get; }
 
-        public int Level { get;  set; }
+        public int MaxExperiencePoints { get; private set; }
 
-        public int LifePoints { get; }
+        public int MaxLifePoints { get; private set; }
 
-        public int ExpreriencePoints
+        public int Damage { get; private set; }
+
+        public int Defence { get; set; }
+
+        public int Level { get; set; }
+
+        public int LifePoints
         {
-            get => experiencePoints;
+            get => lifePoints;
+
             set
             {
-                experiencePoints = value;
-                LevelUp();
+                lifePoints = value;
+                if (lifePoints > MaxLifePoints)
+                {
+                    lifePoints = MaxLifePoints;
+                }
+
+                if (lifePoints <= 0)
+                {
+                    CharacterDeath();
+                }
             }
         }
 
-        public int TakenDamage { get; set; }
+        public event Action<int> InGameBalanceChanged;
 
-        public double InGameBalance
+        public int InGameBalance
         {
-            get => inGameBalance;
-            set => inGameBalance = value;
+            get => _inGameBalance;
+            set { _inGameBalance = value;
+                InGameBalanceChanged?.Invoke(_inGameBalance);
+            }
         }
 
-        public int GetCurrentHp()
-        {
-            if (LifePoints - TakenDamage < 0) return 0;
-            else return LifePoints - TakenDamage;
+        public int HitPoints { get; set; }
 
+        public int HitPointRegain { get; set; }
+
+        public int Luck { get; set; }
+
+        public int JackPot { get; set; }
+
+        public int ExperiencePoints
+        {
+            get => experiencePoints;
+
+            set
+            {
+                experiencePoints = value;
+
+                if (experiencePoints >= MaxExperiencePoints)
+                {
+                    LevelUp();
+                }
+            }
+        }
+
+        public Character(string name, string gender)
+        {
+            this.Name = name;
+            this.Gender = gender;
+            this.MaxExperiencePoints = 100;
+            this.MaxLifePoints = 100;
+            this.Damage = 30;
+            this.Defence = 30;
+            this.Level = 1;
+            this.LifePoints = MaxLifePoints;
+            this.InGameBalance = 0;
+            this.HitPoints = MaxLifePoints;
+            this.HitPointRegain = 30;
+            this.Luck = 3;
+            this.JackPot = 3;
+            this.ExperiencePoints = 0;
+        }
+
+        public void CharacterDeath()
+        {
+            Level -= 1;
+            MaxExperiencePoints -= 20;
+            MaxLifePoints -= 10;
+            Damage -= 5;
+            Defence -= 5;
+            lifePoints = MaxLifePoints;
+            HitPoints = MaxLifePoints;
+            HitPointRegain -= 10;
+            Luck -= 1;
+            JackPot -= 1;
+            experiencePoints = 0;
         }
 
         public void LevelUp()
         {
-            if (experiencePoints >= Level * 100)
-            {
-                experiencePoints = experiencePoints % (Level * 100);
-                Level++;
-            }
+            Level += 1;
+            MaxExperiencePoints += 20;
+            Damage += 5;
+            Defence += 5;
+            MaxLifePoints += 10;
+            lifePoints = MaxLifePoints;
+            HitPoints = MaxLifePoints;
+            HitPointRegain += 10;
+            Luck += 1;
+            JackPot += 1;
+            experiencePoints = 0;
         }
     }
 }

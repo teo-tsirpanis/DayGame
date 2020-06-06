@@ -24,9 +24,10 @@ namespace DayGame
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
+            character.InGameBalanceChanged += SetBalance;
+            SetBalance(character.InGameBalance);
             UpdateStats();
         }
-
 
         private Form activeForm;
 
@@ -52,13 +53,13 @@ namespace DayGame
 
         private void hpBarController()
         {
-            hpBar.Width = character.GetCurrentHp() * 3;
+            hpBar.Width = character.LifePoints * 3;
             if (hpBar.Width >= 175)
             {
                 hpBar.Width = 175;
             }
 
-            if (character.GetCurrentHp() == character.LifePoints)
+            if (character.MaxLifePoints == character.LifePoints)
             {
                 hpBar.Width = 175;
             }
@@ -68,10 +69,9 @@ namespace DayGame
         {
             hpBarController();
             levelLabel.Text = $"Level : {character.Level}";
-            xpBar.Width = (int) (character.ExpreriencePoints * 2 / (character.Level + 0.5));
-            gameBalanceLabel.Text = character.InGameBalance.ToString();
-            xpLabel.Text = $@"{character.ExpreriencePoints} / {character.Level * 100}";
-            hpLabel.Text = $@"{character.GetCurrentHp()} / {character.LifePoints}";
+            xpBar.Width = (int) (character.ExperiencePoints * 2 / (character.Level + 0.5));
+            xpLabel.Text = $@"{character.ExperiencePoints} / {character.Level * 100}";
+            hpLabel.Text = $@"{character.LifePoints} / {character.MaxLifePoints}";
         }
 
         private void inventoryButton_Click(object sender, EventArgs e)
@@ -81,12 +81,18 @@ namespace DayGame
 
         private void NavigationMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
+            character.InGameBalanceChanged -= SetBalance;
             saveFile.Save();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             openChildForm(shopGui);
+        }
+
+        private void SetBalance(int balance)
+        {
+            gameBalanceLabel.Text = balance.ToString();
         }
     }
 }

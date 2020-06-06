@@ -29,7 +29,7 @@ namespace DayGame
         public BossBattleFrame(Character character, Inventory inventory, Boss boss)
         {
             InitializeComponent();
-            BagButtons = new[] {BagButton0, BagButton1, BagButton2, BagButton3, BagButton4, BagButton5, BagButton6, BagButton7};
+            BagButtons = Utilities.GetButtonsInOrder(bagItemPanel);
 
             ButtonToBag = new int[8];
             this.character = character;
@@ -40,7 +40,7 @@ namespace DayGame
             this.CharName.Text = character.Name;
             this.BossLevel.Text = "Level " + boss.Level;
             this.CharLevel.Text = "Level " + character.Level;
-            maxCharHp = character.HitPoints;
+            maxCharHp = character.MaxLifePoints;
             HitPoints = boss.Health;
             HpController();
 
@@ -309,7 +309,7 @@ namespace DayGame
         {
             dialogue.Text = "Whoa! You killed the boss";
             ContinueAfterChar.Text = "Close";
-            character.ExpreriencePoints += boss.Health * 3;
+            character.ExperiencePoints += boss.Health * 3;
             character.InGameBalance += boss.Health;
         }
 
@@ -317,7 +317,7 @@ namespace DayGame
         {
             dialogue.Text = "You were killed by the boss";
             ContinueAfterBoss.Text = "Close";
-            inventory.removeEquipped();
+            inventory.DiscardBagAndEquipped();
         }
 
     }

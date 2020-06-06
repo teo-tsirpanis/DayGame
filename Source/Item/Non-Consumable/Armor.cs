@@ -10,7 +10,5 @@ namespace DayGame
         {
             this.Defence = defence;
         }
-
-        public override Color BackgroundColor => Color.Blue;
     }
 }

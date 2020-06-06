@@ -37,7 +37,7 @@ namespace DayGame
 
         private void SaveFileError(string filename, string message)
         {
-            var response = MessageBox.Show(this,
+            var response = MessageBox.Show(
                 $"Error while reading {filename}.\n{message}\nShould the file be deleted?", "Corrupted save file",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
             if (response == DialogResult.Yes)

@@ -12,19 +12,12 @@ namespace DayGame
         private readonly Button[] BagButtons;
         private readonly Inventory inv;
 
-        private static Button[] GetButtonsInOrder(Control parent) =>
-            parent
-                .Controls.OfType<Button>()
-                .OrderBy(btn => btn.Location.Y)
-                .ThenBy(btn => btn.Location.X)
-                .ToArray();
-
         public InventoryGUI(SaveFile sf)
         {
             InitializeComponent();
             inv = sf.Inventory;
-            ChestButtons = GetButtonsInOrder(buttonPanel);
-            BagButtons = GetButtonsInOrder(bagPanel);
+            ChestButtons = Utilities.GetButtonsInOrder(buttonPanel);
+            BagButtons = Utilities.GetButtonsInOrder(bagPanel);
             AddSampleItems();
 
             var checkBoxes = new[] {armorcheckbox, weaponscheckbox, spellscheckbox, potionscheckbox};
@@ -39,6 +32,7 @@ namespace DayGame
             foreach (var t in BagButtons) t.Click += UnequipConsumable;
             ArmorButton.Click += (_, __) => UnequipNonConsumable(inv.ArmorEquiped, inv.TryUnequipArmor);
             WeaponButton.Click += (_, __) => UnequipNonConsumable(inv.WeaponEquiped, inv.TryUnequipWeapon);
+            inv.OnInventoryChanged += InventorySpaceReload;
             InventorySpaceReload();
         }
 
@@ -57,21 +51,18 @@ namespace DayGame
             else if (!inv.IsBagFull && item is ConsumableItem spell)
             {
                 if (!inv.TryAddToBag(spell))
-                    MessageBox.Show(this, "Your bag is full.\nTry to unequip something from there.", "Error",
+                    MessageBox.Show("Your bag is full.\nTry to unequip something from there.", "Error",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                MessageBox.Show(this, "You cannot equip the item.", "Error", MessageBoxButtons.OK,
+                MessageBox.Show("You cannot equip the item.", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
-                return;
             }
-
-            InventorySpaceReload();
         }
 
         private void FullChestError() =>
-            MessageBox.Show(this, "Your chest is full.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show("Your chest is full.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         private void UnequipConsumable(object sender, EventArgs e)
         {
@@ -82,7 +73,6 @@ namespace DayGame
             if (UnequipWeapon.ShowDialog(this) != DialogResult.OK) return;
 
             if (!inv.TryRemoveFromBag(item)) FullChestError();
-            InventorySpaceReload();
         }
 
         private void UnequipNonConsumable(NonConsumableItem item, Func<bool> fUnequip)
@@ -91,9 +81,7 @@ namespace DayGame
             using var dialog = new EquipUnequipGUI(item, "Unequip");
             if (dialog.ShowDialog(this) != DialogResult.OK) return;
 
-            if (fUnequip())
-                InventorySpaceReload();
-            else
+            if (!fUnequip())
                 FullChestError();
         }
 
@@ -114,7 +102,7 @@ namespace DayGame
         private static void UpdateButtonFromItem(Item item, Button btn)
         {
             btn.Tag = item;
-            btn.BackColor = item?.BackgroundColor ?? Color.FromKnownColor(KnownColor.Control);
+            btn.BackColor = Utilities.GetItemBackgroundColor(item);
             btn.Image = item?.Image;
             btn.Enabled = item != null;
         }
@@ -154,6 +142,11 @@ namespace DayGame
         private void filter_checked_changed(object sender, EventArgs e)
         {
             InventorySpaceReload();
+        }
+
+        private void InventoryGUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            inv.OnInventoryChanged -= InventorySpaceReload;
         }
     }
 }

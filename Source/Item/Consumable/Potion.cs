@@ -10,7 +10,5 @@ namespace DayGame
         {
             this.Hit_point_regain = hit_point_regain;
         }
-
-        public override Color BackgroundColor => Color.Green;
     }
 }

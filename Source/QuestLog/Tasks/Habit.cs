@@ -31,22 +31,22 @@
             if (difficulty == TaskDifficulty.Easy)
             {
                 character.InGameBalance += 10;
-                character.ExpreriencePoints += 10;
+                character.ExperiencePoints += 10;
             }
             else if (difficulty == TaskDifficulty.Medium)
             {
                 character.InGameBalance += 20;
-                character.ExpreriencePoints += 20;
+                character.ExperiencePoints += 20;
             }
             else if (difficulty == TaskDifficulty.Hard)
             {
                 character.InGameBalance += 40;
-                character.ExpreriencePoints += 40;
+                character.ExperiencePoints += 40;
             }
             else
             {
                 character.InGameBalance += 60;
-                character.ExpreriencePoints += 60;
+                character.ExperiencePoints += 60;
             }
         }
 
@@ -55,7 +55,7 @@
             negative++;
             
             character.InGameBalance -= 15;
-            character.TakenDamage += 10;
+            character.LifePoints -= 10;
         }
     }
 }

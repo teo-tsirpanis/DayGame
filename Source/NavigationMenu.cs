@@ -11,6 +11,7 @@ namespace DayGame
         private readonly InventoryGUI inventoryGui;
         private readonly ShopGUI shopGui;
         private BossBattleFrame bossBattleFrame;
+        private WaitingForBossBattle waitingForBossGUI;
         //temporary test date
         DateTime NextBossDate = new DateTime(2020, 6, 7).Date;
         public NavigationMenu(SaveFile saveFile)
@@ -22,6 +23,7 @@ namespace DayGame
             questLog = new QuestLog(saveFile, UpdateStats);
             inventoryGui = new InventoryGUI(saveFile);
             shopGui = new ShopGUI(saveFile);
+            waitingForBossGUI = new WaitingForBossBattle(NextBossDate);
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
@@ -35,11 +37,12 @@ namespace DayGame
                 if (prepare.DialogResult == DialogResult.OK)
                 {
                     //The boss object is temporary
-                    BossBattleFrame bossBattle = new BossBattleFrame(character, saveFile.Inventory, new Boss("TestName", null, 50, 3, 90));
-                    bossBattle.ShowDialog();
+                    bossBattleFrame = new BossBattleFrame(character, saveFile.Inventory, new Boss("TestName", null, 20, 3, 8));
+                    bossBattleFrame.ShowDialog();
                 }
                 NextBossDate = NextBossDate.AddDays(new Random().Next(3, 7)).Date;
-                
+                waitingForBossGUI.updateLabel(NextBossDate);
+                UpdateStats();
             }
         }
 
@@ -114,6 +117,11 @@ namespace DayGame
             #if DEBUG
             character.InGameBalance += 1000;
             #endif
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            openChildForm(waitingForBossGUI);
         }
     }
 }

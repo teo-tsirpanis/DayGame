@@ -482,6 +482,7 @@
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.ControlBox = false;
         }
 
         private System.Windows.Forms.Button AttackB;

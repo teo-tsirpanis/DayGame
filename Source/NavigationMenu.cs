@@ -11,7 +11,8 @@ namespace DayGame
         private readonly InventoryGUI inventoryGui;
         private readonly ShopGUI shopGui;
         private BossBattleFrame bossBattleFrame;
-
+        //temporary test date
+        DateTime NextBossDate = new DateTime(2020, 6, 7).Date;
         public NavigationMenu(SaveFile saveFile)
         {
             this.saveFile = saveFile;
@@ -27,6 +28,19 @@ namespace DayGame
             character.InGameBalanceChanged += SetBalance;
             SetBalance(character.InGameBalance);
             UpdateStats();
+            if (DateTime.Now.Date >= NextBossDate)
+            {
+                PrepareForBoss prepare = new PrepareForBoss(saveFile);
+                prepare.ShowDialog();
+                if (prepare.DialogResult == DialogResult.OK)
+                {
+                    //The boss object is temporary
+                    BossBattleFrame bossBattle = new BossBattleFrame(character, saveFile.Inventory, new Boss("TestName", null, 50, 3, 90));
+                    bossBattle.ShowDialog();
+                }
+                NextBossDate = NextBossDate.AddDays(new Random().Next(3, 7)).Date;
+                
+            }
         }
 
         private Form activeForm;

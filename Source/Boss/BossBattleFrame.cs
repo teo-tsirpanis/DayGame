@@ -30,7 +30,7 @@ namespace DayGame
         {
             InitializeComponent();
             BagButtons = Utilities.GetButtonsInOrder(bagItemPanel);
-
+            character.HitPoints = character.MaxLifePoints;
             ButtonToBag = new int[8];
             this.character = character;
             this.inventory = inventory;

@@ -218,6 +218,7 @@ namespace DayGame
                     {
                         BagButtons[butI].BackColor = c;
                         ButtonToBag[butI] = i;
+                        BagButtons[butI].Image = Bag[i]?.Image;
                         butI++;
                     }
                 }

@@ -31,8 +31,7 @@ namespace DayGame
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources =
-                new System.ComponentModel.ComponentResourceManager(typeof(ToDoTaskLabel));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToDoTaskLabel));
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.descriptionLabel = new System.Windows.Forms.Label();
@@ -43,13 +42,12 @@ namespace DayGame
             // 
             // checkBox1
             // 
-            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (247)))), ((int) (((byte) (163)))),
-                ((int) (((byte) (27)))));
+            this.checkBox1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (247)))), ((int) (((byte) (163)))), ((int) (((byte) (27)))));
             this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox1.Location = new System.Drawing.Point(-3, 1);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(31, 57);
+            this.checkBox1.Size = new System.Drawing.Size(27, 49);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.checkBox1.UseVisualStyleBackColor = false;
@@ -59,16 +57,16 @@ namespace DayGame
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 56);
+            this.panel1.Location = new System.Drawing.Point(0, 48);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(341, 1);
+            this.panel1.Size = new System.Drawing.Size(292, 1);
             this.panel1.TabIndex = 4;
             // 
             // descriptionLabel
             // 
-            this.descriptionLabel.Location = new System.Drawing.Point(27, 14);
+            this.descriptionLabel.Location = new System.Drawing.Point(23, 12);
             this.descriptionLabel.Name = "descriptionLabel";
-            this.descriptionLabel.Size = new System.Drawing.Size(310, 42);
+            this.descriptionLabel.Size = new System.Drawing.Size(266, 36);
             this.descriptionLabel.TabIndex = 5;
             this.descriptionLabel.Text = "label1";
             this.descriptionLabel.Click += new System.EventHandler(this.descriptionLabel_Click);
@@ -78,37 +76,36 @@ namespace DayGame
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Image = ((System.Drawing.Image) (resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(313, 30);
+            this.button1.Location = new System.Drawing.Point(268, 26);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 25);
+            this.button1.Size = new System.Drawing.Size(21, 22);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // timeLabel
             // 
             this.timeLabel.ForeColor = System.Drawing.Color.Red;
-            this.timeLabel.Location = new System.Drawing.Point(185, 30);
+            this.timeLabel.Location = new System.Drawing.Point(159, 26);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(100, 23);
+            this.timeLabel.Size = new System.Drawing.Size(86, 20);
             this.timeLabel.TabIndex = 8;
             this.timeLabel.Text = "time";
             // 
             // nameLabel
             // 
-            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))),
-                ((int) (((byte) (144)))));
-            this.nameLabel.Location = new System.Drawing.Point(27, 0);
+            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
+            this.nameLabel.Location = new System.Drawing.Point(23, 0);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(309, 14);
+            this.nameLabel.Size = new System.Drawing.Size(265, 12);
             this.nameLabel.TabIndex = 9;
             this.nameLabel.Text = "label1";
             // 
             // ToDoTaskLabel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(341, 57);
+            this.ClientSize = new System.Drawing.Size(292, 49);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.timeLabel);
             this.Controls.Add(this.button1);
@@ -123,12 +120,11 @@ namespace DayGame
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label descriptionLabel;
+        private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label timeLabel;
 
         #endregion
-
-        private System.Windows.Forms.Label descriptionLabel;
-        private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Label nameLabel;
     }
 }

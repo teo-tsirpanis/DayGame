@@ -462,6 +462,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(884, 661);
+            this.ControlBox = false;
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
@@ -482,7 +483,6 @@
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.ControlBox = false;
         }
 
         private System.Windows.Forms.Button AttackB;

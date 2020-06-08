@@ -14,7 +14,7 @@ namespace DayGame
             InitializeComponent();
             radioHabits.Checked = true;
             radioEasy.Checked = true;
-            dateTimePicker1.MinDate = DateTime.Now;
+            dateTimePicker1.MinDate = DateTime.Now.AddDays(1);
         }
 
         private void radioEasy_CheckedChanged(object sender, EventArgs e)

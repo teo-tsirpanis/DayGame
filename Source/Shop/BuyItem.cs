@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -65,7 +61,7 @@ namespace DayGame
             if (inventory.IsChestFull)
             {
                 //ean to inventory einai gemato, emfanizetai minyma sfalmatos
-                MessageBox.Show("Your inventory is full! You cannot buy this item.","Error", 
+                MessageBox.Show("Your inventory is full! You cannot buy this item.","Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Close();
                 return;

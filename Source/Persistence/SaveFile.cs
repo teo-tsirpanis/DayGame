@@ -20,12 +20,16 @@ namespace DayGame
         public Character Character => _data.Character;
         public Inventory Inventory => _data.Inventory;
         public List<Task> Tasks => _data.Tasks;
+        public DateTime SaveDate => _data.SaveDate;
+        public DateTime NextBossDate => _data.NextBossDate;
 
         private class Data
         {
             public Character Character { get; set; }
             public Inventory Inventory { get; set; }
             [JsonConverter(typeof(TaskConverter))] public List<Task> Tasks { get; set; }
+            public DateTime SaveDate { get; private set; }
+            public DateTime NextBossDate { get; private set; }
 
             public static void ConsistencyCheck(Data data)
             {
@@ -35,6 +39,13 @@ namespace DayGame
                 data.Inventory ??= new Inventory();
                 data.Tasks ??= new List<Task>();
             }
+            public void UpdateSaveDate()
+            {
+                SaveDate = DateTime.Today;
+                if (NextBossDate == default) UpdateNextBossDate();
+            }
+
+            public void UpdateNextBossDate() => NextBossDate = DateTime.Today.AddDays(new Random().Next(3, 8));
         }
 
         private SaveFile()
@@ -47,6 +58,7 @@ namespace DayGame
         /// </summary>
         public void Save()
         {
+            _data.UpdateSaveDate();
             File.WriteAllText(FileName, JsonConvert.SerializeObject(_data));
         }
 
@@ -89,7 +101,22 @@ namespace DayGame
                 Inventory = new Inventory(),
                 Tasks = new List<Task>()
             };
+            data.UpdateSaveDate();
             return new SaveFile {_data = data, FileName = fileName};
+        }
+
+        /// <summary>
+        /// Initiates a boss battle only if it is time for one.
+        /// </summary>
+        /// <remarks>The time for the next boss battle is
+        /// updated after its completion.</remarks>
+        /// <param name="bossBattle">A delegate that will contain
+        /// the logic of the actual boss battle.</param>
+        public void TryInitiateBossBattle(Action bossBattle)
+        {
+            if (_data.NextBossDate > DateTime.Today) return;
+            bossBattle();
+            _data.UpdateNextBossDate();
         }
 
         /// <summary>

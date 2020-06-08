@@ -28,11 +28,7 @@ namespace DayGame
 
             set
             {
-                lifePoints = value;
-                if (lifePoints > MaxLifePoints)
-                {
-                    lifePoints = MaxLifePoints;
-                }
+                lifePoints = Math.Min(lifePoints, MaxLifePoints);
 
                 if (lifePoints <= 0)
                 {

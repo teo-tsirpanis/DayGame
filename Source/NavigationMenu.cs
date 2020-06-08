@@ -10,10 +10,8 @@ namespace DayGame
         private readonly QuestLog questLog;
         private readonly InventoryGUI inventoryGui;
         private readonly ShopGUI shopGui;
-        private BossBattleFrame bossBattleFrame;
-        private WaitingForBossBattle waitingForBossGUI;
-        //temporary test date
-        DateTime NextBossDate = new DateTime(2020, 6, 7).Date;
+        private readonly WaitingForBossBattle waitingForBossGUI;
+
         public NavigationMenu(SaveFile saveFile)
         {
             this.saveFile = saveFile;
@@ -23,27 +21,23 @@ namespace DayGame
             questLog = new QuestLog(saveFile, UpdateStats);
             inventoryGui = new InventoryGUI(saveFile);
             shopGui = new ShopGUI(saveFile);
-            waitingForBossGUI = new WaitingForBossBattle(NextBossDate);
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
             character.InGameBalanceChanged += SetBalance;
             SetBalance(character.InGameBalance);
+            saveFile.TryInitiateBossBattle(StartBossBattle);
+            waitingForBossGUI = new WaitingForBossBattle(saveFile.NextBossDate);
             UpdateStats();
-            if (DateTime.Now.Date >= NextBossDate)
-            {
-                PrepareForBoss prepare = new PrepareForBoss(saveFile);
+        }
+
+        private void StartBossBattle()
+        {
+            using (var prepare = new PrepareForBoss(saveFile))
                 prepare.ShowDialog();
-                if (prepare.DialogResult == DialogResult.OK)
-                {
-                    //The boss object is temporary
-                    bossBattleFrame = new BossBattleFrame(character, saveFile.Inventory, new Boss("TestName", null, 20, 3, 8));
-                    bossBattleFrame.ShowDialog();
-                }
-                NextBossDate = NextBossDate.AddDays(new Random().Next(3, 7)).Date;
-                waitingForBossGUI.updateLabel(NextBossDate);
-                UpdateStats();
-            }
+            using var bossBattleFrame =
+                new BossBattleFrame(character, saveFile.Inventory, new Boss("TestName", null, 20, 3, 8));
+            bossBattleFrame.ShowDialog();
         }
 
         private Form activeForm;

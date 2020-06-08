@@ -28,8 +28,8 @@ namespace DayGame
             public Character Character { get; set; }
             public Inventory Inventory { get; set; }
             [JsonConverter(typeof(TaskConverter))] public List<Task> Tasks { get; set; }
-            public DateTime SaveDate { get; private set; }
-            public DateTime NextBossDate { get; private set; }
+            public DateTime SaveDate { get; set; }
+            public DateTime NextBossDate { get; set; }
 
             public static void ConsistencyCheck(Data data)
             {

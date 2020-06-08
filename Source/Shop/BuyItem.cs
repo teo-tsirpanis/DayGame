@@ -85,24 +85,6 @@ namespace DayGame
             }
             this.Close();
         }
-        private void BuyItem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ItemName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ItemDescription_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void StatLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

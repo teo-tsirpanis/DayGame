@@ -2,8 +2,16 @@
 {
     public class Daily : Task
     {
+        private bool doneForToday;
         public Daily(string name, string description, TaskDifficulty difficulty) : base(name, description, difficulty)
         {
+            doneForToday = false;
+        }
+
+        public bool DoneForToday
+        {
+            get => doneForToday;
+            set => doneForToday = value;
         }
 
         public override void Complete(Character character)

@@ -44,25 +44,23 @@
             // 
             // NameLabel
             // 
-            this.NameLabel.AutoSize = true;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.NameLabel.Location = new System.Drawing.Point(108, 100);
+            this.NameLabel.Location = new System.Drawing.Point(2, 99);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(104, 24);
+            this.NameLabel.Size = new System.Drawing.Size(299, 48);
             this.NameLabel.TabIndex = 0;
-            this.NameLabel.Text = "ItemName";
-            this.NameLabel.Click += new System.EventHandler(this.ItemName_Click);
+            this.NameLabel.Text = "ItemName\r\nwre\r\n";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DescriptionLabel
             // 
-            this.DescriptionLabel.AutoSize = true;
             this.DescriptionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.DescriptionLabel.Location = new System.Drawing.Point(103, 138);
+            this.DescriptionLabel.Location = new System.Drawing.Point(2, 143);
             this.DescriptionLabel.Name = "DescriptionLabel";
-            this.DescriptionLabel.Size = new System.Drawing.Size(109, 17);
+            this.DescriptionLabel.Size = new System.Drawing.Size(299, 17);
             this.DescriptionLabel.TabIndex = 1;
             this.DescriptionLabel.Text = "Item Description";
-            this.DescriptionLabel.Click += new System.EventHandler(this.ItemDescription_Click);
+            this.DescriptionLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // StatLabel
             // 
@@ -73,7 +71,6 @@
             this.StatLabel.Size = new System.Drawing.Size(40, 24);
             this.StatLabel.TabIndex = 2;
             this.StatLabel.Text = "Stat";
-            this.StatLabel.Click += new System.EventHandler(this.StatLabel_Click);
             // 
             // StatAmountLabel
             // 
@@ -132,9 +129,9 @@
             // 
             // ItemImage
             // 
-            this.ItemImage.Location = new System.Drawing.Point(106, 12);
+            this.ItemImage.Location = new System.Drawing.Point(120, 12);
             this.ItemImage.Name = "ItemImage";
-            this.ItemImage.Size = new System.Drawing.Size(106, 85);
+            this.ItemImage.Size = new System.Drawing.Size(64, 64);
             this.ItemImage.TabIndex = 8;
             this.ItemImage.TabStop = false;
             // 
@@ -160,7 +157,6 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Buy Item";
-            this.Load += new System.EventHandler(this.BuyItem_Load);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.ItemImage)).EndInit();
             this.ResumeLayout(false);

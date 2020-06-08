@@ -81,7 +81,7 @@ namespace DayGame
             hpBarController();
             levelLabel.Text = $"Level : {character.Level}";
             xpBar.Width = (int) (character.ExperiencePoints * 2 / (character.Level + 0.5));
-            xpLabel.Text = $@"{character.ExperiencePoints} / {character.Level * 100}";
+            xpLabel.Text = $@"{character.ExperiencePoints} / {character.MaxExperiencePoints}";
             hpLabel.Text = $@"{character.LifePoints} / {character.MaxLifePoints}";
         }
 

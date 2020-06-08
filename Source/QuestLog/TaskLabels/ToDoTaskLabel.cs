@@ -19,19 +19,11 @@ namespace DayGame
             this.saveFile = saveFile;
             InitializeComponent();
 
-            if (toDo.DueDate < DateTime.Now)
-            {
-                taskFailed();
-            }
-            else
-            {
-                timeLabel.Text = toDo.DueDate.Date.ToString();
-                nameLabel.Text = toDo.Name;
-                var descr = toDo.Description;
-                descriptionLabel.Text = descr.Length > 50 ? $@"{descr.Substring(0, 50)}..." : descr;
-                nameLabel.Text = toDo.Name;
-            }
-            
+            timeLabel.Text = toDo.DueDate.Date.ToString("d");
+            nameLabel.Text = toDo.Name;
+            var descr = toDo.Description;
+            descriptionLabel.Text = descr.Length > 50 ? $@"{descr.Substring(0, 50)}..." : descr;
+            if (toDo.DueDate < DateTime.Now) taskFailed();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -46,7 +38,9 @@ namespace DayGame
             toDo.UpdateTask(false, character);
             onUpdate();
             saveFile.Tasks.Remove(toDo);
-            Close();
+            checkBox1.Enabled = false;
+            checkBox1.BackColor = Color.Gray;
+            timeLabel.ForeColor = Color.Red;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,7 +48,6 @@ namespace DayGame
             saveFile.Tasks.Remove(toDo);
             Close();
         }
-
 
         private void descriptionLabel_Click(object sender, EventArgs e)
         {

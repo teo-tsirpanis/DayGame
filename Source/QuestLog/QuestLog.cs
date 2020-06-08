@@ -16,7 +16,9 @@ namespace DayGame
             this.saveFile = saveFile;
             InitializeComponent();
 
-            saveFile.Tasks.ForEach(AddLabel);
+            // A failed To-Do task will be removed from the list.
+            // That's why we use an intermediate array.
+            Array.ForEach(saveFile.Tasks.ToArray(), AddLabel);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

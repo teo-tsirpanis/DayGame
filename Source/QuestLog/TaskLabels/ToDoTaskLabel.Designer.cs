@@ -81,10 +81,11 @@ namespace DayGame
             this.button1.Size = new System.Drawing.Size(21, 22);
             this.button1.TabIndex = 7;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // timeLabel
             // 
-            this.timeLabel.ForeColor = System.Drawing.Color.Red;
+            this.timeLabel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.timeLabel.Location = new System.Drawing.Point(159, 26);
             this.timeLabel.Name = "timeLabel";
             this.timeLabel.Size = new System.Drawing.Size(86, 20);

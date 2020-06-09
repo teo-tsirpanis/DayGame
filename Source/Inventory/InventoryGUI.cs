@@ -28,8 +28,8 @@ namespace DayGame
 
             foreach (var t in ChestButtons) t.Click += Equip;
             foreach (var t in BagButtons) t.Click += UnequipConsumable;
-            ArmorButton.Click += (_, __) => UnequipNonConsumable(inv.ArmorEquiped, inv.TryUnequipArmor);
-            WeaponButton.Click += (_, __) => UnequipNonConsumable(inv.WeaponEquiped, inv.TryUnequipWeapon);
+            ArmorButton.Click += (_, __) => UnequipNonConsumable(inv.ArmorEquipped, inv.TryUnequipArmor);
+            WeaponButton.Click += (_, __) => UnequipNonConsumable(inv.WeaponEquipped, inv.TryUnequipWeapon);
             inv.OnInventoryChanged += InventorySpaceReload;
             InventorySpaceReload();
         }
@@ -103,8 +103,8 @@ namespace DayGame
         {
             Item.UpdateButtons(inv.Chest.Where(ShouldShow).ToArray(), ChestButtons);
             Item.UpdateButtons(inv.Bag, BagButtons);
-            Item.UpdateButton(inv.WeaponEquiped, WeaponButton);
-            Item.UpdateButton(inv.ArmorEquiped, ArmorButton);
+            Item.UpdateButton(inv.WeaponEquipped, WeaponButton);
+            Item.UpdateButton(inv.ArmorEquipped, ArmorButton);
             UpdateStatText(inv.WeaponBuff, DamageTextNumber);
             UpdateStatText(inv.ArmorBuff, DefenceTextNumber);
         }

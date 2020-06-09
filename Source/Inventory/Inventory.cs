@@ -42,14 +42,14 @@ namespace DayGame
         /// </summary>
         /// <seealso cref="ArmorBuff"/>
         [JsonProperty]
-        public Armor ArmorEquiped { get; private set; }
+        public Armor ArmorEquipped { get; private set; }
 
         /// <summary>
         /// The character's equipped weapon.
         /// </summary>
         /// <seealso cref="WeaponBuff"/>
         [JsonProperty]
-        public Weapon WeaponEquiped { get; private set; }
+        public Weapon WeaponEquipped { get; private set; }
 
         /// <summary>
         /// A read-only view of the chest.
@@ -169,11 +169,11 @@ namespace DayGame
 
         /// <summary>
         /// The increase in <see cref="Character.Damage"/>
-        /// provided by <see cref="WeaponEquiped"/>
+        /// provided by <see cref="WeaponEquipped"/>
         /// (or zero if none is equipped).
         /// </summary>
-        /// <seealso cref="WeaponEquiped"/>
-        public int WeaponBuff => WeaponEquiped?.Damage ?? 0;
+        /// <seealso cref="WeaponEquipped"/>
+        public int WeaponBuff => WeaponEquipped?.Damage ?? 0;
 
         /// <summary>
         /// Equips the given <see cref="Weapon"/> from the chest.
@@ -185,38 +185,38 @@ namespace DayGame
         /// the operation will fail silently.</remarks>
         public void EquipWeapon(Weapon weapon)
         {
-            if (WeaponEquiped == null)
+            if (WeaponEquipped == null)
             {
-                WeaponEquiped = weapon;
+                WeaponEquipped = weapon;
                 chest.Remove(weapon);
             }
             else
             {
                 var weaponPos = chest.FindIndex(x => x == weapon);
                 if (weaponPos == -1) return;
-                chest[weaponPos] = WeaponEquiped;
-                WeaponEquiped = weapon;
+                chest[weaponPos] = WeaponEquipped;
+                WeaponEquipped = weapon;
             }
             InventoryChanged();
         }
 
         public bool TryUnequipWeapon()
         {
-            if (WeaponEquiped == null) return true;
+            if (WeaponEquipped == null) return true;
             if (IsChestFull) return false;
-            chest.Add(WeaponEquiped);
-            WeaponEquiped = null;
+            chest.Add(WeaponEquipped);
+            WeaponEquipped = null;
             InventoryChanged();
             return true;
         }
 
         /// <summary>
         /// The increase in the character's defense
-        /// provided by <see cref="ArmorEquiped"/>
+        /// provided by <see cref="ArmorEquipped"/>
         /// (or zero if none is equipped).
         /// </summary>
-        /// <seealso cref="ArmorEquiped"/>
-        public int ArmorBuff => ArmorEquiped?.Defence ?? 0;
+        /// <seealso cref="ArmorEquipped"/>
+        public int ArmorBuff => ArmorEquipped?.Defence ?? 0;
 
         /// <summary>
         /// Equips the given <see cref="Armor"/> from the chest.
@@ -230,34 +230,34 @@ namespace DayGame
         {
             var weaponPos = chest.FindIndex(x => x == armor);
             if (weaponPos == -1) return;
-            if (ArmorEquiped == null)
+            if (ArmorEquipped == null)
             {
-                ArmorEquiped = armor;
+                ArmorEquipped = armor;
                 chest.Remove(armor);
             }
             else
             {
-                chest[weaponPos] = ArmorEquiped;
-                ArmorEquiped = armor;
+                chest[weaponPos] = ArmorEquipped;
+                ArmorEquipped = armor;
             }
 
             InventoryChanged();
         }
 
         /// <summary>
-        /// Unequips the <see cref="ArmorEquiped"/>
+        /// Unequips the <see cref="ArmorEquipped"/>
         /// and returns it to the chest.
         /// </summary>
         /// <returns>Whether the chest has enough space
         /// for the unequipped armor. If <see langword="false"/>
-        /// is returned, <see cref="ArmorEquiped"/> did not
+        /// is returned, <see cref="ArmorEquipped"/> did not
         /// change.</returns>
         public bool TryUnequipArmor()
         {
-            if (ArmorEquiped == null) return true;
+            if (ArmorEquipped == null) return true;
             if (IsChestFull) return false;
-            chest.Add(ArmorEquiped);
-            ArmorEquiped = null;
+            chest.Add(ArmorEquipped);
+            ArmorEquipped = null;
             InventoryChanged();
             return true;
         }
@@ -266,8 +266,8 @@ namespace DayGame
         public void DiscardBagAndEquipped()
         {
             bag.Clear();
-            ArmorEquiped = null;
-            WeaponEquiped = null;
+            ArmorEquipped = null;
+            WeaponEquipped = null;
             InventoryChanged();
         }
     }

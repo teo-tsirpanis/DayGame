@@ -33,8 +33,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.saveButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.radioDark = new System.Windows.Forms.RadioButton();
             this.radioHard = new System.Windows.Forms.RadioButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.taskDifficultyGroupBox = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.radioEasy = new System.Windows.Forms.RadioButton();
             this.radioMedium = new System.Windows.Forms.RadioButton();
@@ -54,21 +54,21 @@
             this.radioHabits = new System.Windows.Forms.RadioButton();
             this.radioToDos = new System.Windows.Forms.RadioButton();
             this.radioDailies = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.taskTypeGroupBox = new System.Windows.Forms.GroupBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.taskDifficultyGroupBox.SuspendLayout();
+            this.taskTypeGroupBox.SuspendLayout();
             this.SuspendLayout();
-            // 
+            //
             // panel1
-            // 
+            //
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.saveButton);
+            this.panel1.Controls.Add(this.cancelButton);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
@@ -79,45 +79,45 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(297, 230);
             this.panel1.TabIndex = 0;
-            // 
+            //
             // panel3
-            // 
+            //
             this.panel3.Location = new System.Drawing.Point(297, 224);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1, 192);
             this.panel3.TabIndex = 7;
-            // 
+            //
             // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.button2.Location = new System.Drawing.Point(233, 8);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 25);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Save";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
+            //
+            this.saveButton.BackColor = System.Drawing.Color.White;
+            this.saveButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.saveButton.FlatAppearance.BorderSize = 0;
+            this.saveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveButton.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
+            this.saveButton.Location = new System.Drawing.Point(233, 8);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(55, 25);
+            this.saveButton.TabIndex = 6;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            //
             // button1
-            // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(173, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(55, 25);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
+            this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.cancelButton.FlatAppearance.BorderSize = 0;
+            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cancelButton.ForeColor = System.Drawing.Color.White;
+            this.cancelButton.Location = new System.Drawing.Point(173, 8);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(55, 25);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            //
             // label3
-            // 
+            //
             this.label3.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label3.Location = new System.Drawing.Point(10, 100);
@@ -125,9 +125,9 @@
             this.label3.Size = new System.Drawing.Size(94, 25);
             this.label3.TabIndex = 4;
             this.label3.Text = "Description";
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.Font = new System.Drawing.Font("Segoe UI Black", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Location = new System.Drawing.Point(10, 45);
@@ -135,9 +135,9 @@
             this.label2.Size = new System.Drawing.Size(94, 25);
             this.label2.TabIndex = 3;
             this.label2.Text = "Name";
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.Font = new System.Drawing.Font("Segoe UI Black", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Location = new System.Drawing.Point(10, 9);
@@ -145,24 +145,24 @@
             this.label1.Size = new System.Drawing.Size(106, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "Create Task";
-            // 
+            //
             // textBox2
-            // 
+            //
             this.textBox2.Location = new System.Drawing.Point(10, 127);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(278, 76);
             this.textBox2.TabIndex = 1;
-            // 
+            //
             // textBox1
-            // 
+            //
             this.textBox1.Location = new System.Drawing.Point(10, 73);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(278, 20);
             this.textBox1.TabIndex = 0;
-            // 
+            //
             // panel2
-            // 
+            //
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.label6);
@@ -171,27 +171,27 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(297, 87);
             this.panel2.TabIndex = 1;
-            // 
+            //
             // dateTimePicker1
-            // 
+            //
             this.dateTimePicker1.Location = new System.Drawing.Point(66, 37);
             this.dateTimePicker1.MinDate = new System.DateTime(2020, 4, 27, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(172, 20);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.Value = new System.DateTime(2020, 4, 28, 10, 34, 28, 0);
-            // 
+            //
             // label6
-            // 
+            //
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label6.Location = new System.Drawing.Point(10, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "Due Date";
-            // 
+            //
             // radioDark
-            // 
+            //
             this.radioDark.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioDark.BackColor = System.Drawing.Color.LightGray;
             this.radioDark.FlatAppearance.BorderSize = 0;
@@ -204,10 +204,10 @@
             this.radioDark.Text = "Dark\r\nSouls\r\n";
             this.radioDark.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioDark.UseVisualStyleBackColor = false;
-            this.radioDark.CheckedChanged += new System.EventHandler(this.radioDark_CheckedChanged);
-            // 
+            this.radioDark.CheckedChanged += new System.EventHandler(this.TaskDifficultyChanged);
+            //
             // radioHard
-            // 
+            //
             this.radioHard.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioHard.BackColor = System.Drawing.Color.LightGray;
             this.radioHard.FlatAppearance.BorderSize = 0;
@@ -220,32 +220,32 @@
             this.radioHard.Text = "Hard";
             this.radioHard.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioHard.UseVisualStyleBackColor = false;
-            this.radioHard.CheckedChanged += new System.EventHandler(this.radioHard_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.radioEasy);
-            this.groupBox1.Controls.Add(this.radioMedium);
-            this.groupBox1.Controls.Add(this.radioDark);
-            this.groupBox1.Controls.Add(this.radioHard);
-            this.groupBox1.Location = new System.Drawing.Point(0, 235);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(298, 89);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            // 
+            this.radioHard.CheckedChanged += new System.EventHandler(this.TaskDifficultyChanged);
+            //
+            // taskDifficultyGroupBox
+            //
+            this.taskDifficultyGroupBox.Controls.Add(this.label4);
+            this.taskDifficultyGroupBox.Controls.Add(this.radioEasy);
+            this.taskDifficultyGroupBox.Controls.Add(this.radioMedium);
+            this.taskDifficultyGroupBox.Controls.Add(this.radioDark);
+            this.taskDifficultyGroupBox.Controls.Add(this.radioHard);
+            this.taskDifficultyGroupBox.Location = new System.Drawing.Point(0, 235);
+            this.taskDifficultyGroupBox.Name = "taskDifficultyGroupBox";
+            this.taskDifficultyGroupBox.Size = new System.Drawing.Size(298, 89);
+            this.taskDifficultyGroupBox.TabIndex = 11;
+            this.taskDifficultyGroupBox.TabStop = false;
+            //
             // label4
-            // 
+            //
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label4.Location = new System.Drawing.Point(10, 15);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 20);
             this.label4.TabIndex = 12;
             this.label4.Text = "Difficulty";
-            // 
+            //
             // radioEasy
-            // 
+            //
             this.radioEasy.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioEasy.BackColor = System.Drawing.Color.LightGray;
             this.radioEasy.FlatAppearance.BorderSize = 0;
@@ -258,10 +258,10 @@
             this.radioEasy.Text = "Easy";
             this.radioEasy.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioEasy.UseVisualStyleBackColor = false;
-            this.radioEasy.CheckedChanged += new System.EventHandler(this.radioEasy_CheckedChanged);
-            // 
+            this.radioEasy.CheckedChanged += new System.EventHandler(this.TaskDifficultyChanged);
+            //
             // radioMedium
-            // 
+            //
             this.radioMedium.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioMedium.BackColor = System.Drawing.Color.LightGray;
             this.radioMedium.FlatAppearance.BorderSize = 0;
@@ -274,27 +274,27 @@
             this.radioMedium.Text = "Medium";
             this.radioMedium.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioMedium.UseVisualStyleBackColor = false;
-            this.radioMedium.CheckedChanged += new System.EventHandler(this.radioMedium_CheckedChanged);
-            // 
+            this.radioMedium.CheckedChanged += new System.EventHandler(this.TaskDifficultyChanged);
+            //
             // panel4
-            // 
+            //
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
             this.panel4.Location = new System.Drawing.Point(297, 231);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1, 186);
             this.panel4.TabIndex = 16;
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.label5.Location = new System.Drawing.Point(10, 23);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 20);
             this.label5.TabIndex = 7;
             this.label5.Text = "Task Type";
-            // 
+            //
             // radioHabits
-            // 
+            //
             this.radioHabits.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioHabits.BackColor = System.Drawing.Color.LightGray;
             this.radioHabits.FlatAppearance.BorderSize = 0;
@@ -304,13 +304,13 @@
             this.radioHabits.Size = new System.Drawing.Size(76, 28);
             this.radioHabits.TabIndex = 8;
             this.radioHabits.TabStop = true;
-            this.radioHabits.Text = "Habits";
+            this.radioHabits.Text = "Habit";
             this.radioHabits.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioHabits.UseVisualStyleBackColor = false;
-            this.radioHabits.CheckedChanged += new System.EventHandler(this.radioHabits_CheckedChanged);
-            // 
+            this.radioHabits.CheckedChanged += new System.EventHandler(this.TaskTypeChanged);
+            //
             // radioToDos
-            // 
+            //
             this.radioToDos.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioToDos.BackColor = System.Drawing.Color.LightGray;
             this.radioToDos.FlatAppearance.BorderSize = 0;
@@ -320,13 +320,13 @@
             this.radioToDos.Size = new System.Drawing.Size(76, 28);
             this.radioToDos.TabIndex = 10;
             this.radioToDos.TabStop = true;
-            this.radioToDos.Text = "To-Dos";
+            this.radioToDos.Text = "To-Do";
             this.radioToDos.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioToDos.UseVisualStyleBackColor = false;
-            this.radioToDos.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
-            // 
+            this.radioToDos.CheckedChanged += new System.EventHandler(this.TaskTypeChanged);
+            //
             // radioDailies
-            // 
+            //
             this.radioDailies.Appearance = System.Windows.Forms.Appearance.Button;
             this.radioDailies.BackColor = System.Drawing.Color.LightGray;
             this.radioDailies.FlatAppearance.BorderSize = 0;
@@ -336,51 +336,52 @@
             this.radioDailies.Size = new System.Drawing.Size(76, 28);
             this.radioDailies.TabIndex = 9;
             this.radioDailies.TabStop = true;
-            this.radioDailies.Text = "Dailies";
+            this.radioDailies.Text = "Daily";
             this.radioDailies.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.radioDailies.UseVisualStyleBackColor = false;
-            this.radioDailies.CheckedChanged += new System.EventHandler(this.radioDailies_CheckedChanged);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioDailies);
-            this.groupBox2.Controls.Add(this.radioToDos);
-            this.groupBox2.Controls.Add(this.radioHabits);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(0, 325);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(298, 92);
-            this.groupBox2.TabIndex = 12;
-            this.groupBox2.TabStop = false;
-            // 
+            this.radioDailies.CheckedChanged += new System.EventHandler(this.TaskTypeChanged);
+            //
+            // taskTypeGroupBox
+            //
+            this.taskTypeGroupBox.Controls.Add(this.radioDailies);
+            this.taskTypeGroupBox.Controls.Add(this.radioToDos);
+            this.taskTypeGroupBox.Controls.Add(this.radioHabits);
+            this.taskTypeGroupBox.Controls.Add(this.label5);
+            this.taskTypeGroupBox.Location = new System.Drawing.Point(0, 325);
+            this.taskTypeGroupBox.Name = "taskTypeGroupBox";
+            this.taskTypeGroupBox.Size = new System.Drawing.Size(298, 92);
+            this.taskTypeGroupBox.TabIndex = 12;
+            this.taskTypeGroupBox.TabStop = false;
+            //
             // panel5
-            // 
+            //
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
             this.panel5.Location = new System.Drawing.Point(0, 230);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1, 187);
             this.panel5.TabIndex = 16;
-            // 
+            //
             // panel6
-            // 
+            //
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (65)))), ((int) (((byte) (198)))), ((int) (((byte) (144)))));
             this.panel6.Location = new System.Drawing.Point(296, 230);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1, 187);
             this.panel6.TabIndex = 17;
-            // 
+            //
             // CreateTaskMenu
-            // 
+            //
+            this.AcceptButton = this.saveButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.CancelButton = this.button1;
+            this.CancelButton = this.cancelButton;
             this.ClientSize = new System.Drawing.Size(297, 498);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.taskTypeGroupBox);
+            this.Controls.Add(this.taskDifficultyGroupBox);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -390,16 +391,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
+            this.taskDifficultyGroupBox.ResumeLayout(false);
+            this.taskTypeGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button cancelButton;
+        private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox taskDifficultyGroupBox;
+        private System.Windows.Forms.GroupBox taskTypeGroupBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

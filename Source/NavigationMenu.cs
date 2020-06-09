@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DayGame.Help;
+using System;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -11,6 +12,7 @@ namespace DayGame
         private readonly InventoryGUI inventoryGui;
         private readonly ShopGUI shopGui;
         private readonly WaitingForBossBattle waitingForBossGUI;
+        private readonly HelpGUI helpGui;
 
         public NavigationMenu(SaveFile saveFile)
         {
@@ -21,6 +23,7 @@ namespace DayGame
             questLog = new QuestLog(saveFile, UpdateStats);
             inventoryGui = new InventoryGUI(saveFile);
             shopGui = new ShopGUI(saveFile);
+            helpGui = new HelpGUI();
             openChildForm(questLog);
 
             nameLabel.Text = character.Name;
@@ -116,6 +119,11 @@ namespace DayGame
         private void button4_Click(object sender, EventArgs e)
         {
             openChildForm(waitingForBossGUI);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            openChildForm(helpGui);
         }
     }
 }

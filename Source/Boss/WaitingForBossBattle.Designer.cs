@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(308, 233);
@@ -42,10 +42,9 @@
             this.label1.Size = new System.Drawing.Size(633, 108);
             this.label1.TabIndex = 0;
             this.label1.Text = "A new boss has tracked you down.\r\nHe is coming to get you in    days\r\n";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -56,10 +55,9 @@
             this.label2.Size = new System.Drawing.Size(44, 51);
             this.label2.TabIndex = 1;
             this.label2.Text = "4";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
+            //
             // WaitingForBossBattle
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1254, 654);

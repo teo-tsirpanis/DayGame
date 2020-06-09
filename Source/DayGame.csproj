@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <IsPackable>false</IsPackable>
+    <ApplicationIcon>../icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Items/**" CopyToOutputDirectory="PreserveNewest" />

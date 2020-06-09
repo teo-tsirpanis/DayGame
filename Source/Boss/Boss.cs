@@ -1,5 +1,4 @@
-﻿using System;
-using System.Drawing;
+﻿using System.Drawing;
 
 namespace DayGame
 
@@ -20,12 +19,6 @@ namespace DayGame
             this.Health = health;
             this.Level = Level;
             this.Damage = Damage;
-        }
-
-        //dummy method, to be changed
-        public void BossDeath()
-        {
-            Console.WriteLine("The boss died");
         }
     }
 }

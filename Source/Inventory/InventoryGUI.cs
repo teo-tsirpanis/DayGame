@@ -87,7 +87,7 @@ namespace DayGame
         private static void UpdateButtonFromItem(Item item, Button btn)
         {
             btn.Tag = item;
-            btn.BackColor = Utilities.GetItemBackgroundColor(item);
+            btn.BackColor = Item.GetBackgroundColor(item);
             btn.Image = item?.Image;
             btn.Enabled = item != null;
         }

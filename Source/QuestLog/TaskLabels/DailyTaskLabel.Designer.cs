@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DayGame.TaskLabels
+namespace DayGame
 {
     partial class DailyTaskLabel
     {

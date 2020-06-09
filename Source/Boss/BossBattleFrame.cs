@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Reflection.Emit;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -22,8 +16,6 @@ namespace DayGame
         private readonly Inventory inventory;
 
         private int HitPoints;
-        //boolean showing if we are dealing with potions (1) or spells (0)
-        private bool isPotion;
         private IReadOnlyList<ConsumableItem> Bag => inventory.Bag;
 
         public BossBattleFrame(Character character, Inventory inventory, Boss boss)
@@ -79,7 +71,7 @@ namespace DayGame
             if (HitPoints <= 0)
             {
                 PlayerWon();
-                
+
             }
             else
             {
@@ -162,7 +154,7 @@ namespace DayGame
             }
             HpController();
             ContinueAfterBoss.Visible = true;
-            
+
         }
         //Checks if bag has any consumables of selected type
         public Boolean IsEmpty(Boolean isPotion)

@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DayGame.TaskLabels
+namespace DayGame
 {
     public partial class HabitTaskLabel : Form
     {

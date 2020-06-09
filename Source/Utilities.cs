@@ -12,14 +12,5 @@ namespace DayGame
                 .OrderBy(btn => btn.Location.Y)
                 .ThenBy(btn => btn.Location.X)
                 .ToArray();
-
-        public static Color GetItemBackgroundColor(Item item) => item switch
-        {
-            Armor _ => Color.Blue,
-            Weapon _ => Color.Red,
-            Spell _ => Color.Yellow,
-            Potion _ => Color.Green,
-            _ => Color.FromKnownColor(KnownColor.Control)
-        };
     }
 }

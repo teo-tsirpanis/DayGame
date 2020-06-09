@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DayGame.TaskLabels
+namespace DayGame
 {
     public partial class DailyTaskLabel : Form
     {
@@ -46,13 +46,11 @@ namespace DayGame.TaskLabels
                 checkBox1.BackColor = Color.LightGray;
                 checkBox1.Checked = true;
             }
-            
+
         }
 
-        private async void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            if (!checkBox1.Checked) return;
-            
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -27,6 +27,15 @@ namespace DayGame
 
         public int Price { get; }
 
+        public static Color GetBackgroundColor(Item item) => item switch
+        {
+            Armor _ => Color.Blue,
+            Weapon _ => Color.Red,
+            Spell _ => Color.Yellow,
+            Potion _ => Color.Green,
+            _ => Color.FromKnownColor(KnownColor.Control)
+        };
+
         private class ItemConverter : JsonConverter<Item>
         {
             public override void WriteJson(JsonWriter writer, Item value, JsonSerializer serializer)

@@ -13,17 +13,17 @@ namespace DayGame
 
         public override void Complete(Character character)
         {
-            if (difficulty == TaskDifficulty.Easy)
+            if (Difficulty == TaskDifficulty.Easy)
             {
                 character.InGameBalance += 10;
                 character.ExperiencePoints += 10;
             }
-            else if (difficulty == TaskDifficulty.Medium)
+            else if (Difficulty == TaskDifficulty.Medium)
             {
                 character.InGameBalance += 20;
                 character.ExperiencePoints += 20;
             }
-            else if (difficulty == TaskDifficulty.Hard)
+            else if (Difficulty == TaskDifficulty.Hard)
             {
                 character.InGameBalance += 40;
                 character.ExperiencePoints += 40;

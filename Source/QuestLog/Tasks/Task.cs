@@ -2,35 +2,18 @@
 {
     public abstract class Task
     {
-        protected string name;
-        protected string description;
-        protected TaskDifficulty difficulty;
-
-
         public Task(string name, string description, TaskDifficulty difficulty)
         {
-            this.name = name;
-            this.description = description;
-            this.difficulty = difficulty;
+            this.Name = name;
+            this.Description = description;
+            this.Difficulty = difficulty;
         }
 
-        public string Name
-        {
-            get => name;
-            set => name = value;
-        }
+        public string Name { get; set; }
 
-        public string Description
-        {
-            get => description;
-            set => description = value;
-        }
+        public string Description { get; set; }
 
-        public TaskDifficulty Difficulty
-        {
-            get => difficulty;
-            set => difficulty = value;
-        }
+        public TaskDifficulty Difficulty { get; set; }
 
         public void UpdateTask(bool positive, Character character)
         {

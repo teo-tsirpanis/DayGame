@@ -1,44 +1,33 @@
 ﻿namespace DayGame
 {
     public class Habit : Task
-    {   
-        private int positive;
-        private int negative;
+    {
+        public int Positive { get; set; }
 
-        public int Positive
-        {
-            get => positive;
-            set => positive = value;
-        }
+        public int Negative { get; set; }
 
-        public int Negative
-        {
-            get => negative;
-            set => negative = value;
-        }
 
-        
         public Habit(string name, string description, TaskDifficulty difficulty) : base(name, description, difficulty)
         {
-            positive = 0;
-            negative = 0;
+            Positive = 0;
+            Negative = 0;
         }
 
         public override void Complete(Character character)
         {
-            positive++;
-            
-            if (difficulty == TaskDifficulty.Easy)
+            Positive++;
+
+            if (Difficulty == TaskDifficulty.Easy)
             {
                 character.InGameBalance += 10;
                 character.ExperiencePoints += 10;
             }
-            else if (difficulty == TaskDifficulty.Medium)
+            else if (Difficulty == TaskDifficulty.Medium)
             {
                 character.InGameBalance += 20;
                 character.ExperiencePoints += 20;
             }
-            else if (difficulty == TaskDifficulty.Hard)
+            else if (Difficulty == TaskDifficulty.Hard)
             {
                 character.InGameBalance += 40;
                 character.ExperiencePoints += 40;
@@ -52,8 +41,8 @@
 
         public override void Procrastinate(Character character)
         {
-            negative++;
-            
+            Negative++;
+
             character.InGameBalance -= 15;
             character.LifePoints -= 10;
         }

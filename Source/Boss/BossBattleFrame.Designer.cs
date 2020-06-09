@@ -288,7 +288,7 @@
             this.AttackB.TabIndex = 0;
             this.AttackB.Text = "Attack";
             this.AttackB.UseVisualStyleBackColor = false;
-            this.AttackB.Click += new System.EventHandler(this.button1_Click);
+            this.AttackB.Click += new System.EventHandler(this.AttackBClick);
             //
             // panel5
             //

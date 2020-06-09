@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace DayGame
@@ -10,40 +10,35 @@ namespace DayGame
         private readonly Character character;
         private readonly Boss boss;
         private readonly int maxCharHp;
+
         private readonly Button[] BagButtons;
-        //Array mapping button to bag indexes
-        private readonly int[] ButtonToBag;
+
         private readonly Inventory inventory;
 
         private int HitPoints;
+        private bool canClose;
         private IReadOnlyList<ConsumableItem> Bag => inventory.Bag;
 
         public BossBattleFrame(Character character, Inventory inventory, Boss boss)
         {
+            static string FormatLevel(int level) => "Level " + level.ToString();
             InitializeComponent();
             BagButtons = Utilities.GetButtonsInOrder(bagItemPanel);
             character.HitPoints = character.MaxLifePoints;
-            ButtonToBag = new int[8];
             this.character = character;
             this.inventory = inventory;
             this.boss = boss;
             dialogue.Text = "Select Action!";
             this.BossName.Text = boss.Name;
             this.CharName.Text = character.Name;
-            this.BossLevel.Text = "Level " + boss.Level;
-            this.CharLevel.Text = "Level " + character.Level;
+            this.BossLevel.Text = FormatLevel(boss.Level);
+            this.CharLevel.Text = FormatLevel(character.Level);
             maxCharHp = character.MaxLifePoints;
             HitPoints = boss.Health;
-            HpController();
-
+            UpdateHpController();
         }
 
-        private void potionsB_Click(object sender, EventArgs e)
-        {
-            UseConsumable(true);
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void AttackBClick(object sender, EventArgs e)
         {
             int damage = character.Damage;
             HitPoints -= damage;
@@ -51,32 +46,31 @@ namespace DayGame
             if (HitPoints <= 0)
                 PlayerWon();
             else
-                dialogue.Text = $"Whoa! You  have dealt {damage} damage";
-            HpController();
+                dialogue.Text = $"Whoa! You have dealt {damage} damage";
+            UpdateHpController();
             ContinueAfterChar.Visible = true;
-            hideButtons();
+            HideButtons();
         }
 
-        private void spellB_Click(object sender, EventArgs e)
-        {
-            UseConsumable(false);
-        }
+        private void potionsB_Click(object sender, EventArgs e) => UseConsumable<Potion>();
 
-        public void HpController()
+        private void spellB_Click(object sender, EventArgs e) => UseConsumable<Spell>();
+
+        private void UpdateHpController()
         {
             int charHp = character.HitPoints;
             int bossHp = HitPoints;
-            this.CharHpLabel.Text = $"{character.HitPoints}/{maxCharHp}";
-            this.BossHpLabel.Text = $"{bossHp}/{boss.Health}";
-            this.CharHpBar.Width = (int)(charHp / (float)maxCharHp * CharHpBar.Parent.Width);
-            this.BossHpBar.Width = (int)(bossHp / (float)boss.Health * BossHpBar.Parent.Width);
+            this.CharHpLabel.Text = $@"{character.HitPoints}/{maxCharHp}";
+            this.BossHpLabel.Text = $@"{bossHp}/{boss.Health}";
+            this.CharHpBar.Width = (int) (charHp / (float) maxCharHp * CharHpBar.Parent.Width);
+            this.BossHpBar.Width = (int) (bossHp / (float) boss.Health * BossHpBar.Parent.Width);
         }
 
-        public void SelectAction()
+        private void SelectAction()
         {
             ContinueAfterChar.Visible = false;
             ContinueAfterBoss.Visible = false;
-            dialogue.Text = "Select action";
+            dialogue.Text = "Select action!";
             AttackB.Visible = true;
             SpellsB.Visible = true;
             PotionsB.Visible = true;
@@ -84,186 +78,125 @@ namespace DayGame
 
         private void continue_after_char_click(object sender, EventArgs e)
         {
-            Button b = (Button)sender;
-            if (b.Text == "Close")
+            if (canClose)
             {
                 this.Close();
+                return;
             }
+
             ContinueAfterChar.Visible = false;
             BossAttack();
         }
 
         private void continue_after_boss_click(object sender, EventArgs e)
         {
-            Button b = (Button)sender;
-            if (b.Text == "Close")
+            if (canClose)
             {
                 this.Close();
+                return;
             }
+
             ContinueAfterBoss.Visible = false;
             //BossAttack();
-            hideButtons();
+            HideButtons();
             SelectAction();
         }
 
         // Hides action buttons
-        public void hideButtons()
+        private void HideButtons()
         {
             AttackB.Visible = !AttackB.Visible;
             SpellsB.Visible = !SpellsB.Visible;
             PotionsB.Visible = !PotionsB.Visible;
         }
-        public void BossAttack()
+
+        private void BossAttack()
         {
             int damage = boss.Damage;
             character.HitPoints -= damage;
 
             if (character.HitPoints <= 0)
-            {
                 BossWon();
-
-            }
             else
-            {
                 dialogue.Text = $"The boss dealt {damage} damage";
-            }
-            HpController();
+
+            UpdateHpController();
             ContinueAfterBoss.Visible = true;
-
         }
+
         //Checks if bag has any consumables of selected type
-        public bool IsEmpty(bool isPotion)
-        {
-            Type t = isPotion ? typeof(Potion):typeof(Spell);
+        private bool IsBagEmpty<TItem>() where TItem: ConsumableItem => !Bag.OfType<TItem>().Any();
 
-            /*if (isPotion)
-            {
-                t = typeof(Potion);
-            }
-            else
-            {
-                t = typeof(Spell);
-            }*/
-            foreach (ConsumableItem ci in Bag)
-            {
-                if (ci != null)
-                {
-                    if (ci.GetType() == t)
-                    {
-                        return false;
-                    }
-                }
-
-            }
-            return true;
-        }
         //Shows buttons with the appropriate consumables in them
-        public void ShowBag(bool isPotion)
+        private void ShowBag<TItem>() where TItem : ConsumableItem
         {
-
-            Type t = isPotion ? typeof(Potion) : typeof(Spell);
-            //temporary until we find icons
-            Color c = isPotion ? Color.Green : Color.Yellow;
-            int butI = 0;
-            //initialize buttons
-            foreach (Button b in BagButtons)
-            {
-                b.Visible = true;
-                b.BackColor = SystemColors.Control;
-            }
-            for (int i = 0; i<ButtonToBag.Length; i++)
-            {
-                ButtonToBag[i] = -1;
-            }
-
-            //fill buttons
-            for (int i = 0; i<Bag.Count; i++)
-            {
-                if (Bag[i] != null)
-                {
-                    if (Bag[i].GetType() == t)
-                    {
-                        BagButtons[butI].BackColor = c;
-                        ButtonToBag[butI] = i;
-                        BagButtons[butI].Image = Bag[i]?.Image;
-                        butI++;
-                    }
-                }
-            }
+            Item.UpdateButtons(Bag.OfType<TItem>().ToArray(), BagButtons);
+            foreach (Button b in BagButtons) b.Show();
         }
 
-        public void UseConsumable(bool isPotion)
+        private void UseConsumable<TItem>() where TItem : ConsumableItem
         {
-            hideButtons();
-            String text = isPotion ? "potions" : "spells";
+            HideButtons();
             BackB.Visible = true;
-            if (IsEmpty(isPotion)){
+            if (IsBagEmpty<TItem>())
+            {
+                var text = typeof(TItem).Name.ToLower() + "s";
                 dialogue.Text = $"There are no {text} in your bag";
             }
             else
             {
                 dialogue.Text = "";
-                ShowBag(isPotion);
+                ShowBag<TItem>();
             }
         }
 
         private void BagButton_Click(object sender, EventArgs e)
         {
-            Button b = sender as Button;
-            String name = b.Name;
-            int index = Convert.ToInt32(name.Substring(name.Length - 1)); //Gets index from name
-            if (ButtonToBag[index] != -1) // if the button is mapped to a bag item
+            switch ((sender as Control)?.Tag) // if the button is mapped to a bag item
             {
-                ConsumableItem item = Bag[ButtonToBag[index]];
-                if (item is Potion)
-                {
-                    UsePotion((Potion)item);
-                }
-                else
-                {
-                    UseSpell((Spell)item);
-                }
+                case Potion p:
+                    UsePotion(p);
+                    break;
+                case Spell s:
+                    UseSpell(s);
+                    break;
             }
-
         }
 
-        public void UsePotion(Potion potion)
+        private void UsePotion(Potion potion)
         {
-
             int heal = potion.Hit_point_regain;
             character.HitPoints += heal;
             dialogue.Text = $"You have regenerated {heal} hit points";
-            HpController();
+            UpdateHpController();
             HideBag();
             inventory.DiscardFromBag(potion);
             ContinueAfterChar.Visible = true;
         }
 
-        public void UseSpell(Spell spell)
+        private void UseSpell(Spell spell)
         {
             int damage = spell.Damage;
             HitPoints -= damage;
 
             if (HitPoints <= 0)
-            {
                 PlayerWon();
-            }
             else
-            {
-                dialogue.Text = $"Whoa! You  have dealt {damage} damage";
-            }
-            HpController();
+                dialogue.Text = $"Whoa! You have dealt {damage} damage";
+
+            UpdateHpController();
             HideBag();
             inventory.DiscardFromBag(spell);
             ContinueAfterChar.Visible = true;
         }
+
         //hides the bag and back buttons
-        public void HideBag()
+        private void HideBag()
         {
             BackB.Visible = false;
             foreach (Button b in BagButtons)
             {
-                b.Visible = false;
+                b.Hide();
             }
         }
 
@@ -277,6 +210,7 @@ namespace DayGame
         {
             dialogue.Text = "Whoa! You killed the boss";
             ContinueAfterChar.Text = "Close";
+            canClose = true;
             character.ExperiencePoints += boss.Health * 3;
             character.InGameBalance += boss.Health;
         }
@@ -285,8 +219,8 @@ namespace DayGame
         {
             dialogue.Text = "You were killed by the boss";
             ContinueAfterBoss.Text = "Close";
+            canClose = true;
             inventory.DiscardBagAndEquipped();
         }
-
     }
 }

@@ -38,29 +38,9 @@ namespace DayGame
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void BossBattleFrame_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void potionsB_Click(object sender, EventArgs e)
         {
             UseConsumable(true);
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,14 +49,9 @@ namespace DayGame
             HitPoints -= damage;
 
             if (HitPoints <= 0)
-            {
                 PlayerWon();
-
-            }
             else
-            {
                 dialogue.Text = $"Whoa! You  have dealt {damage} damage";
-            }
             HpController();
             ContinueAfterChar.Visible = true;
             hideButtons();
@@ -157,7 +132,7 @@ namespace DayGame
 
         }
         //Checks if bag has any consumables of selected type
-        public Boolean IsEmpty(Boolean isPotion)
+        public bool IsEmpty(bool isPotion)
         {
             Type t = isPotion ? typeof(Potion):typeof(Spell);
 
@@ -183,7 +158,7 @@ namespace DayGame
             return true;
         }
         //Shows buttons with the appropriate consumables in them
-        public void ShowBag(Boolean isPotion)
+        public void ShowBag(bool isPotion)
         {
 
             Type t = isPotion ? typeof(Potion) : typeof(Spell);
@@ -194,7 +169,7 @@ namespace DayGame
             foreach (Button b in BagButtons)
             {
                 b.Visible = true;
-                b.BackColor = System.Drawing.SystemColors.Control;
+                b.BackColor = SystemColors.Control;
             }
             for (int i = 0; i<ButtonToBag.Length; i++)
             {
@@ -217,7 +192,7 @@ namespace DayGame
             }
         }
 
-        public void UseConsumable(Boolean isPotion)
+        public void UseConsumable(bool isPotion)
         {
             hideButtons();
             String text = isPotion ? "potions" : "spells";

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
+using System.Windows.Forms;
 using Newtonsoft.Json;
 
 namespace DayGame
@@ -61,6 +63,24 @@ namespace DayGame
                     return item;
                 throw new InvalidDataException($"Could not find an item with an ID equal to {id}.");
             }
+        }
+
+        internal static void UpdateButton(Item item, Button btn, bool setPrice = false)
+        {
+            btn.Tag = item;
+            btn.BackColor = Item.GetBackgroundColor(item);
+            btn.Image = item?.Image;
+            if (setPrice && item != null)
+                btn.Text = item.Price.ToString();
+            else
+                btn.Text = "";
+            btn.Enabled = item != null;
+        }
+
+        internal static void UpdateButtons(IReadOnlyList<Item> items, Button[] buttons, bool setPrice = false)
+        {
+            for (int i = 0; i < items.Count; i++) UpdateButton(items[i], buttons[i], setPrice);
+            for (int i = items.Count; i < buttons.Length; i++) UpdateButton(null, buttons[i]);
         }
     }
 }

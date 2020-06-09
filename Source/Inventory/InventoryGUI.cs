@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -84,20 +83,6 @@ namespace DayGame
                 FullChestError();
         }
 
-        private static void UpdateButtonFromItem(Item item, Button btn)
-        {
-            btn.Tag = item;
-            btn.BackColor = Item.GetBackgroundColor(item);
-            btn.Image = item?.Image;
-            btn.Enabled = item != null;
-        }
-
-        private static void UpdateButtons(IReadOnlyList<Item> items, Button[] buttons)
-        {
-            for (int i = 0; i < items.Count; i++) UpdateButtonFromItem(items[i], buttons[i]);
-            for (int i = items.Count; i < buttons.Length; i++) UpdateButtonFromItem(null, buttons[i]);
-        }
-
         private static void UpdateStatText(int stat, Control label)
         {
             label.Text = stat.ToString();
@@ -116,10 +101,10 @@ namespace DayGame
 
         private void InventorySpaceReload()
         {
-            UpdateButtons(inv.Chest.Where(ShouldShow).ToArray(), ChestButtons);
-            UpdateButtons(inv.Bag, BagButtons);
-            UpdateButtonFromItem(inv.WeaponEquiped, WeaponButton);
-            UpdateButtonFromItem(inv.ArmorEquiped, ArmorButton);
+            Item.UpdateButtons(inv.Chest.Where(ShouldShow).ToArray(), ChestButtons);
+            Item.UpdateButtons(inv.Bag, BagButtons);
+            Item.UpdateButton(inv.WeaponEquiped, WeaponButton);
+            Item.UpdateButton(inv.ArmorEquiped, ArmorButton);
             UpdateStatText(inv.WeaponBuff, DamageTextNumber);
             UpdateStatText(inv.ArmorBuff, DefenceTextNumber);
         }

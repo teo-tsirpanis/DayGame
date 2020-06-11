@@ -49,11 +49,8 @@ namespace DayGame
 
         public int HitPoints { get; set; }
 
-        public int HitPointRegain { get; set; }
-
         public int Luck { get; set; }
 
-        public int JackPot { get; set; }
 
         public int ExperiencePoints
         {
@@ -76,45 +73,41 @@ namespace DayGame
             this.Gender = gender;
             this.MaxExperiencePoints = 100;
             this.MaxLifePoints = 100;
-            this.Damage = 30;
-            this.Defence = 30;
+            this.Damage = 5;
+            this.Defence = 0;
             this.Level = 1;
             this.LifePoints = MaxLifePoints;
             this.InGameBalance = 0;
             this.HitPoints = MaxLifePoints;
-            this.HitPointRegain = 30;
-            this.Luck = 3;
-            this.JackPot = 3;
+            this.Luck = 1;
             this.ExperiencePoints = 0;
         }
 
         public void CharacterDeath()
         {
+
             Level -= 1;
             MaxExperiencePoints -= 20;
             MaxLifePoints -= 10;
-            Damage -= 5;
-            Defence -= 5;
+            Damage -= 1;
+            Defence -= 1;
             lifePoints = MaxLifePoints;
             HitPoints = MaxLifePoints;
-            HitPointRegain -= 10;
             Luck -= 1;
-            JackPot -= 1;
             experiencePoints = 0;
+            InGameBalance = 0;
         }
 
         public void LevelUp()
         {
             Level += 1;
             MaxExperiencePoints += 20;
-            Damage += 5;
-            Defence += 5;
+            Damage += 1;
+            Defence += 1;
             MaxLifePoints += 10;
             lifePoints = MaxLifePoints;
             HitPoints = MaxLifePoints;
-            HitPointRegain += 10;
             Luck += 1;
-            JackPot += 1;
             experiencePoints = 0;
         }
     }

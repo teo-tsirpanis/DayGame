@@ -112,7 +112,7 @@ namespace DayGame
 
         private void BossAttack()
         {
-            int damage = boss.Damage;
+            int damage = (int)boss.Damage * (100 - character.Defence) / 100;
             character.HitPoints -= damage;
 
             if (character.HitPoints <= 0)

@@ -40,7 +40,7 @@ namespace DayGame
 
         private void AttackBClick(object sender, EventArgs e)
         {
-            int damage = character.Damage;
+            int damage = EffectiveDamage;
             HitPoints -= damage;
 
             if (HitPoints <= 0)
@@ -112,7 +112,7 @@ namespace DayGame
 
         private void BossAttack()
         {
-            int damage = (int)boss.Damage * (100 - character.Defence) / 100;
+            int damage = (int)boss.Damage * (100 - EffectiveDefence) / 100;
             character.HitPoints -= damage;
 
             if (character.HitPoints <= 0)
@@ -222,5 +222,8 @@ namespace DayGame
             canClose = true;
             inventory.DiscardBagAndEquipped();
         }
+
+        private int EffectiveDamage => inventory.WeaponBuff + character.Damage;
+        private int EffectiveDefence => inventory.ArmorBuff + character.Defence;
     }
 }

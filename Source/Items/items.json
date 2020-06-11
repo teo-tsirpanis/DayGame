@@ -1,162 +1,76 @@
 [
-  {
-    "id": 0,
-    "name": "Master Sword",
-    "description": "The blade of evil's bane",
-    "price": 5000,
-    "type": "weapon",
-    "damage": 59
-  },
-  {
-    "id": 1,
-    "name": "Diamond Armor",
-    "description": "Harder than life itself",
-    "price": 2400,
-    "type": "armor",
-    "defence": 30
-  },
-  {
-    "id": 2,
-    "name": "Volcano Dew",
-    "description": "Mountain Dew reloaded.\nMade from lava",
-    "image_path": "volcano_dew.png",
-    "price": 1144,
-    "type": "potion",
-    "hp_regain": 69
-  },
-  {
-    "id": 3,
-    "name": "Saria's song",
-    "description": "It fills you with DETERMINATION",
-    "price": 300,
-    "type": "spell",
-    "damage": 40
-  },
+
   {
     "id": 4,
     "name": "Aether",
     "description": "Wrath of the sky",
     "image_path": "Weapons/Weapon-1.png",
-    "price": 2000,
+    "price": 50,
     "type": "weapon",
-    "damage": 40
+    "damage": 4
   },
   {
     "id": 5,
     "name": "Berserkes' Great Sword",
     "description": "The choice of the Norse warriors",
     "image_path": "Weapons/Weapon-2.png",
-    "price": 2000,
+    "price": 100,
     "type": "weapon",
-    "damage": 50
+    "damage": 8
   },
   {
     "id": 6,
     "name": "Devastator",
     "description": "Destruction of the Worlds",
     "image_path": "Weapons/Weapon-3.png",
-    "price": 2000,
+    "price": 150,
     "type": "weapon",
-    "damage": 60
+    "damage": 12
   },
   {
     "id": 7,
     "name": "Imperial Pole Arm",
     "description": "Protector of the Kingdom",
     "image_path": "Weapons/Weapon-4.png",
-    "price": 2000,
+    "price": 220,
     "type": "weapon",
-    "damage": 65
+    "damage": 16
   },
   {
     "id": 8,
     "name": "Trinity Great Sword",
     "description": "Agile Weapon with the best piercing damage",
     "image_path": "Weapons/Weapon-5.png",
-    "price": 2000,
-    "type": "weapon",
-    "damage": 100
-  },
-  {
-    "id": 9,
-    "name": "Flame Sword",
-    "description": "Light everything on fire",
-    "image_path": "Weapons/Weapon-6.png",
-    "price": 2000,
-    "type": "weapon",
-    "damage": 50
-  },
-  {
-    "id": 10,
-    "name": "Soldiers' Sword",
-    "description": "Common weapon used by soldiers",
-    "image_path": "Weapons/Weapon-7.png",
-    "price": 2000,
+    "price": 300,
     "type": "weapon",
     "damage": 20
-  },
-  {
-    "id": 11,
-    "name": "Dragon",
-    "description": "Forged at the Dragon's hideout",
-    "image_path": "Weapons/Weapon-8.png",
-    "price": 2000,
-    "type": "weapon",
-    "damage": 45
-  },
-  {
-    "id": 12,
-    "name": "Lava Sword",
-    "description": "Burn everything in your path",
-    "image_path": "Weapons/Weapon-9.png",
-    "price": 2000,
-    "type": "weapon",
-    "damage": 55
-  },
-  {
-    "id": 13,
-    "name": "King's Sword",
-    "description": "The weapon of a hero",
-    "image_path": "Weapons/Weapon-10.png",
-    "price": 2000,
-    "type": "weapon",
-    "damage": 80
-  },
-  {
-    "id": 14,
-    "name": "Fire Spell",
-    "description": "Summon a fireball towards your enemy",
-    "image_path": "Spells/Spell-1.png",
-    "price": 300,
-    "type": "spell",
-    "damage": 40
   },
   {
     "id": 15,
     "name": "Lighting Spell",
     "description": "Summon a lighting towards your enemy",
     "image_path": "Spells/Spell-2.png",
-    "price": 300,
+    "price": 50,
     "type": "spell",
-    "damage": 40
+    "damage": 10
   },
   {
     "id": 16,
     "name": "Earth Spell",
     "description": "Throw rock objects towards your enemy",
     "image_path": "Spells/Spell-3.png",
-    "price": 300,
+    "price": 120,
     "type": "spell",
-    "damage": 40
+    "damage": 20
   },
   {
     "id": 17,
     "name": "Air Spell",
     "description": "Disorient your enemy by taking out his breath",
     "image_path": "Spells/Spell-4.png",
-    "price": 300,
+    "price": 200,
     "type": "spell",
-    "damage": 40
+    "damage": 30
   },
   {
     "id": 18,
@@ -172,107 +86,80 @@
     "name": "Pandemonium",
     "description": "Sock your enemy",
     "image_path": "Spells/Spell-6.png",
-    "price": 300,
+    "price": 400,
     "type": "spell",
-    "damage": 70
+    "damage": 50
   },
   {
     "id": 20,
     "name": "Explorers' Healing",
     "description": "Small potion",
     "image_path": "Potions/HealPotion-1.png",
-    "price": 1144,
+    "price": 50,
     "type": "potion",
-    "hp_regain": 69
+    "hp_regain": 20
   },
   {
     "id": 21,
     "name": "Warriors' Healing",
     "description": "Medium potion to recover life during the battle",
     "image_path": "Potions/HealPotion-2.png",
-    "price": 1144,
+    "price": 150,
     "type": "potion",
-    "hp_regain": 69
+    "hp_regain": 35
   },
   {
     "id": 22,
     "name": "Alchemists' Healing",
     "description": "Large potion made by alchemists",
     "image_path": "Potions/HealPotion-3.png",
-    "price": 1144,
+    "price": 250,
     "type": "potion",
-    "hp_regain": 69
+    "hp_regain": 50
   },
   {
     "id": 23,
     "name": "Silver Armor",
     "description": "",
     "image_path": "Armor/Armor-1.png",
-    "price": 2400,
+    "price": 50,
     "type": "armor",
-    "defence": 30
+    "defence": 4
   },
   {
     "id": 24,
     "name": "Lords' Armor",
     "description": "",
     "image_path": "Armor/Armor-2.png",
-    "price": 2400,
+    "price": 100,
     "type": "armor",
-    "defence": 30
+    "defence": 8
   },
   {
     "id": 25,
     "name": "Gold Armor",
     "description": "",
     "image_path": "Armor/Armor-3.png",
-    "price": 2400,
+    "price": 170,
     "type": "armor",
-    "defence": 30
+    "defence": 12
   },
   {
     "id": 26,
     "name": "Kings' Armor",
     "description": "",
     "image_path": "Armor/Armor-4.png",
-    "price": 2400,
+    "price": 250,
     "type": "armor",
-    "defence": 30
+    "defence": 16
   },
   {
     "id": 27,
     "name": "Leather Armor",
     "description": "",
     "image_path": "Armor/Armor-5.png",
-    "price": 2400,
+    "price": 350,
     "type": "armor",
-    "defence": 30
-  },
-  {
-    "id": 28,
-    "name": "Sorcerers' Armor",
-    "description": "",
-    "image_path": "Armor/Armor-6.png",
-    "price": 2400,
-    "type": "armor",
-    "defence": 30
-  },
-  {
-    "id": 29,
-    "name": "Knights' Armor",
-    "description": "",
-    "image_path": "Armor/Armor-7.png",
-    "price": 2400,
-    "type": "armor",
-    "defence": 30
-  },
-  {
-    "id": 30,
-    "name": "Dragonborn Armor",
-    "description": "",
-    "image_path": "Armor/Armor-8.png",
-    "price": 2400,
-    "type": "armor",
-    "defence": 30
+    "defence": 20
   }
 ]

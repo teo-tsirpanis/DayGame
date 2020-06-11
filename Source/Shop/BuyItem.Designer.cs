@@ -129,9 +129,9 @@
             // 
             // ItemImage
             // 
-            this.ItemImage.Location = new System.Drawing.Point(120, 12);
+            this.ItemImage.Location = new System.Drawing.Point(123, 12);
             this.ItemImage.Name = "ItemImage";
-            this.ItemImage.Size = new System.Drawing.Size(64, 64);
+            this.ItemImage.Size = new System.Drawing.Size(56, 64);
             this.ItemImage.TabIndex = 8;
             this.ItemImage.TabStop = false;
             // 

@@ -82,9 +82,9 @@
             this.ShopButton34 = new System.Windows.Forms.Button();
             this.ShopButton33 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            //
+            // 
             // ArmorFilter
-            //
+            // 
             this.ArmorFilter.AutoSize = true;
             this.ArmorFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ArmorFilter.Location = new System.Drawing.Point(12, 44);
@@ -93,9 +93,9 @@
             this.ArmorFilter.TabIndex = 0;
             this.ArmorFilter.Text = "Armor";
             this.ArmorFilter.UseVisualStyleBackColor = true;
-            //
+            // 
             // WeaponsFilter
-            //
+            // 
             this.WeaponsFilter.AutoSize = true;
             this.WeaponsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.WeaponsFilter.Location = new System.Drawing.Point(12, 67);
@@ -104,9 +104,9 @@
             this.WeaponsFilter.TabIndex = 1;
             this.WeaponsFilter.Text = "Weapons";
             this.WeaponsFilter.UseVisualStyleBackColor = true;
-            //
+            // 
             // SpellsFilter
-            //
+            // 
             this.SpellsFilter.AutoSize = true;
             this.SpellsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.SpellsFilter.Location = new System.Drawing.Point(12, 90);
@@ -115,9 +115,9 @@
             this.SpellsFilter.TabIndex = 2;
             this.SpellsFilter.Text = "Spells";
             this.SpellsFilter.UseVisualStyleBackColor = true;
-            //
+            // 
             // PotionsFilter
-            //
+            // 
             this.PotionsFilter.AutoSize = true;
             this.PotionsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.PotionsFilter.Location = new System.Drawing.Point(12, 113);
@@ -126,9 +126,9 @@
             this.PotionsFilter.TabIndex = 3;
             this.PotionsFilter.Text = "Potions";
             this.PotionsFilter.UseVisualStyleBackColor = true;
-            //
+            // 
             // WelcomeLabel
-            //
+            // 
             this.WelcomeLabel.AutoSize = true;
             this.WelcomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.WelcomeLabel.Location = new System.Drawing.Point(267, 9);
@@ -136,9 +136,9 @@
             this.WelcomeLabel.Size = new System.Drawing.Size(299, 31);
             this.WelcomeLabel.TabIndex = 4;
             this.WelcomeLabel.Text = "Welcome to the Shop!";
-            //
+            // 
             // ShopButton1
-            //
+            // 
             this.ShopButton1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton1.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -149,9 +149,9 @@
             this.ShopButton1.Text = "text";
             this.ShopButton1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton1.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton2
-            //
+            // 
             this.ShopButton2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton2.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -162,9 +162,9 @@
             this.ShopButton2.Text = "text";
             this.ShopButton2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton2.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton10
-            //
+            // 
             this.ShopButton10.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton10.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -175,9 +175,9 @@
             this.ShopButton10.Text = "text";
             this.ShopButton10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton10.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton9
-            //
+            // 
             this.ShopButton9.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton9.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -188,9 +188,9 @@
             this.ShopButton9.Text = "text";
             this.ShopButton9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton9.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton12
-            //
+            // 
             this.ShopButton12.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton12.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -201,9 +201,9 @@
             this.ShopButton12.Text = "text";
             this.ShopButton12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton12.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton11
-            //
+            // 
             this.ShopButton11.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton11.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -214,9 +214,9 @@
             this.ShopButton11.Text = "text";
             this.ShopButton11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton11.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton4
-            //
+            // 
             this.ShopButton4.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton4.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -227,9 +227,9 @@
             this.ShopButton4.Text = "text";
             this.ShopButton4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton4.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton3
-            //
+            // 
             this.ShopButton3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton3.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -240,9 +240,9 @@
             this.ShopButton3.Text = "text";
             this.ShopButton3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton3.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton28
-            //
+            // 
             this.ShopButton28.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton28.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -253,9 +253,9 @@
             this.ShopButton28.Text = "text";
             this.ShopButton28.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton28.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton27
-            //
+            // 
             this.ShopButton27.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton27.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -266,9 +266,9 @@
             this.ShopButton27.Text = "text";
             this.ShopButton27.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton27.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton20
-            //
+            // 
             this.ShopButton20.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton20.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -279,9 +279,9 @@
             this.ShopButton20.Text = "text";
             this.ShopButton20.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton20.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton19
-            //
+            // 
             this.ShopButton19.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton19.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -292,9 +292,9 @@
             this.ShopButton19.Text = "text";
             this.ShopButton19.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton19.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton26
-            //
+            // 
             this.ShopButton26.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton26.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -305,9 +305,9 @@
             this.ShopButton26.Text = "text";
             this.ShopButton26.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton26.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton25
-            //
+            // 
             this.ShopButton25.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton25.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -318,9 +318,9 @@
             this.ShopButton25.Text = "text";
             this.ShopButton25.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton25.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton18
-            //
+            // 
             this.ShopButton18.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton18.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -331,9 +331,9 @@
             this.ShopButton18.Text = "text";
             this.ShopButton18.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton18.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton17
-            //
+            // 
             this.ShopButton17.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton17.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -344,9 +344,9 @@
             this.ShopButton17.Text = "text";
             this.ShopButton17.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton17.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton32
-            //
+            // 
             this.ShopButton32.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton32.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -357,9 +357,9 @@
             this.ShopButton32.Text = "text";
             this.ShopButton32.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton32.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton31
-            //
+            // 
             this.ShopButton31.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton31.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -370,9 +370,9 @@
             this.ShopButton31.Text = "text";
             this.ShopButton31.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton31.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton24
-            //
+            // 
             this.ShopButton24.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton24.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -383,9 +383,9 @@
             this.ShopButton24.Text = "text";
             this.ShopButton24.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton24.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton23
-            //
+            // 
             this.ShopButton23.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton23.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -396,9 +396,9 @@
             this.ShopButton23.Text = "text";
             this.ShopButton23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton23.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton30
-            //
+            // 
             this.ShopButton30.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton30.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -409,9 +409,9 @@
             this.ShopButton30.Text = "text";
             this.ShopButton30.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton30.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton29
-            //
+            // 
             this.ShopButton29.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton29.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -422,9 +422,9 @@
             this.ShopButton29.Text = "text";
             this.ShopButton29.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton29.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton22
-            //
+            // 
             this.ShopButton22.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton22.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -435,9 +435,9 @@
             this.ShopButton22.Text = "text";
             this.ShopButton22.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton22.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton21
-            //
+            // 
             this.ShopButton21.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton21.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -448,9 +448,9 @@
             this.ShopButton21.Text = "text";
             this.ShopButton21.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton21.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton16
-            //
+            // 
             this.ShopButton16.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton16.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -461,9 +461,9 @@
             this.ShopButton16.Text = "text";
             this.ShopButton16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton16.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton15
-            //
+            // 
             this.ShopButton15.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton15.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -474,9 +474,9 @@
             this.ShopButton15.Text = "text";
             this.ShopButton15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton15.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton8
-            //
+            // 
             this.ShopButton8.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton8.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -487,9 +487,9 @@
             this.ShopButton8.Text = "text";
             this.ShopButton8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton8.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton7
-            //
+            // 
             this.ShopButton7.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton7.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -500,9 +500,9 @@
             this.ShopButton7.Text = "text";
             this.ShopButton7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton7.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton14
-            //
+            // 
             this.ShopButton14.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton14.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -513,9 +513,9 @@
             this.ShopButton14.Text = "text";
             this.ShopButton14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton14.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton13
-            //
+            // 
             this.ShopButton13.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton13.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -526,9 +526,9 @@
             this.ShopButton13.Text = "text";
             this.ShopButton13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton13.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton6
-            //
+            // 
             this.ShopButton6.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton6.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -539,9 +539,9 @@
             this.ShopButton6.Text = "text";
             this.ShopButton6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton6.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton5
-            //
+            // 
             this.ShopButton5.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton5.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -552,9 +552,9 @@
             this.ShopButton5.Text = "text";
             this.ShopButton5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton5.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton0
-            //
+            // 
             this.ShopButton0.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton0.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton0.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -565,9 +565,9 @@
             this.ShopButton0.Text = "text";
             this.ShopButton0.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton0.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton47
-            //
+            // 
             this.ShopButton47.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton47.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton47.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -578,9 +578,9 @@
             this.ShopButton47.Text = "text";
             this.ShopButton47.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton47.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton40
-            //
+            // 
             this.ShopButton40.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton40.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -591,9 +591,9 @@
             this.ShopButton40.Text = "text";
             this.ShopButton40.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton40.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton39
-            //
+            // 
             this.ShopButton39.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton39.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton39.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -604,9 +604,9 @@
             this.ShopButton39.Text = "text";
             this.ShopButton39.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton39.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton46
-            //
+            // 
             this.ShopButton46.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton46.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton46.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -617,9 +617,9 @@
             this.ShopButton46.Text = "text";
             this.ShopButton46.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton46.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton45
-            //
+            // 
             this.ShopButton45.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton45.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -630,9 +630,9 @@
             this.ShopButton45.Text = "text";
             this.ShopButton45.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton45.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton38
-            //
+            // 
             this.ShopButton38.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton38.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -643,9 +643,9 @@
             this.ShopButton38.Text = "text";
             this.ShopButton38.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton38.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton37
-            //
+            // 
             this.ShopButton37.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton37.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -656,9 +656,9 @@
             this.ShopButton37.Text = "text";
             this.ShopButton37.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton37.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton44
-            //
+            // 
             this.ShopButton44.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton44.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -669,9 +669,9 @@
             this.ShopButton44.Text = "text";
             this.ShopButton44.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton44.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton43
-            //
+            // 
             this.ShopButton43.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton43.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton43.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -682,9 +682,9 @@
             this.ShopButton43.Text = "text";
             this.ShopButton43.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton43.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton36
-            //
+            // 
             this.ShopButton36.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton36.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -695,9 +695,9 @@
             this.ShopButton36.Text = "text";
             this.ShopButton36.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton36.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton35
-            //
+            // 
             this.ShopButton35.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton35.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -708,9 +708,9 @@
             this.ShopButton35.Text = "text";
             this.ShopButton35.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton35.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton42
-            //
+            // 
             this.ShopButton42.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton42.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -721,9 +721,9 @@
             this.ShopButton42.Text = "text";
             this.ShopButton42.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton42.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton41
-            //
+            // 
             this.ShopButton41.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton41.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton41.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -734,9 +734,9 @@
             this.ShopButton41.Text = "text";
             this.ShopButton41.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton41.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton34
-            //
+            // 
             this.ShopButton34.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton34.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -747,9 +747,9 @@
             this.ShopButton34.Text = "text";
             this.ShopButton34.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton34.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopButton33
-            //
+            // 
             this.ShopButton33.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (128)))), ((int) (((byte) (64)))), ((int) (((byte) (0)))));
             this.ShopButton33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ShopButton33.ForeColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
@@ -760,9 +760,9 @@
             this.ShopButton33.Text = "text";
             this.ShopButton33.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.ShopButton33.UseVisualStyleBackColor = false;
-            //
+            // 
             // ShopGUI
-            //
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 458);

@@ -12,11 +12,11 @@ namespace DayGame
 
         public string Gender { get; }
 
-        public int MaxExperiencePoints { get; private set; }
+        public int MaxExperiencePoints { get; set; }
 
-        public int MaxLifePoints { get; private set; }
+        public int MaxLifePoints { get; set; }
 
-        public int Damage { get; private set; }
+        public int Damage { get; set; }
 
         public int Defence { get; set; }
 

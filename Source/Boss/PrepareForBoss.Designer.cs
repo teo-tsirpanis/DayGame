@@ -52,8 +52,9 @@
             // 
             // readyButton
             // 
-            this.readyButton.BackColor = System.Drawing.Color.SaddleBrown;
+            this.readyButton.BackColor = System.Drawing.Color.Coral;
             this.readyButton.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.readyButton.FlatAppearance.BorderSize = 0;
             this.readyButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.readyButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.readyButton.ForeColor = System.Drawing.Color.White;

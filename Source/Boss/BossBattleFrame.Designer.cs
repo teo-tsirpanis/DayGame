@@ -73,9 +73,9 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(605, 93);
+            this.panel1.Location = new System.Drawing.Point(585, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(188, 134);
+            this.panel1.Size = new System.Drawing.Size(128, 128);
             this.panel1.TabIndex = 0;
             // 
             // bagItemPanel
@@ -111,7 +111,7 @@
             // 
             this.dialogue.AutoSize = true;
             this.dialogue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.dialogue.Location = new System.Drawing.Point(57, 56);
+            this.dialogue.Location = new System.Drawing.Point(81, 60);
             this.dialogue.Name = "dialogue";
             this.dialogue.Size = new System.Drawing.Size(315, 29);
             this.dialogue.TabIndex = 0;
@@ -211,7 +211,9 @@
             // 
             // BackB
             // 
-            this.BackB.BackColor = System.Drawing.Color.SaddleBrown;
+            this.BackB.BackColor = System.Drawing.Color.Salmon;
+            this.BackB.FlatAppearance.BorderSize = 0;
+            this.BackB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.BackB.ForeColor = System.Drawing.Color.White;
             this.BackB.Location = new System.Drawing.Point(140, 60);
@@ -225,10 +227,12 @@
             // 
             // ContinueAfterBoss
             // 
-            this.ContinueAfterBoss.BackColor = System.Drawing.Color.SaddleBrown;
+            this.ContinueAfterBoss.BackColor = System.Drawing.Color.Salmon;
+            this.ContinueAfterBoss.FlatAppearance.BorderSize = 0;
+            this.ContinueAfterBoss.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContinueAfterBoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
-            this.ContinueAfterBoss.ForeColor = System.Drawing.Color.White;
-            this.ContinueAfterBoss.Location = new System.Drawing.Point(140, 60);
+            this.ContinueAfterBoss.ForeColor = System.Drawing.Color.Transparent;
+            this.ContinueAfterBoss.Location = new System.Drawing.Point(140, 59);
             this.ContinueAfterBoss.Name = "ContinueAfterBoss";
             this.ContinueAfterBoss.Size = new System.Drawing.Size(111, 36);
             this.ContinueAfterBoss.TabIndex = 4;
@@ -239,7 +243,9 @@
             // 
             // ContinueAfterChar
             // 
-            this.ContinueAfterChar.BackColor = System.Drawing.Color.SaddleBrown;
+            this.ContinueAfterChar.BackColor = System.Drawing.Color.Salmon;
+            this.ContinueAfterChar.FlatAppearance.BorderSize = 0;
+            this.ContinueAfterChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ContinueAfterChar.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.ContinueAfterChar.ForeColor = System.Drawing.Color.White;
             this.ContinueAfterChar.Location = new System.Drawing.Point(140, 60);
@@ -253,7 +259,9 @@
             // 
             // PotionsB
             // 
-            this.PotionsB.BackColor = System.Drawing.Color.SaddleBrown;
+            this.PotionsB.BackColor = System.Drawing.Color.Salmon;
+            this.PotionsB.FlatAppearance.BorderSize = 0;
+            this.PotionsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.PotionsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.PotionsB.ForeColor = System.Drawing.Color.White;
             this.PotionsB.Location = new System.Drawing.Point(140, 102);
@@ -266,7 +274,9 @@
             // 
             // SpellsB
             // 
-            this.SpellsB.BackColor = System.Drawing.Color.SaddleBrown;
+            this.SpellsB.BackColor = System.Drawing.Color.Salmon;
+            this.SpellsB.FlatAppearance.BorderSize = 0;
+            this.SpellsB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SpellsB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.SpellsB.ForeColor = System.Drawing.Color.White;
             this.SpellsB.Location = new System.Drawing.Point(240, 26);
@@ -279,7 +289,9 @@
             // 
             // AttackB
             // 
-            this.AttackB.BackColor = System.Drawing.Color.SaddleBrown;
+            this.AttackB.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (255)))), ((int) (((byte) (128)))), ((int) (((byte) (128)))));
+            this.AttackB.FlatAppearance.BorderSize = 0;
+            this.AttackB.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AttackB.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (161)));
             this.AttackB.ForeColor = System.Drawing.Color.White;
             this.AttackB.Location = new System.Drawing.Point(31, 26);
@@ -293,9 +305,9 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(107, 328);
+            this.panel5.Location = new System.Drawing.Point(145, 334);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(188, 134);
+            this.panel5.Size = new System.Drawing.Size(128, 128);
             this.panel5.TabIndex = 1;
             // 
             // panel6
@@ -315,7 +327,7 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (232)))), ((int) (((byte) (229)))), ((int) (((byte) (128)))));
             this.panel10.Controls.Add(this.BossHpBar);
             this.panel10.Location = new System.Drawing.Point(77, 78);
             this.panel10.Name = "panel10";
@@ -392,12 +404,12 @@
             this.panel7.Controls.Add(this.label12);
             this.panel7.Location = new System.Drawing.Point(507, 357);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(322, 105);
+            this.panel7.Size = new System.Drawing.Size(332, 105);
             this.panel7.TabIndex = 8;
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (192)))), ((int) (((byte) (192)))), ((int) (((byte) (0)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (232)))), ((int) (((byte) (229)))), ((int) (((byte) (128)))));
             this.panel2.Controls.Add(this.CharHpBar);
             this.panel2.Location = new System.Drawing.Point(77, 78);
             this.panel2.Name = "panel2";
@@ -457,7 +469,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (132)))), ((int) (((byte) (207)))), ((int) (((byte) (245)))));
             this.ClientSize = new System.Drawing.Size(884, 661);
             this.ControlBox = false;
             this.Controls.Add(this.panel7);

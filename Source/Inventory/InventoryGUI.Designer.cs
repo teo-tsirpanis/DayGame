@@ -129,7 +129,7 @@ namespace DayGame
             // panel1
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
             this.panel1.Controls.Add(this.Filterlabel);
             this.panel1.Controls.Add(this.potionscheckbox);
             this.panel1.Controls.Add(this.spellscheckbox);
@@ -216,6 +216,7 @@ namespace DayGame
             // buttonPanel
             // 
             this.buttonPanel.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.buttonPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonPanel.Controls.Add(this.chestbutton42);
             this.buttonPanel.Controls.Add(this.chestbutton41);
             this.buttonPanel.Controls.Add(this.chestbutton36);
@@ -636,7 +637,7 @@ namespace DayGame
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (83)))), ((int) (((byte) (255)))));
             this.panel3.Controls.Add(this.WeaponText);
             this.panel3.Controls.Add(this.ArmorText);
             this.panel3.Controls.Add(this.WeaponButton);
@@ -698,7 +699,7 @@ namespace DayGame
             // panel4
             // 
             this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel4.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (224)))), ((int) (((byte) (224)))), ((int) (((byte) (224)))));
             this.panel4.Controls.Add(this.DefenceTextNumber);
             this.panel4.Controls.Add(this.DamageTextNumber);
             this.panel4.Controls.Add(this.DefenceText);
@@ -753,7 +754,7 @@ namespace DayGame
             // bagPanel
             // 
             this.bagPanel.Anchor = ((System.Windows.Forms.AnchorStyles) (((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
-            this.bagPanel.BackColor = System.Drawing.Color.OrangeRed;
+            this.bagPanel.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (242)))), ((int) (((byte) (71)))), ((int) (((byte) (56)))));
             this.bagPanel.Controls.Add(this.BagButton8);
             this.bagPanel.Controls.Add(this.BagButton7);
             this.bagPanel.Controls.Add(this.BagText);

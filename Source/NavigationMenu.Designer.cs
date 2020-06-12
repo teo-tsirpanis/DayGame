@@ -224,6 +224,7 @@ namespace DayGame
             this.nameLabel.Size = new System.Drawing.Size(360, 31);
             this.nameLabel.TabIndex = 1;
             this.nameLabel.Text = "label1";
+            this.nameLabel.DoubleClick += new System.EventHandler(this.nameLabel_DoubleClick);
             // 
             // panel3
             // 

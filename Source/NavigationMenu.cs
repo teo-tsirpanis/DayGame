@@ -120,6 +120,12 @@ namespace DayGame
             openChildForm(waitingForBossGUI);
         }
 
+        private void nameLabel_DoubleClick(object sender, EventArgs e)
+        {
+            #if DEBUG
+            StartBossBattle();
+            #endif
+        }
         private void button5_Click(object sender, EventArgs e)
         {
             openChildForm(helpGui);

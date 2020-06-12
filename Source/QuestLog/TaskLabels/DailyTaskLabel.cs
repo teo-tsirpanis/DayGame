@@ -25,15 +25,20 @@ namespace DayGame
             int days = (DateTime.Today - saveFile.SaveDate).Days;
 
             if (daily.DoneForToday)
-            {
-                days--;
-                daily.DoneForToday = false;
-                doneCheckBox.BackColor = Color.LightGray;
-                doneCheckBox.Enabled = false;
-                doneCheckBox.Checked = true;
+            { 
+                if (days == 0)
+                {
+                    doneCheckBox.BackColor = Color.LightGray;
+                    doneCheckBox.Enabled = false;
+                    doneCheckBox.Checked = true;
+                }
+                else
+                {
+                    days--;
+                    daily.DoneForToday = false;
+                }
             }
             for (int i = 0; i < days; i++) daily.UpdateTask(false, character);
-            doneCheckBox.CheckedChanged += DoneCheckBoxClick;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -10,7 +10,6 @@
         public bool DoneForToday { get; set; }
 
         
-
         public override void Procrastinate(Character character)
         {
             character.InGameBalance -= 15;

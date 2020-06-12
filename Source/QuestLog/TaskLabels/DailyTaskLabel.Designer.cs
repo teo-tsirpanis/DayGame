@@ -50,6 +50,7 @@ namespace DayGame
             this.doneCheckBox.TabIndex = 0;
             this.doneCheckBox.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.doneCheckBox.UseVisualStyleBackColor = false;
+            this.doneCheckBox.Click += new System.EventHandler(this.DoneCheckBoxClick);
             // 
             // descriptionLabel
             // 

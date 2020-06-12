@@ -56,5 +56,10 @@ namespace DayGame
                 return sm.chosenSaveFile;
             return null;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

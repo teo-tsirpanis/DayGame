@@ -1,10 +1,10 @@
 # DayGame
 
-A gamified task management application, that provides users the ability to engage with their everyday tasks and habits in a more fun way by adding RPG elements. The users can create their own character, select or add tasks, buy items using in-game balance and battle opponents. The product has been developed to run on Windows environments.
+DayGame is a gamified task manager, that provides users the ability to engage with their everyday tasks and habits in a more fun way by adding RPG elements. You can create your own character, add and complete tasks, buy items using coins and battle bosses.
 
-## Installation
+## Downloading
 
-Download `daygame-1.0-setup.exe`. Follow the wizard steps and done. You are now ready to take action.
+Get the latest verion of DayGame [from the releases page](https://github.com/teo-tsirpanis/DayGame/releases).
 
 ## Contribution
 
@@ -25,5 +25,4 @@ If you want to help with the further development of this project, feel free to o
 
 ## License
 
-[MIT](https://opensource.org/licenses/MIT). 
-
+[MIT](https://opensource.org/licenses/MIT)

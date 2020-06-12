@@ -1,14 +1,8 @@
-# Καλώς Ορίσατε!
+# DayGame
 
-Σε αυτό το αποθετήριο, θα αποθηκευτεί ο κώδικας της εργασίας μας. Στα issues επίσης, θα κάνουμε τις συζητήσεις μας.
+A gamified task management application, that provides users the ability to engage with their everyday tasks and habits in a more fun way by adding RPG elements. The users can create their own character, select or add tasks, buy items using in-game balance and battle opponents. The product has been developed to run on Windows environments.
 
-Το αποθετήριο είναι ιδιωτικό για ευνόητους λόγους· πριν γίνει η παρουσίαση της εργασίας, θα γίνει δημόσιο.
-
-Επίσης το repository "ανήκει" στον λογαριασμό του __@teo-tsirpanis__, επειδή χρειάζεται πληρωμή για έναν ιδιωτικό οργανισμό.
-
-## Μέλη
-
-Η ομάδα αποτελείται από τους:
+## Contributors
 
 * [Ανέστης Βασιλειάδης](https://github.com/Anoliz)
 * [Χρήστος Καπουτσέλης](https://github.com/ChristosKap22)
@@ -21,14 +15,7 @@
 * [Κώστας Σπυριδόπουλος](https://github.com/KostasSpiridopoulos)
 * [Θοδωρής Τσιρπάνης](https://github.com/teo-tsirpanis)
 
-## Η διαδικασία
+## License
 
-Οι συζητήσεις μας θα γίνονται στα [ζητήματα (issues) του GitHub](https://github.com/teo-tsirpanis/dai19-seng-team7/issues). Εκεί θα ανταλλάσσουμε απόψεις για ζητήματα που προκύπτουν, θα ψηφίζουμε, και θα θέτουμε υπό συζήτηση νέα θέματα.
+[MIT](https://opensource.org/licenses/MIT). 
 
-Καλό θα ήταν να κάνουμε *όλες* τις συζητήσεις για την εργασία εκεί. Η διαδικασία της ανάπτυξης της εργασίας μας θα είναι πιο διαφανής. Είναι σίγουρα καλύτερο από το να σκάβουμε μέσα σε δεκάδες μηνύματα στο Messenger.
-
-## Άδεια χρήσης
-
-Το πρόγραμμα της εργασίας προτείνω να κυκλοφορήσει - όταν έρθει η ώρα - υπό την [ελεύθερη άδεια λογισμικού MIT](https://opensource.org/licenses/MIT). Είναι εκπληκτικά απλή και σύντομη· στην ουσία λέει ότι οποιοσδήποτε είναι ελεύθερος να χρησιμοποιήσει, να αντιγράψει, να τροποποιήσει και τα λοιπά, το πρόγραμμα, εφόσον αναφέρεται ο αρχικός του δημιουργός (εμείς).
-
-Μάλλον δε θα υπάρχει αντίρρηση επ' αυτού, αλλά όσοι έχουν κάποιο πρόβλημα, μπορούν να δημιουργήσουν ένα ζήτημα για να το συζητήσουμε.

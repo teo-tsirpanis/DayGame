@@ -36,6 +36,7 @@ namespace DayGame
             maxCharHp = character.MaxLifePoints;
             HitPoints = boss.Health;
             UpdateHpController();
+            pictureBox1.Image = imageList1.Images[character.Gender == "Male" ? 0 : 1];
         }
 
         private void AttackBClick(object sender, EventArgs e)
@@ -225,5 +226,10 @@ namespace DayGame
 
         private int EffectiveDamage => inventory.WeaponBuff + character.Damage;
         private int EffectiveDefence => inventory.ArmorBuff + character.Defence;
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

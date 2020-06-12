@@ -128,7 +128,7 @@ namespace DayGame
         public Boss GenerateBoss(Character character)
         {
 
-            return new Boss("Boss", null, character.Damage * 5, character.Level, character.MaxLifePoints / 4);
+            return new Boss("Boss", null, character.Damage * 5, character.Level, (int)(character.MaxLifePoints / 3.7));
         }
     }
 }

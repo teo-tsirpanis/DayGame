@@ -59,6 +59,9 @@ namespace DayGame
         public void Save()
         {
             _data.UpdateSaveDate();
+            var directory = Path.GetDirectoryName(FileName);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
             File.WriteAllText(FileName, JsonConvert.SerializeObject(_data));
         }
 
@@ -137,8 +140,11 @@ namespace DayGame
         /// <param name="directory">The directory to find. Subdirectories are not searched.</param>
         /// <param name="onError">An optional delegate that gets called for every exception during
         /// the reading of the file. It accepts the path of the faulty file and the exception's message.</param>
-        public static SaveFile[] ListSaveFiles(string directory, Action<string, string> onError = null) =>
-            Directory.EnumerateFiles(directory, "*.daygame").Select(path =>
+        public static SaveFile[] ListSaveFiles(string directory, Action<string, string> onError = null)
+        {
+            if (!Directory.Exists(directory))
+                return Array.Empty<SaveFile>();
+            return Directory.EnumerateFiles(directory, "*.daygame").Select(path =>
             {
                 try
                 {
@@ -150,6 +156,7 @@ namespace DayGame
                     return null;
                 }
             }).Where(x => x != null).ToArray();
+        }
 
         sealed class TaskConverter : JsonConverter
         {

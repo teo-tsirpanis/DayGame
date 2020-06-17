@@ -13,7 +13,7 @@ namespace DayGame
     {
         private readonly Dictionary<int, Item> items = new Dictionary<int, Item>();
 
-        private static ItemRegistry registry;
+        private static ItemRegistry? registry;
 
         /// <summary>
         /// A read-only view of the items, associated with their <see cref="Item.Id"/>.

@@ -6,7 +6,7 @@ namespace DayGame
 {
     public partial class StartUpMenu : Form
     {
-        private SaveFile chosenSaveFile;
+        private SaveFile? chosenSaveFile;
 
         private StartUpMenu()
         {
@@ -49,7 +49,7 @@ namespace DayGame
             Array.ForEach(SaveFile.ListSaveFiles(SaveFile.SaveFileDirectory, SaveFileError), addLabel);
         }
 
-        public static SaveFile ChooseSaveFile()
+        public static SaveFile? ChooseSaveFile()
         {
             using var sm = new StartUpMenu();
             if (sm.ShowDialog(null) == DialogResult.OK)

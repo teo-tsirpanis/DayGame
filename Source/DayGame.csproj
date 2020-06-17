@@ -6,6 +6,7 @@
     <UseWindowsForms>true</UseWindowsForms>
     <IsPackable>false</IsPackable>
     <ApplicationIcon>../icon.ico</ApplicationIcon>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
     <Content Include="Items/**" CopyToOutputDirectory="PreserveNewest" />

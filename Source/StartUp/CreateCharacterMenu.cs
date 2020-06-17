@@ -6,7 +6,7 @@ namespace DayGame
 {
     public partial class CreateCharacterMenu : Form
     {
-        public SaveFile SaveFile { get; private set; }
+        public SaveFile? SaveFile { get; private set; }
 
         private CreateCharacterMenu()
         {
@@ -42,7 +42,7 @@ namespace DayGame
             pictureBox2.Image = imageList1.Images[1];
         }
 
-        public static SaveFile CreateCharacter(IWin32Window owner)
+        public static SaveFile? CreateCharacter(IWin32Window owner)
         {
             using var ccm = new CreateCharacterMenu();
             if (ccm.ShowDialog(owner) == DialogResult.OK)

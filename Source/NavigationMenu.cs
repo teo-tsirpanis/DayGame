@@ -24,7 +24,7 @@ namespace DayGame
             shopGui = new ShopGUI(saveFile);
             helpGui = new HelpGUI();
             openChildForm(questLog);
-            
+
             nameLabel.Text = character.Name;
             character.InGameBalanceChanged += SetBalance;
             SetBalance(character.InGameBalance);
@@ -38,11 +38,11 @@ namespace DayGame
             using (var prepare = new PrepareForBoss(saveFile))
                 prepare.ShowDialog();
             using var bossBattleFrame =
-                new BossBattleFrame(character, saveFile.Inventory, GenerateBoss(character));
+                new BossBattleFrame(character, saveFile.Inventory, GenerateBoss());
             bossBattleFrame.ShowDialog();
         }
 
-        private Form activeForm;
+        private Form? activeForm;
 
         private void openChildForm(Form childForm)
         {
@@ -131,7 +131,7 @@ namespace DayGame
             openChildForm(helpGui);
         }
 
-        public Boss GenerateBoss(Character character)
+        public Boss GenerateBoss()
         {
 
             return new Boss("Boss", null, character.Damage * 5, character.Level, (int)(character.MaxLifePoints / 3.7));

@@ -34,7 +34,7 @@ namespace DayGame
             InventorySpaceReload();
         }
 
-        private void Equip(object sender, EventArgs e)
+        private void Equip(object? sender, EventArgs e)
         {
             if (!((sender as Control)?.Tag is Item item)) return;
 
@@ -62,7 +62,7 @@ namespace DayGame
         private void FullChestError() =>
             MessageBox.Show("Your chest is full.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        private void UnequipConsumable(object sender, EventArgs e)
+        private void UnequipConsumable(object? sender, EventArgs e)
         {
             if (!((sender as Control)?.Tag is ConsumableItem item)) return;
 
@@ -73,7 +73,7 @@ namespace DayGame
             if (!inv.TryRemoveFromBag(item)) FullChestError();
         }
 
-        private void UnequipNonConsumable(NonConsumableItem item, Func<bool> fUnequip)
+        private void UnequipNonConsumable(NonConsumableItem? item, Func<bool> fUnequip)
         {
             if (item == null) return;
             using var dialog = new EquipUnequipGUI(item, "Unequip");
@@ -109,7 +109,7 @@ namespace DayGame
             UpdateStatText(inv.ArmorBuff, DefenceTextNumber);
         }
 
-        private void filter_checked_changed(object sender, EventArgs e)
+        private void filter_checked_changed(object? sender, EventArgs e)
         {
             InventorySpaceReload();
         }

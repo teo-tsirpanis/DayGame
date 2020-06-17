@@ -15,19 +15,19 @@ namespace DayGame
     /// non-GUI objects are (in)directly contained here.</remarks>
     public sealed class SaveFile
     {
-        private Data _data;
-        private string FileName { get; set; }
-        public Character Character => _data.Character;
-        public Inventory Inventory => _data.Inventory;
-        public List<Task> Tasks => _data.Tasks;
+        private readonly Data _data;
+        private readonly string FileName;
+        public Character Character => _data.Character!;
+        public Inventory Inventory => _data.Inventory!;
+        public List<Task> Tasks => _data.Tasks!;
         public DateTime SaveDate => _data.SaveDate;
         public DateTime NextBossDate => _data.NextBossDate;
 
         private class Data
         {
-            public Character Character { get; set; }
-            public Inventory Inventory { get; set; }
-            [JsonConverter(typeof(TaskConverter))] public List<Task> Tasks { get; set; }
+            public Character? Character { get; set; }
+            public Inventory? Inventory { get; set; }
+            [JsonConverter(typeof(TaskConverter))] public List<Task>? Tasks { get; set; }
             public DateTime SaveDate { get; set; }
             public DateTime NextBossDate { get; set; }
 
@@ -48,8 +48,10 @@ namespace DayGame
             public void UpdateNextBossDate() => NextBossDate = DateTime.Today.AddDays(new Random().Next(3, 8));
         }
 
-        private SaveFile()
+        private SaveFile(Data data, string fileName)
         {
+            _data = data;
+            FileName = fileName;
         }
 
         /// <summary>
@@ -105,7 +107,7 @@ namespace DayGame
                 Tasks = new List<Task>()
             };
             data.UpdateSaveDate();
-            return new SaveFile {_data = data, FileName = fileName};
+            return new SaveFile(data, fileName);
         }
 
         /// <summary>
@@ -131,7 +133,7 @@ namespace DayGame
         {
             var data = JsonConvert.DeserializeObject<Data>(File.ReadAllText(fileName));
             Data.ConsistencyCheck(data);
-            return new SaveFile {_data = data, FileName = fileName};
+            return new SaveFile(data, fileName);
         }
 
         /// <summary>
@@ -140,7 +142,7 @@ namespace DayGame
         /// <param name="directory">The directory to find. Subdirectories are not searched.</param>
         /// <param name="onError">An optional delegate that gets called for every exception during
         /// the reading of the file. It accepts the path of the faulty file and the exception's message.</param>
-        public static SaveFile[] ListSaveFiles(string directory, Action<string, string> onError = null)
+        public static SaveFile[] ListSaveFiles(string directory, Action<string, string>? onError = null)
         {
             if (!Directory.Exists(directory))
                 return Array.Empty<SaveFile>();
@@ -155,14 +157,14 @@ namespace DayGame
                     onError?.Invoke(path, e.Message);
                     return null;
                 }
-            }).Where(x => x != null).ToArray();
+            }).Where(x => x != null).ToArray()!;
         }
 
-        sealed class TaskConverter : JsonConverter
+        sealed class TaskConverter : JsonConverter<List<Task>>
         {
-            public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
+            public override void WriteJson(JsonWriter writer, List<Task>? list, JsonSerializer serializer)
             {
-                var list = (List<Task>) value;
+                if (list == null) return;
                 writer.WriteStartArray();
                 foreach (var task in list)
                 {
@@ -177,8 +179,8 @@ namespace DayGame
                 writer.WriteEndArray();
             }
 
-            public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
-                JsonSerializer serializer)
+            public override List<Task> ReadJson(JsonReader reader, Type objectType, List<Task>? existingValue,
+                bool hasExistingValue, JsonSerializer serializer)
             {
                 Task ReadTask(JToken obj)
                 {
@@ -196,8 +198,6 @@ namespace DayGame
                 var arr = JToken.ReadFrom(reader);
                 return arr.Select(ReadTask).ToList();
             }
-
-            public override bool CanConvert(Type objectType) => objectType == typeof(List<Task>);
         }
     }
 }

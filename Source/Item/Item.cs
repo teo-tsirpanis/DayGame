@@ -10,7 +10,7 @@ namespace DayGame
     [JsonConverter(typeof(ItemConverter))]
     public class Item
     {
-        public Item(int id, string name, string description, Image image, int price)
+        public Item(int id, string name, string description, Image? image, int price)
         {
             this.Id = id;
             this.Name = name;
@@ -25,11 +25,11 @@ namespace DayGame
 
         public string Description { get; }
 
-        public Image Image { get; }
+        public Image? Image { get; }
 
         public int Price { get; }
 
-        public static Color GetBackgroundColor(Item item) => item switch
+        public static Color GetBackgroundColor(Item? item) => item switch
         {
             Armor _ => Color.Blue,
             Weapon _ => Color.Red,
@@ -40,7 +40,7 @@ namespace DayGame
 
         private class ItemConverter : JsonConverter<Item>
         {
-            public override void WriteJson(JsonWriter writer, Item value, JsonSerializer serializer)
+            public override void WriteJson(JsonWriter writer, Item? value, JsonSerializer serializer)
             {
                 if (value != null)
                     writer.WriteValue(value.Id);
@@ -48,14 +48,14 @@ namespace DayGame
                     writer.WriteNull();
             }
 
-            public override Item ReadJson(JsonReader reader, Type objectType, Item existingValue, bool hasExistingValue, JsonSerializer serializer)
+            public override Item ReadJson(JsonReader reader, Type objectType, Item? existingValue, bool hasExistingValue, JsonSerializer serializer)
             {
                 // if (!reader.Read())
                 //     throw new EndOfStreamException("Unexpected end of file.");
                 // if (reader.TokenType == JsonToken.PropertyName)
                 //     reader.Read();
                 if (reader.TokenType == JsonToken.Null)
-                    return null;
+                    return null!;
                 if (reader.TokenType != JsonToken.Integer)
                     throw new InvalidDataException("Invalid item ID format: expected a number.");
                 var id = Convert.ToInt32(reader.Value);
@@ -65,7 +65,7 @@ namespace DayGame
             }
         }
 
-        internal static void UpdateButton(Item item, Button btn, bool setPrice = false)
+        internal static void UpdateButton(Item? item, Button btn, bool setPrice = false)
         {
             btn.Tag = item;
             btn.BackColor = Item.GetBackgroundColor(item);

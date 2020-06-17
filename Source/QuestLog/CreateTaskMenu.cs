@@ -7,7 +7,7 @@ namespace DayGame
 {
     public partial class CreateTaskMenu : Form
     {
-        private Task createdTask;
+        private Task? createdTask;
 
         private CreateTaskMenu()
         {
@@ -62,7 +62,7 @@ namespace DayGame
             this.Close();
         }
 
-        public static Task CreateTask(IWin32Window owner)
+        public static Task? CreateTask(IWin32Window owner)
         {
             using var ctm = new CreateTaskMenu();
             if (ctm.ShowDialog(owner) == DialogResult.OK)

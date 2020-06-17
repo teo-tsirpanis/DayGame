@@ -42,14 +42,14 @@ namespace DayGame
         /// </summary>
         /// <seealso cref="ArmorBuff"/>
         [JsonProperty]
-        public Armor ArmorEquipped { get; private set; }
+        public Armor? ArmorEquipped { get; private set; }
 
         /// <summary>
         /// The character's equipped weapon.
         /// </summary>
         /// <seealso cref="WeaponBuff"/>
         [JsonProperty]
-        public Weapon WeaponEquipped { get; private set; }
+        public Weapon? WeaponEquipped { get; private set; }
 
         /// <summary>
         /// A read-only view of the chest.
@@ -74,7 +74,7 @@ namespace DayGame
         /// <summary>
         /// This event is fired every time this inventory's content is changed.
         /// </summary>
-        public event Action OnInventoryChanged;
+        public event Action? OnInventoryChanged;
 
         private void InventoryChanged()
         {

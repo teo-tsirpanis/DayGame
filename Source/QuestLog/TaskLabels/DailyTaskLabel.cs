@@ -47,7 +47,7 @@ namespace DayGame
             MessageBox.Show(daily.Description, daily.Name);
         }
 
-        private void DoneCheckBoxClick(object sender, EventArgs e)
+        private void DoneCheckBoxClick(object? sender, EventArgs e)
         {
             doneCheckBox.BackColor = Color.LightGray;
             doneCheckBox.Enabled = false;

@@ -37,7 +37,7 @@ namespace DayGame
             }
         }
 
-        public event Action<int> InGameBalanceChanged;
+        public event Action<int>? InGameBalanceChanged;
 
         public int InGameBalance
         {

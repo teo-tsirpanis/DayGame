@@ -7,12 +7,12 @@ namespace DayGame
     {
         public string Name { get; }
 
-        private Image Image { get; }
+        private Image? Image { get; }
         public int Damage { get; }
         public int Health { get; }
         public int Level { get; }
 
-        public Boss(string Name, Image image, int health, int Level, int Damage)
+        public Boss(string Name, Image? image, int health, int Level, int Damage)
         {
             this.Name = Name;
             this.Image = image;

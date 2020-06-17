@@ -10,7 +10,6 @@ namespace DayGame
         private readonly Button[] ShopButtonsArray;
         private readonly List<Item> items;
 
-        private BuyItem buyItem;
         private readonly SaveFile saveFile;
 
         public ShopGUI(SaveFile saveFile)
@@ -34,10 +33,10 @@ namespace DayGame
             Item.UpdateButtons(items, ShopButtonsArray, true);
         }
 
-        private void Buy(object sender, EventArgs e)
+        private void Buy(object? sender, EventArgs e)
         {
             if (!((sender as Control)?.Tag is Item item)) return;
-            buyItem = new BuyItem(item, saveFile.Character, saveFile.Inventory);
+            using var buyItem = new BuyItem(item, saveFile.Character, saveFile.Inventory);
             buyItem.ShowDialog();
         }
 
@@ -51,7 +50,7 @@ namespace DayGame
                 _ => true
             };
 
-        private void filter_checked_changed(object sender, EventArgs e)
+        private void filter_checked_changed(object? sender, EventArgs e)
         {
             Item.UpdateButtons(items.Where(ShouldShow).ToArray(), ShopButtonsArray, true);
         }

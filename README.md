@@ -12,6 +12,8 @@ If you want to help with the further development of this project, feel free to o
 
 ## Contributors
 
+DayGame was developed by ten sophomores studying in the [Department of Applied Informatics in the University of Macedonia](https://uom.gr/dai/) for a Software Engineering assignment. [It was deemed one of the two best projects of the year.](best_project_certificate.pdf).
+
 * [Ανέστης Βασιλειάδης](https://github.com/Anoliz)
 * [Χρήστος Καπουτσέλης](https://github.com/ChristosKap22)
 * [Αποστόλης Μοσχόπουλος](https://github.com/ApostolisMoschopoulos)

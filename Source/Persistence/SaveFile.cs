@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -31,7 +32,7 @@ namespace DayGame
             public DateTime SaveDate { get; set; }
             public DateTime NextBossDate { get; set; }
 
-            public static void ConsistencyCheck(Data data)
+            public static void ConsistencyCheck([NotNull] Data? data)
             {
                 if (data?.Character == null)
                     throw new Exception("The save file contains no data.");
@@ -62,7 +63,8 @@ namespace DayGame
         {
             _data.UpdateSaveDate();
             var directory = Path.GetDirectoryName(FileName);
-            if (!Directory.Exists(directory))
+            // We used to check for Directory.Exists, but CreateDirectory will do nothing if it already exists.
+            if (directory != null)
                 Directory.CreateDirectory(directory);
             File.WriteAllText(FileName, JsonConvert.SerializeObject(_data));
         }

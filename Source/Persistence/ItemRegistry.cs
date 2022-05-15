@@ -28,6 +28,7 @@ namespace DayGame
             var imageDirectory = Path.GetDirectoryName(path.AsSpan());
             foreach (var o in jsonData)
             {
+                if (o == null) continue;
                 var item = ParseItem(o, imageDirectory);
                 items.Add(item.Id, item);
             }
@@ -48,7 +49,7 @@ namespace DayGame
 
         private static Item ParseItem(JObject o, ReadOnlySpan<char> imageDirectory)
         {
-            T GetProperty<T>(string key)
+            T? GetProperty<T>(string key)
             {
                 if (!o.ContainsKey(key))
                     throw new KeyNotFoundException($"Could not find a property with the key '{key}'.");
@@ -57,8 +58,8 @@ namespace DayGame
             }
 
             var id = GetProperty<int>("id");
-            var name = GetProperty<string>("name");
-            var description = GetProperty<string>("description");
+            var name = GetProperty<string>("name") ?? throw new KeyNotFoundException("Name should not be null");
+            var description = GetProperty<string>("description") ?? throw new KeyNotFoundException("Description should not be null");
             // The image path is optional.
             var imagePath = o["image_path"]?.Value<string>();
             var image = imagePath != null

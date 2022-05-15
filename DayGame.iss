@@ -1,5 +1,5 @@
 #define MyAppName "DayGame"
-#define MyAppVersion "1.0.2"
+#define MyAppVersion "1.1.0"
 #define MyAppPublisher "Software Engineering Team 7"
 #define MyAppURL "https://github.com/teo-tsirpanis/DayGame"
 #define MyAppExeName "DayGame.exe"
